@@ -1,0 +1,21 @@
+C:\Users\Multitask\source\repos\PROYECTO\PROYECTO\bin\Debug\PROYECTO.exe.config
+C:\Users\Multitask\source\repos\PROYECTO\PROYECTO\bin\Debug\PROYECTO.exe
+C:\Users\Multitask\source\repos\PROYECTO\PROYECTO\bin\Debug\PROYECTO.pdb
+C:\Users\Multitask\source\repos\PROYECTO\PROYECTO\obj\Debug\PROYECTO.csprojAssemblyReference.cache
+C:\Users\Multitask\source\repos\PROYECTO\PROYECTO\obj\Debug\PROYECTO.Form1.resources
+C:\Users\Multitask\source\repos\PROYECTO\PROYECTO\obj\Debug\PROYECTO.Properties.Resources.resources
+C:\Users\Multitask\source\repos\PROYECTO\PROYECTO\obj\Debug\PROYECTO.csproj.GenerateResource.cache
+C:\Users\Multitask\source\repos\PROYECTO\PROYECTO\obj\Debug\PROYECTO.csproj.CoreCompileInputs.cache
+C:\Users\Multitask\source\repos\PROYECTO\PROYECTO\obj\Debug\PROYECTO.exe
+C:\Users\Multitask\source\repos\PROYECTO\PROYECTO\obj\Debug\PROYECTO.pdb
+C:\Users\Multitask\Desktop\Proyecto Stock Multitask\PROYECTO\PROYECTO\bin\Debug\PROYECTO.exe.config
+C:\Users\Multitask\Desktop\Proyecto Stock Multitask\PROYECTO\PROYECTO\bin\Debug\PROYECTO.exe
+C:\Users\Multitask\Desktop\Proyecto Stock Multitask\PROYECTO\PROYECTO\bin\Debug\PROYECTO.pdb
+C:\Users\Multitask\Desktop\Proyecto Stock Multitask\PROYECTO\PROYECTO\obj\Debug\PROYECTO.csprojAssemblyReference.cache
+C:\Users\Multitask\Desktop\Proyecto Stock Multitask\PROYECTO\PROYECTO\obj\Debug\PROYECTO.Form1.resources
+C:\Users\Multitask\Desktop\Proyecto Stock Multitask\PROYECTO\PROYECTO\obj\Debug\PROYECTO.Properties.Resources.resources
+C:\Users\Multitask\Desktop\Proyecto Stock Multitask\PROYECTO\PROYECTO\obj\Debug\PROYECTO.csproj.GenerateResource.cache
+C:\Users\Multitask\Desktop\Proyecto Stock Multitask\PROYECTO\PROYECTO\obj\Debug\PROYECTO.csproj.CoreCompileInputs.cache
+C:\Users\Multitask\Desktop\Proyecto Stock Multitask\PROYECTO\PROYECTO\obj\Debug\PROYECTO.exe
+C:\Users\Multitask\Desktop\Proyecto Stock Multitask\PROYECTO\PROYECTO\obj\Debug\PROYECTO.pdb
+C:\Users\Multitask\Desktop\Proyecto Stock Multitask\PROYECTO\PROYECTO\obj\Debug\PROYECTO.Login.resources
