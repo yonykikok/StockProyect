@@ -80,15 +80,10 @@ namespace PROYECTO
         {
             this.WindowState = FormWindowState.Minimized;
         }
-        [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
-        private extern static void ReleaseCapture();
-        [DllImport("user32.DLL", EntryPoint = "SendMessage")]
-        private extern static void SendMessage(System.IntPtr hWmd, int wMsg, int wParam, int lParam);
-
         private void Login_MouseDown(object sender, MouseEventArgs e)
         {
-            ReleaseCapture();
-            SendMessage(this.Handle, 0x112, 0xf012, 0);
+            Program.ReleaseCapture();
+            Program.SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
 
         private void buttonAcceder_Click(object sender, EventArgs e)
@@ -110,7 +105,7 @@ namespace PROYECTO
                 }
                 else
                 {
-                    if (empleadoLeido.User == "InvalidUser"&& empleadoLeido.Password != "InvalidPass")
+                    if (empleadoLeido.User == "InvalidUser" && empleadoLeido.Password != "InvalidPass")
                     {
                         labelErrorUsuario.Text = "Usuario Incorrecto, intente de nuevo";
                         labelErrorUsuario.Visible = true;

@@ -25,3 +25,12 @@ C:\Users\Multitask\Desktop\Proyecto Stock Multitask\StockProyect\PROYECTO\CapaDe
 C:\Users\Multitask\Desktop\Proyecto Stock Multitask\StockProyect\PROYECTO\CapaDeDatos\obj\Debug\CapaDeDatos.csproj.CopyComplete
 C:\Users\Multitask\Desktop\Proyecto Stock Multitask\StockProyect\PROYECTO\CapaDeDatos\obj\Debug\CapaDeDatos.dll
 C:\Users\Multitask\Desktop\Proyecto Stock Multitask\StockProyect\PROYECTO\CapaDeDatos\obj\Debug\CapaDeDatos.pdb
+C:\Users\screw\Desktop\Multitask\StockProyect\PROYECTO\CapaDeDatos\bin\Debug\CapaDeDatos.dll
+C:\Users\screw\Desktop\Multitask\StockProyect\PROYECTO\CapaDeDatos\bin\Debug\CapaDeDatos.pdb
+C:\Users\screw\Desktop\Multitask\StockProyect\PROYECTO\CapaDeDatos\bin\Debug\CapaDeNegocios.dll
+C:\Users\screw\Desktop\Multitask\StockProyect\PROYECTO\CapaDeDatos\bin\Debug\CapaDeNegocios.pdb
+C:\Users\screw\Desktop\Multitask\StockProyect\PROYECTO\CapaDeDatos\obj\Debug\CapaDeDatos.csprojAssemblyReference.cache
+C:\Users\screw\Desktop\Multitask\StockProyect\PROYECTO\CapaDeDatos\obj\Debug\CapaDeDatos.csproj.CoreCompileInputs.cache
+C:\Users\screw\Desktop\Multitask\StockProyect\PROYECTO\CapaDeDatos\obj\Debug\CapaDeDatos.csproj.CopyComplete
+C:\Users\screw\Desktop\Multitask\StockProyect\PROYECTO\CapaDeDatos\obj\Debug\CapaDeDatos.dll
+C:\Users\screw\Desktop\Multitask\StockProyect\PROYECTO\CapaDeDatos\obj\Debug\CapaDeDatos.pdb
