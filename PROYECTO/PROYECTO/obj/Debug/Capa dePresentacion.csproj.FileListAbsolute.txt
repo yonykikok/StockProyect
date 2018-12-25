@@ -67,7 +67,14 @@ C:\Users\screw\Desktop\Multitask\StockProyect\PROYECTO\PROYECTO\obj\Debug\Capa d
 C:\Users\screw\Desktop\Multitask\StockProyect\PROYECTO\PROYECTO\obj\Debug\PROYECTO.exe
 C:\Users\screw\Desktop\Multitask\StockProyect\PROYECTO\PROYECTO\obj\Debug\PROYECTO.pdb
 C:\Users\screw\Desktop\Multitask\StockProyect\PROYECTO\PROYECTO\obj\Debug\PROYECTO.FormProductos.resources
-<<<<<<< HEAD
 C:\Users\Multitask\Desktop\Proyecto Stock Multitask\StockProyect\PROYECTO\PROYECTO\obj\Debug\PROYECTO.FormProductos.resources
-=======
->>>>>>> 7e3db99809bed467e7213c9e8eba93b6df21cc12
+C:\Users\Multitask\Desktop\Proyecto Stock Multitask - copia\StockProyect\PROYECTO\PROYECTO\obj\Debug\Capa dePresentacion.csprojAssemblyReference.cache
+C:\Users\Multitask\Desktop\Proyecto Stock Multitask - copia\StockProyect\PROYECTO\PROYECTO\obj\Debug\PROYECTO.FormEmpleados.resources
+C:\Users\Multitask\Desktop\Proyecto Stock Multitask - copia\StockProyect\PROYECTO\PROYECTO\obj\Debug\PROYECTO.FormPrincipal.resources
+C:\Users\Multitask\Desktop\Proyecto Stock Multitask - copia\StockProyect\PROYECTO\PROYECTO\obj\Debug\PROYECTO.FormLogin.resources
+C:\Users\Multitask\Desktop\Proyecto Stock Multitask - copia\StockProyect\PROYECTO\PROYECTO\obj\Debug\PROYECTO.FormProductos.resources
+C:\Users\Multitask\Desktop\Proyecto Stock Multitask - copia\StockProyect\PROYECTO\PROYECTO\obj\Debug\PROYECTO.Properties.Resources.resources
+C:\Users\Multitask\Desktop\Proyecto Stock Multitask - copia\StockProyect\PROYECTO\PROYECTO\obj\Debug\Capa dePresentacion.csproj.GenerateResource.cache
+C:\Users\Multitask\Desktop\Proyecto Stock Multitask - copia\StockProyect\PROYECTO\PROYECTO\obj\Debug\Capa dePresentacion.csproj.CoreCompileInputs.cache
+C:\Users\Multitask\Desktop\Proyecto Stock Multitask - copia\StockProyect\PROYECTO\PROYECTO\obj\Debug\PROYECTO.exe
+C:\Users\Multitask\Desktop\Proyecto Stock Multitask - copia\StockProyect\PROYECTO\PROYECTO\obj\Debug\PROYECTO.pdb
