@@ -17,6 +17,7 @@ namespace PROYECTO
     public partial class FormPrincipal : Form
     {
         static Thread threadEmpleados;
+        static Thread threadProductos;
         Empleado empleado;
         public Thread ThreadEmpleados
         {
@@ -25,11 +26,17 @@ namespace PROYECTO
                 return threadEmpleados;
             }
         }
+        public Thread ThreadProductos
+        {
+            get
+            {
+                return threadProductos;
+            }
+        }
 
         public FormPrincipal()
         {
             InitializeComponent();
-            threadEmpleados = new Thread(IniciarFormEmpleados);
         }
         public FormPrincipal(Empleado empleado):this()
         {
@@ -53,15 +60,10 @@ namespace PROYECTO
             }
 
         }
-        [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
-        private extern static void ReleaseCapture();
-        [DllImport("user32.DLL", EntryPoint = "SendMessage")]
-        private extern static void SendMessage(System.IntPtr hWmd, int wMsg, int wParam, int lParam);
-
         private void ButtonMinimizar_MouseDown(object sender, MouseEventArgs e)
         {
-            ReleaseCapture();
-            SendMessage(this.Handle, 0x112, 0xf012, 0);
+            Program.ReleaseCapture();
+            Program.SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
 
         private void buttonReportesVentas_Click(object sender, EventArgs e)
@@ -69,7 +71,7 @@ namespace PROYECTO
             panelSubMenu.Visible = false;
 
         }
-
+        
         private void buttonReportesCompras_Click(object sender, EventArgs e)
         {
 
@@ -139,17 +141,36 @@ namespace PROYECTO
             FormEmpleados formEmpleados = new FormEmpleados();
             formEmpleados.ShowDialog();
         }
+        private void IniciarFormProductos()
+        {
+            FormProductos formProductos = new FormProductos();
+            formProductos.ShowDialog();
+        }
         private void buttonEmpleados_Click(object sender, EventArgs e)
         {
+            threadEmpleados = new Thread(IniciarFormEmpleados);
+            Program.MockThreads.Add(threadEmpleados);
+            if (!(this.ThreadEmpleados.IsAlive))
             threadEmpleados.Start();
         }
 
         private void FormPrincipal_FormClosing(object sender, FormClosingEventArgs e)
         {
-            if(threadEmpleados.IsAlive)
+            foreach(Thread hilo in Program.MockThreads)
             {
-                threadEmpleados.Abort();
+                if (hilo.IsAlive)
+                {
+                    hilo.Abort();
+                }
             }
+        }
+
+        private void buttonProductos_Click(object sender, EventArgs e)
+        {
+            threadProductos = new Thread(IniciarFormProductos);
+            Program.MockThreads.Add(threadProductos);
+            if (!(this.ThreadProductos.IsAlive))
+                threadProductos.Start();
         }
     }
 }

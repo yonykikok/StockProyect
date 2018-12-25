@@ -49,3 +49,22 @@ C:\Users\Multitask\Desktop\Proyecto Stock Multitask\StockProyect\PROYECTO\PROYEC
 C:\Users\Multitask\Desktop\Proyecto Stock Multitask\StockProyect\PROYECTO\PROYECTO\obj\Debug\PROYECTO.exe
 C:\Users\Multitask\Desktop\Proyecto Stock Multitask\StockProyect\PROYECTO\PROYECTO\obj\Debug\PROYECTO.pdb
 C:\Users\Multitask\Desktop\Proyecto Stock Multitask\StockProyect\PROYECTO\PROYECTO\obj\Debug\PROYECTO.FormEmpleados.resources
+C:\Users\screw\Desktop\Multitask\StockProyect\PROYECTO\PROYECTO\bin\Debug\PROYECTO.exe.config
+C:\Users\screw\Desktop\Multitask\StockProyect\PROYECTO\PROYECTO\bin\Debug\PROYECTO.exe
+C:\Users\screw\Desktop\Multitask\StockProyect\PROYECTO\PROYECTO\bin\Debug\PROYECTO.pdb
+C:\Users\screw\Desktop\Multitask\StockProyect\PROYECTO\PROYECTO\bin\Debug\CapaDeDatos.dll
+C:\Users\screw\Desktop\Multitask\StockProyect\PROYECTO\PROYECTO\bin\Debug\CapaDeNegocios.dll
+C:\Users\screw\Desktop\Multitask\StockProyect\PROYECTO\PROYECTO\bin\Debug\CapaDeDatos.pdb
+C:\Users\screw\Desktop\Multitask\StockProyect\PROYECTO\PROYECTO\bin\Debug\CapaDeNegocios.pdb
+C:\Users\screw\Desktop\Multitask\StockProyect\PROYECTO\PROYECTO\obj\Debug\Capa dePresentacion.csprojAssemblyReference.cache
+C:\Users\screw\Desktop\Multitask\StockProyect\PROYECTO\PROYECTO\obj\Debug\PROYECTO.FormEmpleados.resources
+C:\Users\screw\Desktop\Multitask\StockProyect\PROYECTO\PROYECTO\obj\Debug\PROYECTO.FormPrincipal.resources
+C:\Users\screw\Desktop\Multitask\StockProyect\PROYECTO\PROYECTO\obj\Debug\PROYECTO.FormLogin.resources
+C:\Users\screw\Desktop\Multitask\StockProyect\PROYECTO\PROYECTO\obj\Debug\PROYECTO.Properties.Resources.resources
+C:\Users\screw\Desktop\Multitask\StockProyect\PROYECTO\PROYECTO\obj\Debug\Capa dePresentacion.csproj.GenerateResource.cache
+C:\Users\screw\Desktop\Multitask\StockProyect\PROYECTO\PROYECTO\obj\Debug\Capa dePresentacion.csproj.CoreCompileInputs.cache
+C:\Users\screw\Desktop\Multitask\StockProyect\PROYECTO\PROYECTO\obj\Debug\Capa dePresentacion.csproj.CopyComplete
+C:\Users\screw\Desktop\Multitask\StockProyect\PROYECTO\PROYECTO\obj\Debug\PROYECTO.exe
+C:\Users\screw\Desktop\Multitask\StockProyect\PROYECTO\PROYECTO\obj\Debug\PROYECTO.pdb
+C:\Users\screw\Desktop\Multitask\StockProyect\PROYECTO\PROYECTO\obj\Debug\PROYECTO.FormProductos.resources
+C:\Users\Multitask\Desktop\Proyecto Stock Multitask\StockProyect\PROYECTO\PROYECTO\obj\Debug\PROYECTO.FormProductos.resources

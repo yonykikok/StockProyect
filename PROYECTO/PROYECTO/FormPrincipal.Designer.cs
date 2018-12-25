@@ -430,6 +430,7 @@
             this.buttonProductos.TabIndex = 0;
             this.buttonProductos.Text = "Productos";
             this.buttonProductos.UseVisualStyleBackColor = true;
+            this.buttonProductos.Click += new System.EventHandler(this.buttonProductos_Click);
             // 
             // pictureBoxLogo
             // 
@@ -460,6 +461,7 @@
             this.Controls.Add(this.panel8);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormPrincipal";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormPrincipal_FormClosing);
             this.Load += new System.EventHandler(this.FormPrincipal_Load);
