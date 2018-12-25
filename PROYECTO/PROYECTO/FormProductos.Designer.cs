@@ -45,9 +45,12 @@
             this.pictureBoxImagenProducto = new System.Windows.Forms.PictureBox();
             this.textBoxBuscador = new System.Windows.Forms.TextBox();
             this.panel2 = new System.Windows.Forms.Panel();
+<<<<<<< HEAD
             this.buttonBuscar = new System.Windows.Forms.Button();
             this.panelEnvios = new System.Windows.Forms.Panel();
             this.labelResultadoBusqueda = new System.Windows.Forms.Label();
+=======
+>>>>>>> 7e3db99809bed467e7213c9e8eba93b6df21cc12
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -92,13 +95,20 @@
             // 
             // dataGridViewProductos
             // 
+<<<<<<< HEAD
             this.dataGridViewProductos.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+=======
+>>>>>>> 7e3db99809bed467e7213c9e8eba93b6df21cc12
             this.dataGridViewProductos.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
             this.dataGridViewProductos.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridViewProductos.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Raised;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
+<<<<<<< HEAD
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+=======
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Century", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+>>>>>>> 7e3db99809bed467e7213c9e8eba93b6df21cc12
             dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -113,20 +123,31 @@
             this.StockIdeal});
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
+<<<<<<< HEAD
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+=======
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+>>>>>>> 7e3db99809bed467e7213c9e8eba93b6df21cc12
             dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dataGridViewProductos.DefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridViewProductos.Dock = System.Windows.Forms.DockStyle.Left;
+<<<<<<< HEAD
             this.dataGridViewProductos.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
+=======
+>>>>>>> 7e3db99809bed467e7213c9e8eba93b6df21cc12
             this.dataGridViewProductos.EnableHeadersVisualStyles = false;
             this.dataGridViewProductos.Location = new System.Drawing.Point(0, 25);
             this.dataGridViewProductos.Name = "dataGridViewProductos";
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
+<<<<<<< HEAD
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+=======
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Century", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+>>>>>>> 7e3db99809bed467e7213c9e8eba93b6df21cc12
             dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
@@ -134,7 +155,10 @@
             this.dataGridViewProductos.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridViewProductos.Size = new System.Drawing.Size(836, 475);
             this.dataGridViewProductos.TabIndex = 1;
+<<<<<<< HEAD
             this.dataGridViewProductos.RowHeaderMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridViewProductos_RowHeaderMouseDoubleClick);
+=======
+>>>>>>> 7e3db99809bed467e7213c9e8eba93b6df21cc12
             // 
             // Codigo
             // 
@@ -176,6 +200,7 @@
             // 
             // textBoxBuscador
             // 
+<<<<<<< HEAD
             this.textBoxBuscador.CausesValidation = false;
             this.textBoxBuscador.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxBuscador.Location = new System.Drawing.Point(8, 3);
@@ -183,15 +208,23 @@
             this.textBoxBuscador.Multiline = true;
             this.textBoxBuscador.Name = "textBoxBuscador";
             this.textBoxBuscador.Size = new System.Drawing.Size(190, 25);
+=======
+            this.textBoxBuscador.Location = new System.Drawing.Point(58, 6);
+            this.textBoxBuscador.Name = "textBoxBuscador";
+            this.textBoxBuscador.Size = new System.Drawing.Size(190, 20);
+>>>>>>> 7e3db99809bed467e7213c9e8eba93b6df21cc12
             this.textBoxBuscador.TabIndex = 2;
             this.textBoxBuscador.Text = "Buscador";
             this.textBoxBuscador.Click += new System.EventHandler(this.textBoxBuscador_Click);
             // 
             // panel2
             // 
+<<<<<<< HEAD
             this.panel2.Controls.Add(this.labelResultadoBusqueda);
             this.panel2.Controls.Add(this.panelEnvios);
             this.panel2.Controls.Add(this.buttonBuscar);
+=======
+>>>>>>> 7e3db99809bed467e7213c9e8eba93b6df21cc12
             this.panel2.Controls.Add(this.textBoxBuscador);
             this.panel2.Controls.Add(this.pictureBoxImagenProducto);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Right;
@@ -200,6 +233,7 @@
             this.panel2.Size = new System.Drawing.Size(314, 475);
             this.panel2.TabIndex = 2;
             // 
+<<<<<<< HEAD
             // buttonBuscar
             // 
             this.buttonBuscar.FlatAppearance.BorderSize = 0;
@@ -235,6 +269,8 @@
             this.labelResultadoBusqueda.Text = "Resultado De La Busqueda";
             this.labelResultadoBusqueda.Visible = false;
             // 
+=======
+>>>>>>> 7e3db99809bed467e7213c9e8eba93b6df21cc12
             // FormProductos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -246,8 +282,11 @@
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormProductos";
+<<<<<<< HEAD
             this.Opacity = 0.9D;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+=======
+>>>>>>> 7e3db99809bed467e7213c9e8eba93b6df21cc12
             this.Text = "FormProductos";
             this.Load += new System.EventHandler(this.FormProductos_Load);
             this.panel1.ResumeLayout(false);
@@ -273,10 +312,15 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn StockMinimo;
         private System.Windows.Forms.DataGridViewTextBoxColumn StockIdeal;
         private System.Windows.Forms.PictureBox pictureBoxImagenProducto;
+<<<<<<< HEAD
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button buttonBuscar;
         private System.Windows.Forms.Panel panelEnvios;
         private System.Windows.Forms.TextBox textBoxBuscador;
         private System.Windows.Forms.Label labelResultadoBusqueda;
+=======
+        private System.Windows.Forms.TextBox textBoxBuscador;
+        private System.Windows.Forms.Panel panel2;
+>>>>>>> 7e3db99809bed467e7213c9e8eba93b6df21cc12
     }
 }

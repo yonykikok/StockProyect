@@ -8,17 +8,24 @@ namespace CapaDeNegocios
 {
     public class Producto
     {
+<<<<<<< HEAD
         #region CAMPOS
+=======
+>>>>>>> 7e3db99809bed467e7213c9e8eba93b6df21cc12
         private string codigo;
         private string descripcion;
         private int stock;
         private int stockIdeal;
         private int stockMinimo;
         private float precio;
+<<<<<<< HEAD
         private string imagen;
         #endregion
 
         #region CONSTRUCTORES
+=======
+
+>>>>>>> 7e3db99809bed467e7213c9e8eba93b6df21cc12
         public Producto()
         {
 
@@ -28,6 +35,7 @@ namespace CapaDeNegocios
             this.Codigo = codigo;
             this.Descripcion = descripcion;
             this.Stock = stock;
+<<<<<<< HEAD
             this.StockIdeal = stockIdeal;
             this.StockMinimo = stockMinimo;
             this.Precio = precio;
@@ -87,6 +95,17 @@ namespace CapaDeNegocios
                     stockMinimo = value;
             }
         }
+=======
+            this.StockIdeal = StockIdeal;
+            this.StockMinimo = stockMinimo;
+            this.Precio = precio;
+        }
+        public string Codigo { get => codigo; set => codigo = value; }
+        public string Descripcion { get => descripcion; set => descripcion = value; }
+        public int Stock { get => stock; set => stock = value; }
+        public int StockIdeal { get => stockIdeal; set => stockIdeal = value; }
+        public int StockMinimo { get => stockMinimo; set => stockMinimo = value; }
+>>>>>>> 7e3db99809bed467e7213c9e8eba93b6df21cc12
         public float Precio
         {
             get
@@ -99,6 +118,7 @@ namespace CapaDeNegocios
                     precio = value;
             }
         }
+<<<<<<< HEAD
         public int Stock
         {
             get
@@ -124,5 +144,7 @@ namespace CapaDeNegocios
             }
         }
         #endregion
+=======
+>>>>>>> 7e3db99809bed467e7213c9e8eba93b6df21cc12
     }
 }

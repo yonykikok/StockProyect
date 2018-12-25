@@ -67,4 +67,7 @@ C:\Users\screw\Desktop\Multitask\StockProyect\PROYECTO\PROYECTO\obj\Debug\Capa d
 C:\Users\screw\Desktop\Multitask\StockProyect\PROYECTO\PROYECTO\obj\Debug\PROYECTO.exe
 C:\Users\screw\Desktop\Multitask\StockProyect\PROYECTO\PROYECTO\obj\Debug\PROYECTO.pdb
 C:\Users\screw\Desktop\Multitask\StockProyect\PROYECTO\PROYECTO\obj\Debug\PROYECTO.FormProductos.resources
+<<<<<<< HEAD
 C:\Users\Multitask\Desktop\Proyecto Stock Multitask\StockProyect\PROYECTO\PROYECTO\obj\Debug\PROYECTO.FormProductos.resources
+=======
+>>>>>>> 7e3db99809bed467e7213c9e8eba93b6df21cc12
