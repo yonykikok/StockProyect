@@ -73,7 +73,6 @@ namespace PROYECTO
         {
 
             MessageBox.Show("ESTO ES LO QUE BUSCABA "+ dataGridViewProductos.CurrentRow.Index);
-            MessageBox.Show();
 
          
         }
