@@ -113,7 +113,9 @@ namespace PROYECTO
             }
            
         }
-
+        /// <summary>
+        /// oculta sectores que solo deben ser accesibles para usuarios administradores.
+        /// </summary>
         private void PrivilegioUsuarios()
         {
             if (this.empleado.Type != UserType.admin)
@@ -128,24 +130,31 @@ namespace PROYECTO
                 panelReportes.Visible = false;
             }
         }
-        private void panelProductos_Paint(object sender, PaintEventArgs e)
-        {         
-        }
-
         private void FormPrincipal_Load(object sender, EventArgs e)
         {
             PrivilegioUsuarios();
         }
+        /// <summary>
+        /// inicializa el form empleados
+        /// </summary>
         private void IniciarFormEmpleados()
         {
             FormEmpleados formEmpleados = new FormEmpleados();
             formEmpleados.ShowDialog();
         }
+        /// <summary>
+        /// insicializa el form de productos
+        /// </summary>
         private void IniciarFormProductos()
         {
             FormProductos formProductos = new FormProductos();
             formProductos.ShowDialog();
         }
+        /// <summary>
+        /// crea un nuevo hilo para abrir una nueva ventana de form de empleados
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void buttonEmpleados_Click(object sender, EventArgs e)
         {
             threadEmpleados = new Thread(IniciarFormEmpleados);
@@ -153,7 +162,11 @@ namespace PROYECTO
             if (!(this.ThreadEmpleados.IsAlive))
             threadEmpleados.Start();
         }
-
+        /// <summary>
+        /// cierra todos los hilos antes de cerrar la aplicacion principal
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void FormPrincipal_FormClosing(object sender, FormClosingEventArgs e)
         {
             foreach(Thread hilo in Program.MockThreads)
@@ -164,7 +177,11 @@ namespace PROYECTO
                 }
             }
         }
-
+        /// <summary>
+        /// crea un nuevo hilo para abrir una nueva ventana de form de productos
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void buttonProductos_Click(object sender, EventArgs e)
         {
             threadProductos = new Thread(IniciarFormProductos);
@@ -172,5 +189,7 @@ namespace PROYECTO
             if (!(this.ThreadProductos.IsAlive))
                 threadProductos.Start();
         }
+
+        
     }
 }

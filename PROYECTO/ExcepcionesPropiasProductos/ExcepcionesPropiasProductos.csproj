@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{B578279B-15D2-4293-8B35-3F1FE24F55D5}</ProjectGuid>
+    <ProjectGuid>{82518EAD-A47A-4787-BBAB-782A0004412F}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>ExcepcionesPropias</RootNamespace>
-    <AssemblyName>ExcepcionesPropias</AssemblyName>
+    <RootNamespace>ExcepcionesPropiasProductos</RootNamespace>
+    <AssemblyName>ExcepcionesPropiasProductos</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
@@ -41,16 +41,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="PasswordInvalidException.cs" />
-    <Compile Include="UsuarioInvalidException - Copy.cs" />
-    <Compile Include="UserTypeInvalidException.cs" />
-    <Compile Include="NameInvalidException.cs" />
-    <Compile Include="MailAdressInvalidException.cs" />
-    <Compile Include="AdressInvalidException.cs" />
-    <Compile Include="DniInvalidException.cs" />
-    <Compile Include="LastNameInvalidException.cs" />
-    <Compile Include="idInvalidException.cs" />
+    <Compile Include="CodigoInvalidException.cs" />
+    <Compile Include="DescripcionInvalidException.cs" />
     <Compile Include="ErrorAlComprobarExistenciaDeProducto.cs" />
+    <Compile Include="StockInvalidException.cs" />
+    <Compile Include="StockIdealInvalidException.cs" />
+    <Compile Include="StockMinimoInvalidException.cs" />
+    <Compile Include="PrecioInvalidException.cs" />
+    <Compile Include="ImagenInvalidException.cs" />
+    <Compile Include="IdProductoInvalidException.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

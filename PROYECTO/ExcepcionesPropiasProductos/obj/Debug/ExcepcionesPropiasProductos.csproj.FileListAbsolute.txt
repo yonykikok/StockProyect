@@ -1,0 +1,6 @@
+C:\Users\Haedo Jonathan\Desktop\StockProyect\PROYECTO\ExcepcionesPropiasProductos\bin\Debug\ExcepcionesPropiasProductos.dll
+C:\Users\Haedo Jonathan\Desktop\StockProyect\PROYECTO\ExcepcionesPropiasProductos\bin\Debug\ExcepcionesPropiasProductos.pdb
+C:\Users\Haedo Jonathan\Desktop\StockProyect\PROYECTO\ExcepcionesPropiasProductos\obj\Debug\ExcepcionesPropiasProductos.csprojAssemblyReference.cache
+C:\Users\Haedo Jonathan\Desktop\StockProyect\PROYECTO\ExcepcionesPropiasProductos\obj\Debug\ExcepcionesPropiasProductos.csproj.CoreCompileInputs.cache
+C:\Users\Haedo Jonathan\Desktop\StockProyect\PROYECTO\ExcepcionesPropiasProductos\obj\Debug\ExcepcionesPropiasProductos.dll
+C:\Users\Haedo Jonathan\Desktop\StockProyect\PROYECTO\ExcepcionesPropiasProductos\obj\Debug\ExcepcionesPropiasProductos.pdb

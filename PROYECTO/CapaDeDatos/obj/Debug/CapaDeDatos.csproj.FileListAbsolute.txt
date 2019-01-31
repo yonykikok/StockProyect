@@ -45,3 +45,16 @@ C:\Users\Haedo Jonathan\Desktop\Proyecto Stock Multitask\StockProyect\PROYECTO\C
 C:\Users\Haedo Jonathan\Desktop\Proyecto Stock Multitask\StockProyect\PROYECTO\CapaDeDatos\obj\Debug\CapaDeDatos.csproj.CopyComplete
 C:\Users\Haedo Jonathan\Desktop\Proyecto Stock Multitask\StockProyect\PROYECTO\CapaDeDatos\obj\Debug\CapaDeDatos.dll
 C:\Users\Haedo Jonathan\Desktop\Proyecto Stock Multitask\StockProyect\PROYECTO\CapaDeDatos\obj\Debug\CapaDeDatos.pdb
+C:\Users\Haedo Jonathan\Desktop\StockProyect\PROYECTO\CapaDeDatos\bin\Debug\CapaDeDatos.dll
+C:\Users\Haedo Jonathan\Desktop\StockProyect\PROYECTO\CapaDeDatos\bin\Debug\CapaDeDatos.pdb
+C:\Users\Haedo Jonathan\Desktop\StockProyect\PROYECTO\CapaDeDatos\bin\Debug\CapaDeNegocios.dll
+C:\Users\Haedo Jonathan\Desktop\StockProyect\PROYECTO\CapaDeDatos\bin\Debug\ExcepcionesPropias.dll
+C:\Users\Haedo Jonathan\Desktop\StockProyect\PROYECTO\CapaDeDatos\bin\Debug\CapaDeNegocios.pdb
+C:\Users\Haedo Jonathan\Desktop\StockProyect\PROYECTO\CapaDeDatos\bin\Debug\ExcepcionesPropias.pdb
+C:\Users\Haedo Jonathan\Desktop\StockProyect\PROYECTO\CapaDeDatos\obj\Debug\CapaDeDatos.csprojAssemblyReference.cache
+C:\Users\Haedo Jonathan\Desktop\StockProyect\PROYECTO\CapaDeDatos\obj\Debug\CapaDeDatos.csproj.CoreCompileInputs.cache
+C:\Users\Haedo Jonathan\Desktop\StockProyect\PROYECTO\CapaDeDatos\obj\Debug\CapaDeDatos.csproj.CopyComplete
+C:\Users\Haedo Jonathan\Desktop\StockProyect\PROYECTO\CapaDeDatos\obj\Debug\CapaDeDatos.dll
+C:\Users\Haedo Jonathan\Desktop\StockProyect\PROYECTO\CapaDeDatos\obj\Debug\CapaDeDatos.pdb
+C:\Users\Haedo Jonathan\Desktop\StockProyect\PROYECTO\CapaDeDatos\bin\Debug\ExcepcionesPropiasProductos.dll
+C:\Users\Haedo Jonathan\Desktop\StockProyect\PROYECTO\CapaDeDatos\bin\Debug\ExcepcionesPropiasProductos.pdb

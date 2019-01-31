@@ -160,7 +160,7 @@
             this.buttonEmpleados.FlatAppearance.BorderSize = 0;
             this.buttonEmpleados.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
             this.buttonEmpleados.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonEmpleados.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonEmpleados.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonEmpleados.ForeColor = System.Drawing.Color.White;
             this.buttonEmpleados.Image = ((System.Drawing.Image)(resources.GetObject("buttonEmpleados.Image")));
             this.buttonEmpleados.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -191,7 +191,7 @@
             this.buttonReportesPagos.FlatAppearance.BorderSize = 0;
             this.buttonReportesPagos.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
             this.buttonReportesPagos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonReportesPagos.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonReportesPagos.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonReportesPagos.ForeColor = System.Drawing.Color.White;
             this.buttonReportesPagos.Image = ((System.Drawing.Image)(resources.GetObject("buttonReportesPagos.Image")));
             this.buttonReportesPagos.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -208,7 +208,7 @@
             this.buttonReportesCompras.FlatAppearance.BorderSize = 0;
             this.buttonReportesCompras.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
             this.buttonReportesCompras.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonReportesCompras.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonReportesCompras.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonReportesCompras.ForeColor = System.Drawing.Color.White;
             this.buttonReportesCompras.Image = ((System.Drawing.Image)(resources.GetObject("buttonReportesCompras.Image")));
             this.buttonReportesCompras.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -249,7 +249,7 @@
             this.buttonReportesVentas.FlatAppearance.BorderSize = 0;
             this.buttonReportesVentas.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
             this.buttonReportesVentas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonReportesVentas.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonReportesVentas.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonReportesVentas.ForeColor = System.Drawing.Color.White;
             this.buttonReportesVentas.Image = ((System.Drawing.Image)(resources.GetObject("buttonReportesVentas.Image")));
             this.buttonReportesVentas.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -282,7 +282,7 @@
             this.buttonUsuario.FlatAppearance.BorderSize = 0;
             this.buttonUsuario.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
             this.buttonUsuario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonUsuario.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonUsuario.ForeColor = System.Drawing.Color.White;
             this.buttonUsuario.Image = ((System.Drawing.Image)(resources.GetObject("buttonUsuario.Image")));
             this.buttonUsuario.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -298,7 +298,7 @@
             this.buttonEnvios.FlatAppearance.BorderSize = 0;
             this.buttonEnvios.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
             this.buttonEnvios.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonEnvios.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonEnvios.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonEnvios.ForeColor = System.Drawing.Color.White;
             this.buttonEnvios.Image = ((System.Drawing.Image)(resources.GetObject("buttonEnvios.Image")));
             this.buttonEnvios.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -346,7 +346,7 @@
             this.buttonClientes.FlatAppearance.BorderSize = 0;
             this.buttonClientes.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
             this.buttonClientes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonClientes.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonClientes.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonClientes.ForeColor = System.Drawing.Color.White;
             this.buttonClientes.Image = ((System.Drawing.Image)(resources.GetObject("buttonClientes.Image")));
             this.buttonClientes.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -362,7 +362,7 @@
             this.buttonPagos.FlatAppearance.BorderSize = 0;
             this.buttonPagos.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
             this.buttonPagos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonPagos.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonPagos.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonPagos.ForeColor = System.Drawing.Color.White;
             this.buttonPagos.Image = ((System.Drawing.Image)(resources.GetObject("buttonPagos.Image")));
             this.buttonPagos.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -378,7 +378,7 @@
             this.buttonReportes.FlatAppearance.BorderSize = 0;
             this.buttonReportes.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
             this.buttonReportes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonReportes.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonReportes.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonReportes.ForeColor = System.Drawing.Color.White;
             this.buttonReportes.Image = ((System.Drawing.Image)(resources.GetObject("buttonReportes.Image")));
             this.buttonReportes.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -396,7 +396,7 @@
             this.buttonVentas.FlatAppearance.BorderSize = 0;
             this.buttonVentas.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
             this.buttonVentas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonVentas.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonVentas.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonVentas.ForeColor = System.Drawing.Color.White;
             this.buttonVentas.Image = ((System.Drawing.Image)(resources.GetObject("buttonVentas.Image")));
             this.buttonVentas.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -420,7 +420,7 @@
             this.buttonProductos.FlatAppearance.BorderSize = 0;
             this.buttonProductos.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
             this.buttonProductos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonProductos.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonProductos.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonProductos.ForeColor = System.Drawing.Color.White;
             this.buttonProductos.Image = ((System.Drawing.Image)(resources.GetObject("buttonProductos.Image")));
             this.buttonProductos.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;

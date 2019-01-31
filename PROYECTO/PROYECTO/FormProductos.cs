@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using CapaDeNegocios;
 using CapaDeDatos;
 using ExcepcionesPropias;
+using ExcepcionesPropiasProductos;
 using System.Threading;
 
 namespace PROYECTO
@@ -26,13 +27,19 @@ namespace PROYECTO
             CargarDatosAlGridView();
             DesactivarColumasDataGridView();
         }
-
+        /// <summary>
+        /// permite deslizar la ventana
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void FormProductos_MouseDown(object sender, MouseEventArgs e)
         {
             Program.ReleaseCapture();
             Program.SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
-
+        /// <summary>
+        /// carga los productos de la base de datos al dataGridView
+        /// </summary>
         private void CargarDatosAlGridView()
         {
             dataGridViewProductos.Rows.Clear();
@@ -60,13 +67,17 @@ namespace PROYECTO
             dataGridViewProductos.Columns[5].Visible = false;
         }
 
-
+        /// <summary>
+        /// busca productos basandose en su Codigo o Descripcion segun el texto ingresado
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void buttonBuscar_Click(object sender, EventArgs e)
         {
             labelResultadoBusqueda.Visible = false;
             if (textBoxBuscador.Text.Contains("\r\n"))
             {
-                textBoxBuscador.Text=textBoxBuscador.Text.Replace("\r\n", "");
+                textBoxBuscador.Text = textBoxBuscador.Text.Replace("\r\n", "");
             }
             try
             {
@@ -86,18 +97,71 @@ namespace PROYECTO
             }
 
         }
-
+        /// <summary>
+        /// carga los datos de una fila al formulario de los textbox para poder crear uno nuevo, modificarlo o borrarlo.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void dataGridViewProductos_RowHeaderMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
         {
             try
             {
-                textBoxCodigo.Text = dataGridViewProductos.Rows[e.RowIndex].Cells["Codigo"].Value.ToString();
-                textBoxDescripcion.Text = dataGridViewProductos.Rows[e.RowIndex].Cells["Descripcion"].Value.ToString();
-                textBoxStock.Text = dataGridViewProductos.Rows[e.RowIndex].Cells["Stock"].Value.ToString();
-                textBoxStockMinimo.Text = dataGridViewProductos.Rows[e.RowIndex].Cells["StockMinimo"].Value.ToString();
-                textBoxStockIdeal.Text = dataGridViewProductos.Rows[e.RowIndex].Cells["StockIdeal"].Value.ToString();
-                textBoxPrecio.Text = dataGridViewProductos.Rows[e.RowIndex].Cells["Precio"].Value.ToString();
-                textBoxIndice.Text = dataGridViewProductos.Rows[e.RowIndex].Cells["Indice"].Value.ToString();
+                if (!(dataGridViewProductos.Rows[e.RowIndex].Cells["Codigo"].Value is null))
+                {
+                    if (!(dataGridViewProductos.Rows[e.RowIndex].Cells["Descripcion"].Value is null))
+                    {
+                        if (!(dataGridViewProductos.Rows[e.RowIndex].Cells["Stock"].Value is null))
+                        {
+                            if (!(dataGridViewProductos.Rows[e.RowIndex].Cells["StockMinimo"].Value is null))
+                            {
+                                if (!(dataGridViewProductos.Rows[e.RowIndex].Cells["StockIdeal"].Value is null))
+                                {
+                                    if (!(dataGridViewProductos.Rows[e.RowIndex].Cells["Precio"].Value is null))
+                                    {
+                                        if (!(dataGridViewProductos.Rows[e.RowIndex].Cells["Indice"].Value is null))
+                                        {
+                                            textBoxCodigo.Text = dataGridViewProductos.Rows[e.RowIndex].Cells["Codigo"].Value.ToString();
+                                            textBoxDescripcion.Text = dataGridViewProductos.Rows[e.RowIndex].Cells["Descripcion"].Value.ToString();
+                                            textBoxStock.Text = dataGridViewProductos.Rows[e.RowIndex].Cells["Stock"].Value.ToString();
+                                            textBoxStockMinimo.Text = dataGridViewProductos.Rows[e.RowIndex].Cells["StockMinimo"].Value.ToString();
+                                            textBoxStockIdeal.Text = dataGridViewProductos.Rows[e.RowIndex].Cells["StockIdeal"].Value.ToString();
+                                            textBoxPrecio.Text = dataGridViewProductos.Rows[e.RowIndex].Cells["Precio"].Value.ToString();
+                                            textBoxIndice.Text = dataGridViewProductos.Rows[e.RowIndex].Cells["Indice"].Value.ToString();
+                                        }
+                                        else
+                                        {
+                                            MessageBox.Show("ERRROR EN EL ID");
+                                        }
+                                    }
+                                    else
+                                    {
+                                        dataGridViewProductos.Rows[e.RowIndex].Cells["Precio"].Value = "Ingrese Un Precio";
+                                    }
+                                }
+                                else
+                                {
+                                    dataGridViewProductos.Rows[e.RowIndex].Cells["StockIdeal"].Value = "Ingrese El Stock Ideal";
+                                }
+                            }
+                            else
+                            {
+                                dataGridViewProductos.Rows[e.RowIndex].Cells["StockMinimo"].Value = "Ingrese El Stock Minimo";
+                            }
+                        }
+                        else
+                        {
+                            dataGridViewProductos.Rows[e.RowIndex].Cells["Stock"].Value = "Ingrese El Stock";
+                        }
+                    }
+                    else
+                    {
+                        dataGridViewProductos.Rows[e.RowIndex].Cells["Descripcion"].Value = "Ingrese La Descripcion";
+                    }
+                }
+                else
+                {
+                    dataGridViewProductos.Rows[e.RowIndex].Cells["Codigo"].Value = "Ingrese El Codigo";
+                }
             }
             catch (NullReferenceException exception)
             {
@@ -109,7 +173,10 @@ namespace PROYECTO
                 textBoxPrecio.ResetText();
             }
         }
-
+        /// <summary>
+        /// crea y devuelvo un producto en base a los datos en los textbox. 
+        /// </summary>
+        /// <returns> retorna un producto si los datos son correctos</returns>
         private Producto LeerProductoDelFormulario()
         {
             int stock;
@@ -120,31 +187,73 @@ namespace PROYECTO
             Producto retorno = null;
             try
             {
-                string codigo = textBoxCodigo.Text;
-                string descripcion = textBoxDescripcion.Text;
-                if (Int32.TryParse(textBoxStock.Text, out stock))
+                if (!(textBoxCodigo.Text.ToLower() is null) && (textBoxCodigo.Text.ToLower().Length > 1))
                 {
-                    if (Int32.TryParse(textBoxStockIdeal.Text, out stockIdeal))
+                    if ((!(textBoxDescripcion.Text.ToLower() is null)) && (textBoxDescripcion.Text.ToLower().Length > 1))
                     {
-                        if (Int32.TryParse(textBoxStockMinimo.Text, out stockMinimo))
+                        if (Int32.TryParse(textBoxStock.Text, out stock))
                         {
-                            if (float.TryParse(textBoxPrecio.Text, out precio))
+                            if (Int32.TryParse(textBoxStockIdeal.Text, out stockIdeal))
                             {
-                                if (Int32.TryParse(textBoxIndice.Text, out id))
+                                if (Int32.TryParse(textBoxStockMinimo.Text, out stockMinimo))
                                 {
-                                    retorno = new Producto(codigo, descripcion, stock, stockIdeal, stockMinimo, precio, id);
+                                    if (float.TryParse(textBoxPrecio.Text, out precio))
+                                    {
+                                        if (Int32.TryParse(textBoxIndice.Text, out id))
+                                        {
+                                            string codigo = textBoxCodigo.Text;
+                                            string descripcion = textBoxDescripcion.Text;
+                                            retorno = new Producto(codigo, descripcion, stock, stockIdeal, stockMinimo, precio, id);
+                                        }
+                                        else
+                                        {
+                                            string codigo = textBoxCodigo.Text;
+                                            string descripcion = textBoxDescripcion.Text;
+                                            retorno = new Producto(codigo, descripcion, stock, stockIdeal, stockMinimo, precio);
+                                        }
+
+                                    }
+                                    else
+                                    {
+                                        throw new PrecioInvalidException("ERROR, todos los campos son obligatorios, por favor ingrese el Precio");
+                                    }
+                                }
+                                else
+                                {
+                                    throw new StockMinimoInvalidException("ERROR, todos los campos son obligatorios, por favor ingrese el Stock Minimo");
                                 }
                             }
+                            else
+                            {
+                                throw new StockIdealInvalidException("ERROR, todos los campos son obligatorios, por favor ingrese el Stock Ideal");
+                            }
+                        }
+                        else
+                        {
+                            throw new StockInvalidException("ERROR, todos los campos son obligatorios, por favor ingrese el Stock");
                         }
                     }
+                    else
+                    {
+                        throw new DescripcionInvalidException("ERROR, todos los campos son obligatorios, por favor ingrese la Descripcion");
+                    }
+                }
+                else
+                {
+                    throw new CodigoInvalidException("ERROR, todos los campos son obligatorios, por favor ingrese el Codigo");
                 }
             }
             catch (Exception exception)
             {
-                MessageBox.Show("No se pudo leer el producto del formulario " + exception.Message);
+                throw exception;
             }
             return retorno;
         }
+        /// <summary>
+        /// agrega un producto a la base de datos
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void buttonAgregarProducto_Click(object sender, EventArgs e)
         {
             try
@@ -162,20 +271,32 @@ namespace PROYECTO
                 MessageBox.Show("Error al cargar un producto " + exception.Message);
             }
         }
-
+        /// <summary>
+        /// Selecciona una imagen que representara al producto
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void buttonSeleccionarImagen_Click(object sender, EventArgs e)
         {
             OpenFileDialog openFile = new OpenFileDialog();
-            openFile.ShowDialog();
+            openFile.ShowDialog();//falta termina y nose como xDD
         }
-
+        /// <summary>
+        /// remueve un producto de la base de datos
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void buttonQuitarProducto_Click(object sender, EventArgs e)
         {
             Producto producto = LeerProductoDelFormulario();
             ProductosDAO.Remover(producto);
             CargarDatosAlGridView();
         }
-
+        /// <summary>
+        /// detecta la tecla 'ENTER' para buscar el producto
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void textBoxBuscador_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (e.KeyChar == Convert.ToChar(Keys.Enter))
@@ -183,17 +304,75 @@ namespace PROYECTO
                 buttonBuscar_Click(sender, e);
             }
         }
-
+        /// <summary>
+        /// modifica los datos actuales de un producto existente
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void buttonModificarProducto_Click(object sender, EventArgs e)
         {
-            ProductosDAO.ModificarProducto(LeerProductoDelFormulario());
+            try
+            {
+                Producto producto = LeerProductoDelFormulario();
+                if (!(producto is null))
+                {
+                    int id;
+                    if (Int32.TryParse(textBoxIndice.Text, out id))
+                    {
+                        ProductosDAO.ModificarProducto(producto);
+
+                        ProductosDAO.ModificarProducto(producto);
+                        CargarDatosAlGridView();
+                    }
+                }
+            }
+            catch (CodigoInvalidException exception)
+            {
+                MessageBox.Show(exception.Message);
+            }
+            catch (DescripcionInvalidException exception)
+            {
+                MessageBox.Show(exception.Message);
+            }
+            catch (StockInvalidException exception)
+            {
+                MessageBox.Show(exception.Message);
+            }
+            catch (StockIdealInvalidException exception)
+            {
+                MessageBox.Show(exception.Message);
+            }
+            catch (StockMinimoInvalidException exception)
+            {
+                MessageBox.Show(exception.Message);
+            }
+            catch (PrecioInvalidException exception)
+            {
+                MessageBox.Show(exception.Message);
+            }
+            catch (ImagenInvalidException exception)
+            {
+                MessageBox.Show(exception.Message);
+            }
+            catch (IdProductoInvalidException exception)
+            {
+                MessageBox.Show(exception.Message);
+            }
+            catch (Exception exception)
+            {
+                MessageBox.Show("Error al modificar un Producto, puede que algun dato no este ingresado");
+            }
         }
 
         private void pictureBoxClose_Click(object sender, EventArgs e)
         {
             this.Close();
         }
-
+        /// <summary>
+        /// minimiza el formulario
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void pictureBoxMinimizar_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Minimized;

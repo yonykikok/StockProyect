@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using CapaDeNegocios;
 using ExcepcionesPropias;
+using ExcepcionesPropiasProductos;
 namespace CapaDeDatos
 {
     public class ProductosDAO

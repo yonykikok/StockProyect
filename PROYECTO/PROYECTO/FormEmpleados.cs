@@ -33,22 +33,27 @@ namespace PROYECTO
         }
         private void ActivarColumasDataGridView()
         {
-            dataGridViewUsuarios.Columns[1].Visible = true;
-            dataGridViewUsuarios.Columns[2].Visible = true;
-            dataGridViewUsuarios.Columns[3].Visible = true;
-            dataGridViewUsuarios.Columns[8].Visible = true;
+            dataGridViewUsuarios.Columns[1].Visible = true;//Usuario
+            dataGridViewUsuarios.Columns[2].Visible = true;//Nombre
+            dataGridViewUsuarios.Columns[3].Visible = true;//Apellido
+            dataGridViewUsuarios.Columns[8].Visible = true;//Tipo de cuenta
         }
         /// <summary>
-        /// Desactiva las columas Indice,StockIdeal y StockMinimo para que no sean visibles
+        /// Desactiva las columas Indice,dni,direccion,mail,StockIdeal y StockMinimo para que no sean visibles
         /// </summary>
         private void DesactivarColumasDataGridView()
         {
-            dataGridViewUsuarios.Columns[0].Visible = true;
-            dataGridViewUsuarios.Columns[4].Visible = true;
-            dataGridViewUsuarios.Columns[5].Visible = false;
-            dataGridViewUsuarios.Columns[6].Visible = false;
-            dataGridViewUsuarios.Columns[7].Visible = false;
+            dataGridViewUsuarios.Columns[0].Visible = false;//Indice / Id
+            dataGridViewUsuarios.Columns[4].Visible = false;//Dni
+            dataGridViewUsuarios.Columns[5].Visible = false;//Direccion
+            dataGridViewUsuarios.Columns[6].Visible = false;//Mail
+            dataGridViewUsuarios.Columns[7].Visible = false;//Contraseña
         }
+        /// <summary>
+        /// carga los datos al gridView, vacia los textbox y desactiva las colomnas especiales de datos del gridview
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Empleados_Load(object sender, EventArgs e)
         {
             CargarDatosAlGridView();
@@ -61,6 +66,11 @@ namespace PROYECTO
             textBoxPassword.Text = null;
             DesactivarColumasDataGridView();
         }
+        /// <summary>
+        /// permite deslizar la ventana 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Empleados_MouseDown(object sender, MouseEventArgs e)
         {
             Program.ReleaseCapture();
@@ -71,6 +81,10 @@ namespace PROYECTO
         {
 
         }
+        /// <summary>
+        /// obtiene los datos de los TextBox y crea un empleado si los datos estan correcto
+        /// </summary>
+        /// <returns> retorna un empleado</returns>
         private Empleado ObtenerEmpleadoDelFormulario()
         {
             Empleado empleado = null;
@@ -166,7 +180,11 @@ namespace PROYECTO
             }
             return empleado;
         }
-
+        /// <summary>
+        /// agrega un usuario a la base de datos
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void buttonAgregarUsuario_Click(object sender, EventArgs e)
         {
             try
@@ -292,7 +310,11 @@ namespace PROYECTO
                 MessageBox.Show("Error al cargar los datos de los 'USUARIOS' al GridView");
             }
         }
-
+        /// <summary>
+        /// minimiza la ventana
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void pictureBoxMinimizar_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Minimized;
@@ -302,10 +324,14 @@ namespace PROYECTO
         {
             this.Close();
         }
-
+        /// <summary>
+        /// modifica los datos de un usuario en la base de datos
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void buttonModificarUsuario_Click(object sender, EventArgs e)
         {
-            try
+             try
             {
                 Empleado empleado = ObtenerEmpleadoDelFormulario();
                 if (!(empleado is null))
@@ -355,7 +381,11 @@ namespace PROYECTO
                 MessageBox.Show("Error al modificar un usuario, puede que algun dato no este ingresado");
             }
         }
-
+        /// <summary>
+        /// remueve un usuario de la base de datos por el id.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void buttonQuitarUsuario_Click(object sender, EventArgs e)
         {
             Empleado empleado = ObtenerEmpleadoDelFormulario();
