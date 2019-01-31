@@ -42,10 +42,17 @@ namespace PROYECTO
         /// </summary>
         private void CargarDatosAlGridView()
         {
-            dataGridViewProductos.Rows.Clear();
-            foreach (Producto producto in ProductosDAO.LeerProductos(""))
+            try
             {
-                dataGridViewProductos.Rows.Add(producto.Id, producto.Codigo, producto.Descripcion, producto.Stock, producto.StockIdeal, producto.StockMinimo, producto.Precio);
+                dataGridViewProductos.Rows.Clear();
+                foreach (Producto producto in ProductosDAO.LeerProductos(""))
+                {
+                    dataGridViewProductos.Rows.Add(producto.Id, producto.Codigo, producto.Descripcion, producto.Stock, producto.StockIdeal, producto.StockMinimo, producto.Precio);
+                }
+            }
+            catch(ConexionDBException exception)
+            {
+                MessageBox.Show("Error al conectarse con la base de datos. InnerException: " + exception.Message);
             }
         }
         /// <summary>

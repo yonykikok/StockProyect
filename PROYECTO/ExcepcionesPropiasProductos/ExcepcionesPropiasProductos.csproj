@@ -46,6 +46,7 @@
     <Compile Include="ErrorAlComprobarExistenciaDeProducto.cs" />
     <Compile Include="StockInvalidException.cs" />
     <Compile Include="StockIdealInvalidException.cs" />
+    <Compile Include="ConexionDBException.cs" />
     <Compile Include="StockMinimoInvalidException.cs" />
     <Compile Include="PrecioInvalidException.cs" />
     <Compile Include="ImagenInvalidException.cs" />

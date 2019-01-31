@@ -67,7 +67,7 @@ namespace CapaDeDatos
             if (ComprobarExistenciaDeProducto(producto))
             {
                 conexionADB.Open();
-                comando = new SqlCommand(string.Format("DELETE FROM Productos WHERE Id={0}",producto.Id), conexionADB);
+                comando = new SqlCommand(string.Format("DELETE FROM Productos WHERE Id={0}", producto.Id), conexionADB);
                 comando.ExecuteNonQuery();
                 conexionADB.Close();
             }
@@ -82,32 +82,43 @@ namespace CapaDeDatos
         public static List<Producto> LeerProductos(string codigo)
         {
             List<Producto> retorno = null;
-            conexionADB.Open();
-            int contador = 0;
-            comando = new SqlCommand("SELECT Description,Code,Stock,IdealStock,MinimumStock,Price,Id FROM Productos", conexionADB);
-            dataReader = comando.ExecuteReader();
-            while (dataReader.Read())
+            try
             {
-                string auxCode = dataReader["Code"].ToString().ToLower();
-                string auxDescription = dataReader["Description"].ToString().ToLower();
-                int auxStock = Convert.ToInt32(dataReader["Stock"].ToString());
-                int auxIdealStock = Convert.ToInt32(dataReader["IdealStock"].ToString());
-                int auxMinimumStock = Convert.ToInt32(dataReader["MinimumStock"].ToString());
-                float auxPrice = (float)Convert.ToDouble(dataReader["Price"].ToString());
-                int auxId = Convert.ToInt32(dataReader["Id"].ToString());
-                if (auxCode.Contains(codigo.ToLower()) || auxDescription.Contains(codigo.ToLower()))
-                {
-                    if (contador == 0)
-                    {
-                        retorno = new List<Producto>();
-                        contador++;
-                    }
-                    Producto auxProducto = new Producto(auxCode, auxDescription, Convert.ToInt32(auxStock), auxIdealStock, auxMinimumStock, auxPrice,auxId);
-                    retorno.Add(auxProducto);
-                }
 
+                conexionADB.Open();
+                int contador = 0;
+                comando = new SqlCommand("SELECT Description,Code,Stock,IdealStock,MinimumStock,Price,Id FROM Productos", conexionADB);
+                dataReader = comando.ExecuteReader();
+                while (dataReader.Read())
+                {
+                    string auxCode = dataReader["Code"].ToString().ToLower();
+                    string auxDescription = dataReader["Description"].ToString().ToLower();
+                    int auxStock = Convert.ToInt32(dataReader["Stock"].ToString());
+                    int auxIdealStock = Convert.ToInt32(dataReader["IdealStock"].ToString());
+                    int auxMinimumStock = Convert.ToInt32(dataReader["MinimumStock"].ToString());
+                    float auxPrice = (float)Convert.ToDouble(dataReader["Price"].ToString());
+                    int auxId = Convert.ToInt32(dataReader["Id"].ToString());
+                    if (auxCode.Contains(codigo.ToLower()) || auxDescription.Contains(codigo.ToLower()))
+                    {
+                        if (contador == 0)
+                        {
+                            retorno = new List<Producto>();
+                            contador++;
+                        }
+                        Producto auxProducto = new Producto(auxCode, auxDescription, Convert.ToInt32(auxStock), auxIdealStock, auxMinimumStock, auxPrice, auxId);
+                        retorno.Add(auxProducto);
+                    }
+
+                }
             }
-            conexionADB.Close();
+            catch (Exception exception)
+            {
+                throw new ConexionDBException(exception.Message);
+            }
+            finally
+            {
+                conexionADB.Close();
+            }
             return retorno;
         }
     }
