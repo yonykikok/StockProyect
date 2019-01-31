@@ -11,7 +11,7 @@ namespace CapaDeNegocios
 {
     public enum UserType
     {
-        employee,
+        user,
         admin
     }
     public class Empleado
@@ -23,8 +23,14 @@ namespace CapaDeNegocios
         private string dni;
         private string adress;
         private string mailAdress;
+        private int id;
         private UserType type;
-
+        #region CONSTRUCTORES
+        public Empleado(string user, string password)
+        {
+            this.User = user;
+            this.Password = password;
+        }
         public Empleado(string user, string password, string name, string lastName, string dni, string adress, string mailAdress, UserType type) : this(user, password)
         {
             this.Name = name;
@@ -34,6 +40,11 @@ namespace CapaDeNegocios
             this.MailAdress = mailAdress;
             this.Type = type;
         }
+        public Empleado(string user, string password, string name, string lastName, string dni, string adress, string mailAdress, UserType type, int id) : this(user, password, name, lastName, dni, adress, mailAdress, type)
+        {
+            this.id = id;
+        }
+        #endregion
         public string Name
         {
             get { return this.name; }
@@ -44,6 +55,13 @@ namespace CapaDeNegocios
                 {
                     this.name = value;
                 }
+            }
+        }
+        public int Id
+        {
+            get
+            {
+                return this.id;
             }
         }
         public UserType Type
@@ -58,7 +76,7 @@ namespace CapaDeNegocios
                 if (SoloLetras.IsMatch(value.ToString()))
                 {
                     value.ToString().ToLower();
-                    if (value == UserType.admin || value == UserType.employee)
+                    if (value == UserType.admin || value == UserType.user)
                     {
                         this.type = value;
                     }
@@ -139,15 +157,11 @@ namespace CapaDeNegocios
                 }
             }
         }
+
         public string Password
         {
             get { return this.password; }
             set { this.password = value; }
-        }
-        public Empleado(string user, string password)
-        {
-            this.User = user;
-            this.Password = password;
         }
     }
 }

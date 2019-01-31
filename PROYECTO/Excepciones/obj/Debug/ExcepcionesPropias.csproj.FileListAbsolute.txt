@@ -1,0 +1,2 @@
+C:\Users\Haedo Jonathan\Desktop\Proyecto Stock Multitask\StockProyect\PROYECTO\Excepciones\obj\Debug\ExcepcionesPropias.csprojAssemblyReference.cache
+C:\Users\Haedo Jonathan\Desktop\Proyecto Stock Multitask\StockProyect\PROYECTO\Excepciones\obj\Debug\ExcepcionesPropias.csproj.CoreCompileInputs.cache

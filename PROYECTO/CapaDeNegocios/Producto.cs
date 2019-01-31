@@ -16,6 +16,7 @@ namespace CapaDeNegocios
         private int stockMinimo;
         private float precio;
         private string imagen;
+        private int id;
         #endregion
 
         #region CONSTRUCTORES
@@ -23,7 +24,7 @@ namespace CapaDeNegocios
         {
 
         }
-        public Producto(string codigo, string descripcion, int stock, int stockIdeal, int stockMinimo, float precio)
+        public Producto(string codigo, string descripcion, int stock, int stockIdeal, int stockMinimo, float precio)//--------------------------------------------------------------------------------------------
         {
             this.Codigo = codigo;
             this.Descripcion = descripcion;
@@ -32,7 +33,17 @@ namespace CapaDeNegocios
             this.StockMinimo = stockMinimo;
             this.Precio = precio;
         }
-        public Producto(string codigo, string descripcion, int stock, int stockIdeal, int stockMinimo, float precio,string imagen):this(codigo,descripcion,stock,stockIdeal,stockMinimo,precio)
+        public Producto(string codigo, string descripcion, int stock, int stockIdeal, int stockMinimo, float precio,int id)//--------------------------------------------------------------------------------------------
+        {
+            this.Codigo = codigo;
+            this.Descripcion = descripcion;
+            this.Stock = stock;
+            this.StockIdeal = stockIdeal;
+            this.StockMinimo = stockMinimo;
+            this.Precio = precio;
+            this.id = id;
+        }
+        public Producto(string codigo, string descripcion, int stock, int stockIdeal, int stockMinimo, float precio,string imagen, int id):this(codigo,descripcion,stock,stockIdeal,stockMinimo,precio,id)//-------------
         {
             this.Imagen = imagen;
         }
@@ -61,6 +72,13 @@ namespace CapaDeNegocios
             {
                 if (value.Length > 0)
                     descripcion = value;
+            }
+        }
+        public int Id
+        {
+            get
+            {
+                return this.id;
             }
         }
         public string Codigo

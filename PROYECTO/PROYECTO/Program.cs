@@ -12,7 +12,7 @@ namespace PROYECTO
 {
     static class Program
     {
-        static Empleado empleadoProgram = new Empleado("Usuario", "Password", "Name", "LastName", "Dni", "Adress", "MailAdress", UserType.employee);
+        static Empleado empleadoProgram = new Empleado("Usuario", "Password", "Name", "LastName", "Dni", "Adress", "MailAdress", UserType.user);
         static List<Thread> mockThreads;
         #region CODIGO PARA MOVER VENTANAS
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
@@ -47,10 +47,10 @@ namespace PROYECTO
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-          //  Application.Run(new FormLogin());
-            //if (!(EmpleadoProgram.User is "Usuario"))
-                Application.Run(new FormPrincipal(EmpleadoProgram));
-
+            // Application.Run(new FormLogin());
+            //  if (!(EmpleadoProgram.User is "Usuario"))
+            Empleado empleadoHardcodeo = new Empleado("yonykikok", "40132526", "Name", "LastName", "Dni", "Adress", "MailAdress", UserType.admin);
+                Application.Run(new FormPrincipal(empleadoHardcodeo));
         }
     }
 }

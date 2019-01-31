@@ -62,7 +62,7 @@
             // pictureBox3
             // 
             this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(0, 44);
+            this.pictureBox3.Location = new System.Drawing.Point(0, 48);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(250, 221);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -78,7 +78,7 @@
             this.textBoxUsurio.Location = new System.Drawing.Point(341, 80);
             this.textBoxUsurio.Name = "textBoxUsurio";
             this.textBoxUsurio.Size = new System.Drawing.Size(318, 15);
-            this.textBoxUsurio.TabIndex = 1;
+            this.textBoxUsurio.TabIndex = 0;
             this.textBoxUsurio.Text = "Usuario";
             this.textBoxUsurio.Enter += new System.EventHandler(this.textBoxUsurio_Enter);
             this.textBoxUsurio.Leave += new System.EventHandler(this.textBoxUsurio_Leave);
@@ -92,7 +92,7 @@
             this.textBoxPassword.Location = new System.Drawing.Point(341, 144);
             this.textBoxPassword.Name = "textBoxPassword";
             this.textBoxPassword.Size = new System.Drawing.Size(318, 15);
-            this.textBoxPassword.TabIndex = 2;
+            this.textBoxPassword.TabIndex = 1;
             this.textBoxPassword.Text = "Password";
             this.textBoxPassword.Enter += new System.EventHandler(this.textBoxPassword_Enter);
             this.textBoxPassword.Leave += new System.EventHandler(this.textBoxPassword_Leave);
@@ -118,7 +118,7 @@
             this.buttonAcceder.Location = new System.Drawing.Point(385, 262);
             this.buttonAcceder.Name = "buttonAcceder";
             this.buttonAcceder.Size = new System.Drawing.Size(274, 35);
-            this.buttonAcceder.TabIndex = 3;
+            this.buttonAcceder.TabIndex = 2;
             this.buttonAcceder.Text = "Acceder";
             this.buttonAcceder.UseVisualStyleBackColor = false;
             this.buttonAcceder.Click += new System.EventHandler(this.buttonAcceder_Click);
@@ -129,7 +129,7 @@
             this.linkLabelPasswordLost.Location = new System.Drawing.Point(461, 300);
             this.linkLabelPasswordLost.Name = "linkLabelPasswordLost";
             this.linkLabelPasswordLost.Size = new System.Drawing.Size(137, 13);
-            this.linkLabelPasswordLost.TabIndex = 0;
+            this.linkLabelPasswordLost.TabIndex = 3;
             this.linkLabelPasswordLost.TabStop = true;
             this.linkLabelPasswordLost.Text = "Ha olvidado la contraseña?";
             // 

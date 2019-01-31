@@ -22,3 +22,9 @@ C:\Users\screw\Desktop\Multitask\StockProyect\PROYECTO\CapaDeNegocios\obj\Debug\
 C:\Users\screw\Desktop\Multitask\StockProyect\PROYECTO\CapaDeNegocios\obj\Debug\CapaDeNegocios.csproj.CoreCompileInputs.cache
 C:\Users\screw\Desktop\Multitask\StockProyect\PROYECTO\CapaDeNegocios\obj\Debug\CapaDeNegocios.dll
 C:\Users\screw\Desktop\Multitask\StockProyect\PROYECTO\CapaDeNegocios\obj\Debug\CapaDeNegocios.pdb
+C:\Users\Haedo Jonathan\Desktop\Proyecto Stock Multitask\StockProyect\PROYECTO\CapaDeNegocios\bin\Debug\CapaDeNegocios.dll
+C:\Users\Haedo Jonathan\Desktop\Proyecto Stock Multitask\StockProyect\PROYECTO\CapaDeNegocios\bin\Debug\CapaDeNegocios.pdb
+C:\Users\Haedo Jonathan\Desktop\Proyecto Stock Multitask\StockProyect\PROYECTO\CapaDeNegocios\obj\Debug\CapaDeNegocios.csproj.CoreCompileInputs.cache
+C:\Users\Haedo Jonathan\Desktop\Proyecto Stock Multitask\StockProyect\PROYECTO\CapaDeNegocios\obj\Debug\CapaDeNegocios.dll
+C:\Users\Haedo Jonathan\Desktop\Proyecto Stock Multitask\StockProyect\PROYECTO\CapaDeNegocios\obj\Debug\CapaDeNegocios.pdb
+C:\Users\Haedo Jonathan\Desktop\Proyecto Stock Multitask\StockProyect\PROYECTO\CapaDeNegocios\obj\Debug\CapaDeNegocios.csprojAssemblyReference.cache

@@ -50,6 +50,10 @@
       <Project>{8e1ea87a-9c5b-473d-b6a3-29a51e93a8f4}</Project>
       <Name>CapaDeNegocios</Name>
     </ProjectReference>
+    <ProjectReference Include="..\ExcepcionesPropias\ExcepcionesPropias.csproj">
+      <Project>{b578279b-15d2-4293-8b35-3f1fe24f55d5}</Project>
+      <Name>ExcepcionesPropias</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -40,7 +40,6 @@ namespace PROYECTO
             {
                 textBoxUsurio.Text = "";
                 textBoxUsurio.ForeColor = Color.LightGray;
-
             }
         }
 
@@ -74,6 +73,7 @@ namespace PROYECTO
                 textBoxPassword.UseSystemPasswordChar = false;
 
             }
+            
         }
 
         private void ButtonMinimizar_Click(object sender, EventArgs e)
@@ -85,8 +85,7 @@ namespace PROYECTO
             Program.ReleaseCapture();
             Program.SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
-
-        private void buttonAcceder_Click(object sender, EventArgs e)
+        public void buttonAcceder_Click(object sender, EventArgs e)
         {
             try
             {
@@ -94,8 +93,8 @@ namespace PROYECTO
                 labelErrorPassword.Text = "";
                 labelErrorDatosInvalidos.Text = "";
                 empleado = new Empleado(textBoxUsurio.Text, textBoxPassword.Text);
-                UsuariosDAO personaDao = new UsuariosDAO();
-                Empleado empleadoLeido = personaDao.LeerUsuarioCompleto(empleado);
+               
+                Empleado empleadoLeido = UsuariosDAO.LeerUsuarioCompleto(empleado);
                 if (empleadoLeido.User == empleado.User && empleadoLeido.Password == empleado.Password)
                 {
                     this.Close();
@@ -139,5 +138,7 @@ namespace PROYECTO
         {
 
         }
+
+       
     }
 }
