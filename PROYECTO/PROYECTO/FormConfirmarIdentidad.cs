@@ -40,5 +40,7 @@ namespace PROYECTO
                 MessageBox.Show("NO TIENE PERMISO PARA ESTA ACCION");
             }            
         }
+
+     
     }
 }

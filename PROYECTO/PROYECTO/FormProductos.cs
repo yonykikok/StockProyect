@@ -268,6 +268,10 @@ namespace PROYECTO
                 Producto auxProducto = LeerProductoDelFormulario();
                 ProductosDAO.InsertarProducto(auxProducto);
                 CargarDatosAlGridView();
+                textBoxCodigo.Text = "";
+                textBoxDescripcion.Text = "";
+                textBoxPrecio.Text = "";
+                textBoxCodigo.Focus();
             }
             catch (ErrorAlComprobarExistenciaDeProducto exception)
             {
