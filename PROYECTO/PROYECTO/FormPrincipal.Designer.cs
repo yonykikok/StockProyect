@@ -406,6 +406,7 @@
             this.buttonVentas.TabIndex = 2;
             this.buttonVentas.Text = "Ventas";
             this.buttonVentas.UseVisualStyleBackColor = true;
+            this.buttonVentas.Click += new System.EventHandler(this.buttonVentas_Click);
             // 
             // panelProductos
             // 
@@ -417,6 +418,7 @@
             // 
             // buttonProductos
             // 
+            this.buttonProductos.AccessibleName = "";
             this.buttonProductos.FlatAppearance.BorderSize = 0;
             this.buttonProductos.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
             this.buttonProductos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;

@@ -26,6 +26,16 @@ namespace PROYECTO
         {
             CargarDatosAlGridView();
             DesactivarColumasDataGridView();
+            if (Program.MockThreads.Last().Name.ToLower() == "ventas")
+            {
+                panelVenderProductos.Visible = true;
+                panelCargarProducto.Visible = false;
+            }
+            else
+            {
+                panelVenderProductos.Visible = false;
+                panelCargarProducto.Visible = true;
+            }
         }
         /// <summary>
         /// permite deslizar la ventana
@@ -50,7 +60,7 @@ namespace PROYECTO
                     dataGridViewProductos.Rows.Add(producto.Id, producto.Codigo, producto.Descripcion, producto.Stock, producto.StockIdeal, producto.StockMinimo, producto.Precio);
                 }
             }
-            catch(ConexionDBException exception)
+            catch (ConexionDBException exception)
             {
                 MessageBox.Show("Error al conectarse con la base de datos. InnerException: " + exception.Message);
             }
@@ -102,14 +112,13 @@ namespace PROYECTO
                 labelResultadoBusqueda.Visible = true;
                 textBoxBuscador.Text = "";
             }
-
         }
         /// <summary>
         /// carga los datos de una fila al formulario de los textbox para poder crear uno nuevo, modificarlo o borrarlo.
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void dataGridViewProductos_RowHeaderMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
+        private void CargarDatosDelProductoAlFormulario(object sender, DataGridViewCellMouseEventArgs e)
         {
             try
             {
@@ -127,13 +136,20 @@ namespace PROYECTO
                                     {
                                         if (!(dataGridViewProductos.Rows[e.RowIndex].Cells["Indice"].Value is null))
                                         {
-                                            textBoxCodigo.Text = dataGridViewProductos.Rows[e.RowIndex].Cells["Codigo"].Value.ToString();
-                                            textBoxDescripcion.Text = dataGridViewProductos.Rows[e.RowIndex].Cells["Descripcion"].Value.ToString();
-                                            textBoxStock.Text = dataGridViewProductos.Rows[e.RowIndex].Cells["Stock"].Value.ToString();
-                                            textBoxStockMinimo.Text = dataGridViewProductos.Rows[e.RowIndex].Cells["StockMinimo"].Value.ToString();
-                                            textBoxStockIdeal.Text = dataGridViewProductos.Rows[e.RowIndex].Cells["StockIdeal"].Value.ToString();
-                                            textBoxPrecio.Text = dataGridViewProductos.Rows[e.RowIndex].Cells["Precio"].Value.ToString();
-                                            textBoxIndice.Text = dataGridViewProductos.Rows[e.RowIndex].Cells["Indice"].Value.ToString();
+                                            if (panelCargarProducto.Visible == true)//si esta visible quiere decir que estamos en la seccion productos
+                                            {
+                                                textBoxCodigo.Text = dataGridViewProductos.Rows[e.RowIndex].Cells["Codigo"].Value.ToString();
+                                                textBoxDescripcion.Text = dataGridViewProductos.Rows[e.RowIndex].Cells["Descripcion"].Value.ToString();
+                                                textBoxStock.Text = dataGridViewProductos.Rows[e.RowIndex].Cells["Stock"].Value.ToString();
+                                                textBoxStockMinimo.Text = dataGridViewProductos.Rows[e.RowIndex].Cells["StockMinimo"].Value.ToString();
+                                                textBoxStockIdeal.Text = dataGridViewProductos.Rows[e.RowIndex].Cells["StockIdeal"].Value.ToString();
+                                                textBoxPrecio.Text = dataGridViewProductos.Rows[e.RowIndex].Cells["Precio"].Value.ToString();
+                                                textBoxIndice.Text = dataGridViewProductos.Rows[e.RowIndex].Cells["Indice"].Value.ToString();
+                                            }
+                                            else//si no, estamos en la seccion ventas.
+                                            {                                               
+                                                richTextBoxProducto.Text = string.Format("Codigo De Producto: {0}\nDescripcion: {1}\nPrecio: ${2}\n", dataGridViewProductos.Rows[e.RowIndex].Cells["Codigo"].Value.ToString(), dataGridViewProductos.Rows[e.RowIndex].Cells["Descripcion"].Value.ToString(), dataGridViewProductos.Rows[e.RowIndex].Cells["Precio"].Value.ToString());
+                                            }
                                         }
                                         else
                                         {
@@ -180,6 +196,10 @@ namespace PROYECTO
                 textBoxPrecio.ResetText();
             }
         }
+        private void dataGridViewProductos_RowHeaderMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            CargarDatosDelProductoAlFormulario(sender, e);
+        }
         /// <summary>
         /// crea y devuelvo un producto en base a los datos en los textbox. 
         /// </summary>
@@ -206,13 +226,13 @@ namespace PROYECTO
                                 {
                                     if (float.TryParse(textBoxPrecio.Text, out precio))
                                     {
-                                        if (Int32.TryParse(textBoxIndice.Text, out id))
+                                        if (Int32.TryParse(textBoxIndice.Text, out id))//si tiene id es porque es un producto ya ingresado.
                                         {
                                             string codigo = textBoxCodigo.Text;
                                             string descripcion = textBoxDescripcion.Text;
                                             retorno = new Producto(codigo, descripcion, stock, stockIdeal, stockMinimo, precio, id);
                                         }
-                                        else
+                                        else//si no tiene id quiere decir que es un producto nuevo y requiere de un id.
                                         {
                                             string codigo = textBoxCodigo.Text;
                                             string descripcion = textBoxDescripcion.Text;
@@ -388,5 +408,6 @@ namespace PROYECTO
         {
             this.WindowState = FormWindowState.Minimized;
         }
+
     }
 }

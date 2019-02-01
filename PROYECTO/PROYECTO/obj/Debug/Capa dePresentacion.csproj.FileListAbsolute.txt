@@ -43,3 +43,51 @@ C:\Users\Haedo Jonathan\Desktop\StockProyect\PROYECTO\PROYECTO\obj\Debug\PROYECT
 C:\Users\Haedo Jonathan\Desktop\StockProyect\PROYECTO\PROYECTO\bin\Debug\ExcepcionesPropiasProductos.dll
 C:\Users\Haedo Jonathan\Desktop\StockProyect\PROYECTO\PROYECTO\bin\Debug\ExcepcionesPropiasProductos.pdb
 C:\Users\Haedo Jonathan\Desktop\StockProyect\PROYECTO\PROYECTO\obj\Debug\PROYECTO.FormClientes.resources
+C:\Users\screw\Desktop\MultitasProyect\StockProyect\PROYECTO\PROYECTO\bin\Debug\PROYECTO.exe.config
+C:\Users\screw\Desktop\MultitasProyect\StockProyect\PROYECTO\PROYECTO\bin\Debug\PROYECTO.exe
+C:\Users\screw\Desktop\MultitasProyect\StockProyect\PROYECTO\PROYECTO\bin\Debug\PROYECTO.pdb
+C:\Users\screw\Desktop\MultitasProyect\StockProyect\PROYECTO\PROYECTO\bin\Debug\CapaDeDatos.dll
+C:\Users\screw\Desktop\MultitasProyect\StockProyect\PROYECTO\PROYECTO\bin\Debug\CapaDeNegocios.dll
+C:\Users\screw\Desktop\MultitasProyect\StockProyect\PROYECTO\PROYECTO\bin\Debug\ExcepcionesPropias.dll
+C:\Users\screw\Desktop\MultitasProyect\StockProyect\PROYECTO\PROYECTO\bin\Debug\ExcepcionesPropiasProductos.dll
+C:\Users\screw\Desktop\MultitasProyect\StockProyect\PROYECTO\PROYECTO\bin\Debug\CapaDeDatos.pdb
+C:\Users\screw\Desktop\MultitasProyect\StockProyect\PROYECTO\PROYECTO\bin\Debug\CapaDeNegocios.pdb
+C:\Users\screw\Desktop\MultitasProyect\StockProyect\PROYECTO\PROYECTO\bin\Debug\ExcepcionesPropiasProductos.pdb
+C:\Users\screw\Desktop\MultitasProyect\StockProyect\PROYECTO\PROYECTO\bin\Debug\ExcepcionesPropias.pdb
+C:\Users\screw\Desktop\MultitasProyect\StockProyect\PROYECTO\PROYECTO\obj\Debug\Capa dePresentacion.csprojAssemblyReference.cache
+C:\Users\screw\Desktop\MultitasProyect\StockProyect\PROYECTO\PROYECTO\obj\Debug\PROYECTO.FormClientes.resources
+C:\Users\screw\Desktop\MultitasProyect\StockProyect\PROYECTO\PROYECTO\obj\Debug\PROYECTO.FormConfirmarIdentidad.resources
+C:\Users\screw\Desktop\MultitasProyect\StockProyect\PROYECTO\PROYECTO\obj\Debug\PROYECTO.FormEmpleados.resources
+C:\Users\screw\Desktop\MultitasProyect\StockProyect\PROYECTO\PROYECTO\obj\Debug\PROYECTO.FormPrincipal.resources
+C:\Users\screw\Desktop\MultitasProyect\StockProyect\PROYECTO\PROYECTO\obj\Debug\PROYECTO.FormLogin.resources
+C:\Users\screw\Desktop\MultitasProyect\StockProyect\PROYECTO\PROYECTO\obj\Debug\PROYECTO.FormProductos.resources
+C:\Users\screw\Desktop\MultitasProyect\StockProyect\PROYECTO\PROYECTO\obj\Debug\PROYECTO.Properties.Resources.resources
+C:\Users\screw\Desktop\MultitasProyect\StockProyect\PROYECTO\PROYECTO\obj\Debug\Capa dePresentacion.csproj.GenerateResource.cache
+C:\Users\screw\Desktop\MultitasProyect\StockProyect\PROYECTO\PROYECTO\obj\Debug\Capa dePresentacion.csproj.CoreCompileInputs.cache
+C:\Users\screw\Desktop\MultitasProyect\StockProyect\PROYECTO\PROYECTO\obj\Debug\Capa dePresentacion.csproj.CopyComplete
+C:\Users\screw\Desktop\MultitasProyect\StockProyect\PROYECTO\PROYECTO\obj\Debug\PROYECTO.exe
+C:\Users\screw\Desktop\MultitasProyect\StockProyect\PROYECTO\PROYECTO\obj\Debug\PROYECTO.pdb
+C:\Users\Haedo Jonathan\Desktop\StockProyect\StockProyect\PROYECTO\PROYECTO\bin\Debug\PROYECTO.exe.config
+C:\Users\Haedo Jonathan\Desktop\StockProyect\StockProyect\PROYECTO\PROYECTO\bin\Debug\PROYECTO.exe
+C:\Users\Haedo Jonathan\Desktop\StockProyect\StockProyect\PROYECTO\PROYECTO\bin\Debug\PROYECTO.pdb
+C:\Users\Haedo Jonathan\Desktop\StockProyect\StockProyect\PROYECTO\PROYECTO\bin\Debug\CapaDeDatos.dll
+C:\Users\Haedo Jonathan\Desktop\StockProyect\StockProyect\PROYECTO\PROYECTO\bin\Debug\CapaDeNegocios.dll
+C:\Users\Haedo Jonathan\Desktop\StockProyect\StockProyect\PROYECTO\PROYECTO\bin\Debug\ExcepcionesPropias.dll
+C:\Users\Haedo Jonathan\Desktop\StockProyect\StockProyect\PROYECTO\PROYECTO\bin\Debug\ExcepcionesPropiasProductos.dll
+C:\Users\Haedo Jonathan\Desktop\StockProyect\StockProyect\PROYECTO\PROYECTO\bin\Debug\CapaDeDatos.pdb
+C:\Users\Haedo Jonathan\Desktop\StockProyect\StockProyect\PROYECTO\PROYECTO\bin\Debug\CapaDeNegocios.pdb
+C:\Users\Haedo Jonathan\Desktop\StockProyect\StockProyect\PROYECTO\PROYECTO\bin\Debug\ExcepcionesPropiasProductos.pdb
+C:\Users\Haedo Jonathan\Desktop\StockProyect\StockProyect\PROYECTO\PROYECTO\bin\Debug\ExcepcionesPropias.pdb
+C:\Users\Haedo Jonathan\Desktop\StockProyect\StockProyect\PROYECTO\PROYECTO\obj\Debug\Capa dePresentacion.csprojAssemblyReference.cache
+C:\Users\Haedo Jonathan\Desktop\StockProyect\StockProyect\PROYECTO\PROYECTO\obj\Debug\PROYECTO.FormClientes.resources
+C:\Users\Haedo Jonathan\Desktop\StockProyect\StockProyect\PROYECTO\PROYECTO\obj\Debug\PROYECTO.FormConfirmarIdentidad.resources
+C:\Users\Haedo Jonathan\Desktop\StockProyect\StockProyect\PROYECTO\PROYECTO\obj\Debug\PROYECTO.FormEmpleados.resources
+C:\Users\Haedo Jonathan\Desktop\StockProyect\StockProyect\PROYECTO\PROYECTO\obj\Debug\PROYECTO.FormPrincipal.resources
+C:\Users\Haedo Jonathan\Desktop\StockProyect\StockProyect\PROYECTO\PROYECTO\obj\Debug\PROYECTO.FormLogin.resources
+C:\Users\Haedo Jonathan\Desktop\StockProyect\StockProyect\PROYECTO\PROYECTO\obj\Debug\PROYECTO.FormProductos.resources
+C:\Users\Haedo Jonathan\Desktop\StockProyect\StockProyect\PROYECTO\PROYECTO\obj\Debug\PROYECTO.Properties.Resources.resources
+C:\Users\Haedo Jonathan\Desktop\StockProyect\StockProyect\PROYECTO\PROYECTO\obj\Debug\Capa dePresentacion.csproj.GenerateResource.cache
+C:\Users\Haedo Jonathan\Desktop\StockProyect\StockProyect\PROYECTO\PROYECTO\obj\Debug\Capa dePresentacion.csproj.CoreCompileInputs.cache
+C:\Users\Haedo Jonathan\Desktop\StockProyect\StockProyect\PROYECTO\PROYECTO\obj\Debug\Capa dePresentacion.csproj.CopyComplete
+C:\Users\Haedo Jonathan\Desktop\StockProyect\StockProyect\PROYECTO\PROYECTO\obj\Debug\PROYECTO.exe
+C:\Users\Haedo Jonathan\Desktop\StockProyect\StockProyect\PROYECTO\PROYECTO\obj\Debug\PROYECTO.pdb

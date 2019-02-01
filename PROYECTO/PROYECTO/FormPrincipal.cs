@@ -18,7 +18,15 @@ namespace PROYECTO
     {
         static Thread threadEmpleados;
         static Thread threadProductos;
+        static Thread threadVentas;
         Empleado empleado;
+        public Thread ThreadVentas
+        {
+            get
+            {
+                return threadVentas;
+            }
+        }
         public Thread ThreadEmpleados
         {
             get
@@ -38,14 +46,14 @@ namespace PROYECTO
         {
             InitializeComponent();
         }
-        public FormPrincipal(Empleado empleado):this()
+        public FormPrincipal(Empleado empleado) : this()
         {
-            this.empleado = new Empleado(empleado.User,empleado.Password,empleado.Name,empleado.LastName,empleado.Dni,empleado.Adress,empleado.MailAdress,empleado.Type);
+            this.empleado = new Empleado(empleado.User, empleado.Password, empleado.Name, empleado.LastName, empleado.Dni, empleado.Adress, empleado.MailAdress, empleado.Type);
         }
 
         private void ButtonCerrar_Click(object sender, EventArgs e)
         {
-            this.Close();            
+            this.Close();
         }
 
         private void ButtonMaximizar_Click(object sender, EventArgs e)
@@ -71,7 +79,7 @@ namespace PROYECTO
             panelSubMenu.Visible = false;
 
         }
-        
+
         private void buttonReportesCompras_Click(object sender, EventArgs e)
         {
 
@@ -111,7 +119,7 @@ namespace PROYECTO
             {
                 this.WindowState = FormWindowState.Minimized;
             }
-           
+
         }
         /// <summary>
         /// oculta sectores que solo deben ser accesibles para usuarios administradores.
@@ -160,7 +168,7 @@ namespace PROYECTO
             threadEmpleados = new Thread(IniciarFormEmpleados);
             Program.MockThreads.Add(threadEmpleados);
             if (!(this.ThreadEmpleados.IsAlive))
-            threadEmpleados.Start();
+                threadEmpleados.Start();
         }
         /// <summary>
         /// cierra todos los hilos antes de cerrar la aplicacion principal
@@ -169,7 +177,7 @@ namespace PROYECTO
         /// <param name="e"></param>
         private void FormPrincipal_FormClosing(object sender, FormClosingEventArgs e)
         {
-            foreach(Thread hilo in Program.MockThreads)
+            foreach (Thread hilo in Program.MockThreads)
             {
                 if (hilo.IsAlive)
                 {
@@ -187,9 +195,21 @@ namespace PROYECTO
             threadProductos = new Thread(IniciarFormProductos);
             Program.MockThreads.Add(threadProductos);
             if (!(this.ThreadProductos.IsAlive))
+            {
+                ThreadProductos.Name = "productos";
                 threadProductos.Start();
+            }
         }
 
-        
+        private void buttonVentas_Click(object sender, EventArgs e)
+        {
+            threadVentas = new Thread(IniciarFormProductos);
+            Program.MockThreads.Add(threadVentas);
+            if (!(this.ThreadVentas.IsAlive))
+            {
+                ThreadVentas.Name = "ventas";
+                threadVentas.Start();
+            }
+        }
     }
 }
