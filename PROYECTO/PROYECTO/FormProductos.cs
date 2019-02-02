@@ -21,6 +21,30 @@ namespace PROYECTO
         {
             InitializeComponent();
         }
+        private string descripcion;
+        private float precio;
+        public string DescripcionDeProducto
+        {
+            get
+            {
+                return this.descripcion;
+            }
+            set
+            {
+                this.descripcion = value;
+            }
+        }
+        public float PrecioDeProducto
+        {
+            get
+            {
+                return this.precio;
+            }
+            set
+            {
+                this.precio = value;
+            }
+        }
 
         private void FormProductos_Load(object sender, EventArgs e)
         {
@@ -147,8 +171,18 @@ namespace PROYECTO
                                                 textBoxIndice.Text = dataGridViewProductos.Rows[e.RowIndex].Cells["Indice"].Value.ToString();
                                             }
                                             else//si no, estamos en la seccion ventas.
-                                            {                                               
+                                            {
                                                 richTextBoxProducto.Text = string.Format("Codigo De Producto: {0}\nDescripcion: {1}\nPrecio: ${2}\n", dataGridViewProductos.Rows[e.RowIndex].Cells["Codigo"].Value.ToString(), dataGridViewProductos.Rows[e.RowIndex].Cells["Descripcion"].Value.ToString(), dataGridViewProductos.Rows[e.RowIndex].Cells["Precio"].Value.ToString());
+                                                DescripcionDeProducto = dataGridViewProductos.Rows[e.RowIndex].Cells["Descripcion"].Value.ToString();
+                                                float auxPrecio;
+                                                if (float.TryParse(dataGridViewProductos.Rows[e.RowIndex].Cells["Precio"].Value.ToString(), out auxPrecio))
+                                                {
+                                                    PrecioDeProducto = auxPrecio;
+                                                }
+                                                else
+                                                {
+                                                    MessageBox.Show("ERRROR EN EL PRECIO");
+                                                }
                                             }
                                         }
                                         else
@@ -312,6 +346,10 @@ namespace PROYECTO
             OpenFileDialog openFile = new OpenFileDialog();
             openFile.ShowDialog();//falta termina y nose como xDD
         }
+        private void IniciarOpenFile()
+        {
+
+        }
         /// <summary>
         /// remueve un producto de la base de datos
         /// </summary>
@@ -409,13 +447,33 @@ namespace PROYECTO
             this.WindowState = FormWindowState.Minimized;
         }
 
+        private float CalcularTotal(int cantidad, float precio)
+        {
+            float retorno = 0;
+            if (cantidad != 0 && precio != 0)
+            {
+                retorno = precio * cantidad;
+            }
+            return retorno;
+        }
         private void buttonAgregarVenta_Click(object sender, EventArgs e)
         {
             FormCantidad formCantidad = new FormCantidad();
             formCantidad.ShowDialog();
-            if(!(formCantidad.Cantidad == 0))
+            float auxTotal = CalcularTotal(formCantidad.Cantidad, PrecioDeProducto);
+            if (!(formCantidad.Cantidad == 0))
             {
-
+                listBoxCantidad.Items.Add(formCantidad.Cantidad.ToString());
+                listBoxCarrito.Items.Add(string.Format("Descripcion: {0}", DescripcionDeProducto));
+                if (auxTotal != 0)
+                {
+                    listBoxPrecio.Items.Add("$" + PrecioDeProducto.ToString());
+                    listBoxPrecioTotal.Items.Add("$" + auxTotal.ToString());
+                }
+                else
+                {
+                    MessageBox.Show("Error Precio Total");
+                }
             }
 
         }

@@ -55,7 +55,10 @@ namespace PROYECTO
             if (!(comboBoxCantidad.SelectedItem is null))
             {
                 if (Int32.TryParse(comboBoxCantidad.SelectedItem.ToString(), out auxCantidad))
+                {
                     Cantidad = auxCantidad;
+                    this.Close();
+                }
             }
             else
             {
@@ -65,7 +68,7 @@ namespace PROYECTO
 
         private void FormCantidad_Load(object sender, EventArgs e)
         {
-            comboBoxCantidad.SelectedItem = 1;
+
         }
     }
 }
