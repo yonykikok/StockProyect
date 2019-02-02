@@ -28,13 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormProductos));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.pictureBoxMinimizar = new System.Windows.Forms.PictureBox();
-            this.pictureBoxClose = new System.Windows.Forms.PictureBox();
             this.dataGridViewProductos = new System.Windows.Forms.DataGridView();
             this.Indice = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -67,19 +64,19 @@
             this.buttonModificarProducto = new System.Windows.Forms.Button();
             this.panelPagos = new System.Windows.Forms.Panel();
             this.buttonAgregarProducto = new System.Windows.Forms.Button();
-            this.labelResultadoBusqueda = new System.Windows.Forms.Label();
             this.panel6 = new System.Windows.Forms.Panel();
-            this.panelEnvios = new System.Windows.Forms.Panel();
             this.buttonSeleccionarImagen = new System.Windows.Forms.Button();
+            this.labelResultadoBusqueda = new System.Windows.Forms.Label();
+            this.panelEnvios = new System.Windows.Forms.Panel();
             this.buttonBuscar = new System.Windows.Forms.Button();
             this.panelVenderProductos = new System.Windows.Forms.Panel();
+            this.richTextBoxProducto = new System.Windows.Forms.RichTextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.listBoxPrecioTotal = new System.Windows.Forms.ListBox();
-            this.listBoxCantidad = new System.Windows.Forms.ListBox();
             this.listBoxCarrito = new System.Windows.Forms.ListBox();
             this.panel8 = new System.Windows.Forms.Panel();
             this.panel9 = new System.Windows.Forms.Panel();
@@ -88,51 +85,20 @@
             this.buttonModificarVenta = new System.Windows.Forms.Button();
             this.panel11 = new System.Windows.Forms.Panel();
             this.buttonAgregarVenta = new System.Windows.Forms.Button();
-            this.richTextBoxProducto = new System.Windows.Forms.RichTextBox();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMinimizar)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxClose)).BeginInit();
+            this.pictureBoxClose = new System.Windows.Forms.PictureBox();
+            this.pictureBoxMinimizar = new System.Windows.Forms.PictureBox();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.listBoxCantidad = new System.Windows.Forms.ListBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewProductos)).BeginInit();
             this.panelCargarProducto.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxImagenProducto)).BeginInit();
             this.panelVenderProductos.SuspendLayout();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxClose)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMinimizar)).BeginInit();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
-            this.panel1.Controls.Add(this.pictureBoxMinimizar);
-            this.panel1.Controls.Add(this.pictureBoxClose);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1156, 25);
-            this.panel1.TabIndex = 0;
-            this.panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.FormProductos_MouseDown);
-            // 
-            // pictureBoxMinimizar
-            // 
-            this.pictureBoxMinimizar.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxMinimizar.Image")));
-            this.pictureBoxMinimizar.Location = new System.Drawing.Point(1117, 3);
-            this.pictureBoxMinimizar.Name = "pictureBoxMinimizar";
-            this.pictureBoxMinimizar.Size = new System.Drawing.Size(15, 15);
-            this.pictureBoxMinimizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBoxMinimizar.TabIndex = 1;
-            this.pictureBoxMinimizar.TabStop = false;
-            this.pictureBoxMinimizar.Click += new System.EventHandler(this.pictureBoxMinimizar_Click);
-            // 
-            // pictureBoxClose
-            // 
-            this.pictureBoxClose.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxClose.Image")));
-            this.pictureBoxClose.Location = new System.Drawing.Point(1138, 3);
-            this.pictureBoxClose.Name = "pictureBoxClose";
-            this.pictureBoxClose.Size = new System.Drawing.Size(15, 15);
-            this.pictureBoxClose.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBoxClose.TabIndex = 0;
-            this.pictureBoxClose.TabStop = false;
-            this.pictureBoxClose.Click += new System.EventHandler(this.pictureBoxClose_Click);
             // 
             // dataGridViewProductos
             // 
@@ -140,14 +106,14 @@
             this.dataGridViewProductos.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
             this.dataGridViewProductos.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridViewProductos.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Raised;
-            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
-            dataGridViewCellStyle10.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle10.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewProductos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewProductos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
             this.dataGridViewProductos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Indice,
             this.Codigo,
@@ -156,27 +122,27 @@
             this.StockIdeal,
             this.StockMinimo,
             this.Precio});
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
-            dataGridViewCellStyle11.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle11.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
-            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridViewProductos.DefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridViewProductos.DefaultCellStyle = dataGridViewCellStyle8;
             this.dataGridViewProductos.Dock = System.Windows.Forms.DockStyle.Left;
             this.dataGridViewProductos.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.dataGridViewProductos.EnableHeadersVisualStyles = false;
             this.dataGridViewProductos.Location = new System.Drawing.Point(0, 25);
             this.dataGridViewProductos.Name = "dataGridViewProductos";
-            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
-            dataGridViewCellStyle12.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle12.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
-            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewProductos.RowHeadersDefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewProductos.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
             this.dataGridViewProductos.Size = new System.Drawing.Size(836, 475);
             this.dataGridViewProductos.TabIndex = 1;
             this.dataGridViewProductos.RowHeaderMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridViewProductos_RowHeaderMouseDoubleClick);
@@ -479,17 +445,6 @@
             this.buttonAgregarProducto.UseVisualStyleBackColor = true;
             this.buttonAgregarProducto.Click += new System.EventHandler(this.buttonAgregarProducto_Click);
             // 
-            // labelResultadoBusqueda
-            // 
-            this.labelResultadoBusqueda.AutoSize = true;
-            this.labelResultadoBusqueda.ForeColor = System.Drawing.Color.White;
-            this.labelResultadoBusqueda.Location = new System.Drawing.Point(3, 31);
-            this.labelResultadoBusqueda.Name = "labelResultadoBusqueda";
-            this.labelResultadoBusqueda.Size = new System.Drawing.Size(138, 13);
-            this.labelResultadoBusqueda.TabIndex = 6;
-            this.labelResultadoBusqueda.Text = "Resultado De La Busqueda";
-            this.labelResultadoBusqueda.Visible = false;
-            // 
             // panel6
             // 
             this.panel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
@@ -497,14 +452,6 @@
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(5, 25);
             this.panel6.TabIndex = 5;
-            // 
-            // panelEnvios
-            // 
-            this.panelEnvios.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
-            this.panelEnvios.Location = new System.Drawing.Point(197, 3);
-            this.panelEnvios.Name = "panelEnvios";
-            this.panelEnvios.Size = new System.Drawing.Size(5, 25);
-            this.panelEnvios.TabIndex = 5;
             // 
             // buttonSeleccionarImagen
             // 
@@ -521,6 +468,25 @@
             this.buttonSeleccionarImagen.Text = "Seleccionar Imagen";
             this.buttonSeleccionarImagen.UseVisualStyleBackColor = true;
             this.buttonSeleccionarImagen.Click += new System.EventHandler(this.buttonSeleccionarImagen_Click);
+            // 
+            // labelResultadoBusqueda
+            // 
+            this.labelResultadoBusqueda.AutoSize = true;
+            this.labelResultadoBusqueda.ForeColor = System.Drawing.Color.White;
+            this.labelResultadoBusqueda.Location = new System.Drawing.Point(3, 31);
+            this.labelResultadoBusqueda.Name = "labelResultadoBusqueda";
+            this.labelResultadoBusqueda.Size = new System.Drawing.Size(138, 13);
+            this.labelResultadoBusqueda.TabIndex = 6;
+            this.labelResultadoBusqueda.Text = "Resultado De La Busqueda";
+            this.labelResultadoBusqueda.Visible = false;
+            // 
+            // panelEnvios
+            // 
+            this.panelEnvios.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
+            this.panelEnvios.Location = new System.Drawing.Point(197, 3);
+            this.panelEnvios.Name = "panelEnvios";
+            this.panelEnvios.Size = new System.Drawing.Size(5, 25);
+            this.panelEnvios.TabIndex = 5;
             // 
             // buttonBuscar
             // 
@@ -560,6 +526,15 @@
             this.panelVenderProductos.Name = "panelVenderProductos";
             this.panelVenderProductos.Size = new System.Drawing.Size(314, 418);
             this.panelVenderProductos.TabIndex = 3;
+            // 
+            // richTextBoxProducto
+            // 
+            this.richTextBoxProducto.Location = new System.Drawing.Point(8, 3);
+            this.richTextBoxProducto.Name = "richTextBoxProducto";
+            this.richTextBoxProducto.ReadOnly = true;
+            this.richTextBoxProducto.Size = new System.Drawing.Size(300, 163);
+            this.richTextBoxProducto.TabIndex = 42;
+            this.richTextBoxProducto.Text = "";
             // 
             // label4
             // 
@@ -626,19 +601,6 @@
             this.listBoxPrecioTotal.Name = "listBoxPrecioTotal";
             this.listBoxPrecioTotal.Size = new System.Drawing.Size(49, 186);
             this.listBoxPrecioTotal.TabIndex = 36;
-            // 
-            // listBoxCantidad
-            // 
-            this.listBoxCantidad.FormattingEnabled = true;
-            this.listBoxCantidad.Items.AddRange(new object[] {
-            "1",
-            "2",
-            "1",
-            "1"});
-            this.listBoxCantidad.Location = new System.Drawing.Point(5, 189);
-            this.listBoxCantidad.Name = "listBoxCantidad";
-            this.listBoxCantidad.Size = new System.Drawing.Size(28, 186);
-            this.listBoxCantidad.TabIndex = 35;
             // 
             // listBoxCarrito
             // 
@@ -714,6 +676,7 @@
             this.panel11.Name = "panel11";
             this.panel11.Size = new System.Drawing.Size(5, 32);
             this.panel11.TabIndex = 28;
+            this.panel11.Paint += new System.Windows.Forms.PaintEventHandler(this.panel11_Paint);
             // 
             // buttonAgregarVenta
             // 
@@ -729,15 +692,7 @@
             this.buttonAgregarVenta.TabIndex = 9;
             this.buttonAgregarVenta.Text = "Agregar";
             this.buttonAgregarVenta.UseVisualStyleBackColor = true;
-            // 
-            // richTextBoxProducto
-            // 
-            this.richTextBoxProducto.Location = new System.Drawing.Point(8, 3);
-            this.richTextBoxProducto.Name = "richTextBoxProducto";
-            this.richTextBoxProducto.ReadOnly = true;
-            this.richTextBoxProducto.Size = new System.Drawing.Size(300, 163);
-            this.richTextBoxProducto.TabIndex = 42;
-            this.richTextBoxProducto.Text = "";
+            this.buttonAgregarVenta.Click += new System.EventHandler(this.buttonAgregarVenta_Click);
             // 
             // panel2
             // 
@@ -749,6 +704,53 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(314, 44);
             this.panel2.TabIndex = 4;
+            // 
+            // pictureBoxClose
+            // 
+            this.pictureBoxClose.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxClose.Image")));
+            this.pictureBoxClose.Location = new System.Drawing.Point(1138, 3);
+            this.pictureBoxClose.Name = "pictureBoxClose";
+            this.pictureBoxClose.Size = new System.Drawing.Size(15, 15);
+            this.pictureBoxClose.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBoxClose.TabIndex = 0;
+            this.pictureBoxClose.TabStop = false;
+            this.pictureBoxClose.Click += new System.EventHandler(this.pictureBoxClose_Click);
+            // 
+            // pictureBoxMinimizar
+            // 
+            this.pictureBoxMinimizar.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxMinimizar.Image")));
+            this.pictureBoxMinimizar.Location = new System.Drawing.Point(1117, 3);
+            this.pictureBoxMinimizar.Name = "pictureBoxMinimizar";
+            this.pictureBoxMinimizar.Size = new System.Drawing.Size(15, 15);
+            this.pictureBoxMinimizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBoxMinimizar.TabIndex = 1;
+            this.pictureBoxMinimizar.TabStop = false;
+            this.pictureBoxMinimizar.Click += new System.EventHandler(this.pictureBoxMinimizar_Click);
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
+            this.panel1.Controls.Add(this.pictureBoxMinimizar);
+            this.panel1.Controls.Add(this.pictureBoxClose);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1156, 25);
+            this.panel1.TabIndex = 0;
+            this.panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.FormProductos_MouseDown);
+            // 
+            // listBoxCantidad
+            // 
+            this.listBoxCantidad.FormattingEnabled = true;
+            this.listBoxCantidad.Items.AddRange(new object[] {
+            "1",
+            "2",
+            "1",
+            "1"});
+            this.listBoxCantidad.Location = new System.Drawing.Point(5, 189);
+            this.listBoxCantidad.Name = "listBoxCantidad";
+            this.listBoxCantidad.Size = new System.Drawing.Size(28, 186);
+            this.listBoxCantidad.TabIndex = 35;
             // 
             // FormProductos
             // 
@@ -767,9 +769,6 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormProductos";
             this.Load += new System.EventHandler(this.FormProductos_Load);
-            this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMinimizar)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxClose)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewProductos)).EndInit();
             this.panelCargarProducto.ResumeLayout(false);
             this.panelCargarProducto.PerformLayout();
@@ -778,14 +777,14 @@
             this.panelVenderProductos.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxClose)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMinimizar)).EndInit();
+            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
 
         #endregion
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.PictureBox pictureBoxMinimizar;
-        private System.Windows.Forms.PictureBox pictureBoxClose;
         private System.Windows.Forms.DataGridView dataGridViewProductos;
         private System.Windows.Forms.Panel panelCargarProducto;
         private System.Windows.Forms.Button buttonBuscar;
@@ -832,7 +831,6 @@
         private System.Windows.Forms.Panel panel11;
         private System.Windows.Forms.Button buttonAgregarVenta;
         private System.Windows.Forms.ListBox listBoxCarrito;
-        private System.Windows.Forms.ListBox listBoxCantidad;
         private System.Windows.Forms.ListBox listBoxPrecioTotal;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
@@ -841,5 +839,9 @@
         private System.Windows.Forms.ListBox listBox1;
         private System.Windows.Forms.RichTextBox richTextBoxProducto;
         private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.PictureBox pictureBoxClose;
+        private System.Windows.Forms.PictureBox pictureBoxMinimizar;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.ListBox listBoxCantidad;
     }
 }

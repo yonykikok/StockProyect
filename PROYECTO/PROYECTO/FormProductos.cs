@@ -409,5 +409,20 @@ namespace PROYECTO
             this.WindowState = FormWindowState.Minimized;
         }
 
+        private void buttonAgregarVenta_Click(object sender, EventArgs e)
+        {
+            FormCantidad formCantidad = new FormCantidad();
+            formCantidad.ShowDialog();
+            if(!(formCantidad.Cantidad == 0))
+            {
+
+            }
+
+        }
+
+        private void panel11_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

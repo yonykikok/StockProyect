@@ -51,7 +51,8 @@ namespace PROYECTO
             // if (!(EmpleadoProgram.User is "Usuario"))
             Empleado empleadoHardcodeo = new Empleado("yonykikok", "40132526", "Name", "LastName", "Dni", "Adress", "MailAdress", UserType.admin);
                 Application.Run(new FormPrincipal(empleadoHardcodeo));
-                //Application.Run(new FormClientes());
+           // Application.Run(new FormClientes());
+            //Application.Run(new FormCantidad());
         }
     }
 }

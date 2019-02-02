@@ -91,3 +91,4 @@ C:\Users\Haedo Jonathan\Desktop\StockProyect\StockProyect\PROYECTO\PROYECTO\obj\
 C:\Users\Haedo Jonathan\Desktop\StockProyect\StockProyect\PROYECTO\PROYECTO\obj\Debug\Capa dePresentacion.csproj.CopyComplete
 C:\Users\Haedo Jonathan\Desktop\StockProyect\StockProyect\PROYECTO\PROYECTO\obj\Debug\PROYECTO.exe
 C:\Users\Haedo Jonathan\Desktop\StockProyect\StockProyect\PROYECTO\PROYECTO\obj\Debug\PROYECTO.pdb
+C:\Users\Haedo Jonathan\Desktop\StockProyect\PROYECTO\PROYECTO\obj\Debug\PROYECTO.FormCantidad.resources
