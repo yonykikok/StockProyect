@@ -40,7 +40,6 @@
             this.StockIdeal = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.StockMinimo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Precio = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.textBoxBuscador = new System.Windows.Forms.TextBox();
             this.panelCargarProducto = new System.Windows.Forms.Panel();
             this.textBoxIndice = new System.Windows.Forms.TextBox();
             this.pictureBoxImagenProducto = new System.Windows.Forms.PictureBox();
@@ -66,38 +65,40 @@
             this.buttonAgregarProducto = new System.Windows.Forms.Button();
             this.panel6 = new System.Windows.Forms.Panel();
             this.buttonSeleccionarImagen = new System.Windows.Forms.Button();
-            this.labelResultadoBusqueda = new System.Windows.Forms.Label();
-            this.panelEnvios = new System.Windows.Forms.Panel();
-            this.buttonBuscar = new System.Windows.Forms.Button();
-            this.panelVenderProductos = new System.Windows.Forms.Panel();
-            this.richTextBoxProducto = new System.Windows.Forms.RichTextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.listBoxPrecio = new System.Windows.Forms.ListBox();
-            this.listBoxPrecioTotal = new System.Windows.Forms.ListBox();
-            this.listBoxCantidad = new System.Windows.Forms.ListBox();
-            this.listBoxCarrito = new System.Windows.Forms.ListBox();
-            this.panel8 = new System.Windows.Forms.Panel();
-            this.panel9 = new System.Windows.Forms.Panel();
-            this.buttonQuitarVenta = new System.Windows.Forms.Button();
-            this.panel10 = new System.Windows.Forms.Panel();
-            this.buttonFinalizarVenta = new System.Windows.Forms.Button();
-            this.panel11 = new System.Windows.Forms.Panel();
-            this.buttonAgregarVenta = new System.Windows.Forms.Button();
-            this.panel2 = new System.Windows.Forms.Panel();
             this.pictureBoxClose = new System.Windows.Forms.PictureBox();
             this.pictureBoxMinimizar = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.panel7 = new System.Windows.Forms.Panel();
+            this.buttonAgregarVenta = new System.Windows.Forms.Button();
+            this.panel11 = new System.Windows.Forms.Panel();
+            this.buttonFinalizarVenta = new System.Windows.Forms.Button();
+            this.panel10 = new System.Windows.Forms.Panel();
+            this.buttonQuitarVenta = new System.Windows.Forms.Button();
+            this.panel9 = new System.Windows.Forms.Panel();
+            this.panel8 = new System.Windows.Forms.Panel();
+            this.listBoxCarrito = new System.Windows.Forms.ListBox();
+            this.listBoxCantidad = new System.Windows.Forms.ListBox();
+            this.listBoxPrecioTotal = new System.Windows.Forms.ListBox();
+            this.listBoxPrecio = new System.Windows.Forms.ListBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.richTextBoxProducto = new System.Windows.Forms.RichTextBox();
+            this.panelVenderProductos = new System.Windows.Forms.Panel();
+            this.labelResultadoBusqueda = new System.Windows.Forms.Label();
+            this.panelEnvios = new System.Windows.Forms.Panel();
+            this.buttonBuscar = new System.Windows.Forms.Button();
+            this.textBoxBuscador = new System.Windows.Forms.TextBox();
+            this.panel2 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewProductos)).BeginInit();
             this.panelCargarProducto.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxImagenProducto)).BeginInit();
-            this.panelVenderProductos.SuspendLayout();
-            this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxClose)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMinimizar)).BeginInit();
             this.panel1.SuspendLayout();
+            this.panelVenderProductos.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // dataGridViewProductos
@@ -192,18 +193,6 @@
             // 
             this.Precio.HeaderText = "Precio";
             this.Precio.Name = "Precio";
-            // 
-            // textBoxBuscador
-            // 
-            this.textBoxBuscador.CausesValidation = false;
-            this.textBoxBuscador.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxBuscador.Location = new System.Drawing.Point(6, 3);
-            this.textBoxBuscador.MinimumSize = new System.Drawing.Size(25, 25);
-            this.textBoxBuscador.Multiline = true;
-            this.textBoxBuscador.Name = "textBoxBuscador";
-            this.textBoxBuscador.Size = new System.Drawing.Size(190, 25);
-            this.textBoxBuscador.TabIndex = 0;
-            this.textBoxBuscador.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxBuscador_KeyPress);
             // 
             // panelCargarProducto
             // 
@@ -469,6 +458,244 @@
             this.buttonSeleccionarImagen.UseVisualStyleBackColor = true;
             this.buttonSeleccionarImagen.Click += new System.EventHandler(this.buttonSeleccionarImagen_Click);
             // 
+            // pictureBoxClose
+            // 
+            this.pictureBoxClose.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxClose.Image")));
+            this.pictureBoxClose.Location = new System.Drawing.Point(1138, 3);
+            this.pictureBoxClose.Name = "pictureBoxClose";
+            this.pictureBoxClose.Size = new System.Drawing.Size(15, 15);
+            this.pictureBoxClose.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBoxClose.TabIndex = 0;
+            this.pictureBoxClose.TabStop = false;
+            this.pictureBoxClose.Click += new System.EventHandler(this.pictureBoxClose_Click);
+            // 
+            // pictureBoxMinimizar
+            // 
+            this.pictureBoxMinimizar.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxMinimizar.Image")));
+            this.pictureBoxMinimizar.Location = new System.Drawing.Point(1117, 3);
+            this.pictureBoxMinimizar.Name = "pictureBoxMinimizar";
+            this.pictureBoxMinimizar.Size = new System.Drawing.Size(15, 15);
+            this.pictureBoxMinimizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBoxMinimizar.TabIndex = 1;
+            this.pictureBoxMinimizar.TabStop = false;
+            this.pictureBoxMinimizar.Click += new System.EventHandler(this.pictureBoxMinimizar_Click);
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
+            this.panel1.Controls.Add(this.pictureBoxMinimizar);
+            this.panel1.Controls.Add(this.pictureBoxClose);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1156, 25);
+            this.panel1.TabIndex = 0;
+            this.panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.FormProductos_MouseDown);
+            // 
+            // panel7
+            // 
+            this.panel7.Location = new System.Drawing.Point(0, 0);
+            this.panel7.Name = "panel7";
+            this.panel7.Size = new System.Drawing.Size(1516, 722);
+            this.panel7.TabIndex = 5;
+            // 
+            // buttonAgregarVenta
+            // 
+            this.buttonAgregarVenta.FlatAppearance.BorderSize = 0;
+            this.buttonAgregarVenta.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
+            this.buttonAgregarVenta.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonAgregarVenta.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonAgregarVenta.ForeColor = System.Drawing.Color.White;
+            this.buttonAgregarVenta.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonAgregarVenta.Location = new System.Drawing.Point(17, 387);
+            this.buttonAgregarVenta.Name = "buttonAgregarVenta";
+            this.buttonAgregarVenta.Size = new System.Drawing.Size(96, 32);
+            this.buttonAgregarVenta.TabIndex = 9;
+            this.buttonAgregarVenta.Text = "Agregar";
+            this.buttonAgregarVenta.UseVisualStyleBackColor = true;
+            this.buttonAgregarVenta.Click += new System.EventHandler(this.buttonAgregarVenta_Click);
+            // 
+            // panel11
+            // 
+            this.panel11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
+            this.panel11.Location = new System.Drawing.Point(14, 387);
+            this.panel11.Name = "panel11";
+            this.panel11.Size = new System.Drawing.Size(5, 32);
+            this.panel11.TabIndex = 28;
+            // 
+            // buttonFinalizarVenta
+            // 
+            this.buttonFinalizarVenta.FlatAppearance.BorderSize = 0;
+            this.buttonFinalizarVenta.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
+            this.buttonFinalizarVenta.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonFinalizarVenta.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonFinalizarVenta.ForeColor = System.Drawing.Color.White;
+            this.buttonFinalizarVenta.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonFinalizarVenta.Location = new System.Drawing.Point(111, 387);
+            this.buttonFinalizarVenta.Name = "buttonFinalizarVenta";
+            this.buttonFinalizarVenta.Size = new System.Drawing.Size(96, 32);
+            this.buttonFinalizarVenta.TabIndex = 10;
+            this.buttonFinalizarVenta.Text = "Finalizar";
+            this.buttonFinalizarVenta.UseVisualStyleBackColor = true;
+            this.buttonFinalizarVenta.Click += new System.EventHandler(this.buttonFinalizarVenta_Click);
+            // 
+            // panel10
+            // 
+            this.panel10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
+            this.panel10.Location = new System.Drawing.Point(108, 387);
+            this.panel10.Name = "panel10";
+            this.panel10.Size = new System.Drawing.Size(5, 32);
+            this.panel10.TabIndex = 31;
+            // 
+            // buttonQuitarVenta
+            // 
+            this.buttonQuitarVenta.FlatAppearance.BorderSize = 0;
+            this.buttonQuitarVenta.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
+            this.buttonQuitarVenta.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonQuitarVenta.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonQuitarVenta.ForeColor = System.Drawing.Color.White;
+            this.buttonQuitarVenta.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonQuitarVenta.Location = new System.Drawing.Point(205, 387);
+            this.buttonQuitarVenta.Name = "buttonQuitarVenta";
+            this.buttonQuitarVenta.Size = new System.Drawing.Size(96, 32);
+            this.buttonQuitarVenta.TabIndex = 11;
+            this.buttonQuitarVenta.Text = "Quitar";
+            this.buttonQuitarVenta.UseVisualStyleBackColor = true;
+            // 
+            // panel9
+            // 
+            this.panel9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
+            this.panel9.Location = new System.Drawing.Point(202, 387);
+            this.panel9.Name = "panel9";
+            this.panel9.Size = new System.Drawing.Size(5, 32);
+            this.panel9.TabIndex = 33;
+            // 
+            // panel8
+            // 
+            this.panel8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
+            this.panel8.Location = new System.Drawing.Point(296, 387);
+            this.panel8.Name = "panel8";
+            this.panel8.Size = new System.Drawing.Size(5, 32);
+            this.panel8.TabIndex = 30;
+            // 
+            // listBoxCarrito
+            // 
+            this.listBoxCarrito.FormattingEnabled = true;
+            this.listBoxCarrito.Location = new System.Drawing.Point(35, 189);
+            this.listBoxCarrito.Name = "listBoxCarrito";
+            this.listBoxCarrito.Size = new System.Drawing.Size(172, 186);
+            this.listBoxCarrito.TabIndex = 34;
+            // 
+            // listBoxCantidad
+            // 
+            this.listBoxCantidad.FormattingEnabled = true;
+            this.listBoxCantidad.Items.AddRange(new object[] {
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6"});
+            this.listBoxCantidad.Location = new System.Drawing.Point(5, 189);
+            this.listBoxCantidad.Name = "listBoxCantidad";
+            this.listBoxCantidad.Size = new System.Drawing.Size(28, 186);
+            this.listBoxCantidad.TabIndex = 35;
+            // 
+            // listBoxPrecioTotal
+            // 
+            this.listBoxPrecioTotal.FormattingEnabled = true;
+            this.listBoxPrecioTotal.Items.AddRange(new object[] {
+            "$120",
+            "$150",
+            "$200",
+            "$500",
+            "$1500",
+            "$630"});
+            this.listBoxPrecioTotal.Location = new System.Drawing.Point(261, 189);
+            this.listBoxPrecioTotal.Name = "listBoxPrecioTotal";
+            this.listBoxPrecioTotal.Size = new System.Drawing.Size(49, 186);
+            this.listBoxPrecioTotal.TabIndex = 36;
+            // 
+            // listBoxPrecio
+            // 
+            this.listBoxPrecio.FormattingEnabled = true;
+            this.listBoxPrecio.Location = new System.Drawing.Point(209, 189);
+            this.listBoxPrecio.Name = "listBoxPrecio";
+            this.listBoxPrecio.Size = new System.Drawing.Size(49, 186);
+            this.listBoxPrecio.TabIndex = 37;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(3, 173);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(32, 13);
+            this.label1.TabIndex = 38;
+            this.label1.Text = "Cant.";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(90, 173);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(53, 13);
+            this.label2.TabIndex = 39;
+            this.label2.Text = "Producto.";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.ForeColor = System.Drawing.Color.White;
+            this.label3.Location = new System.Drawing.Point(218, 173);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(25, 13);
+            this.label3.TabIndex = 40;
+            this.label3.Text = "C/u";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.ForeColor = System.Drawing.Color.White;
+            this.label4.Location = new System.Drawing.Point(267, 173);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(31, 13);
+            this.label4.TabIndex = 41;
+            this.label4.Text = "Total";
+            // 
+            // richTextBoxProducto
+            // 
+            this.richTextBoxProducto.Location = new System.Drawing.Point(8, 3);
+            this.richTextBoxProducto.Name = "richTextBoxProducto";
+            this.richTextBoxProducto.ReadOnly = true;
+            this.richTextBoxProducto.Size = new System.Drawing.Size(300, 163);
+            this.richTextBoxProducto.TabIndex = 42;
+            this.richTextBoxProducto.Text = "";
+            // 
+            // panelVenderProductos
+            // 
+            this.panelVenderProductos.Controls.Add(this.richTextBoxProducto);
+            this.panelVenderProductos.Controls.Add(this.label4);
+            this.panelVenderProductos.Controls.Add(this.label3);
+            this.panelVenderProductos.Controls.Add(this.label2);
+            this.panelVenderProductos.Controls.Add(this.label1);
+            this.panelVenderProductos.Controls.Add(this.listBoxPrecio);
+            this.panelVenderProductos.Controls.Add(this.listBoxPrecioTotal);
+            this.panelVenderProductos.Controls.Add(this.listBoxCantidad);
+            this.panelVenderProductos.Controls.Add(this.listBoxCarrito);
+            this.panelVenderProductos.Controls.Add(this.panel8);
+            this.panelVenderProductos.Controls.Add(this.panel9);
+            this.panelVenderProductos.Controls.Add(this.buttonQuitarVenta);
+            this.panelVenderProductos.Controls.Add(this.panel10);
+            this.panelVenderProductos.Controls.Add(this.buttonFinalizarVenta);
+            this.panelVenderProductos.Controls.Add(this.panel11);
+            this.panelVenderProductos.Controls.Add(this.buttonAgregarVenta);
+            this.panelVenderProductos.Location = new System.Drawing.Point(842, 82);
+            this.panelVenderProductos.Name = "panelVenderProductos";
+            this.panelVenderProductos.Size = new System.Drawing.Size(314, 418);
+            this.panelVenderProductos.TabIndex = 3;
+            // 
             // labelResultadoBusqueda
             // 
             this.labelResultadoBusqueda.AutoSize = true;
@@ -504,202 +731,17 @@
             this.buttonBuscar.UseVisualStyleBackColor = true;
             this.buttonBuscar.Click += new System.EventHandler(this.buttonBuscar_Click);
             // 
-            // panelVenderProductos
+            // textBoxBuscador
             // 
-            this.panelVenderProductos.Controls.Add(this.richTextBoxProducto);
-            this.panelVenderProductos.Controls.Add(this.label4);
-            this.panelVenderProductos.Controls.Add(this.label3);
-            this.panelVenderProductos.Controls.Add(this.label2);
-            this.panelVenderProductos.Controls.Add(this.label1);
-            this.panelVenderProductos.Controls.Add(this.listBoxPrecio);
-            this.panelVenderProductos.Controls.Add(this.listBoxPrecioTotal);
-            this.panelVenderProductos.Controls.Add(this.listBoxCantidad);
-            this.panelVenderProductos.Controls.Add(this.listBoxCarrito);
-            this.panelVenderProductos.Controls.Add(this.panel8);
-            this.panelVenderProductos.Controls.Add(this.panel9);
-            this.panelVenderProductos.Controls.Add(this.buttonQuitarVenta);
-            this.panelVenderProductos.Controls.Add(this.panel10);
-            this.panelVenderProductos.Controls.Add(this.buttonFinalizarVenta);
-            this.panelVenderProductos.Controls.Add(this.panel11);
-            this.panelVenderProductos.Controls.Add(this.buttonAgregarVenta);
-            this.panelVenderProductos.Location = new System.Drawing.Point(842, 82);
-            this.panelVenderProductos.Name = "panelVenderProductos";
-            this.panelVenderProductos.Size = new System.Drawing.Size(314, 418);
-            this.panelVenderProductos.TabIndex = 3;
-            // 
-            // richTextBoxProducto
-            // 
-            this.richTextBoxProducto.Location = new System.Drawing.Point(8, 3);
-            this.richTextBoxProducto.Name = "richTextBoxProducto";
-            this.richTextBoxProducto.ReadOnly = true;
-            this.richTextBoxProducto.Size = new System.Drawing.Size(300, 163);
-            this.richTextBoxProducto.TabIndex = 42;
-            this.richTextBoxProducto.Text = "";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(267, 173);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(31, 13);
-            this.label4.TabIndex = 41;
-            this.label4.Text = "Total";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(218, 173);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(25, 13);
-            this.label3.TabIndex = 40;
-            this.label3.Text = "C/u";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(90, 173);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(53, 13);
-            this.label2.TabIndex = 39;
-            this.label2.Text = "Producto.";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(3, 173);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(32, 13);
-            this.label1.TabIndex = 38;
-            this.label1.Text = "Cant.";
-            // 
-            // listBoxPrecio
-            // 
-            this.listBoxPrecio.FormattingEnabled = true;
-            this.listBoxPrecio.Location = new System.Drawing.Point(209, 189);
-            this.listBoxPrecio.Name = "listBoxPrecio";
-            this.listBoxPrecio.Size = new System.Drawing.Size(49, 186);
-            this.listBoxPrecio.TabIndex = 37;
-            // 
-            // listBoxPrecioTotal
-            // 
-            this.listBoxPrecioTotal.FormattingEnabled = true;
-            this.listBoxPrecioTotal.Items.AddRange(new object[] {
-            "$120",
-            "$150",
-            "$200",
-            "$500",
-            "$1500",
-            "$630"});
-            this.listBoxPrecioTotal.Location = new System.Drawing.Point(261, 189);
-            this.listBoxPrecioTotal.Name = "listBoxPrecioTotal";
-            this.listBoxPrecioTotal.Size = new System.Drawing.Size(49, 186);
-            this.listBoxPrecioTotal.TabIndex = 36;
-            // 
-            // listBoxCantidad
-            // 
-            this.listBoxCantidad.FormattingEnabled = true;
-            this.listBoxCantidad.Items.AddRange(new object[] {
-            "1",
-            "2",
-            "3",
-            "4",
-            "5",
-            "6"});
-            this.listBoxCantidad.Location = new System.Drawing.Point(5, 189);
-            this.listBoxCantidad.Name = "listBoxCantidad";
-            this.listBoxCantidad.Size = new System.Drawing.Size(28, 186);
-            this.listBoxCantidad.TabIndex = 35;
-            // 
-            // listBoxCarrito
-            // 
-            this.listBoxCarrito.FormattingEnabled = true;
-            this.listBoxCarrito.Location = new System.Drawing.Point(35, 189);
-            this.listBoxCarrito.Name = "listBoxCarrito";
-            this.listBoxCarrito.Size = new System.Drawing.Size(172, 186);
-            this.listBoxCarrito.TabIndex = 34;
-            // 
-            // panel8
-            // 
-            this.panel8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
-            this.panel8.Location = new System.Drawing.Point(296, 387);
-            this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(5, 32);
-            this.panel8.TabIndex = 30;
-            // 
-            // panel9
-            // 
-            this.panel9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
-            this.panel9.Location = new System.Drawing.Point(202, 387);
-            this.panel9.Name = "panel9";
-            this.panel9.Size = new System.Drawing.Size(5, 32);
-            this.panel9.TabIndex = 33;
-            // 
-            // buttonQuitarVenta
-            // 
-            this.buttonQuitarVenta.FlatAppearance.BorderSize = 0;
-            this.buttonQuitarVenta.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
-            this.buttonQuitarVenta.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonQuitarVenta.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonQuitarVenta.ForeColor = System.Drawing.Color.White;
-            this.buttonQuitarVenta.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonQuitarVenta.Location = new System.Drawing.Point(205, 387);
-            this.buttonQuitarVenta.Name = "buttonQuitarVenta";
-            this.buttonQuitarVenta.Size = new System.Drawing.Size(96, 32);
-            this.buttonQuitarVenta.TabIndex = 11;
-            this.buttonQuitarVenta.Text = "Quitar";
-            this.buttonQuitarVenta.UseVisualStyleBackColor = true;
-            // 
-            // panel10
-            // 
-            this.panel10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
-            this.panel10.Location = new System.Drawing.Point(108, 387);
-            this.panel10.Name = "panel10";
-            this.panel10.Size = new System.Drawing.Size(5, 32);
-            this.panel10.TabIndex = 31;
-            // 
-            // buttonFinalizarVenta
-            // 
-            this.buttonFinalizarVenta.FlatAppearance.BorderSize = 0;
-            this.buttonFinalizarVenta.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
-            this.buttonFinalizarVenta.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonFinalizarVenta.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonFinalizarVenta.ForeColor = System.Drawing.Color.White;
-            this.buttonFinalizarVenta.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonFinalizarVenta.Location = new System.Drawing.Point(111, 387);
-            this.buttonFinalizarVenta.Name = "buttonFinalizarVenta";
-            this.buttonFinalizarVenta.Size = new System.Drawing.Size(96, 32);
-            this.buttonFinalizarVenta.TabIndex = 10;
-            this.buttonFinalizarVenta.Text = "Finalizar";
-            this.buttonFinalizarVenta.UseVisualStyleBackColor = true;
-            this.buttonFinalizarVenta.Click += new System.EventHandler(this.buttonFinalizarVenta_Click);
-            // 
-            // panel11
-            // 
-            this.panel11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
-            this.panel11.Location = new System.Drawing.Point(14, 387);
-            this.panel11.Name = "panel11";
-            this.panel11.Size = new System.Drawing.Size(5, 32);
-            this.panel11.TabIndex = 28;
-            // 
-            // buttonAgregarVenta
-            // 
-            this.buttonAgregarVenta.FlatAppearance.BorderSize = 0;
-            this.buttonAgregarVenta.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
-            this.buttonAgregarVenta.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonAgregarVenta.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonAgregarVenta.ForeColor = System.Drawing.Color.White;
-            this.buttonAgregarVenta.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonAgregarVenta.Location = new System.Drawing.Point(17, 387);
-            this.buttonAgregarVenta.Name = "buttonAgregarVenta";
-            this.buttonAgregarVenta.Size = new System.Drawing.Size(96, 32);
-            this.buttonAgregarVenta.TabIndex = 9;
-            this.buttonAgregarVenta.Text = "Agregar";
-            this.buttonAgregarVenta.UseVisualStyleBackColor = true;
-            this.buttonAgregarVenta.Click += new System.EventHandler(this.buttonAgregarVenta_Click);
+            this.textBoxBuscador.CausesValidation = false;
+            this.textBoxBuscador.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxBuscador.Location = new System.Drawing.Point(6, 3);
+            this.textBoxBuscador.MinimumSize = new System.Drawing.Size(25, 25);
+            this.textBoxBuscador.Multiline = true;
+            this.textBoxBuscador.Name = "textBoxBuscador";
+            this.textBoxBuscador.Size = new System.Drawing.Size(190, 25);
+            this.textBoxBuscador.TabIndex = 0;
+            this.textBoxBuscador.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxBuscador_KeyPress);
             // 
             // panel2
             // 
@@ -712,40 +754,6 @@
             this.panel2.Size = new System.Drawing.Size(314, 44);
             this.panel2.TabIndex = 4;
             // 
-            // pictureBoxClose
-            // 
-            this.pictureBoxClose.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxClose.Image")));
-            this.pictureBoxClose.Location = new System.Drawing.Point(1138, 3);
-            this.pictureBoxClose.Name = "pictureBoxClose";
-            this.pictureBoxClose.Size = new System.Drawing.Size(15, 15);
-            this.pictureBoxClose.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBoxClose.TabIndex = 0;
-            this.pictureBoxClose.TabStop = false;
-            this.pictureBoxClose.Click += new System.EventHandler(this.pictureBoxClose_Click);
-            // 
-            // pictureBoxMinimizar
-            // 
-            this.pictureBoxMinimizar.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxMinimizar.Image")));
-            this.pictureBoxMinimizar.Location = new System.Drawing.Point(1117, 3);
-            this.pictureBoxMinimizar.Name = "pictureBoxMinimizar";
-            this.pictureBoxMinimizar.Size = new System.Drawing.Size(15, 15);
-            this.pictureBoxMinimizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBoxMinimizar.TabIndex = 1;
-            this.pictureBoxMinimizar.TabStop = false;
-            this.pictureBoxMinimizar.Click += new System.EventHandler(this.pictureBoxMinimizar_Click);
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
-            this.panel1.Controls.Add(this.pictureBoxMinimizar);
-            this.panel1.Controls.Add(this.pictureBoxClose);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1156, 25);
-            this.panel1.TabIndex = 0;
-            this.panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.FormProductos_MouseDown);
-            // 
             // FormProductos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -757,6 +765,7 @@
             this.Controls.Add(this.panelCargarProducto);
             this.Controls.Add(this.dataGridViewProductos);
             this.Controls.Add(this.panel1);
+            this.Controls.Add(this.panel7);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormProductos";
             this.Opacity = 0.9D;
@@ -767,13 +776,13 @@
             this.panelCargarProducto.ResumeLayout(false);
             this.panelCargarProducto.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxImagenProducto)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxClose)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMinimizar)).EndInit();
+            this.panel1.ResumeLayout(false);
             this.panelVenderProductos.ResumeLayout(false);
             this.panelVenderProductos.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxClose)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMinimizar)).EndInit();
-            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -781,10 +790,6 @@
         #endregion
         private System.Windows.Forms.DataGridView dataGridViewProductos;
         private System.Windows.Forms.Panel panelCargarProducto;
-        private System.Windows.Forms.Button buttonBuscar;
-        private System.Windows.Forms.Panel panelEnvios;
-        private System.Windows.Forms.TextBox textBoxBuscador;
-        private System.Windows.Forms.Label labelResultadoBusqueda;
         private System.Windows.Forms.TextBox textBoxPrecio;
         private System.Windows.Forms.TextBox textBoxStockMinimo;
         private System.Windows.Forms.TextBox textBoxStockIdeal;
@@ -816,26 +821,31 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn StockIdeal;
         private System.Windows.Forms.DataGridViewTextBoxColumn StockMinimo;
         private System.Windows.Forms.DataGridViewTextBoxColumn Precio;
-        private System.Windows.Forms.Panel panelVenderProductos;
-        private System.Windows.Forms.Panel panel8;
-        private System.Windows.Forms.Panel panel9;
-        private System.Windows.Forms.Button buttonQuitarVenta;
-        private System.Windows.Forms.Panel panel10;
-        private System.Windows.Forms.Button buttonFinalizarVenta;
-        private System.Windows.Forms.Panel panel11;
-        private System.Windows.Forms.Button buttonAgregarVenta;
-        private System.Windows.Forms.ListBox listBoxCarrito;
-        private System.Windows.Forms.ListBox listBoxPrecioTotal;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ListBox listBoxPrecio;
-        private System.Windows.Forms.RichTextBox richTextBoxProducto;
-        private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.PictureBox pictureBoxClose;
         private System.Windows.Forms.PictureBox pictureBoxMinimizar;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel panel7;
+        private System.Windows.Forms.Button buttonAgregarVenta;
+        private System.Windows.Forms.Panel panel11;
+        private System.Windows.Forms.Button buttonFinalizarVenta;
+        private System.Windows.Forms.Panel panel10;
+        private System.Windows.Forms.Button buttonQuitarVenta;
+        private System.Windows.Forms.Panel panel9;
+        private System.Windows.Forms.Panel panel8;
+        private System.Windows.Forms.ListBox listBoxCarrito;
         private System.Windows.Forms.ListBox listBoxCantidad;
+        private System.Windows.Forms.ListBox listBoxPrecioTotal;
+        private System.Windows.Forms.ListBox listBoxPrecio;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.RichTextBox richTextBoxProducto;
+        private System.Windows.Forms.Panel panelVenderProductos;
+        private System.Windows.Forms.Label labelResultadoBusqueda;
+        private System.Windows.Forms.Panel panelEnvios;
+        private System.Windows.Forms.Button buttonBuscar;
+        private System.Windows.Forms.TextBox textBoxBuscador;
+        private System.Windows.Forms.Panel panel2;
     }
 }

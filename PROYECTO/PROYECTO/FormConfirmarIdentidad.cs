@@ -32,7 +32,7 @@ namespace PROYECTO
 
         private void buttonAcceder_Click(object sender, EventArgs e)
         {
-            Empleado empleado = new Empleado(textBoxUsuario.Text, textBoxPassword.Text);
+            Empleado empleado = new Empleado(textBoxUsuario.Text, textBoxPassword.Text, null, null, null, null, null, UserType.user);
             Empleado auxEmpleado = UsuariosDAO.LeerUsuarioCompleto(empleado);
 
             if (auxEmpleado.Type != UserType.admin)

@@ -10,7 +10,7 @@ namespace CapaDeDatos
 {
     public class UsuariosDAO
     {
-        private static string stringDeConexion = "Data Source=MULTITASK;Initial Catalog=Multitask; Integrated Security=True";
+        private static string stringDeConexion = "Data Source=MULTITASK\\SQLEXPRESS;Initial Catalog=Multitask; Integrated Security=True";
         private static SqlConnection conexionADB;
         private static SqlCommand comando;
         private static SqlDataReader dataReader;
@@ -85,16 +85,16 @@ namespace CapaDeDatos
                     }
                     else
                     {
-                        retorno = new Empleado(auxUsuario, "InvalidPass");
+                        retorno = new Empleado(auxUsuario, "InvalidPass", "Nombre", "Apellido", "Dni", "Direccion", "Gmail@gmail.com", UserType.user);
                     }
                 }
                 else if (auxUsuario != empleado.User && auxContraseña == empleado.Password)
                 {
-                    retorno = new Empleado("InvalidUser", auxContraseña);
+                    retorno = new Empleado("InvalidUser", auxContraseña, "Nombre", "Apellido", "Dni", "Direccion", "Gmail@gmail.com", UserType.user);
                 }
                 else
                 {
-                    retorno = new Empleado("InvalidUser", "InvalidPass");
+                    retorno = new Empleado("InvalidUser", "InvalidPass", "Nombre", "Apellido", "Dni", "Direccion", "Gmail@gmail.com", UserType.user);
                 }
             }
             conexionADB.Close();
@@ -132,16 +132,16 @@ namespace CapaDeDatos
                     }
                     else if (auxUsuario == empleado.User && auxContraseña != empleado.Password)
                     {
-                        retorno = new Empleado(auxUsuario, "InvalidPass");
+                        retorno = new Empleado(auxUsuario, "InvalidPass", "Nombre", "Apellido", "Dni", "Direccion", "Gmail@gmail.com", UserType.user);
                     }
                     else
                     {
-                        retorno = new Empleado("InvalidUser", "InvalidPass");
+                        retorno = new Empleado("InvalidUser", "InvalidPass", "Nombre", "Apellido", "Dni", "Direccion", "Gmail@gmail.com", UserType.user);
                     }
                 }
                 else if (auxUsuario != empleado.User && auxContraseña == empleado.Password)
                 {
-                    retorno = new Empleado("InvalidUser", auxContraseña);
+                    retorno = new Empleado("InvalidUser", auxContraseña, "Nombre", "Apellido", "Dni", "Direccion", "Gmail@gmail.com", UserType.user);
                 }
 
 

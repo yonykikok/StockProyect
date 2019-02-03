@@ -87,12 +87,12 @@ namespace PROYECTO
         }
         public void buttonAcceder_Click(object sender, EventArgs e)
         {
-            try
+             try
             {
                 labelErrorUsuario.Text = "";
                 labelErrorPassword.Text = "";
                 labelErrorDatosInvalidos.Text = "";
-                empleado = new Empleado(textBoxUsurio.Text, textBoxPassword.Text);
+                empleado = new Empleado(textBoxUsurio.Text, textBoxPassword.Text, "Nombre", "Apellido", "Dni","Direccion", "Gmail@gmail.com", UserType.user);
                
                 Empleado empleadoLeido = UsuariosDAO.LeerUsuarioCompleto(empleado);
                 if (empleadoLeido.User == empleado.User && empleadoLeido.Password == empleado.Password)

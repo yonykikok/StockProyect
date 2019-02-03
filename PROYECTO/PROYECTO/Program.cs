@@ -47,12 +47,12 @@ namespace PROYECTO
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-          //  Application.Run(new FormLogin());
-            // if (!(EmpleadoProgram.User is "Usuario"))
-            Empleado empleadoHardcodeo = new Empleado("yonykikok", "40132526", "Name", "LastName", "Dni", "Adress", "MailAdress", UserType.admin);
-                Application.Run(new FormPrincipal(empleadoHardcodeo));
-           // Application.Run(new FormClientes());
-            //Application.Run(new FormCantidad());
+            Application.Run(new FormLogin());
+             if (!(EmpleadoProgram.User is "Usuario"))
+            //Empleado empleadoHardcodeo = new Empleado("yonykikok", "40132526", "Name", "LastName", "Dni", "Adress", "MailAdress", UserType.admin);
+               Application.Run(new FormPrincipal(empleadoProgram));
+        //  Application.Run(new FormClientes());
+          //  Application.Run(new FormVenta());
         }
     }
 }

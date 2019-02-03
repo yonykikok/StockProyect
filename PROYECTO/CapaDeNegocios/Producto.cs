@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CapaDeNegocios
 {
-    public class Producto
+    public class Producto : Articulo
     {
         #region CAMPOS
         private string codigo;
@@ -20,30 +20,24 @@ namespace CapaDeNegocios
         #endregion
 
         #region CONSTRUCTORES
-        public Producto()
+        static Producto()
         {
 
         }
-        public Producto(string codigo, string descripcion, int stock, int stockIdeal, int stockMinimo, float precio)//--------------------------------------------------------------------------------------------
+        public Producto(string codigo, string descripcion, int stock, int stockIdeal, int stockMinimo, float precio) : base(codigo, descripcion, precio)//--------------------------------------------------------------------------------------------
         {
-            this.Codigo = codigo;
-            this.Descripcion = descripcion;
             this.Stock = stock;
             this.StockIdeal = stockIdeal;
             this.StockMinimo = stockMinimo;
-            this.Precio = precio;
         }
-        public Producto(string codigo, string descripcion, int stock, int stockIdeal, int stockMinimo, float precio,int id)//--------------------------------------------------------------------------------------------
+        public Producto(string codigo, string descripcion, int stock, int stockIdeal, int stockMinimo, float precio, int id) : base(codigo, descripcion, precio)//--------------------------------------------------------------------------------------------
         {
-            this.Codigo = codigo;
-            this.Descripcion = descripcion;
             this.Stock = stock;
             this.StockIdeal = stockIdeal;
             this.StockMinimo = stockMinimo;
-            this.Precio = precio;
             this.id = id;
         }
-        public Producto(string codigo, string descripcion, int stock, int stockIdeal, int stockMinimo, float precio,string imagen, int id):this(codigo,descripcion,stock,stockIdeal,stockMinimo,precio,id)//-------------
+        public Producto(string codigo, string descripcion, int stock, int stockIdeal, int stockMinimo, float precio, string imagen, int id) : this(codigo, descripcion, stock, stockIdeal, stockMinimo, precio, id)//-------------
         {
             this.Imagen = imagen;
         }
@@ -62,35 +56,11 @@ namespace CapaDeNegocios
                     imagen = value;
             }
         }
-        public string Descripcion
-        {
-            get
-            {
-                return this.descripcion;
-            }
-            set
-            {
-                if (value.Length > 0)
-                    descripcion = value;
-            }
-        }
         public int Id
         {
             get
             {
                 return this.id;
-            }
-        }
-        public string Codigo
-        {
-            get
-            {
-                return this.codigo;
-            }
-            set
-            {
-                if (value.Length > 0)
-                    codigo = value;
             }
         }
         public int StockMinimo
@@ -103,18 +73,6 @@ namespace CapaDeNegocios
             {
                 if (value >= 0)
                     stockMinimo = value;
-            }
-        }
-        public float Precio
-        {
-            get
-            {
-                return this.precio;
-            }
-            set
-            {
-                if (value > 0)
-                    precio = value;
             }
         }
         public int Stock

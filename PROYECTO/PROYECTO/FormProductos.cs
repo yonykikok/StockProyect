@@ -429,7 +429,7 @@ namespace PROYECTO
             }
             catch (Exception exception)
             {
-                MessageBox.Show("Error al modificar un Producto, puede que algun dato no este ingresado");
+                MessageBox.Show("Error al modificar un Producto, puede que algun dato no este ingresado " + exception.Message);
             }
         }
 
@@ -510,7 +510,7 @@ namespace PROYECTO
         {
             List<float> listaPrecios=ObternerListaDePreciosFiltrados();
             float total= CalcularPrecioFinal(listaPrecios);
-            MessageBox.Show(total.ToString());
+
         }
     }
 }

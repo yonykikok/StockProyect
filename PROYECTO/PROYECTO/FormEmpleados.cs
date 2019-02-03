@@ -307,7 +307,7 @@ namespace PROYECTO
                 textBoxAdress.Text = "";
                 textBoxMailAdress.Text = "";
                 textBoxPassword.Text = "";
-                MessageBox.Show("Error al cargar los datos de los 'USUARIOS' al GridView");
+                MessageBox.Show("Error al cargar los datos de los 'USUARIOS' al GridView "+exception.Message);
             }
         }
         /// <summary>
@@ -378,7 +378,7 @@ namespace PROYECTO
             }
             catch (Exception exception)
             {
-                MessageBox.Show("Error al modificar un usuario, puede que algun dato no este ingresado");
+                MessageBox.Show("Error al modificar un usuario, puede que algun dato no este ingresado " + exception.Message);
             }
         }
         /// <summary>

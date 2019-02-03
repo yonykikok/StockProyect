@@ -14,49 +14,24 @@ namespace CapaDeNegocios
         user,
         admin
     }
-    public class Empleado
+    public class Empleado : Persona
     {
         private string user;
         private string password;
-        private string name;
-        private string lastName;
-        private string dni;
-        private string adress;
-        private string mailAdress;
         private int id;
         private UserType type;
-        #region CONSTRUCTORES
-        public Empleado(string user, string password)
-        {
+        #region CONSTRUCTORES        
+        public Empleado(string user, string password, string name, string lastName, string dni, string adress, string mailAdress, UserType type) : base(name,lastName,dni,adress,mailAdress)
+        {           
+            this.Type = type;
             this.User = user;
             this.Password = password;
-        }
-        public Empleado(string user, string password, string name, string lastName, string dni, string adress, string mailAdress, UserType type) : this(user, password)
-        {
-            this.Name = name;
-            this.LastName = lastName;
-            this.Dni = dni;
-            this.Adress = adress;
-            this.MailAdress = mailAdress;
-            this.Type = type;
         }
         public Empleado(string user, string password, string name, string lastName, string dni, string adress, string mailAdress, UserType type, int id) : this(user, password, name, lastName, dni, adress, mailAdress, type)
         {
             this.id = id;
         }
         #endregion
-        public string Name
-        {
-            get { return this.name; }
-            set
-            {
-                Regex SoloLetras = new Regex("^[a-z|A-Z]+?$");
-                if (SoloLetras.IsMatch(value))
-                {
-                    this.name = value;
-                }
-            }
-        }
         public int Id
         {
             get
@@ -83,36 +58,6 @@ namespace CapaDeNegocios
                 }
             }
         }
-        public string Dni
-        {
-            get { return this.dni; }
-            set
-            {
-                if (!(value is null))
-                {
-                    Regex SoloLetras = new Regex("^[0-9]+?$");
-                    if (SoloLetras.IsMatch(value))
-                    {
-                        if (value.Length > 5 && value.Length < 10)
-                        {
-                            this.dni = value;
-                        }
-                    }
-                }
-            }
-        }
-        public string LastName
-        {
-            get { return this.lastName; }
-            set
-            {
-                Regex SoloLetras = new Regex("^[a-z|A-Z]+?$");
-                if (SoloLetras.IsMatch(value))
-                {
-                    this.lastName = value;
-                }
-            }
-        }
         public string User
         {
             get { return this.user; }
@@ -125,39 +70,6 @@ namespace CapaDeNegocios
                 }
             }
         }
-        public string MailAdress
-        {
-            get { return this.mailAdress; }
-            set
-            {
-                if (!(value is null))
-                {
-                    if (value.Length > 10 && value.Length < 100)
-                    {
-                        this.mailAdress = value;
-                    }
-                }
-            }
-        }
-        public string Adress
-        {
-            get { return this.adress; }
-            set
-            {
-                if (!(value is null))
-                {
-                    Regex SoloLetras = new Regex("^[a-z|A-Z|0-9| ]+?$");
-                    if (SoloLetras.IsMatch(value))
-                    {
-                        if (value.Length > 8 && value.Length < 50)
-                        {
-                            this.adress = value;
-                        }
-                    }
-                }
-            }
-        }
-
         public string Password
         {
             get { return this.password; }
