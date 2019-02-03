@@ -84,3 +84,16 @@ C:\Users\Haedo Jonathan\Desktop\StockProyect\StockProyect\PROYECTO\CapaDeDatos\o
 C:\Users\Haedo Jonathan\Desktop\StockProyect\StockProyect\PROYECTO\CapaDeDatos\obj\Debug\CapaDeDatos.csproj.CopyComplete
 C:\Users\Haedo Jonathan\Desktop\StockProyect\StockProyect\PROYECTO\CapaDeDatos\obj\Debug\CapaDeDatos.dll
 C:\Users\Haedo Jonathan\Desktop\StockProyect\StockProyect\PROYECTO\CapaDeDatos\obj\Debug\CapaDeDatos.pdb
+C:\Users\Haedo Jonathan\Desktop\RepositorioGit\StockProyect\PROYECTO\CapaDeDatos\bin\Debug\CapaDeDatos.dll
+C:\Users\Haedo Jonathan\Desktop\RepositorioGit\StockProyect\PROYECTO\CapaDeDatos\bin\Debug\CapaDeDatos.pdb
+C:\Users\Haedo Jonathan\Desktop\RepositorioGit\StockProyect\PROYECTO\CapaDeDatos\bin\Debug\CapaDeNegocios.dll
+C:\Users\Haedo Jonathan\Desktop\RepositorioGit\StockProyect\PROYECTO\CapaDeDatos\bin\Debug\ExcepcionesPropias.dll
+C:\Users\Haedo Jonathan\Desktop\RepositorioGit\StockProyect\PROYECTO\CapaDeDatos\bin\Debug\ExcepcionesPropiasProductos.dll
+C:\Users\Haedo Jonathan\Desktop\RepositorioGit\StockProyect\PROYECTO\CapaDeDatos\bin\Debug\CapaDeNegocios.pdb
+C:\Users\Haedo Jonathan\Desktop\RepositorioGit\StockProyect\PROYECTO\CapaDeDatos\bin\Debug\ExcepcionesPropiasProductos.pdb
+C:\Users\Haedo Jonathan\Desktop\RepositorioGit\StockProyect\PROYECTO\CapaDeDatos\bin\Debug\ExcepcionesPropias.pdb
+C:\Users\Haedo Jonathan\Desktop\RepositorioGit\StockProyect\PROYECTO\CapaDeDatos\obj\Debug\CapaDeDatos.csprojAssemblyReference.cache
+C:\Users\Haedo Jonathan\Desktop\RepositorioGit\StockProyect\PROYECTO\CapaDeDatos\obj\Debug\CapaDeDatos.csproj.CoreCompileInputs.cache
+C:\Users\Haedo Jonathan\Desktop\RepositorioGit\StockProyect\PROYECTO\CapaDeDatos\obj\Debug\CapaDeDatos.csproj.CopyComplete
+C:\Users\Haedo Jonathan\Desktop\RepositorioGit\StockProyect\PROYECTO\CapaDeDatos\obj\Debug\CapaDeDatos.dll
+C:\Users\Haedo Jonathan\Desktop\RepositorioGit\StockProyect\PROYECTO\CapaDeDatos\obj\Debug\CapaDeDatos.pdb

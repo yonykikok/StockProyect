@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormProductos));
             this.dataGridViewProductos = new System.Windows.Forms.DataGridView();
             this.Indice = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -83,7 +83,7 @@
             this.panel9 = new System.Windows.Forms.Panel();
             this.buttonQuitarVenta = new System.Windows.Forms.Button();
             this.panel10 = new System.Windows.Forms.Panel();
-            this.buttonModificarVenta = new System.Windows.Forms.Button();
+            this.buttonFinalizarVenta = new System.Windows.Forms.Button();
             this.panel11 = new System.Windows.Forms.Panel();
             this.buttonAgregarVenta = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -106,14 +106,14 @@
             this.dataGridViewProductos.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
             this.dataGridViewProductos.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridViewProductos.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Raised;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewProductos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewProductos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridViewProductos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Indice,
             this.Codigo,
@@ -122,27 +122,27 @@
             this.StockIdeal,
             this.StockMinimo,
             this.Precio});
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridViewProductos.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridViewProductos.DefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridViewProductos.Dock = System.Windows.Forms.DockStyle.Left;
             this.dataGridViewProductos.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.dataGridViewProductos.EnableHeadersVisualStyles = false;
             this.dataGridViewProductos.Location = new System.Drawing.Point(0, 25);
             this.dataGridViewProductos.Name = "dataGridViewProductos";
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewProductos.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewProductos.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridViewProductos.Size = new System.Drawing.Size(836, 475);
             this.dataGridViewProductos.TabIndex = 1;
             this.dataGridViewProductos.RowHeaderMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridViewProductos_RowHeaderMouseDoubleClick);
@@ -519,7 +519,7 @@
             this.panelVenderProductos.Controls.Add(this.panel9);
             this.panelVenderProductos.Controls.Add(this.buttonQuitarVenta);
             this.panelVenderProductos.Controls.Add(this.panel10);
-            this.panelVenderProductos.Controls.Add(this.buttonModificarVenta);
+            this.panelVenderProductos.Controls.Add(this.buttonFinalizarVenta);
             this.panelVenderProductos.Controls.Add(this.panel11);
             this.panelVenderProductos.Controls.Add(this.buttonAgregarVenta);
             this.panelVenderProductos.Location = new System.Drawing.Point(842, 82);
@@ -579,11 +579,6 @@
             // listBoxPrecio
             // 
             this.listBoxPrecio.FormattingEnabled = true;
-            this.listBoxPrecio.Items.AddRange(new object[] {
-            "$100",
-            "$240",
-            "$250",
-            "$320"});
             this.listBoxPrecio.Location = new System.Drawing.Point(209, 189);
             this.listBoxPrecio.Name = "listBoxPrecio";
             this.listBoxPrecio.Size = new System.Drawing.Size(49, 186);
@@ -593,10 +588,12 @@
             // 
             this.listBoxPrecioTotal.FormattingEnabled = true;
             this.listBoxPrecioTotal.Items.AddRange(new object[] {
-            "$100",
-            "$240",
-            "$250",
-            "$320"});
+            "$120",
+            "$150",
+            "$200",
+            "$500",
+            "$1500",
+            "$630"});
             this.listBoxPrecioTotal.Location = new System.Drawing.Point(261, 189);
             this.listBoxPrecioTotal.Name = "listBoxPrecioTotal";
             this.listBoxPrecioTotal.Size = new System.Drawing.Size(49, 186);
@@ -608,8 +605,10 @@
             this.listBoxCantidad.Items.AddRange(new object[] {
             "1",
             "2",
-            "1",
-            "1"});
+            "3",
+            "4",
+            "5",
+            "6"});
             this.listBoxCantidad.Location = new System.Drawing.Point(5, 189);
             this.listBoxCantidad.Name = "listBoxCantidad";
             this.listBoxCantidad.Size = new System.Drawing.Size(28, 186);
@@ -618,11 +617,6 @@
             // listBoxCarrito
             // 
             this.listBoxCarrito.FormattingEnabled = true;
-            this.listBoxCarrito.Items.AddRange(new object[] {
-            "Cargador Samsung",
-            "Cargador Inova 2mAh",
-            "Cargador Inova 3.1mAh",
-            "MicroSd Kingstone 32GB"});
             this.listBoxCarrito.Location = new System.Drawing.Point(35, 189);
             this.listBoxCarrito.Name = "listBoxCarrito";
             this.listBoxCarrito.Size = new System.Drawing.Size(172, 186);
@@ -667,20 +661,21 @@
             this.panel10.Size = new System.Drawing.Size(5, 32);
             this.panel10.TabIndex = 31;
             // 
-            // buttonModificarVenta
+            // buttonFinalizarVenta
             // 
-            this.buttonModificarVenta.FlatAppearance.BorderSize = 0;
-            this.buttonModificarVenta.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
-            this.buttonModificarVenta.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonModificarVenta.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonModificarVenta.ForeColor = System.Drawing.Color.White;
-            this.buttonModificarVenta.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonModificarVenta.Location = new System.Drawing.Point(111, 387);
-            this.buttonModificarVenta.Name = "buttonModificarVenta";
-            this.buttonModificarVenta.Size = new System.Drawing.Size(96, 32);
-            this.buttonModificarVenta.TabIndex = 10;
-            this.buttonModificarVenta.Text = "Finalizar";
-            this.buttonModificarVenta.UseVisualStyleBackColor = true;
+            this.buttonFinalizarVenta.FlatAppearance.BorderSize = 0;
+            this.buttonFinalizarVenta.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
+            this.buttonFinalizarVenta.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonFinalizarVenta.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonFinalizarVenta.ForeColor = System.Drawing.Color.White;
+            this.buttonFinalizarVenta.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonFinalizarVenta.Location = new System.Drawing.Point(111, 387);
+            this.buttonFinalizarVenta.Name = "buttonFinalizarVenta";
+            this.buttonFinalizarVenta.Size = new System.Drawing.Size(96, 32);
+            this.buttonFinalizarVenta.TabIndex = 10;
+            this.buttonFinalizarVenta.Text = "Finalizar";
+            this.buttonFinalizarVenta.UseVisualStyleBackColor = true;
+            this.buttonFinalizarVenta.Click += new System.EventHandler(this.buttonFinalizarVenta_Click);
             // 
             // panel11
             // 
@@ -689,7 +684,6 @@
             this.panel11.Name = "panel11";
             this.panel11.Size = new System.Drawing.Size(5, 32);
             this.panel11.TabIndex = 28;
-            this.panel11.Paint += new System.Windows.Forms.PaintEventHandler(this.panel11_Paint);
             // 
             // buttonAgregarVenta
             // 
@@ -827,7 +821,7 @@
         private System.Windows.Forms.Panel panel9;
         private System.Windows.Forms.Button buttonQuitarVenta;
         private System.Windows.Forms.Panel panel10;
-        private System.Windows.Forms.Button buttonModificarVenta;
+        private System.Windows.Forms.Button buttonFinalizarVenta;
         private System.Windows.Forms.Panel panel11;
         private System.Windows.Forms.Button buttonAgregarVenta;
         private System.Windows.Forms.ListBox listBoxCarrito;

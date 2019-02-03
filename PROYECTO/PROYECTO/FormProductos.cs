@@ -464,7 +464,7 @@ namespace PROYECTO
             if (!(formCantidad.Cantidad == 0))
             {
                 listBoxCantidad.Items.Add(formCantidad.Cantidad.ToString());
-                listBoxCarrito.Items.Add(string.Format("Descripcion: {0}", DescripcionDeProducto));
+                listBoxCarrito.Items.Add(string.Format("{0}", DescripcionDeProducto));
                 if (auxTotal != 0)
                 {
                     listBoxPrecio.Items.Add("$" + PrecioDeProducto.ToString());
@@ -478,9 +478,39 @@ namespace PROYECTO
 
         }
 
-        private void panel11_Paint(object sender, PaintEventArgs e)
+        private List<float> ObternerListaDePreciosFiltrados()
+        {            
+            int cantidadDeProductos = listBoxCantidad.Items.Count;
+            string strprecios;
+            List<float> precios = new List<float>();
+            float auxPrecio;
+            if (cantidadDeProductos > 0)
+            {
+                for (int i = 0; i < cantidadDeProductos; i++)
+                {
+                    strprecios = listBoxPrecioTotal.Items[i].ToString().Remove(0, 1);
+                    if (float.TryParse(strprecios, out auxPrecio))
+                    {
+                        precios.Add(auxPrecio);
+                    }
+                }
+            }
+            return precios;
+        }
+        private float CalcularPrecioFinal(List<float> listaPrecios)
         {
-
+            float sumaTotal=0;
+            foreach(float precio in listaPrecios)
+            {
+                sumaTotal += precio;
+            }
+            return sumaTotal;
+        }
+        private void buttonFinalizarVenta_Click(object sender, EventArgs e)
+        {
+            List<float> listaPrecios=ObternerListaDePreciosFiltrados();
+            float total= CalcularPrecioFinal(listaPrecios);
+            MessageBox.Show(total.ToString());
         }
     }
 }

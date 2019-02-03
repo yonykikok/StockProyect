@@ -16,3 +16,9 @@ C:\Users\Haedo Jonathan\Desktop\StockProyect\StockProyect\PROYECTO\ExcepcionesPr
 C:\Users\Haedo Jonathan\Desktop\StockProyect\StockProyect\PROYECTO\ExcepcionesPropias\obj\Debug\ExcepcionesPropiasUsuarios.csproj.CoreCompileInputs.cache
 C:\Users\Haedo Jonathan\Desktop\StockProyect\StockProyect\PROYECTO\ExcepcionesPropias\obj\Debug\ExcepcionesPropias.dll
 C:\Users\Haedo Jonathan\Desktop\StockProyect\StockProyect\PROYECTO\ExcepcionesPropias\obj\Debug\ExcepcionesPropias.pdb
+C:\Users\Haedo Jonathan\Desktop\RepositorioGit\StockProyect\PROYECTO\ExcepcionesPropias\bin\Debug\ExcepcionesPropias.dll
+C:\Users\Haedo Jonathan\Desktop\RepositorioGit\StockProyect\PROYECTO\ExcepcionesPropias\bin\Debug\ExcepcionesPropias.pdb
+C:\Users\Haedo Jonathan\Desktop\RepositorioGit\StockProyect\PROYECTO\ExcepcionesPropias\obj\Debug\ExcepcionesPropiasUsuarios.csprojAssemblyReference.cache
+C:\Users\Haedo Jonathan\Desktop\RepositorioGit\StockProyect\PROYECTO\ExcepcionesPropias\obj\Debug\ExcepcionesPropiasUsuarios.csproj.CoreCompileInputs.cache
+C:\Users\Haedo Jonathan\Desktop\RepositorioGit\StockProyect\PROYECTO\ExcepcionesPropias\obj\Debug\ExcepcionesPropias.dll
+C:\Users\Haedo Jonathan\Desktop\RepositorioGit\StockProyect\PROYECTO\ExcepcionesPropias\obj\Debug\ExcepcionesPropias.pdb
