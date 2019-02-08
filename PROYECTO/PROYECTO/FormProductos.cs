@@ -322,9 +322,13 @@ namespace PROYECTO
                 Producto auxProducto = LeerProductoDelFormulario();
                 ProductosDAO.InsertarProducto(auxProducto);
                 CargarDatosAlGridView();
-                textBoxCodigo.Text = "";
-                textBoxDescripcion.Text = "";
-                textBoxPrecio.Text = "";
+               /* //sacar esta linea despues 
+                long auxNumero;
+                long.TryParse(textBoxCodigo.Text, out auxNumero);
+                auxNumero++;
+                textBoxCodigo.Text = auxNumero.ToString();
+                textBoxStock.Focus();
+                //----hasta aqui. es para no incrementar el codigo del producto manualmente xD*/
                 textBoxCodigo.Focus();
             }
             catch (ErrorAlComprobarExistenciaDeProducto exception)
@@ -479,7 +483,7 @@ namespace PROYECTO
         }
 
         private List<float> ObternerListaDePreciosFiltrados()
-        {            
+        {
             int cantidadDeProductos = listBoxCantidad.Items.Count;
             string strprecios;
             List<float> precios = new List<float>();
@@ -499,8 +503,8 @@ namespace PROYECTO
         }
         private float CalcularPrecioFinal(List<float> listaPrecios)
         {
-            float sumaTotal=0;
-            foreach(float precio in listaPrecios)
+            float sumaTotal = 0;
+            foreach (float precio in listaPrecios)
             {
                 sumaTotal += precio;
             }
@@ -508,8 +512,8 @@ namespace PROYECTO
         }
         private void buttonFinalizarVenta_Click(object sender, EventArgs e)
         {
-            List<float> listaPrecios=ObternerListaDePreciosFiltrados();
-            float total= CalcularPrecioFinal(listaPrecios);
+            List<float> listaPrecios = ObternerListaDePreciosFiltrados();
+            float total = CalcularPrecioFinal(listaPrecios);
 
         }
     }
