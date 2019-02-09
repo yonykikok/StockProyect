@@ -6,33 +6,29 @@ using System.Threading.Tasks;
 
 namespace CapaDeNegocios
 {
-    public class Carrito : Articulo
+    public class Carrito
     {
-        private string CodigoDeProducto;
-        private string descripcion;
-        private int cantidad;
+        static private List<Compra> compras;
         private int descuento;
-        private float precio;
         private float subTotal;
         private float total;
-
-        public Carrito(string codigoDeProducto,string descripcion,float precio, int cantidad, int descuento,float subTotal,float total):base(codigoDeProducto,descripcion,precio)
+        static Carrito()
         {
-            Codigo = codigoDeProducto;
-            Descripcion = descripcion;
-            Precio = precio;
-            Cantidad = cantidad;
+            Compras = new List<Compra>();
+        }
+        public Carrito(int cantidad, int descuento, float subTotal, float total) 
+        {
             Descuento = descuento;
             SubTotal = subTotal;
             Total = total;
         }
 
+        public static List<Compra> Compras { get => compras; set => compras = value; }
         public float Total { get => total; set => total = value; }
         public float SubTotal { get => subTotal; set => subTotal = value; }
-        public int Cantidad { get => cantidad; set => cantidad = value; }
         public int Descuento { get => descuento; set => descuento = value; }
 
-       
+
 
 
     }

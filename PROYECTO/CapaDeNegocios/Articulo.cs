@@ -9,9 +9,19 @@ namespace CapaDeNegocios
     public class Articulo
     {
         private string codigo;
-        private string descripcion;        
+        private string descripcion;
         private float precio;
 
+        public Articulo(string codigo, string descripcion, string precio)
+        {
+            this.Codigo = codigo;
+            this.Descripcion = descripcion;
+            float auxPrecio;
+            if (float.TryParse(precio, out auxPrecio))
+            {
+                this.Precio = auxPrecio;
+            }
+        }
         public Articulo(string codigo, string descripcion, float precio)
         {
             this.Codigo = codigo;

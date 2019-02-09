@@ -41,6 +41,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ProductoRepetidoException.cs" />
     <Compile Include="CodigoInvalidException.cs" />
     <Compile Include="DescripcionInvalidException.cs" />
     <Compile Include="ErrorAlComprobarExistenciaDeProducto.cs" />

@@ -9,12 +9,9 @@ namespace CapaDeNegocios
     public class Producto : Articulo
     {
         #region CAMPOS
-        private string codigo;
-        private string descripcion;
         private int stock;
         private int stockIdeal;
         private int stockMinimo;
-        private float precio;
         private string imagen;
         private int id;
         #endregion
@@ -23,6 +20,24 @@ namespace CapaDeNegocios
         static Producto()
         {
 
+        }
+        public Producto(string codigo, string descripcion, string stock, string stockIdeal, string stockMinimo, string precio) : base(codigo, descripcion, precio)//--------------------------------------------------------------------------------------------
+        {
+            int auxStock;
+            int auxStockIdeal;
+            int auxStockMinimo;
+            if (Int32.TryParse(stock, out auxStock))
+            {
+                if (Int32.TryParse(stockIdeal, out auxStockIdeal))
+                {
+                    if (Int32.TryParse(stockMinimo, out auxStockMinimo))
+                    {
+                        this.Stock = auxStock;
+                        this.StockIdeal = auxStockIdeal;
+                        this.StockMinimo = auxStockMinimo;
+                    }
+                }
+            }
         }
         public Producto(string codigo, string descripcion, int stock, int stockIdeal, int stockMinimo, float precio) : base(codigo, descripcion, precio)//--------------------------------------------------------------------------------------------
         {

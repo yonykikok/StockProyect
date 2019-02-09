@@ -28,12 +28,13 @@ namespace CapaDeDatos
             try
             {
                 conexionADB.Open();
-                comando = new SqlCommand("SELECT Code FROM Productos", conexionADB);
+                comando = new SqlCommand("SELECT Code,Description FROM Productos", conexionADB);
                 dataReader = comando.ExecuteReader();
                 while (dataReader.Read())
                 {
                     string auxCode = dataReader["Code"].ToString().ToLower();
-                    if (auxCode == producto.Codigo)
+                    string auxDescription = dataReader["Description"].ToString().ToLower();
+                    if (auxCode == producto.Codigo || auxDescription == producto.Descripcion)
                     {
                         retorno = true;
                         break;
@@ -60,6 +61,12 @@ namespace CapaDeDatos
                 comando.ExecuteNonQuery();
                 conexionADB.Close();
             }
+            else
+            {
+                throw new ProductoRepetidoException("El Procuto ya se encuentra en la lista");
+            }
+
+
         }
 
         public static void Remover(Producto producto)

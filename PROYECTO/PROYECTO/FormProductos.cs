@@ -21,33 +21,15 @@ namespace PROYECTO
         {
             InitializeComponent();
         }
-        private string descripcion;
-        private float precio;
-        public string DescripcionDeProducto
-        {
-            get
-            {
-                return this.descripcion;
-            }
-            set
-            {
-                this.descripcion = value;
-            }
-        }
-        public float PrecioDeProducto
-        {
-            get
-            {
-                return this.precio;
-            }
-            set
-            {
-                this.precio = value;
-            }
-        }
+        private Producto producto;
+        private Carrito carrito;
+
+        public Carrito Carrito { get => carrito; set => carrito = value; }
+        public Producto Producto { get => producto; set => producto = value; }
 
         private void FormProductos_Load(object sender, EventArgs e)
         {
+            Carrito = new Carrito(0, 0, 0, 0);
             CargarDatosAlGridView();
             DesactivarColumasDataGridView();
             if (Program.MockThreads.Last().Name.ToLower() == "ventas")
@@ -138,12 +120,13 @@ namespace PROYECTO
             }
         }
         /// <summary>
-        /// carga los datos de una fila al formulario de los textbox para poder crear uno nuevo, modificarlo o borrarlo.
+        /// carga los datos de una fila, al formulario de los textbox para poder crear un producto nuevo, modificarlo o borrarlo.
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void CargarDatosDelProductoAlFormulario(object sender, DataGridViewCellMouseEventArgs e)
+        private bool ValidarDatosDelProductoSeleccionado(object sender, DataGridViewCellMouseEventArgs e)
         {
+            bool retorno = false;
             try
             {
                 if (!(dataGridViewProductos.Rows[e.RowIndex].Cells["Codigo"].Value is null))
@@ -160,30 +143,7 @@ namespace PROYECTO
                                     {
                                         if (!(dataGridViewProductos.Rows[e.RowIndex].Cells["Indice"].Value is null))
                                         {
-                                            if (panelCargarProducto.Visible == true)//si esta visible quiere decir que estamos en la seccion productos
-                                            {
-                                                textBoxCodigo.Text = dataGridViewProductos.Rows[e.RowIndex].Cells["Codigo"].Value.ToString();
-                                                textBoxDescripcion.Text = dataGridViewProductos.Rows[e.RowIndex].Cells["Descripcion"].Value.ToString();
-                                                textBoxStock.Text = dataGridViewProductos.Rows[e.RowIndex].Cells["Stock"].Value.ToString();
-                                                textBoxStockMinimo.Text = dataGridViewProductos.Rows[e.RowIndex].Cells["StockMinimo"].Value.ToString();
-                                                textBoxStockIdeal.Text = dataGridViewProductos.Rows[e.RowIndex].Cells["StockIdeal"].Value.ToString();
-                                                textBoxPrecio.Text = dataGridViewProductos.Rows[e.RowIndex].Cells["Precio"].Value.ToString();
-                                                textBoxIndice.Text = dataGridViewProductos.Rows[e.RowIndex].Cells["Indice"].Value.ToString();
-                                            }
-                                            else//si no, estamos en la seccion ventas.
-                                            {
-                                                richTextBoxProducto.Text = string.Format("Codigo De Producto: {0}\nDescripcion: {1}\nPrecio: ${2}\n", dataGridViewProductos.Rows[e.RowIndex].Cells["Codigo"].Value.ToString(), dataGridViewProductos.Rows[e.RowIndex].Cells["Descripcion"].Value.ToString(), dataGridViewProductos.Rows[e.RowIndex].Cells["Precio"].Value.ToString());
-                                                DescripcionDeProducto = dataGridViewProductos.Rows[e.RowIndex].Cells["Descripcion"].Value.ToString();
-                                                float auxPrecio;
-                                                if (float.TryParse(dataGridViewProductos.Rows[e.RowIndex].Cells["Precio"].Value.ToString(), out auxPrecio))
-                                                {
-                                                    PrecioDeProducto = auxPrecio;
-                                                }
-                                                else
-                                                {
-                                                    MessageBox.Show("ERRROR EN EL PRECIO");
-                                                }
-                                            }
+                                            retorno = true;
                                         }
                                         else
                                         {
@@ -229,10 +189,38 @@ namespace PROYECTO
                 textBoxStockIdeal.ResetText();
                 textBoxPrecio.ResetText();
             }
+            return retorno;
         }
         private void dataGridViewProductos_RowHeaderMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
         {
-            CargarDatosDelProductoAlFormulario(sender, e);
+            if (ValidarDatosDelProductoSeleccionado(sender, e))
+            {
+                if (panelCargarProducto.Visible == true)//si esta visible quiere decir, que estamos en la seccion productos
+                {
+                    textBoxCodigo.Text = dataGridViewProductos.Rows[e.RowIndex].Cells["Codigo"].Value.ToString();
+                    textBoxDescripcion.Text = dataGridViewProductos.Rows[e.RowIndex].Cells["Descripcion"].Value.ToString();
+                    textBoxStock.Text = dataGridViewProductos.Rows[e.RowIndex].Cells["Stock"].Value.ToString();
+                    textBoxStockMinimo.Text = dataGridViewProductos.Rows[e.RowIndex].Cells["StockMinimo"].Value.ToString();
+                    textBoxStockIdeal.Text = dataGridViewProductos.Rows[e.RowIndex].Cells["StockIdeal"].Value.ToString();
+                    textBoxPrecio.Text = dataGridViewProductos.Rows[e.RowIndex].Cells["Precio"].Value.ToString();
+                    textBoxIndice.Text = dataGridViewProductos.Rows[e.RowIndex].Cells["Indice"].Value.ToString();
+                    Producto = new Producto(textBoxCodigo.Text, textBoxDescripcion.Text, textBoxStock.Text, textBoxStockIdeal.Text, textBoxStockMinimo.Text, textBoxPrecio.Text);
+                }
+                else//si no, estamos en la seccion ventas.
+                {
+                    Producto = new Producto(dataGridViewProductos.Rows[e.RowIndex].Cells["Codigo"].Value.ToString(), dataGridViewProductos.Rows[e.RowIndex].Cells["Descripcion"].Value.ToString(), dataGridViewProductos.Rows[e.RowIndex].Cells["Stock"].Value.ToString(), dataGridViewProductos.Rows[e.RowIndex].Cells["StockIdeal"].Value.ToString(), dataGridViewProductos.Rows[e.RowIndex].Cells["StockMinimo"].Value.ToString(), dataGridViewProductos.Rows[e.RowIndex].Cells["Precio"].Value.ToString());
+                    richTextBoxProducto.Text = string.Format("Codigo De Producto: {0}\nDescripcion: {1}\nPrecio: ${2}\n", Producto.Codigo, Producto.Descripcion, Producto.Precio);
+                    float auxPrecio;
+                    if (float.TryParse(dataGridViewProductos.Rows[e.RowIndex].Cells["Precio"].Value.ToString(), out auxPrecio))
+                    {
+                        Producto.Precio = auxPrecio;
+                    }
+                    else
+                    {
+                        MessageBox.Show("ERRROR EN EL PRECIO");
+                    }
+                }
+            }
         }
         /// <summary>
         /// crea y devuelvo un producto en base a los datos en los textbox. 
@@ -322,14 +310,11 @@ namespace PROYECTO
                 Producto auxProducto = LeerProductoDelFormulario();
                 ProductosDAO.InsertarProducto(auxProducto);
                 CargarDatosAlGridView();
-               /* //sacar esta linea despues 
-                long auxNumero;
-                long.TryParse(textBoxCodigo.Text, out auxNumero);
-                auxNumero++;
-                textBoxCodigo.Text = auxNumero.ToString();
-                textBoxStock.Focus();
-                //----hasta aqui. es para no incrementar el codigo del producto manualmente xD*/
                 textBoxCodigo.Focus();
+            }
+            catch (ProductoRepetidoException exception)
+            {
+                MessageBox.Show(exception.Message);
             }
             catch (ErrorAlComprobarExistenciaDeProducto exception)
             {
@@ -451,7 +436,7 @@ namespace PROYECTO
             this.WindowState = FormWindowState.Minimized;
         }
 
-        private float CalcularTotal(int cantidad, float precio)
+        private float CalcularPrecioTotal(int cantidad, float precio)
         {
             float retorno = 0;
             if (cantidad != 0 && precio != 0)
@@ -464,15 +449,18 @@ namespace PROYECTO
         {
             FormCantidad formCantidad = new FormCantidad();
             formCantidad.ShowDialog();
-            float auxTotal = CalcularTotal(formCantidad.Cantidad, PrecioDeProducto);
+            float auxPrecioTotal = CalcularPrecioTotal(formCantidad.Cantidad, Producto.Precio);
             if (!(formCantidad.Cantidad == 0))
             {
                 listBoxCantidad.Items.Add(formCantidad.Cantidad.ToString());
-                listBoxCarrito.Items.Add(string.Format("{0}", DescripcionDeProducto));
-                if (auxTotal != 0)
+                listBoxCarrito.Items.Add(string.Format("{0}", Producto.Descripcion));
+                if (auxPrecioTotal != 0)
                 {
-                    listBoxPrecio.Items.Add("$" + PrecioDeProducto.ToString());
-                    listBoxPrecioTotal.Items.Add("$" + auxTotal.ToString());
+                    listBoxPrecio.Items.Add("$" + Producto.Precio.ToString());
+                    listBoxPrecioTotal.Items.Add("$" + auxPrecioTotal.ToString());
+                    //armar el carrito
+                    Compra compra = new Compra(Producto.Codigo, producto.Descripcion, producto.Stock, producto.StockIdeal, producto.StockMinimo, producto.Precio, formCantidad.Cantidad);
+                    Carrito.Compras.Add(compra);
                 }
                 else
                 {
@@ -482,39 +470,13 @@ namespace PROYECTO
 
         }
 
-        private List<float> ObternerListaDePreciosFiltrados()
-        {
-            int cantidadDeProductos = listBoxCantidad.Items.Count;
-            string strprecios;
-            List<float> precios = new List<float>();
-            float auxPrecio;
-            if (cantidadDeProductos > 0)
-            {
-                for (int i = 0; i < cantidadDeProductos; i++)
-                {
-                    strprecios = listBoxPrecioTotal.Items[i].ToString().Remove(0, 1);
-                    if (float.TryParse(strprecios, out auxPrecio))
-                    {
-                        precios.Add(auxPrecio);
-                    }
-                }
-            }
-            return precios;
-        }
-        private float CalcularPrecioFinal(List<float> listaPrecios)
-        {
-            float sumaTotal = 0;
-            foreach (float precio in listaPrecios)
-            {
-                sumaTotal += precio;
-            }
-            return sumaTotal;
-        }
         private void buttonFinalizarVenta_Click(object sender, EventArgs e)
         {
-            List<float> listaPrecios = ObternerListaDePreciosFiltrados();
-            float total = CalcularPrecioFinal(listaPrecios);
-
+            richTextBoxProducto.Text = "";
+            foreach (Compra compra in Carrito.Compras)
+            {
+                richTextBoxProducto.Text += "\n" + compra.ToString();
+            }
         }
     }
 }
