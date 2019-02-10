@@ -561,6 +561,7 @@
             this.buttonQuitarVenta.TabIndex = 11;
             this.buttonQuitarVenta.Text = "Quitar";
             this.buttonQuitarVenta.UseVisualStyleBackColor = true;
+            this.buttonQuitarVenta.Click += new System.EventHandler(this.buttonQuitarVenta_Click);
             // 
             // panel9
             // 

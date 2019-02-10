@@ -21,11 +21,13 @@ namespace PROYECTO
         {
             InitializeComponent();
         }
+        private Thread threadVenta;
         private Producto producto;
         private Carrito carrito;
 
         public Carrito Carrito { get => carrito; set => carrito = value; }
         public Producto Producto { get => producto; set => producto = value; }
+        public Thread ThreadVenta { get => threadVenta; set => threadVenta = value; }
 
         private void FormProductos_Load(object sender, EventArgs e)
         {
@@ -470,13 +472,26 @@ namespace PROYECTO
 
         }
 
+        private void IniciarFormVenta()
+        {
+            FormVenta formVenta = new FormVenta();
+            formVenta.Carrito = this.Carrito;
+            formVenta.ShowDialog();
+           // formVenta.BringToFront();
+        }
         private void buttonFinalizarVenta_Click(object sender, EventArgs e)
         {
-            richTextBoxProducto.Text = "";
-            foreach (Compra compra in Carrito.Compras)
+            ThreadVenta = new Thread(IniciarFormVenta);
+            Program.MockThreads.Add(ThreadVenta);
+            if (!(ThreadVenta.IsAlive))
             {
-                richTextBoxProducto.Text += "\n" + compra.ToString();
+                ThreadVenta.Start();
             }
+        }
+
+        private void buttonQuitarVenta_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
