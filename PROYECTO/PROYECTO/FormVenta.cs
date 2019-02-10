@@ -47,6 +47,7 @@ namespace PROYECTO
             if (dia > diasDelMes)
             {
                 dia = dia - diasDelMes;
+                mes++;
             }
             return dia + "/" + mes.ToString() + "/" + anio.ToString();
         }
