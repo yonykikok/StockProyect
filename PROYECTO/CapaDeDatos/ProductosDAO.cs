@@ -22,6 +22,59 @@ namespace CapaDeDatos
             conexionADB.ConnectionString = stringDeConexion;
         }
 
+        public static bool LeerProductoPorCodigo(Producto producto)
+        {
+            bool retorno = false;
+            conexionADB.Open();
+            comando = new SqlCommand("SELECT Code FROM Productos", conexionADB);
+            dataReader = comando.ExecuteReader();
+            while (dataReader.Read())
+            {
+                string auxCodigo = dataReader["Code"].ToString();
+                if (auxCodigo == producto.Codigo)
+                {
+                    retorno = true;
+                    break;
+                }
+            }
+            return retorno;
+        }
+
+        public static Producto ObtenerProductoPorCodigo(string codigo)
+        {
+            Producto retorno = null; ;
+            try
+            {
+                conexionADB.Open();
+                comando = new SqlCommand("SELECT Description,Code,Stock,IdealStock,MinimumStock,Price,Id FROM Productos", conexionADB);
+                dataReader = comando.ExecuteReader();
+                while (dataReader.Read())
+                {
+                    string auxCode = dataReader["Code"].ToString().ToLower();
+                    string auxDescription = dataReader["Description"].ToString().ToLower();
+                    int auxStock = Convert.ToInt32(dataReader["Stock"].ToString());
+                    int auxIdealStock = Convert.ToInt32(dataReader["IdealStock"].ToString());
+                    int auxMinimumStock = Convert.ToInt32(dataReader["MinimumStock"].ToString());
+                    float auxPrice = (float)Convert.ToDouble(dataReader["Price"].ToString());
+                    int auxId = Convert.ToInt32(dataReader["Id"].ToString());
+                    if (auxCode == codigo)
+                    {
+                        retorno = new Producto(auxCode, auxDescription, auxStock, auxIdealStock, auxMinimumStock, auxPrice, auxId);
+                        break;
+                    }
+                }
+                conexionADB.Close();
+            }
+            catch (ErrorAlComprobarExistenciaDeProducto exception)
+            {
+                throw new ErrorAlComprobarExistenciaDeProducto("Error al comprobar la existencia del producto 'Codigo: " + codigo + "'", exception);
+            }
+            catch (Exception exception)
+            {
+
+            }
+            return retorno;
+        }
         public static bool ComprobarExistenciaDeProducto(Producto producto)
         {
             bool retorno = false;

@@ -447,26 +447,43 @@ namespace PROYECTO
             }
             return retorno;
         }
+        private bool VerificarStockDisponible(int cantidadAComprar)
+        {
+            bool retorno = false;
+            if (producto.Stock >= cantidadAComprar)
+            {
+                retorno = true;
+            }
+            return retorno;
+        }
         private void buttonAgregarVenta_Click(object sender, EventArgs e)
         {
             FormCantidad formCantidad = new FormCantidad();
             formCantidad.ShowDialog();
+
             float auxPrecioTotal = CalcularPrecioTotal(formCantidad.Cantidad, Producto.Precio);
             if (!(formCantidad.Cantidad == 0))
             {
-                listBoxCantidad.Items.Add(formCantidad.Cantidad.ToString());
-                listBoxCarrito.Items.Add(string.Format("{0}", Producto.Descripcion));
-                if (auxPrecioTotal != 0)
+                if (VerificarStockDisponible(formCantidad.Cantidad))
                 {
-                    listBoxPrecio.Items.Add("$" + Producto.Precio.ToString());
-                    listBoxPrecioTotal.Items.Add("$" + auxPrecioTotal.ToString());
-                    //armar el carrito
-                    Compra compra = new Compra(Producto.Codigo, producto.Descripcion, producto.Stock, producto.StockIdeal, producto.StockMinimo, producto.Precio, formCantidad.Cantidad);
-                    Carrito.Compras.Add(compra);
+                    listBoxCantidad.Items.Add(formCantidad.Cantidad.ToString());
+                    listBoxCarrito.Items.Add(string.Format("{0}", Producto.Descripcion));
+                    if (auxPrecioTotal != 0)
+                    {
+                        listBoxPrecio.Items.Add("$" + Producto.Precio.ToString());
+                        listBoxPrecioTotal.Items.Add("$" + auxPrecioTotal.ToString());
+                        //armar el carrito
+                        Compra compra = new Compra(Producto.Codigo, producto.Descripcion, producto.Stock, producto.StockIdeal, producto.StockMinimo, producto.Precio, formCantidad.Cantidad);
+                        Carrito.Compras.Add(compra);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Error Precio Total");
+                    }
                 }
                 else
                 {
-                    MessageBox.Show("Error Precio Total");
+                    MessageBox.Show("El stock disponible es de " + producto.Stock + " no podemos vender mas de eso.");
                 }
             }
 
@@ -477,7 +494,7 @@ namespace PROYECTO
             FormVenta formVenta = new FormVenta();
             formVenta.Carrito = this.Carrito;
             formVenta.ShowDialog();
-           // formVenta.BringToFront();
+            // formVenta.BringToFront();
         }
         private void buttonFinalizarVenta_Click(object sender, EventArgs e)
         {
