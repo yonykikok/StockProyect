@@ -456,35 +456,118 @@ namespace PROYECTO
             }
             return retorno;
         }
+
+        private void MostrarDatosDeCompraEnLosListBox(Carrito carrito)
+        {
+            listBoxCantidad.Items.Clear();
+            listBoxCarrito.Items.Clear();
+            listBoxPrecio.Items.Clear();
+            listBoxPrecioTotal.Items.Clear();
+            foreach (Compra compra in Carrito.Compras)
+            {
+                listBoxCantidad.Items.Add(compra.Cantidad.ToString());
+                listBoxCarrito.Items.Add(string.Format("{0}", compra.Descripcion));
+                listBoxPrecio.Items.Add("$" + compra.Precio.ToString());
+                listBoxPrecioTotal.Items.Add("$" + (compra.Cantidad * compra.Precio).ToString());
+            }
+        }
+        private bool ValidarDatosDeLaCompra(FormCantidad formCantidad)
+        {
+            bool retorno = false;
+            if (!(producto is null))//si tiene seleccionado un producto, entra.
+            {
+                if (!(formCantidad.Cantidad == 0))
+                {
+                    if (VerificarStockDisponible(formCantidad.Cantidad))
+                    {
+                        return true;
+                    }
+                    else
+                    {
+                        MessageBox.Show("El stock disponible es de " + producto.Stock + " no podemos vender mas de eso.");
+                    }
+                }
+            }
+            else
+            {
+                MessageBox.Show("Debe Seleccionar un producto para poder agregarlo.");
+            }
+            return retorno;
+        }
+        private bool ValidarProductoRepetido(string codigoDelProducto)
+        {
+            bool retorno = false;
+            foreach (Compra compra in Carrito.Compras)
+            {
+                if (compra.Codigo == codigoDelProducto)
+                {
+                    retorno = true;
+                }
+            }
+            return retorno;
+        }
+        private int CalcularCantidadActual(string codigoDelProducto, int cantidad)
+        {
+            int retorno = cantidad;
+            foreach (Compra compra in Carrito.Compras)
+            {
+                if (compra.Codigo == codigoDelProducto)
+                {
+                    retorno = compra.Cantidad + cantidad;
+                    compra.Cantidad = retorno;
+                }
+            }
+            return retorno;
+        }
         private void buttonAgregarVenta_Click(object sender, EventArgs e)
         {
             FormCantidad formCantidad = new FormCantidad();
             formCantidad.ShowDialog();
-
-            float auxPrecioTotal = CalcularPrecioTotal(formCantidad.Cantidad, Producto.Precio);
-            if (!(formCantidad.Cantidad == 0))
+            float auxTotal = 0;
+            try
             {
-                if (VerificarStockDisponible(formCantidad.Cantidad))
+                if (ValidarDatosDeLaCompra(formCantidad))
                 {
-                    listBoxCantidad.Items.Add(formCantidad.Cantidad.ToString());
-                    listBoxCarrito.Items.Add(string.Format("{0}", Producto.Descripcion));
-                    if (auxPrecioTotal != 0)
+                    //armar el carrito
+                    Compra compra = new Compra(Producto.Codigo, producto.Descripcion, producto.Stock, producto.StockIdeal, producto.StockMinimo, producto.Precio, formCantidad.Cantidad);
+                    if (Carrito.Compras.Count > 0)
                     {
-                        listBoxPrecio.Items.Add("$" + Producto.Precio.ToString());
-                        listBoxPrecioTotal.Items.Add("$" + auxPrecioTotal.ToString());
-                        //armar el carrito
-                        Compra compra = new Compra(Producto.Codigo, producto.Descripcion, producto.Stock, producto.StockIdeal, producto.StockMinimo, producto.Precio, formCantidad.Cantidad);
-                        Carrito.Compras.Add(compra);
+                        if (ValidarProductoRepetido(Producto.Codigo))//verifica si este producto ya esta en la lista de compras
+                        {
+                            int cantidadActual = CalcularCantidadActual(Producto.Codigo, formCantidad.Cantidad);
+                            if (VerificarStockDisponible(cantidadActual))
+                            {
+                                compra.Cantidad = cantidadActual;
+                                auxTotal = CalcularPrecioTotal(cantidadActual, compra.Precio);
+                                MostrarDatosDeCompraEnLosListBox(Carrito);
+                            }
+                            else
+                            {
+                                throw new StockInvalidException("No hay stock suficiente para este pedido");
+                            }
+                        }
+                        else
+                        {
+                            Carrito.Compras.Add(compra);
+                            auxTotal = CalcularPrecioTotal(compra.Cantidad, compra.Precio);
+                            MostrarDatosDeCompraEnLosListBox(Carrito);
+                        }
                     }
                     else
                     {
-                        MessageBox.Show("Error Precio Total");
+                        Carrito.Compras.Add(compra);
+                        auxTotal = CalcularPrecioTotal(compra.Cantidad, compra.Precio);
+                        MostrarDatosDeCompraEnLosListBox(Carrito);
                     }
                 }
-                else
-                {
-                    MessageBox.Show("El stock disponible es de " + producto.Stock + " no podemos vender mas de eso.");
-                }
+            }
+            catch (StockInvalidException exception)
+            {
+                MessageBox.Show(exception.Message);
+            }
+            catch
+            {
+
             }
 
         }
@@ -494,7 +577,6 @@ namespace PROYECTO
             FormVenta formVenta = new FormVenta();
             formVenta.Carrito = this.Carrito;
             formVenta.ShowDialog();
-            // formVenta.BringToFront();
         }
         private void buttonFinalizarVenta_Click(object sender, EventArgs e)
         {
@@ -504,11 +586,8 @@ namespace PROYECTO
             {
                 ThreadVenta.Start();
             }
+            this.Close();
         }
 
-        private void buttonQuitarVenta_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }

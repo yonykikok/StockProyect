@@ -100,8 +100,9 @@ namespace PROYECTO
                 {
                     Producto auxProducto = ProductosDAO.ObtenerProductoPorCodigo(compra.Codigo);
                     int id = auxProducto.Id;
-                    auxProducto.Stock -= compra.Cantidad;
-                    if (auxProducto.Stock >= 0)
+                    int auxStock = auxProducto.Stock - compra.Cantidad;
+                    auxProducto.Stock =auxStock;
+                    if (auxStock >= 0)
                     {
                         ProductosDAO.ModificarProducto(auxProducto);
                     }
@@ -127,6 +128,7 @@ namespace PROYECTO
             {
                 descontarStockDeLosProductosVendidos();
                 MessageBox.Show("Venta Finaliza Con Exito");
+                this.Close();
             }
             catch(StockInvalidException exception)
             {
