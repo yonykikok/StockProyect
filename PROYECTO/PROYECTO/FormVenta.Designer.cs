@@ -35,7 +35,6 @@
             this.PanelDown = new System.Windows.Forms.FlowLayoutPanel();
             this.buttonCerrar = new System.Windows.Forms.PictureBox();
             this.buttonMinimizar = new System.Windows.Forms.PictureBox();
-            this.textBoxIVA = new System.Windows.Forms.TextBox();
             this.textBoxSubTotal = new System.Windows.Forms.TextBox();
             this.panelResumenDeCompras = new System.Windows.Forms.Panel();
             this.dataGridViewProductos = new System.Windows.Forms.DataGridView();
@@ -65,14 +64,21 @@
             this.labelNombreDeLaEmpresa = new System.Windows.Forms.Label();
             this.pictureBoxLogo = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.panel8 = new System.Windows.Forms.Panel();
+            this.buttonAplicarIVA = new System.Windows.Forms.Button();
             this.textBoxTotal = new System.Windows.Forms.TextBox();
             this.labelTotal = new System.Windows.Forms.Label();
+            this.textBoxIVA = new System.Windows.Forms.TextBox();
             this.labelTerminos = new System.Windows.Forms.Label();
             this.panelTerminos = new System.Windows.Forms.Panel();
             this.panel9 = new System.Windows.Forms.Panel();
             this.buttonConfirmarVenta = new System.Windows.Forms.Button();
             this.panel5 = new System.Windows.Forms.Panel();
             this.buttonCancelar = new System.Windows.Forms.Button();
+            this.panel11 = new System.Windows.Forms.Panel();
+            this.buttonClienteExistente = new System.Windows.Forms.Button();
+            this.panel7 = new System.Windows.Forms.Panel();
+            this.buttonClienteNuevo = new System.Windows.Forms.Button();
             this.PanelDown.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.buttonCerrar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.buttonMinimizar)).BeginInit();
@@ -121,14 +127,6 @@
             this.buttonMinimizar.TabIndex = 5;
             this.buttonMinimizar.TabStop = false;
             this.buttonMinimizar.Click += new System.EventHandler(this.buttonMinimizar_Click);
-            // 
-            // textBoxIVA
-            // 
-            this.textBoxIVA.Location = new System.Drawing.Point(152, 45);
-            this.textBoxIVA.Name = "textBoxIVA";
-            this.textBoxIVA.ReadOnly = true;
-            this.textBoxIVA.Size = new System.Drawing.Size(172, 20);
-            this.textBoxIVA.TabIndex = 3;
             // 
             // textBoxSubTotal
             // 
@@ -446,6 +444,8 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.panel8);
+            this.panel1.Controls.Add(this.buttonAplicarIVA);
             this.panel1.Controls.Add(this.textBoxTotal);
             this.panel1.Controls.Add(this.labelTotal);
             this.panel1.Controls.Add(this.label1);
@@ -456,6 +456,31 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(332, 127);
             this.panel1.TabIndex = 12;
+            // 
+            // panel8
+            // 
+            this.panel8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
+            this.panel8.Location = new System.Drawing.Point(70, 42);
+            this.panel8.Name = "panel8";
+            this.panel8.Size = new System.Drawing.Size(5, 24);
+            this.panel8.TabIndex = 30;
+            // 
+            // buttonAplicarIVA
+            // 
+            this.buttonAplicarIVA.FlatAppearance.BorderSize = 0;
+            this.buttonAplicarIVA.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
+            this.buttonAplicarIVA.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonAplicarIVA.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonAplicarIVA.ForeColor = System.Drawing.Color.White;
+            this.buttonAplicarIVA.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonAplicarIVA.Location = new System.Drawing.Point(75, 42);
+            this.buttonAplicarIVA.Name = "buttonAplicarIVA";
+            this.buttonAplicarIVA.Size = new System.Drawing.Size(65, 24);
+            this.buttonAplicarIVA.TabIndex = 29;
+            this.buttonAplicarIVA.Text = "Aplicar";
+            this.buttonAplicarIVA.TextAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.buttonAplicarIVA.UseVisualStyleBackColor = true;
+            this.buttonAplicarIVA.Click += new System.EventHandler(this.buttonAplicarIVA_Click);
             // 
             // textBoxTotal
             // 
@@ -475,6 +500,15 @@
             this.labelTotal.Size = new System.Drawing.Size(51, 24);
             this.labelTotal.TabIndex = 10;
             this.labelTotal.Text = "Total";
+            // 
+            // textBoxIVA
+            // 
+            this.textBoxIVA.Location = new System.Drawing.Point(152, 45);
+            this.textBoxIVA.Name = "textBoxIVA";
+            this.textBoxIVA.ReadOnly = true;
+            this.textBoxIVA.Size = new System.Drawing.Size(172, 20);
+            this.textBoxIVA.TabIndex = 3;
+            this.textBoxIVA.Text = "21%  (No Aplicado)";
             // 
             // labelTerminos
             // 
@@ -543,12 +577,64 @@
             this.buttonCancelar.UseVisualStyleBackColor = true;
             this.buttonCancelar.Click += new System.EventHandler(this.buttonCancelar_Click);
             // 
+            // panel11
+            // 
+            this.panel11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
+            this.panel11.Location = new System.Drawing.Point(494, 167);
+            this.panel11.Name = "panel11";
+            this.panel11.Size = new System.Drawing.Size(5, 32);
+            this.panel11.TabIndex = 39;
+            // 
+            // buttonClienteExistente
+            // 
+            this.buttonClienteExistente.FlatAppearance.BorderSize = 0;
+            this.buttonClienteExistente.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
+            this.buttonClienteExistente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonClienteExistente.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonClienteExistente.ForeColor = System.Drawing.Color.White;
+            this.buttonClienteExistente.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonClienteExistente.Location = new System.Drawing.Point(497, 167);
+            this.buttonClienteExistente.Name = "buttonClienteExistente";
+            this.buttonClienteExistente.Size = new System.Drawing.Size(164, 32);
+            this.buttonClienteExistente.TabIndex = 38;
+            this.buttonClienteExistente.Text = "Cliente Existente";
+            this.buttonClienteExistente.UseVisualStyleBackColor = true;
+            this.buttonClienteExistente.Click += new System.EventHandler(this.buttonClienteExistente_Click);
+            // 
+            // panel7
+            // 
+            this.panel7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
+            this.panel7.Location = new System.Drawing.Point(494, 201);
+            this.panel7.Name = "panel7";
+            this.panel7.Size = new System.Drawing.Size(5, 32);
+            this.panel7.TabIndex = 41;
+            // 
+            // buttonClienteNuevo
+            // 
+            this.buttonClienteNuevo.FlatAppearance.BorderSize = 0;
+            this.buttonClienteNuevo.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
+            this.buttonClienteNuevo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonClienteNuevo.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonClienteNuevo.ForeColor = System.Drawing.Color.White;
+            this.buttonClienteNuevo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonClienteNuevo.Location = new System.Drawing.Point(497, 201);
+            this.buttonClienteNuevo.Name = "buttonClienteNuevo";
+            this.buttonClienteNuevo.Size = new System.Drawing.Size(164, 32);
+            this.buttonClienteNuevo.TabIndex = 40;
+            this.buttonClienteNuevo.Text = "Cliente Nuevo";
+            this.buttonClienteNuevo.UseVisualStyleBackColor = true;
+            this.buttonClienteNuevo.Click += new System.EventHandler(this.buttonClienteNuevo_Click);
+            // 
             // FormVenta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
             this.ClientSize = new System.Drawing.Size(1232, 689);
+            this.Controls.Add(this.panel7);
+            this.Controls.Add(this.buttonClienteNuevo);
+            this.Controls.Add(this.panel11);
+            this.Controls.Add(this.buttonClienteExistente);
             this.Controls.Add(this.panel5);
             this.Controls.Add(this.buttonCancelar);
             this.Controls.Add(this.panel9);
@@ -591,7 +677,6 @@
         private System.Windows.Forms.FlowLayoutPanel PanelDown;
         private System.Windows.Forms.PictureBox buttonCerrar;
         private System.Windows.Forms.PictureBox buttonMinimizar;
-        private System.Windows.Forms.TextBox textBoxIVA;
         private System.Windows.Forms.TextBox textBoxSubTotal;
         private System.Windows.Forms.Panel panelResumenDeCompras;
         private System.Windows.Forms.DataGridView dataGridViewProductos;
@@ -629,5 +714,12 @@
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Button buttonCancelar;
         private System.Windows.Forms.Panel panel6;
+        private System.Windows.Forms.Panel panel11;
+        private System.Windows.Forms.Button buttonClienteExistente;
+        private System.Windows.Forms.Panel panel7;
+        private System.Windows.Forms.Button buttonClienteNuevo;
+        private System.Windows.Forms.TextBox textBoxIVA;
+        private System.Windows.Forms.Panel panel8;
+        private System.Windows.Forms.Button buttonAplicarIVA;
     }
 }

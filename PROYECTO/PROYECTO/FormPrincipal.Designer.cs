@@ -356,6 +356,7 @@
             this.buttonClientes.TabIndex = 5;
             this.buttonClientes.Text = "Clientes";
             this.buttonClientes.UseVisualStyleBackColor = true;
+            this.buttonClientes.Click += new System.EventHandler(this.buttonClientes_Click);
             // 
             // buttonPagos
             // 

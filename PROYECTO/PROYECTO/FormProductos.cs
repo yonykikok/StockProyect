@@ -21,13 +21,16 @@ namespace PROYECTO
         {
             InitializeComponent();
         }
+        #region CAMPOS
         private Thread threadVenta;
         private Producto producto;
         private Carrito carrito;
-
+        #endregion
+        #region PROPIEDADES
         public Carrito Carrito { get => carrito; set => carrito = value; }
         public Producto Producto { get => producto; set => producto = value; }
         public Thread ThreadVenta { get => threadVenta; set => threadVenta = value; }
+        #endregion
 
         private void FormProductos_Load(object sender, EventArgs e)
         {
@@ -193,6 +196,11 @@ namespace PROYECTO
             }
             return retorno;
         }
+        /// <summary>
+        /// Al Hacerle Doble click en el HEADER de una linea, carga los datos de la misma a los textbox.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void dataGridViewProductos_RowHeaderMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
         {
             if (ValidarDatosDelProductoSeleccionado(sender, e))
@@ -437,7 +445,12 @@ namespace PROYECTO
         {
             this.WindowState = FormWindowState.Minimized;
         }
-
+        /// <summary>
+        /// Calcula el costo final de un producto basandose en la cantidad x el precio.
+        /// </summary>
+        /// <param name="cantidad"></param>
+        /// <param name="precio"></param>
+        /// <returns></returns>
         private float CalcularPrecioTotal(int cantidad, float precio)
         {
             float retorno = 0;
@@ -447,6 +460,11 @@ namespace PROYECTO
             }
             return retorno;
         }
+        /// <summary>
+        /// verifica si hay stock disponible para la cantidad de productos a comprar
+        /// </summary>
+        /// <param name="cantidadAComprar"></param>
+        /// <returns></returns>
         private bool VerificarStockDisponible(int cantidadAComprar)
         {
             bool retorno = false;
@@ -456,7 +474,10 @@ namespace PROYECTO
             }
             return retorno;
         }
-
+        /// <summary>
+        /// Limpia Los ListBox y recorre el carrito de compras, agregando los detalles de las compras a los listBox
+        /// </summary>
+        /// <param name="carrito"></param>
         private void MostrarDatosDeCompraEnLosListBox(Carrito carrito)
         {
             listBoxCantidad.Items.Clear();
@@ -471,6 +492,11 @@ namespace PROYECTO
                 listBoxPrecioTotal.Items.Add("$" + (compra.Cantidad * compra.Precio).ToString());
             }
         }
+        /// <summary>
+        /// valida los datos y verifica si el stock disponible es menor al exigido en la compra.
+        /// </summary>
+        /// <param name="formCantidad"></param>
+        /// <returns></returns>
         private bool ValidarDatosDeLaCompra(FormCantidad formCantidad)
         {
             bool retorno = false;
@@ -494,6 +520,11 @@ namespace PROYECTO
             }
             return retorno;
         }
+        /// <summary>
+        /// verifica si ese producto ya esta en el carrito de compras. si lo esta, suma las cantidades y modifica la compra existente.
+        /// </summary>
+        /// <param name="codigoDelProducto"></param>
+        /// <returns>retorna true en caso de que este repetido</returns>
         private bool ValidarProductoRepetido(string codigoDelProducto)
         {
             bool retorno = false;
@@ -506,6 +537,12 @@ namespace PROYECTO
             }
             return retorno;
         }
+        /// <summary>
+        /// si un producto esta repetido, calcula cual es la cantidad a comprar entre todos los productos iguales
+        /// </summary>
+        /// <param name="codigoDelProducto"></param>
+        /// <param name="cantidad"></param>
+        /// <returns></returns>
         private int CalcularCantidadActual(string codigoDelProducto, int cantidad)
         {
             int retorno = cantidad;
@@ -514,11 +551,19 @@ namespace PROYECTO
                 if (compra.Codigo == codigoDelProducto)
                 {
                     retorno = compra.Cantidad + cantidad;
-                    compra.Cantidad = retorno;
+                    if (retorno <= compra.Stock)
+                    {
+                        compra.Cantidad = retorno;
+                    }
                 }
             }
             return retorno;
         }
+        /// <summary>
+        /// agrega una compra al carrito de compras. y lo mustra en los listBox
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void buttonAgregarVenta_Click(object sender, EventArgs e)
         {
             FormCantidad formCantidad = new FormCantidad();
@@ -578,6 +623,11 @@ namespace PROYECTO
             formVenta.Carrito = this.Carrito;
             formVenta.ShowDialog();
         }
+        /// <summary>
+        /// finaliza la lista de compras y abre el formFinalizarVenta para la facturacion final
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void buttonFinalizarVenta_Click(object sender, EventArgs e)
         {
             ThreadVenta = new Thread(IniciarFormVenta);
@@ -588,6 +638,26 @@ namespace PROYECTO
             }
             this.Close();
         }
+        /// <summary>
+        /// alerta al usuario de los productos con stock basico. (naranja= stock minimo) (rojo= stock por debajo del minimo)
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void dataGridViewProductos_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            if (dataGridViewProductos.Columns[e.ColumnIndex].Name == "Stock")
+            {
+                if (Convert.ToInt32(e.Value) < Convert.ToInt32(dataGridViewProductos.Rows[e.RowIndex].Cells["StockMinimo"].Value))
+                {
+                    e.CellStyle.BackColor = Color.Red;
+                }
+                else if (Convert.ToInt32(e.Value) == Convert.ToInt32(dataGridViewProductos.Rows[e.RowIndex].Cells["StockMinimo"].Value))
+                {
+                    e.CellStyle.BackColor = Color.Orange;
+                }
+            }
+        }
 
+       
     }
 }

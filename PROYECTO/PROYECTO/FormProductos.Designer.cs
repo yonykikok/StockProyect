@@ -145,7 +145,8 @@
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dataGridViewProductos.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridViewProductos.Size = new System.Drawing.Size(836, 475);
-            this.dataGridViewProductos.TabIndex = 1;
+            this.dataGridViewProductos.TabIndex = 10;
+            this.dataGridViewProductos.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dataGridViewProductos_CellFormatting);
             this.dataGridViewProductos.RowHeaderMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridViewProductos_RowHeaderMouseDoubleClick);
             // 
             // Indice
@@ -726,7 +727,7 @@
             this.textBoxBuscador.Multiline = true;
             this.textBoxBuscador.Name = "textBoxBuscador";
             this.textBoxBuscador.Size = new System.Drawing.Size(190, 25);
-            this.textBoxBuscador.TabIndex = 0;
+            this.textBoxBuscador.TabIndex = 1;
             this.textBoxBuscador.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxBuscador_KeyPress);
             // 
             // panel2

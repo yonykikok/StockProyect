@@ -17,14 +17,36 @@ namespace PROYECTO
     public partial class FormVenta : Form
     {
         private Carrito carrito;
+        private Thread threadClientes;
+        private const string aplicado = "APLICADO";
+        private const string sinAplicar = "SIN APLICAR";
+        private string estadoIVA= "SIN APLICAR";
 
         public Carrito Carrito { get => carrito; set => carrito = value; }
+        public Thread ThreadClientes { get => threadClientes; set => threadClientes = value; }
+        public static string ivaAplicado => aplicado;
+        public static string ivaSinAplicar => sinAplicar;
+        public string EstadoIVA { get => estadoIVA; set => estadoIVA = value; }
 
         public FormVenta()
         {
             InitializeComponent();
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void FormVenta_Load(object sender, EventArgs e)
+        {
+            CargarDatosAlGridView();
+            labelFecha.Text = ObtenerFechaDeHoy();
+            labelFechaVencimiento.Text = ObtenerFechaDeVencimiento();
+            textBoxSubTotal.Text = Carrito.CalcularSubTotal().ToString();
+            textBoxTotal.Text = Carrito.CalcularSubTotal().ToString();
+            labelTerminos.Text = "“Esta factura es un título valor y se aplica, en lo pertinente, las normas relativas a la letra de cambio”. Art.5, Ley 1231 de 2008, Art. 779 C. de Comercio. \nEn caso de mora se causará el interés autorizado por la Ley. La aceptación dada por una persona distinta al comprador implica que dicha persona esta\nautorizada expresamente por él para firmar, confesar la deuda y obligarlo. Recibí de conformidad y a satisfacción la mercancía de que trata esta factura\ny acepto el valor estipulado en la misma. ";
+        }
         private void buttonMinimizar_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Minimized;
@@ -69,20 +91,7 @@ namespace PROYECTO
                 dataGridViewProductos.Rows.Add(compra.Cantidad, compra.Descripcion, compra.Precio);
             }
         }
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void FormVenta_Load(object sender, EventArgs e)
-        {
-            // Thread threadFecha = new Thread
-            CargarDatosAlGridView();
-            labelFecha.Text = ObtenerFechaDeHoy();
-            labelFechaVencimiento.Text = ObtenerFechaDeVencimiento();
-            textBoxTotal.Text = Carrito.CalcularCostoFinal().ToString();
-            labelTerminos.Text = "“Esta factura es un título valor y se aplica, en lo pertinente, las normas relativas a la letra de cambio”. Art.5, Ley 1231 de 2008, Art. 779 C. de Comercio. \nEn caso de mora se causará el interés autorizado por la Ley. La aceptación dada por una persona distinta al comprador implica que dicha persona esta\nautorizada expresamente por él para firmar, confesar la deuda y obligarlo. Recibí de conformidad y a satisfacción la mercancía de que trata esta factura\ny acepto el valor estipulado en la misma. ";
-        }
+
 
         private void buttonCancelar_Click(object sender, EventArgs e)
         {
@@ -101,7 +110,7 @@ namespace PROYECTO
                     Producto auxProducto = ProductosDAO.ObtenerProductoPorCodigo(compra.Codigo);
                     int id = auxProducto.Id;
                     int auxStock = auxProducto.Stock - compra.Cantidad;
-                    auxProducto.Stock =auxStock;
+                    auxProducto.Stock = auxStock;
                     if (auxStock >= 0)
                     {
                         ProductosDAO.ModificarProducto(auxProducto);
@@ -127,12 +136,57 @@ namespace PROYECTO
             try
             {
                 descontarStockDeLosProductosVendidos();
+                ClientesLog.GuardarLogHistorialClientes(this.Carrito,textBoxIVA.Text);
                 MessageBox.Show("Venta Finaliza Con Exito");
                 this.Close();
             }
-            catch(StockInvalidException exception)
+            catch (StockInvalidException exception)
             {
                 MessageBox.Show(exception.Message);
+            }
+        }
+
+        private void buttonClienteExistente_Click(object sender, EventArgs e)
+        {
+            ThreadClientes = new Thread(IniciarFormClientes);
+            Program.MockThreads.Add(ThreadClientes);
+            if (!(this.ThreadClientes.IsAlive))
+            {
+                ThreadClientes.Name = "ClienteExistente";
+                ThreadClientes.Start();
+            }
+            Thread threadClientes = new Thread(IniciarFormClientes);
+        }
+        private void IniciarFormClientes()
+        {
+            FormClientes formClientes = new FormClientes();
+            formClientes.ShowDialog();
+        }
+        private void buttonClienteNuevo_Click(object sender, EventArgs e)
+        {
+            ThreadClientes = new Thread(IniciarFormClientes);
+            Program.MockThreads.Add(ThreadClientes);
+            if (!(this.ThreadClientes.IsAlive))
+            {
+                ThreadClientes.Name = "ClienteNuevo";
+                ThreadClientes.Start();
+            }
+            Thread threadClientes = new Thread(IniciarFormClientes);
+        }
+
+        private void buttonAplicarIVA_Click(object sender, EventArgs e)
+        {
+            if (EstadoIVA==ivaSinAplicar)
+            {
+                EstadoIVA = ivaAplicado;
+                textBoxTotal.Text = (Carrito.CalcularSubTotal()* 1.21).ToString();
+                textBoxIVA.Text = "21% (Aplicado)";
+            }
+            else
+            {
+                EstadoIVA = ivaSinAplicar;
+                textBoxTotal.Text = Carrito.CalcularSubTotal().ToString();
+                textBoxIVA.Text = "21% (No Aplicado)";
             }
         }
     }

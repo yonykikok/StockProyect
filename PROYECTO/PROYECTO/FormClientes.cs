@@ -34,5 +34,36 @@ namespace PROYECTO
             this.Close();
         }
 
+        private void FormClientes_Load(object sender, EventArgs e)
+        {
+           
+            if (Program.MockThreads.Last().Name.ToLower() == "clienteexistente")
+            {
+                panelClienteExistente.Visible = true;
+                panelClienteNuevo.Visible = false;                
+            }
+            else if(Program.MockThreads.Last().Name.ToLower() == "clientes")
+            {
+                panelClienteExistente.Visible = false;
+                panelClienteNuevo.Visible = false;
+                panelAdministraror.Visible = true;
+                panelHistorial.Visible = true;
+            }
+            else
+            {
+                panelClienteExistente.Visible = false;
+                panelClienteNuevo.Visible = true;
+            }
+        }
+
+        private void buttonCancelar_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void buttonAgregarCliente_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

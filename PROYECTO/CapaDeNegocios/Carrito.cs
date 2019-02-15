@@ -16,7 +16,7 @@ namespace CapaDeNegocios
         {
             Compras = new List<Compra>();
         }
-        public Carrito(int cantidad, int descuento, float subTotal, float total) :this()
+        public Carrito(int cantidad, int descuento, float subTotal, float total) : this()
         {
             Descuento = descuento;
             SubTotal = subTotal;
@@ -29,14 +29,33 @@ namespace CapaDeNegocios
         public int Descuento { get => descuento; set => descuento = value; }
 
 
-        public float CalcularCostoFinal()
+        public float CalcularSubTotal()
         {
             float retorno = 0;
-            foreach(Compra compra in Compras)
+            foreach (Compra compra in Compras)
             {
                 retorno += compra.Precio * compra.Cantidad;
             }
             return retorno;
+        }
+        public string GenerarLogDeCompra(string impuestoIVA)
+        {
+            StringBuilder retorno = new StringBuilder();
+
+            foreach (Compra compra in this.Compras)
+            {
+                string auxCostoFinal;
+                if (impuestoIVA == "21% (Aplicado)")
+                {
+                    auxCostoFinal = ((compra.Precio * compra.Cantidad) * 1.21).ToString();
+                }
+                else
+                {
+                    auxCostoFinal = (compra.Precio * compra.Cantidad).ToString();
+                }
+                retorno.AppendFormat("{0};{1};{2};{3};{4};{5}\n", DateTime.Now.ToString(), compra.Codigo, compra.Descripcion, compra.Cantidad, compra.Precio, auxCostoFinal);
+            }
+            return retorno.ToString();
         }
 
     }

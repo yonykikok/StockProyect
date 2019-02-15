@@ -16,9 +16,10 @@ namespace PROYECTO
 {
     public partial class FormPrincipal : Form
     {
-        static Thread threadEmpleados;
-        static Thread threadProductos;
-        static Thread threadVentas;
+        private static Thread threadEmpleados;
+        private static Thread threadProductos;
+        private static Thread threadVentas;
+        private static Thread threadClientes;
         Empleado empleado;
         public Thread ThreadVentas
         {
@@ -41,6 +42,8 @@ namespace PROYECTO
                 return threadProductos;
             }
         }
+
+        public static Thread ThreadClientes { get => threadClientes; set => threadClientes = value; }
 
         public FormPrincipal()
         {
@@ -158,6 +161,12 @@ namespace PROYECTO
             FormProductos formProductos = new FormProductos();
             formProductos.ShowDialog();
         }
+
+        private void IniciarFormClientes()
+        {
+            FormClientes  formCliente= new FormClientes();
+            formCliente.ShowDialog();
+        }
         /// <summary>
         /// crea un nuevo hilo para abrir una nueva ventana de form de empleados
         /// </summary>
@@ -209,6 +218,17 @@ namespace PROYECTO
             {
                 ThreadVentas.Name = "ventas";
                 threadVentas.Start();
+            }
+        }
+
+        private void buttonClientes_Click(object sender, EventArgs e)
+        {
+            threadClientes = new Thread(IniciarFormClientes);
+            Program.MockThreads.Add(threadClientes);
+            if (!(threadClientes.IsAlive))
+            {
+                threadClientes.Name = "Clientes";
+                threadClientes.Start();
             }
         }
     }
