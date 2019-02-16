@@ -21,7 +21,9 @@ namespace PROYECTO
         private const string aplicado = "APLICADO";
         private const string sinAplicar = "SIN APLICAR";
         private string estadoIVA= "SIN APLICAR";
+        private static Cliente clienteSeleccionado;
 
+        public static Cliente ClienteSeleccionado { get => clienteSeleccionado; set => clienteSeleccionado = value; }
         public Carrito Carrito { get => carrito; set => carrito = value; }
         public Thread ThreadClientes { get => threadClientes; set => threadClientes = value; }
         public static string ivaAplicado => aplicado;
@@ -161,6 +163,28 @@ namespace PROYECTO
         {
             FormClientes formClientes = new FormClientes();
             formClientes.ShowDialog();
+            if (this.textBoxDireccion.InvokeRequired)///Buscar Explicacion del PORQUE de estas lineas. 
+            {
+                this.textBoxDireccion.BeginInvoke((MethodInvoker)delegate ()
+                {
+                    this.textBoxNombreDelCliente.Text = ClienteSeleccionado.LastName + " " + ClienteSeleccionado.Name;
+                    this.textBoxDireccion.Text = ClienteSeleccionado.Adress;
+                    this.textBoxTelefono.Text = ClienteSeleccionado.Numero;
+                    textBoxNombreDelCliente.Refresh();
+                    textBoxDireccion.Refresh();
+                    textBoxTelefono.Refresh();
+                });
+            }
+            else
+            {
+                this.textBoxNombreDelCliente.Text = ClienteSeleccionado.LastName + " " + ClienteSeleccionado.Name;
+                this.textBoxDireccion.Text = ClienteSeleccionado.Adress;
+                this.textBoxTelefono.Text = ClienteSeleccionado.Numero;
+                textBoxNombreDelCliente.Refresh();
+                textBoxDireccion.Refresh();
+                textBoxTelefono.Refresh();
+            }
+            
         }
         private void buttonClienteNuevo_Click(object sender, EventArgs e)
         {

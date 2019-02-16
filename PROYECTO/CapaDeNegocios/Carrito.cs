@@ -38,6 +38,7 @@ namespace CapaDeNegocios
             }
             return retorno;
         }
+
         public string GenerarLogDeCompra(string impuestoIVA)
         {
             StringBuilder retorno = new StringBuilder();

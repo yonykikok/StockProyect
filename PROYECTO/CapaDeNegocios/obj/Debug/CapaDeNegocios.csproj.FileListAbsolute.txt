@@ -36,7 +36,7 @@ C:\Users\screw\Desktop\MultitasProyect\StockProyect\PROYECTO\CapaDeNegocios\obj\
 C:\Users\screw\Desktop\MultitasProyect\StockProyect\PROYECTO\CapaDeNegocios\obj\Debug\CapaDeNegocios.pdb
 C:\Users\Haedo Jonathan\Desktop\StockProyect\PROYECTO\CapaDeNegocios\bin\Debug\CapaDeNegocios.dll
 C:\Users\Haedo Jonathan\Desktop\StockProyect\PROYECTO\CapaDeNegocios\bin\Debug\CapaDeNegocios.pdb
-C:\Users\Haedo Jonathan\Desktop\StockProyect\PROYECTO\CapaDeNegocios\obj\Debug\CapaDeNegocios.csprojAssemblyReference.cache
 C:\Users\Haedo Jonathan\Desktop\StockProyect\PROYECTO\CapaDeNegocios\obj\Debug\CapaDeNegocios.csproj.CoreCompileInputs.cache
 C:\Users\Haedo Jonathan\Desktop\StockProyect\PROYECTO\CapaDeNegocios\obj\Debug\CapaDeNegocios.dll
 C:\Users\Haedo Jonathan\Desktop\StockProyect\PROYECTO\CapaDeNegocios\obj\Debug\CapaDeNegocios.pdb
+C:\Users\Haedo Jonathan\Desktop\StockProyect\PROYECTO\CapaDeNegocios\obj\Debug\CapaDeNegocios.csprojAssemblyReference.cache

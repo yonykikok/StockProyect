@@ -14,13 +14,18 @@ namespace CapaDeDatos
         private static SqlCommand comando;
         private static SqlDataReader dataReader;
 
+        static ClientesDAO()// establece la conexion con SQL 
+        {
+            conexionADB = new SqlConnection();
+            conexionADB.ConnectionString = stringDeConexion;
+        }
         public static List<Cliente> LeerUsuarios()
         {
             List<Cliente> clientes = new List<Cliente>();
             try
             {
                 conexionADB.Open();
-                comando = new SqlCommand("SELECT Usuario,Password,Name,LastName,Dni,Adress,MailAdress,UserType,Id FROM Usuarios", conexionADB);
+                comando = new SqlCommand("SELECT Name,LastName,Dni,Adress,Dni,Adress,MailAdress,Number,Id FROM Clientes", conexionADB);
                 dataReader = comando.ExecuteReader();
                 Cliente cliente = null;
                 while (dataReader.Read())
@@ -34,7 +39,7 @@ namespace CapaDeDatos
                     string auxNumero = dataReader["Number"].ToString();
                     Int32.TryParse(dataReader["Id"].ToString(), out id);
 
-                    cliente = new Cliente(auxNombre,auxApellido,auxDni,auxDireccion, auxMail, auxNumero);
+                    cliente = new Cliente(auxNombre,auxApellido,auxDni,auxDireccion, auxMail, auxNumero,id);
                     clientes.Add(cliente);
                 }
             }

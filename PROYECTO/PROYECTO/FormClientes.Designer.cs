@@ -29,11 +29,11 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormClientes));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panelBarraSuperior = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pictureBoxCerrar = new System.Windows.Forms.PictureBox();
             this.buttonMinimizar = new System.Windows.Forms.PictureBox();
             this.pictureBoxClose = new System.Windows.Forms.PictureBox();
             this.pictureBoxMinimizar = new System.Windows.Forms.PictureBox();
@@ -43,6 +43,7 @@
             this.Apellido = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Dni = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Direccion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Telefono = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.buttonVentas = new System.Windows.Forms.Button();
             this.panelVentas = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -69,40 +70,41 @@
             this.label4 = new System.Windows.Forms.Label();
             this.textBoxTelefono = new System.Windows.Forms.TextBox();
             this.panelDatosDelCliente = new System.Windows.Forms.Panel();
-            this.panelClienteExistente = new System.Windows.Forms.Panel();
-            this.panel10 = new System.Windows.Forms.Panel();
-            this.buttonSeleccionar = new System.Windows.Forms.Button();
-            this.panel11 = new System.Windows.Forms.Panel();
-            this.buttonCancelar = new System.Windows.Forms.Button();
-            this.buttonCancelar2 = new System.Windows.Forms.Button();
-            this.panel8 = new System.Windows.Forms.Panel();
-            this.buttonAgregarCliente = new System.Windows.Forms.Button();
-            this.panelPagos = new System.Windows.Forms.Panel();
-            this.panelClienteNuevo = new System.Windows.Forms.Panel();
-            this.panelHistorial = new System.Windows.Forms.Panel();
+            this.textBoxIndice = new System.Windows.Forms.TextBox();
             this.panelAdministraror = new System.Windows.Forms.Panel();
             this.panel13 = new System.Windows.Forms.Panel();
             this.buttonAgregar2 = new System.Windows.Forms.Button();
             this.panel14 = new System.Windows.Forms.Panel();
             this.buttonModificar = new System.Windows.Forms.Button();
+            this.panelClienteNuevo = new System.Windows.Forms.Panel();
+            this.panelPagos = new System.Windows.Forms.Panel();
+            this.buttonAgregarCliente = new System.Windows.Forms.Button();
+            this.panel8 = new System.Windows.Forms.Panel();
+            this.buttonCancelar2 = new System.Windows.Forms.Button();
+            this.panelClienteExistente = new System.Windows.Forms.Panel();
+            this.panel10 = new System.Windows.Forms.Panel();
+            this.buttonSeleccionar = new System.Windows.Forms.Button();
+            this.panel11 = new System.Windows.Forms.Panel();
+            this.buttonCancelar = new System.Windows.Forms.Button();
+            this.panelHistorial = new System.Windows.Forms.Panel();
             this.panelBarraSuperior.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCerrar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.buttonMinimizar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxClose)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMinimizar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewClientes)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxImagenDelCliente)).BeginInit();
             this.panelDatosDelCliente.SuspendLayout();
-            this.panelClienteExistente.SuspendLayout();
-            this.panelClienteNuevo.SuspendLayout();
-            this.panelHistorial.SuspendLayout();
             this.panelAdministraror.SuspendLayout();
+            this.panelClienteNuevo.SuspendLayout();
+            this.panelClienteExistente.SuspendLayout();
+            this.panelHistorial.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelBarraSuperior
             // 
             this.panelBarraSuperior.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
-            this.panelBarraSuperior.Controls.Add(this.pictureBox1);
+            this.panelBarraSuperior.Controls.Add(this.pictureBoxCerrar);
             this.panelBarraSuperior.Controls.Add(this.buttonMinimizar);
             this.panelBarraSuperior.Controls.Add(this.pictureBoxClose);
             this.panelBarraSuperior.Controls.Add(this.pictureBoxMinimizar);
@@ -113,17 +115,17 @@
             this.panelBarraSuperior.TabIndex = 5;
             this.panelBarraSuperior.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelBarraSuperior_MouseDown);
             // 
-            // pictureBox1
+            // pictureBoxCerrar
             // 
-            this.pictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(953, 4);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(15, 15);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 4;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            this.pictureBoxCerrar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
+            this.pictureBoxCerrar.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxCerrar.Image")));
+            this.pictureBoxCerrar.Location = new System.Drawing.Point(953, 4);
+            this.pictureBoxCerrar.Name = "pictureBoxCerrar";
+            this.pictureBoxCerrar.Size = new System.Drawing.Size(15, 15);
+            this.pictureBoxCerrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBoxCerrar.TabIndex = 4;
+            this.pictureBoxCerrar.TabStop = false;
+            this.pictureBoxCerrar.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // buttonMinimizar
             // 
@@ -161,43 +163,45 @@
             // 
             this.dataGridViewClientes.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
             this.dataGridViewClientes.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Raised;
-            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
-            dataGridViewCellStyle10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle10.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
-            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewClientes.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewClientes.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridViewClientes.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Indice,
             this.Nombre,
             this.Apellido,
             this.Dni,
-            this.Direccion});
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
-            dataGridViewCellStyle11.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle11.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
-            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridViewClientes.DefaultCellStyle = dataGridViewCellStyle11;
+            this.Direccion,
+            this.Telefono});
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridViewClientes.DefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridViewClientes.Dock = System.Windows.Forms.DockStyle.Top;
             this.dataGridViewClientes.EnableHeadersVisualStyles = false;
             this.dataGridViewClientes.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
             this.dataGridViewClientes.Location = new System.Drawing.Point(0, 25);
             this.dataGridViewClientes.Name = "dataGridViewClientes";
-            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
-            dataGridViewCellStyle12.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle12.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
-            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewClientes.RowHeadersDefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewClientes.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridViewClientes.Size = new System.Drawing.Size(690, 289);
             this.dataGridViewClientes.TabIndex = 7;
+            this.dataGridViewClientes.RowHeaderMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridViewClientes_RowHeaderMouseDoubleClick);
             // 
             // Indice
             // 
@@ -205,6 +209,7 @@
             this.Indice.HeaderText = "Indice";
             this.Indice.Name = "Indice";
             this.Indice.ReadOnly = true;
+            this.Indice.Visible = false;
             // 
             // Nombre
             // 
@@ -235,6 +240,12 @@
             this.Direccion.HeaderText = "Direccion";
             this.Direccion.Name = "Direccion";
             this.Direccion.ReadOnly = true;
+            // 
+            // Telefono
+            // 
+            this.Telefono.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Telefono.HeaderText = "Telefono";
+            this.Telefono.Name = "Telefono";
             // 
             // buttonVentas
             // 
@@ -498,6 +509,7 @@
             // panelDatosDelCliente
             // 
             this.panelDatosDelCliente.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panelDatosDelCliente.Controls.Add(this.textBoxIndice);
             this.panelDatosDelCliente.Controls.Add(this.panelAdministraror);
             this.panelDatosDelCliente.Controls.Add(this.panelClienteNuevo);
             this.panelDatosDelCliente.Controls.Add(this.textBoxTelefono);
@@ -520,146 +532,13 @@
             this.panelDatosDelCliente.Size = new System.Drawing.Size(281, 425);
             this.panelDatosDelCliente.TabIndex = 6;
             // 
-            // panelClienteExistente
+            // textBoxIndice
             // 
-            this.panelClienteExistente.Controls.Add(this.panel10);
-            this.panelClienteExistente.Controls.Add(this.buttonSeleccionar);
-            this.panelClienteExistente.Controls.Add(this.panel11);
-            this.panelClienteExistente.Controls.Add(this.buttonCancelar);
-            this.panelClienteExistente.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panelClienteExistente.Location = new System.Drawing.Point(0, 344);
-            this.panelClienteExistente.Name = "panelClienteExistente";
-            this.panelClienteExistente.Size = new System.Drawing.Size(279, 79);
-            this.panelClienteExistente.TabIndex = 39;
-            // 
-            // panel10
-            // 
-            this.panel10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
-            this.panel10.Location = new System.Drawing.Point(43, 23);
-            this.panel10.Name = "panel10";
-            this.panel10.Size = new System.Drawing.Size(5, 32);
-            this.panel10.TabIndex = 34;
-            // 
-            // buttonSeleccionar
-            // 
-            this.buttonSeleccionar.FlatAppearance.BorderSize = 0;
-            this.buttonSeleccionar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
-            this.buttonSeleccionar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonSeleccionar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonSeleccionar.ForeColor = System.Drawing.Color.White;
-            this.buttonSeleccionar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonSeleccionar.Location = new System.Drawing.Point(46, 23);
-            this.buttonSeleccionar.Name = "buttonSeleccionar";
-            this.buttonSeleccionar.Size = new System.Drawing.Size(96, 32);
-            this.buttonSeleccionar.TabIndex = 32;
-            this.buttonSeleccionar.Text = "Seleccionar";
-            this.buttonSeleccionar.UseVisualStyleBackColor = true;
-            // 
-            // panel11
-            // 
-            this.panel11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
-            this.panel11.Location = new System.Drawing.Point(142, 23);
-            this.panel11.Name = "panel11";
-            this.panel11.Size = new System.Drawing.Size(5, 32);
-            this.panel11.TabIndex = 35;
-            // 
-            // buttonCancelar
-            // 
-            this.buttonCancelar.FlatAppearance.BorderSize = 0;
-            this.buttonCancelar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
-            this.buttonCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonCancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonCancelar.ForeColor = System.Drawing.Color.White;
-            this.buttonCancelar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonCancelar.Location = new System.Drawing.Point(145, 23);
-            this.buttonCancelar.Name = "buttonCancelar";
-            this.buttonCancelar.Size = new System.Drawing.Size(96, 32);
-            this.buttonCancelar.TabIndex = 33;
-            this.buttonCancelar.Text = "Cancelar";
-            this.buttonCancelar.UseVisualStyleBackColor = true;
-            this.buttonCancelar.Click += new System.EventHandler(this.buttonCancelar_Click);
-            // 
-            // buttonCancelar2
-            // 
-            this.buttonCancelar2.FlatAppearance.BorderSize = 0;
-            this.buttonCancelar2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
-            this.buttonCancelar2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonCancelar2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonCancelar2.ForeColor = System.Drawing.Color.White;
-            this.buttonCancelar2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonCancelar2.Location = new System.Drawing.Point(145, 23);
-            this.buttonCancelar2.Name = "buttonCancelar2";
-            this.buttonCancelar2.Size = new System.Drawing.Size(96, 32);
-            this.buttonCancelar2.TabIndex = 33;
-            this.buttonCancelar2.Text = "Cancelar";
-            this.buttonCancelar2.UseVisualStyleBackColor = true;
-            this.buttonCancelar2.Click += new System.EventHandler(this.buttonCancelar_Click);
-            // 
-            // panel8
-            // 
-            this.panel8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
-            this.panel8.Location = new System.Drawing.Point(142, 23);
-            this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(5, 32);
-            this.panel8.TabIndex = 35;
-            // 
-            // buttonAgregarCliente
-            // 
-            this.buttonAgregarCliente.FlatAppearance.BorderSize = 0;
-            this.buttonAgregarCliente.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
-            this.buttonAgregarCliente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonAgregarCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonAgregarCliente.ForeColor = System.Drawing.Color.White;
-            this.buttonAgregarCliente.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonAgregarCliente.Location = new System.Drawing.Point(46, 23);
-            this.buttonAgregarCliente.Name = "buttonAgregarCliente";
-            this.buttonAgregarCliente.Size = new System.Drawing.Size(96, 32);
-            this.buttonAgregarCliente.TabIndex = 32;
-            this.buttonAgregarCliente.Text = "Agregar";
-            this.buttonAgregarCliente.UseVisualStyleBackColor = true;
-            this.buttonAgregarCliente.Click += new System.EventHandler(this.buttonAgregarCliente_Click);
-            // 
-            // panelPagos
-            // 
-            this.panelPagos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
-            this.panelPagos.Location = new System.Drawing.Point(43, 23);
-            this.panelPagos.Name = "panelPagos";
-            this.panelPagos.Size = new System.Drawing.Size(5, 32);
-            this.panelPagos.TabIndex = 34;
-            // 
-            // panelClienteNuevo
-            // 
-            this.panelClienteNuevo.Controls.Add(this.panelPagos);
-            this.panelClienteNuevo.Controls.Add(this.buttonAgregarCliente);
-            this.panelClienteNuevo.Controls.Add(this.panel8);
-            this.panelClienteNuevo.Controls.Add(this.buttonCancelar2);
-            this.panelClienteNuevo.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panelClienteNuevo.Location = new System.Drawing.Point(0, 265);
-            this.panelClienteNuevo.Name = "panelClienteNuevo";
-            this.panelClienteNuevo.Size = new System.Drawing.Size(279, 79);
-            this.panelClienteNuevo.TabIndex = 38;
-            this.panelClienteNuevo.Click += new System.EventHandler(this.buttonCancelar_Click);
-            // 
-            // panelHistorial
-            // 
-            this.panelHistorial.Controls.Add(this.panelVentas);
-            this.panelHistorial.Controls.Add(this.panel5);
-            this.panelHistorial.Controls.Add(this.buttonVentas);
-            this.panelHistorial.Controls.Add(this.button3);
-            this.panelHistorial.Controls.Add(this.button1);
-            this.panelHistorial.Controls.Add(this.panel6);
-            this.panelHistorial.Controls.Add(this.panel2);
-            this.panelHistorial.Controls.Add(this.button4);
-            this.panelHistorial.Controls.Add(this.button2);
-            this.panelHistorial.Controls.Add(this.panel7);
-            this.panelHistorial.Controls.Add(this.panel4);
-            this.panelHistorial.Controls.Add(this.button5);
-            this.panelHistorial.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panelHistorial.Location = new System.Drawing.Point(0, 314);
-            this.panelHistorial.Name = "panelHistorial";
-            this.panelHistorial.Size = new System.Drawing.Size(690, 136);
-            this.panelHistorial.TabIndex = 20;
-            this.panelHistorial.Visible = false;
+            this.textBoxIndice.Location = new System.Drawing.Point(64, 166);
+            this.textBoxIndice.Name = "textBoxIndice";
+            this.textBoxIndice.Size = new System.Drawing.Size(205, 20);
+            this.textBoxIndice.TabIndex = 40;
+            this.textBoxIndice.Visible = false;
             // 
             // panelAdministraror
             // 
@@ -696,7 +575,6 @@
             this.buttonAgregar2.TabIndex = 32;
             this.buttonAgregar2.Text = "Agregar";
             this.buttonAgregar2.UseVisualStyleBackColor = true;
-            this.buttonAgregar2.Click += new System.EventHandler(this.buttonAgregarCliente_Click);
             // 
             // panel14
             // 
@@ -721,6 +599,147 @@
             this.buttonModificar.Text = "Modificar";
             this.buttonModificar.UseVisualStyleBackColor = true;
             // 
+            // panelClienteNuevo
+            // 
+            this.panelClienteNuevo.Controls.Add(this.panelPagos);
+            this.panelClienteNuevo.Controls.Add(this.buttonAgregarCliente);
+            this.panelClienteNuevo.Controls.Add(this.panel8);
+            this.panelClienteNuevo.Controls.Add(this.buttonCancelar2);
+            this.panelClienteNuevo.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panelClienteNuevo.Location = new System.Drawing.Point(0, 265);
+            this.panelClienteNuevo.Name = "panelClienteNuevo";
+            this.panelClienteNuevo.Size = new System.Drawing.Size(279, 79);
+            this.panelClienteNuevo.TabIndex = 38;
+            this.panelClienteNuevo.Click += new System.EventHandler(this.buttonCancelar_Click);
+            // 
+            // panelPagos
+            // 
+            this.panelPagos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
+            this.panelPagos.Location = new System.Drawing.Point(43, 23);
+            this.panelPagos.Name = "panelPagos";
+            this.panelPagos.Size = new System.Drawing.Size(5, 32);
+            this.panelPagos.TabIndex = 34;
+            // 
+            // buttonAgregarCliente
+            // 
+            this.buttonAgregarCliente.FlatAppearance.BorderSize = 0;
+            this.buttonAgregarCliente.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
+            this.buttonAgregarCliente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonAgregarCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonAgregarCliente.ForeColor = System.Drawing.Color.White;
+            this.buttonAgregarCliente.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonAgregarCliente.Location = new System.Drawing.Point(46, 23);
+            this.buttonAgregarCliente.Name = "buttonAgregarCliente";
+            this.buttonAgregarCliente.Size = new System.Drawing.Size(96, 32);
+            this.buttonAgregarCliente.TabIndex = 32;
+            this.buttonAgregarCliente.Text = "Agregar";
+            this.buttonAgregarCliente.UseVisualStyleBackColor = true;
+            // 
+            // panel8
+            // 
+            this.panel8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
+            this.panel8.Location = new System.Drawing.Point(142, 23);
+            this.panel8.Name = "panel8";
+            this.panel8.Size = new System.Drawing.Size(5, 32);
+            this.panel8.TabIndex = 35;
+            // 
+            // buttonCancelar2
+            // 
+            this.buttonCancelar2.FlatAppearance.BorderSize = 0;
+            this.buttonCancelar2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
+            this.buttonCancelar2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonCancelar2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonCancelar2.ForeColor = System.Drawing.Color.White;
+            this.buttonCancelar2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonCancelar2.Location = new System.Drawing.Point(145, 23);
+            this.buttonCancelar2.Name = "buttonCancelar2";
+            this.buttonCancelar2.Size = new System.Drawing.Size(96, 32);
+            this.buttonCancelar2.TabIndex = 33;
+            this.buttonCancelar2.Text = "Cancelar";
+            this.buttonCancelar2.UseVisualStyleBackColor = true;
+            this.buttonCancelar2.Click += new System.EventHandler(this.buttonCancelar_Click);
+            // 
+            // panelClienteExistente
+            // 
+            this.panelClienteExistente.Controls.Add(this.panel10);
+            this.panelClienteExistente.Controls.Add(this.buttonSeleccionar);
+            this.panelClienteExistente.Controls.Add(this.panel11);
+            this.panelClienteExistente.Controls.Add(this.buttonCancelar);
+            this.panelClienteExistente.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panelClienteExistente.Location = new System.Drawing.Point(0, 344);
+            this.panelClienteExistente.Name = "panelClienteExistente";
+            this.panelClienteExistente.Size = new System.Drawing.Size(279, 79);
+            this.panelClienteExistente.TabIndex = 39;
+            // 
+            // panel10
+            // 
+            this.panel10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
+            this.panel10.Location = new System.Drawing.Point(43, 23);
+            this.panel10.Name = "panel10";
+            this.panel10.Size = new System.Drawing.Size(5, 32);
+            this.panel10.TabIndex = 34;
+            // 
+            // buttonSeleccionar
+            // 
+            this.buttonSeleccionar.FlatAppearance.BorderSize = 0;
+            this.buttonSeleccionar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
+            this.buttonSeleccionar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonSeleccionar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonSeleccionar.ForeColor = System.Drawing.Color.White;
+            this.buttonSeleccionar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonSeleccionar.Location = new System.Drawing.Point(46, 23);
+            this.buttonSeleccionar.Name = "buttonSeleccionar";
+            this.buttonSeleccionar.Size = new System.Drawing.Size(96, 32);
+            this.buttonSeleccionar.TabIndex = 32;
+            this.buttonSeleccionar.Text = "Seleccionar";
+            this.buttonSeleccionar.UseVisualStyleBackColor = true;
+            this.buttonSeleccionar.Click += new System.EventHandler(this.buttonSeleccionar_Click);
+            // 
+            // panel11
+            // 
+            this.panel11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
+            this.panel11.Location = new System.Drawing.Point(142, 23);
+            this.panel11.Name = "panel11";
+            this.panel11.Size = new System.Drawing.Size(5, 32);
+            this.panel11.TabIndex = 35;
+            // 
+            // buttonCancelar
+            // 
+            this.buttonCancelar.FlatAppearance.BorderSize = 0;
+            this.buttonCancelar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
+            this.buttonCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonCancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonCancelar.ForeColor = System.Drawing.Color.White;
+            this.buttonCancelar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonCancelar.Location = new System.Drawing.Point(145, 23);
+            this.buttonCancelar.Name = "buttonCancelar";
+            this.buttonCancelar.Size = new System.Drawing.Size(96, 32);
+            this.buttonCancelar.TabIndex = 33;
+            this.buttonCancelar.Text = "Cancelar";
+            this.buttonCancelar.UseVisualStyleBackColor = true;
+            this.buttonCancelar.Click += new System.EventHandler(this.buttonCancelar_Click);
+            // 
+            // panelHistorial
+            // 
+            this.panelHistorial.Controls.Add(this.panelVentas);
+            this.panelHistorial.Controls.Add(this.panel5);
+            this.panelHistorial.Controls.Add(this.buttonVentas);
+            this.panelHistorial.Controls.Add(this.button3);
+            this.panelHistorial.Controls.Add(this.button1);
+            this.panelHistorial.Controls.Add(this.panel6);
+            this.panelHistorial.Controls.Add(this.panel2);
+            this.panelHistorial.Controls.Add(this.button4);
+            this.panelHistorial.Controls.Add(this.button2);
+            this.panelHistorial.Controls.Add(this.panel7);
+            this.panelHistorial.Controls.Add(this.panel4);
+            this.panelHistorial.Controls.Add(this.button5);
+            this.panelHistorial.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panelHistorial.Location = new System.Drawing.Point(0, 314);
+            this.panelHistorial.Name = "panelHistorial";
+            this.panelHistorial.Size = new System.Drawing.Size(690, 136);
+            this.panelHistorial.TabIndex = 20;
+            this.panelHistorial.Visible = false;
+            // 
             // FormClientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -737,7 +756,7 @@
             this.Text = "FormClientes";
             this.Load += new System.EventHandler(this.FormClientes_Load);
             this.panelBarraSuperior.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCerrar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.buttonMinimizar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxClose)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMinimizar)).EndInit();
@@ -745,10 +764,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxImagenDelCliente)).EndInit();
             this.panelDatosDelCliente.ResumeLayout(false);
             this.panelDatosDelCliente.PerformLayout();
-            this.panelClienteExistente.ResumeLayout(false);
-            this.panelClienteNuevo.ResumeLayout(false);
-            this.panelHistorial.ResumeLayout(false);
             this.panelAdministraror.ResumeLayout(false);
+            this.panelClienteNuevo.ResumeLayout(false);
+            this.panelClienteExistente.ResumeLayout(false);
+            this.panelHistorial.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -758,14 +777,9 @@
         private System.Windows.Forms.Panel panelBarraSuperior;
         private System.Windows.Forms.PictureBox pictureBoxClose;
         private System.Windows.Forms.PictureBox pictureBoxMinimizar;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pictureBoxCerrar;
         private System.Windows.Forms.PictureBox buttonMinimizar;
         private System.Windows.Forms.DataGridView dataGridViewClientes;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Indice;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Apellido;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Dni;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Direccion;
         private System.Windows.Forms.Button buttonVentas;
         private System.Windows.Forms.Panel panelVentas;
         private System.Windows.Forms.Panel panel2;
@@ -808,5 +822,12 @@
         private System.Windows.Forms.Button buttonAgregar2;
         private System.Windows.Forms.Panel panel14;
         private System.Windows.Forms.Button buttonModificar;
+        private System.Windows.Forms.TextBox textBoxIndice;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Indice;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Apellido;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Dni;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Direccion;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Telefono;
     }
 }
