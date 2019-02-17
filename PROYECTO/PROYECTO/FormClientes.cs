@@ -24,6 +24,11 @@ namespace PROYECTO
         {
             SeleccionarSector();
             CargarDatosAlDataGridView();
+            if(Program.EmpleadoProgram.Type != UserType.admin)
+            {
+                panelDatosDelCliente.Visible = false;
+               
+            }
 
         }
         /// <summary>

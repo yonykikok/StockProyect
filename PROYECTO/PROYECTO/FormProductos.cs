@@ -343,7 +343,7 @@ namespace PROYECTO
         private void buttonSeleccionarImagen_Click(object sender, EventArgs e)
         {
             OpenFileDialog openFile = new OpenFileDialog();
-            openFile.ShowDialog();//falta termina y nose como xDD
+            openFile.ShowDialog();//falta termina y nose como xDD            
         }
         private void IniciarOpenFile()
         {

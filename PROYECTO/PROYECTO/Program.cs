@@ -49,7 +49,7 @@ namespace PROYECTO
             Application.SetCompatibleTextRenderingDefault(false);
            // Application.Run(new FormLogin());
          //   if (!(EmpleadoProgram.User is "Usuario"))
-                empleadoProgram = new Empleado("yonykikok", "40132526", "Name", "LastName", "Dni", "Adress", "MailAdress", UserType.admin);
+                empleadoProgram = new Empleado("yonykikok", "40132526", "Name", "LastName", "Dni", "Adress", "MailAdress", UserType.user);
             Application.Run(new FormPrincipal(empleadoProgram));
             // Application.Run(new FormClientes());
         }
