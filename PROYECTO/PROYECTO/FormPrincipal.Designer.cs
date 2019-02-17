@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormPrincipal));
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             this.ButtonMinimizar = new System.Windows.Forms.Panel();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.ButtonMaximizar = new System.Windows.Forms.PictureBox();
@@ -59,6 +61,7 @@
             this.buttonProductos = new System.Windows.Forms.Button();
             this.pictureBoxLogo = new System.Windows.Forms.PictureBox();
             this.panel8 = new System.Windows.Forms.Panel();
+            this.chartEstadisticaGlobal = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.ButtonMinimizar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ButtonMaximizar)).BeginInit();
@@ -66,6 +69,8 @@
             this.panelMenuVertical.SuspendLayout();
             this.panelSubMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogo)).BeginInit();
+            this.panel8.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.chartEstadisticaGlobal)).BeginInit();
             this.SuspendLayout();
             // 
             // ButtonMinimizar
@@ -166,7 +171,7 @@
             this.buttonEmpleados.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.buttonEmpleados.Location = new System.Drawing.Point(4, 134);
             this.buttonEmpleados.Name = "buttonEmpleados";
-            this.buttonEmpleados.Size = new System.Drawing.Size(217, 32);
+            this.buttonEmpleados.Size = new System.Drawing.Size(216, 32);
             this.buttonEmpleados.TabIndex = 9;
             this.buttonEmpleados.Text = "Empleados";
             this.buttonEmpleados.UseVisualStyleBackColor = true;
@@ -195,7 +200,7 @@
             this.buttonReportesPagos.ForeColor = System.Drawing.Color.White;
             this.buttonReportesPagos.Image = ((System.Drawing.Image)(resources.GetObject("buttonReportesPagos.Image")));
             this.buttonReportesPagos.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonReportesPagos.Location = new System.Drawing.Point(4, 72);
+            this.buttonReportesPagos.Location = new System.Drawing.Point(5, 72);
             this.buttonReportesPagos.Name = "buttonReportesPagos";
             this.buttonReportesPagos.Size = new System.Drawing.Size(174, 32);
             this.buttonReportesPagos.TabIndex = 11;
@@ -212,7 +217,7 @@
             this.buttonReportesCompras.ForeColor = System.Drawing.Color.White;
             this.buttonReportesCompras.Image = ((System.Drawing.Image)(resources.GetObject("buttonReportesCompras.Image")));
             this.buttonReportesCompras.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonReportesCompras.Location = new System.Drawing.Point(4, 34);
+            this.buttonReportesCompras.Location = new System.Drawing.Point(5, 36);
             this.buttonReportesCompras.Name = "buttonReportesCompras";
             this.buttonReportesCompras.Size = new System.Drawing.Size(174, 32);
             this.buttonReportesCompras.TabIndex = 10;
@@ -223,7 +228,7 @@
             // panelSubPagos
             // 
             this.panelSubPagos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
-            this.panelSubPagos.Location = new System.Drawing.Point(0, 76);
+            this.panelSubPagos.Location = new System.Drawing.Point(0, 72);
             this.panelSubPagos.Name = "panelSubPagos";
             this.panelSubPagos.Size = new System.Drawing.Size(5, 32);
             this.panelSubPagos.TabIndex = 4;
@@ -231,7 +236,7 @@
             // panelSubCompras
             // 
             this.panelSubCompras.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
-            this.panelSubCompras.Location = new System.Drawing.Point(0, 38);
+            this.panelSubCompras.Location = new System.Drawing.Point(0, 36);
             this.panelSubCompras.Name = "panelSubCompras";
             this.panelSubCompras.Size = new System.Drawing.Size(5, 32);
             this.panelSubCompras.TabIndex = 4;
@@ -286,9 +291,9 @@
             this.buttonUsuario.ForeColor = System.Drawing.Color.White;
             this.buttonUsuario.Image = ((System.Drawing.Image)(resources.GetObject("buttonUsuario.Image")));
             this.buttonUsuario.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonUsuario.Location = new System.Drawing.Point(4, 324);
+            this.buttonUsuario.Location = new System.Drawing.Point(5, 324);
             this.buttonUsuario.Name = "buttonUsuario";
-            this.buttonUsuario.Size = new System.Drawing.Size(217, 32);
+            this.buttonUsuario.Size = new System.Drawing.Size(215, 32);
             this.buttonUsuario.TabIndex = 7;
             this.buttonUsuario.Text = "Usuarios";
             this.buttonUsuario.UseVisualStyleBackColor = true;
@@ -302,9 +307,9 @@
             this.buttonEnvios.ForeColor = System.Drawing.Color.White;
             this.buttonEnvios.Image = ((System.Drawing.Image)(resources.GetObject("buttonEnvios.Image")));
             this.buttonEnvios.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonEnvios.Location = new System.Drawing.Point(4, 286);
+            this.buttonEnvios.Location = new System.Drawing.Point(5, 286);
             this.buttonEnvios.Name = "buttonEnvios";
-            this.buttonEnvios.Size = new System.Drawing.Size(217, 32);
+            this.buttonEnvios.Size = new System.Drawing.Size(215, 32);
             this.buttonEnvios.TabIndex = 6;
             this.buttonEnvios.Text = "Envios";
             this.buttonEnvios.UseVisualStyleBackColor = true;
@@ -328,7 +333,7 @@
             // panelVentas
             // 
             this.panelVentas.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
-            this.panelVentas.Location = new System.Drawing.Point(1, 248);
+            this.panelVentas.Location = new System.Drawing.Point(0, 248);
             this.panelVentas.Name = "panelVentas";
             this.panelVentas.Size = new System.Drawing.Size(5, 32);
             this.panelVentas.TabIndex = 2;
@@ -369,7 +374,7 @@
             this.buttonPagos.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.buttonPagos.Location = new System.Drawing.Point(4, 362);
             this.buttonPagos.Name = "buttonPagos";
-            this.buttonPagos.Size = new System.Drawing.Size(217, 32);
+            this.buttonPagos.Size = new System.Drawing.Size(216, 32);
             this.buttonPagos.TabIndex = 4;
             this.buttonPagos.Text = "Pagos";
             this.buttonPagos.UseVisualStyleBackColor = true;
@@ -401,7 +406,7 @@
             this.buttonVentas.ForeColor = System.Drawing.Color.White;
             this.buttonVentas.Image = ((System.Drawing.Image)(resources.GetObject("buttonVentas.Image")));
             this.buttonVentas.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonVentas.Location = new System.Drawing.Point(4, 248);
+            this.buttonVentas.Location = new System.Drawing.Point(3, 248);
             this.buttonVentas.Name = "buttonVentas";
             this.buttonVentas.Size = new System.Drawing.Size(217, 32);
             this.buttonVentas.TabIndex = 2;
@@ -448,11 +453,27 @@
             // panel8
             // 
             this.panel8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
-            this.panel8.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel8.Location = new System.Drawing.Point(0, 0);
+            this.panel8.Controls.Add(this.chartEstadisticaGlobal);
+            this.panel8.Location = new System.Drawing.Point(220, 35);
             this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(1300, 650);
+            this.panel8.Size = new System.Drawing.Size(1080, 615);
             this.panel8.TabIndex = 2;
+            // 
+            // chartEstadisticaGlobal
+            // 
+            this.chartEstadisticaGlobal.BorderlineColor = System.Drawing.Color.Empty;
+            this.chartEstadisticaGlobal.BorderSkin.BackImageWrapMode = System.Windows.Forms.DataVisualization.Charting.ChartImageWrapMode.TileFlipXY;
+            chartArea1.Name = "ChartArea1";
+            this.chartEstadisticaGlobal.ChartAreas.Add(chartArea1);
+            this.chartEstadisticaGlobal.Dock = System.Windows.Forms.DockStyle.Bottom;
+            legend1.Name = "Legend1";
+            this.chartEstadisticaGlobal.Legends.Add(legend1);
+            this.chartEstadisticaGlobal.Location = new System.Drawing.Point(0, 186);
+            this.chartEstadisticaGlobal.Name = "chartEstadisticaGlobal";
+            this.chartEstadisticaGlobal.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Excel;
+            this.chartEstadisticaGlobal.Size = new System.Drawing.Size(1080, 429);
+            this.chartEstadisticaGlobal.TabIndex = 0;
+            this.chartEstadisticaGlobal.Text = "Estadisticas De Venta";
             // 
             // FormPrincipal
             // 
@@ -475,6 +496,8 @@
             this.panelMenuVertical.ResumeLayout(false);
             this.panelSubMenu.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogo)).EndInit();
+            this.panel8.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.chartEstadisticaGlobal)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -511,6 +534,7 @@
         private System.Windows.Forms.Panel panel8;
         private System.Windows.Forms.Panel panelEmpleados;
         private System.Windows.Forms.Button buttonEmpleados;
+        private System.Windows.Forms.DataVisualization.Charting.Chart chartEstadisticaGlobal;
     }
 }
 

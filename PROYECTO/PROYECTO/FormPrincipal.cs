@@ -11,6 +11,7 @@ using System.Runtime.InteropServices;
 using CapaDeNegocios;
 using CapaDeDatos;
 using System.Threading;
+using System.Windows.Forms.DataVisualization.Charting;
 
 namespace PROYECTO
 {
@@ -21,6 +22,7 @@ namespace PROYECTO
         private static Thread threadVentas;
         private static Thread threadClientes;
         Empleado empleado;
+
         public Thread ThreadVentas
         {
             get
@@ -45,6 +47,21 @@ namespace PROYECTO
 
         public static Thread ThreadClientes { get => threadClientes; set => threadClientes = value; }
 
+        private void FormPrincipal_Load(object sender, EventArgs e)
+        {
+            PrivilegioUsuarios();
+
+
+            //------probando
+            List<LogVenta> listaLogs= ClientesLog.LeerHistorialDeVentas();
+            foreach(LogVenta log in listaLogs)
+            {
+                Series serie = chartEstadisticaGlobal.Series.Add(log.Descripcion);//agrega las series.
+                serie.Label = log.Cantidad.ToString();//los muestra como label a la derecha del grafico
+                serie.Points.Add(log.Cantidad);//establece las cantidades o porcentajes
+            }
+
+        }
         public FormPrincipal()
         {
             InitializeComponent();
@@ -141,10 +158,7 @@ namespace PROYECTO
                 panelReportes.Visible = false;
             }
         }
-        private void FormPrincipal_Load(object sender, EventArgs e)
-        {
-            PrivilegioUsuarios();
-        }
+        
         /// <summary>
         /// inicializa el form empleados
         /// </summary>
@@ -231,5 +245,6 @@ namespace PROYECTO
                 threadClientes.Start();
             }
         }
+
     }
 }
