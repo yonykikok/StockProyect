@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormClientes));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle21 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panelBarraSuperior = new System.Windows.Forms.Panel();
             this.pictureBoxCerrar = new System.Windows.Forms.PictureBox();
             this.buttonMinimizar = new System.Windows.Forms.PictureBox();
@@ -43,6 +43,7 @@
             this.Apellido = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Dni = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Direccion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Mail = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Telefono = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.buttonVentas = new System.Windows.Forms.Button();
             this.panelVentas = new System.Windows.Forms.Panel();
@@ -70,13 +71,10 @@
             this.label4 = new System.Windows.Forms.Label();
             this.textBoxTelefono = new System.Windows.Forms.TextBox();
             this.panelDatosDelCliente = new System.Windows.Forms.Panel();
-            this.textBoxIndice = new System.Windows.Forms.TextBox();
-            this.panelAdministraror = new System.Windows.Forms.Panel();
-            this.panel13 = new System.Windows.Forms.Panel();
-            this.buttonAgregar2 = new System.Windows.Forms.Button();
-            this.panel14 = new System.Windows.Forms.Panel();
-            this.buttonModificar = new System.Windows.Forms.Button();
+            this.labelMail = new System.Windows.Forms.Label();
+            this.textBoxMail = new System.Windows.Forms.TextBox();
             this.panelClienteNuevo = new System.Windows.Forms.Panel();
+            this.textBoxIndice = new System.Windows.Forms.TextBox();
             this.panelPagos = new System.Windows.Forms.Panel();
             this.buttonAgregarCliente = new System.Windows.Forms.Button();
             this.panel8 = new System.Windows.Forms.Panel();
@@ -86,6 +84,11 @@
             this.buttonSeleccionar = new System.Windows.Forms.Button();
             this.panel11 = new System.Windows.Forms.Panel();
             this.buttonCancelar = new System.Windows.Forms.Button();
+            this.panelAdministraror = new System.Windows.Forms.Panel();
+            this.panel13 = new System.Windows.Forms.Panel();
+            this.buttonAgregar2 = new System.Windows.Forms.Button();
+            this.panel14 = new System.Windows.Forms.Panel();
+            this.buttonModificar = new System.Windows.Forms.Button();
             this.panelHistorial = new System.Windows.Forms.Panel();
             this.panelBuscadorCliente = new System.Windows.Forms.Panel();
             this.textBoxBuscador = new System.Windows.Forms.TextBox();
@@ -99,9 +102,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewClientes)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxImagenDelCliente)).BeginInit();
             this.panelDatosDelCliente.SuspendLayout();
-            this.panelAdministraror.SuspendLayout();
             this.panelClienteNuevo.SuspendLayout();
             this.panelClienteExistente.SuspendLayout();
+            this.panelAdministraror.SuspendLayout();
             this.panelHistorial.SuspendLayout();
             this.panelBuscadorCliente.SuspendLayout();
             this.SuspendLayout();
@@ -168,41 +171,42 @@
             // 
             this.dataGridViewClientes.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
             this.dataGridViewClientes.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Raised;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewClientes.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle19.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle19.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
+            dataGridViewCellStyle19.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle19.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle19.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
+            dataGridViewCellStyle19.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle19.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewClientes.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle19;
             this.dataGridViewClientes.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Indice,
             this.Nombre,
             this.Apellido,
             this.Dni,
             this.Direccion,
+            this.Mail,
             this.Telefono});
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridViewClientes.DefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle20.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle20.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
+            dataGridViewCellStyle20.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle20.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle20.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
+            dataGridViewCellStyle20.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle20.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridViewClientes.DefaultCellStyle = dataGridViewCellStyle20;
             this.dataGridViewClientes.EnableHeadersVisualStyles = false;
             this.dataGridViewClientes.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
             this.dataGridViewClientes.Location = new System.Drawing.Point(0, 25);
             this.dataGridViewClientes.Name = "dataGridViewClientes";
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewClientes.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle21.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle21.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
+            dataGridViewCellStyle21.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle21.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle21.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
+            dataGridViewCellStyle21.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle21.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewClientes.RowHeadersDefaultCellStyle = dataGridViewCellStyle21;
             this.dataGridViewClientes.Size = new System.Drawing.Size(690, 289);
             this.dataGridViewClientes.TabIndex = 7;
             this.dataGridViewClientes.RowHeaderMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridViewClientes_RowHeaderMouseDoubleClick);
@@ -244,6 +248,12 @@
             this.Direccion.HeaderText = "Direccion";
             this.Direccion.Name = "Direccion";
             this.Direccion.ReadOnly = true;
+            // 
+            // Mail
+            // 
+            this.Mail.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Mail.HeaderText = "Mail";
+            this.Mail.Name = "Mail";
             // 
             // Telefono
             // 
@@ -418,37 +428,37 @@
             // 
             // textBoxNombre
             // 
-            this.textBoxNombre.Location = new System.Drawing.Point(64, 29);
+            this.textBoxNombre.Location = new System.Drawing.Point(64, 170);
             this.textBoxNombre.Name = "textBoxNombre";
             this.textBoxNombre.Size = new System.Drawing.Size(205, 20);
-            this.textBoxNombre.TabIndex = 2;
+            this.textBoxNombre.TabIndex = 1;
             // 
             // textBoxApellido
             // 
-            this.textBoxApellido.Location = new System.Drawing.Point(64, 190);
+            this.textBoxApellido.Location = new System.Drawing.Point(64, 193);
             this.textBoxApellido.Name = "textBoxApellido";
             this.textBoxApellido.Size = new System.Drawing.Size(205, 20);
-            this.textBoxApellido.TabIndex = 3;
+            this.textBoxApellido.TabIndex = 2;
             // 
             // textBoxDni
             // 
             this.textBoxDni.Location = new System.Drawing.Point(64, 216);
             this.textBoxDni.Name = "textBoxDni";
             this.textBoxDni.Size = new System.Drawing.Size(205, 20);
-            this.textBoxDni.TabIndex = 4;
+            this.textBoxDni.TabIndex = 3;
             // 
             // textBoxDireccion
             // 
-            this.textBoxDireccion.Location = new System.Drawing.Point(64, 242);
+            this.textBoxDireccion.Location = new System.Drawing.Point(64, 239);
             this.textBoxDireccion.Name = "textBoxDireccion";
             this.textBoxDireccion.Size = new System.Drawing.Size(205, 20);
-            this.textBoxDireccion.TabIndex = 5;
+            this.textBoxDireccion.TabIndex = 4;
             // 
             // labelNombre
             // 
             this.labelNombre.AutoSize = true;
             this.labelNombre.ForeColor = System.Drawing.Color.White;
-            this.labelNombre.Location = new System.Drawing.Point(6, 171);
+            this.labelNombre.Location = new System.Drawing.Point(6, 177);
             this.labelNombre.Name = "labelNombre";
             this.labelNombre.Size = new System.Drawing.Size(44, 13);
             this.labelNombre.TabIndex = 6;
@@ -458,7 +468,7 @@
             // 
             this.labelApellido.AutoSize = true;
             this.labelApellido.ForeColor = System.Drawing.Color.White;
-            this.labelApellido.Location = new System.Drawing.Point(6, 197);
+            this.labelApellido.Location = new System.Drawing.Point(6, 200);
             this.labelApellido.Name = "labelApellido";
             this.labelApellido.Size = new System.Drawing.Size(44, 13);
             this.labelApellido.TabIndex = 7;
@@ -478,7 +488,7 @@
             // 
             this.labelDireccion.AutoSize = true;
             this.labelDireccion.ForeColor = System.Drawing.Color.White;
-            this.labelDireccion.Location = new System.Drawing.Point(6, 249);
+            this.labelDireccion.Location = new System.Drawing.Point(6, 246);
             this.labelDireccion.Name = "labelDireccion";
             this.labelDireccion.Size = new System.Drawing.Size(52, 13);
             this.labelDireccion.TabIndex = 9;
@@ -497,7 +507,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(6, 275);
+            this.label4.Location = new System.Drawing.Point(6, 292);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(49, 13);
             this.label4.TabIndex = 36;
@@ -505,17 +515,19 @@
             // 
             // textBoxTelefono
             // 
-            this.textBoxTelefono.Location = new System.Drawing.Point(64, 268);
+            this.textBoxTelefono.Location = new System.Drawing.Point(64, 285);
             this.textBoxTelefono.Name = "textBoxTelefono";
             this.textBoxTelefono.Size = new System.Drawing.Size(205, 20);
-            this.textBoxTelefono.TabIndex = 37;
+            this.textBoxTelefono.TabIndex = 6;
             // 
             // panelDatosDelCliente
             // 
-            this.panelDatosDelCliente.Controls.Add(this.textBoxIndice);
+            this.panelDatosDelCliente.Controls.Add(this.labelMail);
+            this.panelDatosDelCliente.Controls.Add(this.textBoxMail);
             this.panelDatosDelCliente.Controls.Add(this.textBoxTelefono);
             this.panelDatosDelCliente.Controls.Add(this.label4);
             this.panelDatosDelCliente.Controls.Add(this.panel3);
+            this.panelDatosDelCliente.Controls.Add(this.textBoxNombre);
             this.panelDatosDelCliente.Controls.Add(this.labelDireccion);
             this.panelDatosDelCliente.Controls.Add(this.labelDni);
             this.panelDatosDelCliente.Controls.Add(this.labelApellido);
@@ -533,75 +545,26 @@
             this.panelDatosDelCliente.Size = new System.Drawing.Size(281, 388);
             this.panelDatosDelCliente.TabIndex = 6;
             // 
-            // textBoxIndice
+            // labelMail
             // 
-            this.textBoxIndice.Location = new System.Drawing.Point(64, 164);
-            this.textBoxIndice.Name = "textBoxIndice";
-            this.textBoxIndice.Size = new System.Drawing.Size(205, 20);
-            this.textBoxIndice.TabIndex = 40;
-            this.textBoxIndice.Visible = false;
+            this.labelMail.AutoSize = true;
+            this.labelMail.ForeColor = System.Drawing.Color.White;
+            this.labelMail.Location = new System.Drawing.Point(6, 269);
+            this.labelMail.Name = "labelMail";
+            this.labelMail.Size = new System.Drawing.Size(26, 13);
+            this.labelMail.TabIndex = 41;
+            this.labelMail.Text = "Mail";
             // 
-            // panelAdministraror
+            // textBoxMail
             // 
-            this.panelAdministraror.Controls.Add(this.panel13);
-            this.panelAdministraror.Controls.Add(this.buttonAgregar2);
-            this.panelAdministraror.Controls.Add(this.panel14);
-            this.panelAdministraror.Controls.Add(this.buttonModificar);
-            this.panelAdministraror.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panelAdministraror.Location = new System.Drawing.Point(0, 309);
-            this.panelAdministraror.Name = "panelAdministraror";
-            this.panelAdministraror.Size = new System.Drawing.Size(281, 79);
-            this.panelAdministraror.TabIndex = 39;
-            this.panelAdministraror.Visible = false;
-            // 
-            // panel13
-            // 
-            this.panel13.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
-            this.panel13.Location = new System.Drawing.Point(43, 23);
-            this.panel13.Name = "panel13";
-            this.panel13.Size = new System.Drawing.Size(5, 32);
-            this.panel13.TabIndex = 34;
-            // 
-            // buttonAgregar2
-            // 
-            this.buttonAgregar2.FlatAppearance.BorderSize = 0;
-            this.buttonAgregar2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
-            this.buttonAgregar2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonAgregar2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonAgregar2.ForeColor = System.Drawing.Color.White;
-            this.buttonAgregar2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonAgregar2.Location = new System.Drawing.Point(46, 23);
-            this.buttonAgregar2.Name = "buttonAgregar2";
-            this.buttonAgregar2.Size = new System.Drawing.Size(96, 32);
-            this.buttonAgregar2.TabIndex = 32;
-            this.buttonAgregar2.Text = "Agregar";
-            this.buttonAgregar2.UseVisualStyleBackColor = true;
-            // 
-            // panel14
-            // 
-            this.panel14.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
-            this.panel14.Location = new System.Drawing.Point(142, 23);
-            this.panel14.Name = "panel14";
-            this.panel14.Size = new System.Drawing.Size(5, 32);
-            this.panel14.TabIndex = 35;
-            // 
-            // buttonModificar
-            // 
-            this.buttonModificar.FlatAppearance.BorderSize = 0;
-            this.buttonModificar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
-            this.buttonModificar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonModificar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonModificar.ForeColor = System.Drawing.Color.White;
-            this.buttonModificar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonModificar.Location = new System.Drawing.Point(145, 23);
-            this.buttonModificar.Name = "buttonModificar";
-            this.buttonModificar.Size = new System.Drawing.Size(96, 32);
-            this.buttonModificar.TabIndex = 33;
-            this.buttonModificar.Text = "Modificar";
-            this.buttonModificar.UseVisualStyleBackColor = true;
+            this.textBoxMail.Location = new System.Drawing.Point(64, 262);
+            this.textBoxMail.Name = "textBoxMail";
+            this.textBoxMail.Size = new System.Drawing.Size(205, 20);
+            this.textBoxMail.TabIndex = 5;
             // 
             // panelClienteNuevo
             // 
+            this.panelClienteNuevo.Controls.Add(this.textBoxIndice);
             this.panelClienteNuevo.Controls.Add(this.panelPagos);
             this.panelClienteNuevo.Controls.Add(this.buttonAgregarCliente);
             this.panelClienteNuevo.Controls.Add(this.panel8);
@@ -612,6 +575,14 @@
             this.panelClienteNuevo.Size = new System.Drawing.Size(281, 79);
             this.panelClienteNuevo.TabIndex = 38;
             this.panelClienteNuevo.Click += new System.EventHandler(this.buttonCancelar_Click);
+            // 
+            // textBoxIndice
+            // 
+            this.textBoxIndice.Location = new System.Drawing.Point(64, 19);
+            this.textBoxIndice.Name = "textBoxIndice";
+            this.textBoxIndice.Size = new System.Drawing.Size(205, 20);
+            this.textBoxIndice.TabIndex = 40;
+            this.textBoxIndice.Visible = false;
             // 
             // panelPagos
             // 
@@ -635,6 +606,7 @@
             this.buttonAgregarCliente.TabIndex = 32;
             this.buttonAgregarCliente.Text = "Agregar";
             this.buttonAgregarCliente.UseVisualStyleBackColor = true;
+            this.buttonAgregarCliente.Click += new System.EventHandler(this.buttonAgregarCliente_Click);
             // 
             // panel8
             // 
@@ -666,7 +638,6 @@
             this.panelClienteExistente.Controls.Add(this.buttonSeleccionar);
             this.panelClienteExistente.Controls.Add(this.panel11);
             this.panelClienteExistente.Controls.Add(this.buttonCancelar);
-            this.panelClienteExistente.Controls.Add(this.textBoxNombre);
             this.panelClienteExistente.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panelClienteExistente.Location = new System.Drawing.Point(0, 230);
             this.panelClienteExistente.Name = "panelClienteExistente";
@@ -721,6 +692,67 @@
             this.buttonCancelar.UseVisualStyleBackColor = true;
             this.buttonCancelar.Click += new System.EventHandler(this.buttonCancelar_Click);
             // 
+            // panelAdministraror
+            // 
+            this.panelAdministraror.Controls.Add(this.panel13);
+            this.panelAdministraror.Controls.Add(this.buttonAgregar2);
+            this.panelAdministraror.Controls.Add(this.panel14);
+            this.panelAdministraror.Controls.Add(this.buttonModificar);
+            this.panelAdministraror.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panelAdministraror.Location = new System.Drawing.Point(0, 309);
+            this.panelAdministraror.Name = "panelAdministraror";
+            this.panelAdministraror.Size = new System.Drawing.Size(281, 79);
+            this.panelAdministraror.TabIndex = 39;
+            this.panelAdministraror.Visible = false;
+            // 
+            // panel13
+            // 
+            this.panel13.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
+            this.panel13.Location = new System.Drawing.Point(43, 23);
+            this.panel13.Name = "panel13";
+            this.panel13.Size = new System.Drawing.Size(5, 32);
+            this.panel13.TabIndex = 34;
+            // 
+            // buttonAgregar2
+            // 
+            this.buttonAgregar2.FlatAppearance.BorderSize = 0;
+            this.buttonAgregar2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
+            this.buttonAgregar2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonAgregar2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonAgregar2.ForeColor = System.Drawing.Color.White;
+            this.buttonAgregar2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonAgregar2.Location = new System.Drawing.Point(46, 23);
+            this.buttonAgregar2.Name = "buttonAgregar2";
+            this.buttonAgregar2.Size = new System.Drawing.Size(96, 32);
+            this.buttonAgregar2.TabIndex = 32;
+            this.buttonAgregar2.Text = "Agregar";
+            this.buttonAgregar2.UseVisualStyleBackColor = true;
+            this.buttonAgregar2.Click += new System.EventHandler(this.buttonAgregarCliente_Click);
+            // 
+            // panel14
+            // 
+            this.panel14.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
+            this.panel14.Location = new System.Drawing.Point(142, 23);
+            this.panel14.Name = "panel14";
+            this.panel14.Size = new System.Drawing.Size(5, 32);
+            this.panel14.TabIndex = 35;
+            // 
+            // buttonModificar
+            // 
+            this.buttonModificar.FlatAppearance.BorderSize = 0;
+            this.buttonModificar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
+            this.buttonModificar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonModificar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonModificar.ForeColor = System.Drawing.Color.White;
+            this.buttonModificar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonModificar.Location = new System.Drawing.Point(145, 23);
+            this.buttonModificar.Name = "buttonModificar";
+            this.buttonModificar.Size = new System.Drawing.Size(96, 32);
+            this.buttonModificar.TabIndex = 33;
+            this.buttonModificar.Text = "Modificar";
+            this.buttonModificar.UseVisualStyleBackColor = true;
+            this.buttonModificar.Click += new System.EventHandler(this.buttonModificar_Click);
+            // 
             // panelHistorial
             // 
             this.panelHistorial.Controls.Add(this.panelVentas);
@@ -761,7 +793,7 @@
             this.textBoxBuscador.Multiline = true;
             this.textBoxBuscador.Name = "textBoxBuscador";
             this.textBoxBuscador.Size = new System.Drawing.Size(190, 25);
-            this.textBoxBuscador.TabIndex = 6;
+            this.textBoxBuscador.TabIndex = 0;
             // 
             // buttonBuscar
             // 
@@ -812,10 +844,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxImagenDelCliente)).EndInit();
             this.panelDatosDelCliente.ResumeLayout(false);
             this.panelDatosDelCliente.PerformLayout();
-            this.panelAdministraror.ResumeLayout(false);
             this.panelClienteNuevo.ResumeLayout(false);
+            this.panelClienteNuevo.PerformLayout();
             this.panelClienteExistente.ResumeLayout(false);
-            this.panelClienteExistente.PerformLayout();
+            this.panelAdministraror.ResumeLayout(false);
             this.panelHistorial.ResumeLayout(false);
             this.panelBuscadorCliente.ResumeLayout(false);
             this.panelBuscadorCliente.PerformLayout();
@@ -874,15 +906,18 @@
         private System.Windows.Forms.Panel panel14;
         private System.Windows.Forms.Button buttonModificar;
         private System.Windows.Forms.TextBox textBoxIndice;
+        private System.Windows.Forms.Panel panelBuscadorCliente;
+        private System.Windows.Forms.TextBox textBoxBuscador;
+        private System.Windows.Forms.Button buttonBuscar;
+        private System.Windows.Forms.Panel panelDecorativo;
+        private System.Windows.Forms.Label labelMail;
+        private System.Windows.Forms.TextBox textBoxMail;
         private System.Windows.Forms.DataGridViewTextBoxColumn Indice;
         private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
         private System.Windows.Forms.DataGridViewTextBoxColumn Apellido;
         private System.Windows.Forms.DataGridViewTextBoxColumn Dni;
         private System.Windows.Forms.DataGridViewTextBoxColumn Direccion;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Mail;
         private System.Windows.Forms.DataGridViewTextBoxColumn Telefono;
-        private System.Windows.Forms.Panel panelBuscadorCliente;
-        private System.Windows.Forms.TextBox textBoxBuscador;
-        private System.Windows.Forms.Button buttonBuscar;
-        private System.Windows.Forms.Panel panelDecorativo;
     }
 }

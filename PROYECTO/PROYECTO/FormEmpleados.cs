@@ -195,6 +195,7 @@ namespace PROYECTO
                 {
                     UsuariosDAO.InsertarUsuario(empleado);
                     CargarDatosAlGridView();
+                    LimpiarTextBoxs();
                 }
                 else
                 {
@@ -300,14 +301,8 @@ namespace PROYECTO
             }
             catch (Exception exception)
             {
-                textBoxUsuario.Text = "";
-                textBoxName.Text = "";
-                textBoxLastName.Text = "";
-                textBoxDni.Text = "";
-                textBoxAdress.Text = "";
-                textBoxMailAdress.Text = "";
-                textBoxPassword.Text = "";
-                MessageBox.Show("Error al cargar los datos de los 'USUARIOS' al GridView "+exception.Message);
+                LimpiarTextBoxs();
+                MessageBox.Show("Error al cargar los datos de los 'USUARIOS' al GridView " + exception.Message);
             }
         }
         /// <summary>
@@ -331,7 +326,7 @@ namespace PROYECTO
         /// <param name="e"></param>
         private void buttonModificarUsuario_Click(object sender, EventArgs e)
         {
-             try
+            try
             {
                 Empleado empleado = ObtenerEmpleadoDelFormulario();
                 if (!(empleado is null))
@@ -341,6 +336,7 @@ namespace PROYECTO
                     {
                         UsuariosDAO.Modificar(empleado);
                         CargarDatosAlGridView();
+                        LimpiarTextBoxs();
                     }
                 }
             }
@@ -381,6 +377,17 @@ namespace PROYECTO
                 MessageBox.Show("Error al modificar un usuario, puede que algun dato no este ingresado " + exception.Message);
             }
         }
+        public void LimpiarTextBoxs()
+        {
+            textBoxUsuario.Clear();
+            textBoxName.Clear();
+            textBoxLastName.Clear();
+            textBoxDni.Clear();
+            textBoxAdress.Clear();
+            textBoxMailAdress.Clear();
+            textBoxPassword.Clear();
+            textBoxId.Clear();
+        }
         /// <summary>
         /// remueve un usuario de la base de datos por el id.
         /// </summary>
@@ -388,12 +395,20 @@ namespace PROYECTO
         /// <param name="e"></param>
         private void buttonQuitarUsuario_Click(object sender, EventArgs e)
         {
-            Empleado empleado = ObtenerEmpleadoDelFormulario();
-            int id;
-            if (Int32.TryParse(textBoxId.Text, out id))
+            try
             {
-                UsuariosDAO.Remover(empleado);
-                CargarDatosAlGridView();
+                Empleado empleado = ObtenerEmpleadoDelFormulario();
+                int id;
+                if (Int32.TryParse(textBoxId.Text, out id))
+                {
+                    UsuariosDAO.Remover(empleado);
+                    CargarDatosAlGridView();
+                    LimpiarTextBoxs();
+                }
+            }
+            catch(Exception exception)
+            {
+                MessageBox.Show("Seleccione el usuario que desea borrar.");
             }
         }
 

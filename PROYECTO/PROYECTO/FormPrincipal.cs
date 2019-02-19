@@ -97,7 +97,14 @@ namespace PROYECTO
         private void buttonReportesVentas_Click(object sender, EventArgs e)
         {
             panelSubMenu.Visible = false;
-
+            if(chartEstadisticaGlobal.Visible)
+            {
+                chartEstadisticaGlobal.Visible = false;
+            }
+            else
+            {
+                chartEstadisticaGlobal.Visible = true;
+            }
         }
 
         private void buttonReportesCompras_Click(object sender, EventArgs e)

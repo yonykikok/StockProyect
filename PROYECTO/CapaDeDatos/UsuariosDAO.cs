@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.Data.SqlClient;
 using System.Data;
 using CapaDeNegocios;
+using ExcepcionesPropiasDAO;
 namespace CapaDeDatos
 {
     public class UsuariosDAO
@@ -38,7 +39,7 @@ namespace CapaDeDatos
         public static void Modificar(Empleado empleado)
         {
             conexionADB.Open();
-            comando = new SqlCommand(string.Format("UPDATE Usuarios SET Usuario = '{0}' , Password = '{1}', Name = '{2}', LastName = '{3}', Dni = '{4}', Adress = '{5}', MailAdress = '{6}', UserType = '{7}' WHERE id = {8}", empleado.User, empleado.Password, empleado.Name, empleado.LastName, empleado.Dni, empleado.Adress, empleado.MailAdress, empleado.Type,empleado.Id), conexionADB);
+            comando = new SqlCommand(string.Format("UPDATE Usuarios SET Usuario = '{0}' , Password = '{1}', Name = '{2}', LastName = '{3}', Dni = '{4}', Adress = '{5}', MailAdress = '{6}', UserType = '{7}' WHERE id = {8}", empleado.User, empleado.Password, empleado.Name, empleado.LastName, empleado.Dni, empleado.Adress, empleado.MailAdress, empleado.Type, empleado.Id), conexionADB);
             comando.ExecuteNonQuery();
             conexionADB.Close();
         }
@@ -56,7 +57,7 @@ namespace CapaDeDatos
                 {
                     retorno = true;
                     break;
-                }                
+                }
             }
             conexionADB.Close();
             return retorno;
@@ -108,45 +109,67 @@ namespace CapaDeDatos
         public static Empleado LeerUsuarioCompleto(Empleado empleado)
         {
             Empleado retorno = null;
-            conexionADB.Open();
-            comando = new SqlCommand("SELECT Usuario,Password,Name,LastName,Dni,Adress,MailAdress,UserType FROM Usuarios", conexionADB);
-            dataReader = comando.ExecuteReader();
-            while (dataReader.Read())
+            try
             {
-                string auxUsuario = dataReader["Usuario"].ToString();
-                string auxContraseña = dataReader["Password"].ToString();
-                string auxName = dataReader["Name"].ToString();
-                string auxLastName = dataReader["LastName"].ToString();
-                string auxDni = dataReader["Dni"].ToString();
-                string auxAdress = dataReader["Adress"].ToString();
-                string auxMailAdress = dataReader["MailAdress"].ToString();
-                string auxUserType = dataReader["UserType"].ToString().ToLower();
-                if (auxUsuario.ToLower() == empleado.User.ToLower())
+
+                conexionADB.Open();
+                comando = new SqlCommand("SELECT Usuario,Password,Name,LastName,Dni,Adress,MailAdress,UserType FROM Usuarios", conexionADB);
+                dataReader = comando.ExecuteReader();
+
+                while (dataReader.Read())
                 {
-                    if (auxContraseña.ToLower() == empleado.Password.ToLower())
+                    string auxUsuario = dataReader["Usuario"].ToString();
+                    string auxContraseña = dataReader["Password"].ToString();
+                    string auxName = dataReader["Name"].ToString();
+                    string auxLastName = dataReader["LastName"].ToString();
+                    string auxDni = dataReader["Dni"].ToString();
+                    string auxAdress = dataReader["Adress"].ToString();
+                    string auxMailAdress = dataReader["MailAdress"].ToString();
+                    string auxUserType = dataReader["UserType"].ToString().ToLower();
+                    if (auxUsuario.ToLower() == empleado.User.ToLower())
                     {
-                        UserType tipo;
-                        Enum.TryParse<UserType>(auxUserType, out tipo);
-                        retorno = new Empleado(empleado.User, empleado.Password, auxName, auxLastName, auxDni, auxAdress, auxMailAdress, tipo);
-                        break;
+                        if (auxContraseña.ToLower() == empleado.Password.ToLower())
+                        {
+                            UserType tipo;
+                            Enum.TryParse<UserType>(auxUserType, out tipo);
+                            retorno = new Empleado(empleado.User, empleado.Password, auxName, auxLastName, auxDni, auxAdress, auxMailAdress, tipo);
+                            break;
+                        }
+                        else if (auxUsuario == empleado.User && auxContraseña != empleado.Password)
+                        {
+                            retorno = new Empleado(auxUsuario, "InvalidPass", "Nombre", "Apellido", "Dni", "Direccion", "Gmail@gmail.com", UserType.user);
+                        }
+                        else
+                        {
+                            retorno = new Empleado("InvalidUser", "InvalidPass", "Nombre", "Apellido", "Dni", "Direccion", "Gmail@gmail.com", UserType.user);
+                        }
                     }
-                    else if (auxUsuario == empleado.User && auxContraseña != empleado.Password)
+                    else if (auxUsuario != empleado.User && auxContraseña == empleado.Password)
                     {
-                        retorno = new Empleado(auxUsuario, "InvalidPass", "Nombre", "Apellido", "Dni", "Direccion", "Gmail@gmail.com", UserType.user);
+                        retorno = new Empleado("InvalidUser", auxContraseña, "Nombre", "Apellido", "Dni", "Direccion", "Gmail@gmail.com", UserType.user);
                     }
-                    else
-                    {
-                        retorno = new Empleado("InvalidUser", "InvalidPass", "Nombre", "Apellido", "Dni", "Direccion", "Gmail@gmail.com", UserType.user);
-                    }
-                }
-                else if (auxUsuario != empleado.User && auxContraseña == empleado.Password)
-                {
-                    retorno = new Empleado("InvalidUser", auxContraseña, "Nombre", "Apellido", "Dni", "Direccion", "Gmail@gmail.com", UserType.user);
+
+
                 }
 
 
             }
-            conexionADB.Close();
+            catch (Exception exception)
+            {
+                if (exception.Message == "Invalid object name 'Usuarios'.")
+                {
+                    throw new TablaInvalidException("Error, al conectarse con la tabla 'Usuarios'. InnerException: " + exception.Message+"\nSugerencia: Puede que la tabla no se encuentre en la base de datos");
+                }
+                else
+                {
+                    throw new ErrorAlConectarConLaBaseDeDatosException("Error Al Conectar Con Las Base De Datos: " + stringDeConexion);
+                }
+            }
+
+            finally
+            {
+                conexionADB.Close();
+            }
             return retorno;
         }
         public static List<Empleado> LeerUsuarios()
@@ -169,10 +192,10 @@ namespace CapaDeDatos
                     string auxAdress = dataReader["Adress"].ToString();
                     string auxMailAdress = dataReader["MailAdress"].ToString();
                     string auxUserType = dataReader["UserType"].ToString();
-                    Int32.TryParse( dataReader["Id"].ToString(), out id);
+                    Int32.TryParse(dataReader["Id"].ToString(), out id);
                     UserType type;
                     Enum.TryParse<UserType>(auxUserType, out type);//convierte un string a un tipo de enumerado.
-                    empleado = new Empleado(auxUsuario, auxPassword, auxName, auxLastName, auxDni, auxAdress, auxMailAdress, type,id);
+                    empleado = new Empleado(auxUsuario, auxPassword, auxName, auxLastName, auxDni, auxAdress, auxMailAdress, type, id);
                     empleados.Add(empleado);
                 }
             }

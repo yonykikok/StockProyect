@@ -73,7 +73,7 @@ namespace PROYECTO
             }
             catch (ConexionDBException exception)
             {
-                MessageBox.Show("Error al conectarse con la base de datos. InnerException: " + exception.Message);
+                MessageBox.Show("Error al conectarse con la tabla Productos. InnerException: " + exception.Message + "\nSugerencia: Puede que la tabla no se encuentre en la base de datos");
             }
         }
         /// <summary>
@@ -516,7 +516,11 @@ namespace PROYECTO
             }
             else
             {
-                MessageBox.Show("Debe Seleccionar un producto para poder agregarlo.");
+                //tengo que agregar un evento que para que no aparesca este mensaje si cancelo el form cantidad.
+                if (!(formCantidad.Name == "Cancelado"))
+                {
+                    MessageBox.Show("Debe Seleccionar un producto para poder agregarlo.");
+                }
             }
             return retorno;
         }
@@ -658,6 +662,6 @@ namespace PROYECTO
             }
         }
 
-       
+
     }
 }

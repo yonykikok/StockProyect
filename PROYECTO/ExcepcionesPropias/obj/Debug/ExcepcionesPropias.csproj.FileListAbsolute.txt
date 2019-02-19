@@ -4,3 +4,9 @@ C:\Users\Haedo Jonathan\Desktop\Proyecto Stock Multitask\StockProyect\PROYECTO\E
 C:\Users\Haedo Jonathan\Desktop\Proyecto Stock Multitask\StockProyect\PROYECTO\ExcepcionesPropias\obj\Debug\ExcepcionesPropias.dll
 C:\Users\Haedo Jonathan\Desktop\Proyecto Stock Multitask\StockProyect\PROYECTO\ExcepcionesPropias\obj\Debug\ExcepcionesPropias.pdb
 C:\Users\Haedo Jonathan\Desktop\Proyecto Stock Multitask\StockProyect\PROYECTO\ExcepcionesPropias\obj\Debug\ExcepcionesPropias.csprojAssemblyReference.cache
+C:\Users\Haedo Jonathan\Desktop\StockProyect\PROYECTO\ExcepcionesPropias\bin\Debug\ExcepcionesPropias.dll
+C:\Users\Haedo Jonathan\Desktop\StockProyect\PROYECTO\ExcepcionesPropias\bin\Debug\ExcepcionesPropias.pdb
+C:\Users\Haedo Jonathan\Desktop\StockProyect\PROYECTO\ExcepcionesPropias\obj\Debug\ExcepcionesPropias.csprojAssemblyReference.cache
+C:\Users\Haedo Jonathan\Desktop\StockProyect\PROYECTO\ExcepcionesPropias\obj\Debug\ExcepcionesPropias.csproj.CoreCompileInputs.cache
+C:\Users\Haedo Jonathan\Desktop\StockProyect\PROYECTO\ExcepcionesPropias\obj\Debug\ExcepcionesPropias.dll
+C:\Users\Haedo Jonathan\Desktop\StockProyect\PROYECTO\ExcepcionesPropias\obj\Debug\ExcepcionesPropias.pdb

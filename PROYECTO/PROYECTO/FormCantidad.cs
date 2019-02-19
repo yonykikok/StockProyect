@@ -35,6 +35,7 @@ namespace PROYECTO
 
         private void buttonCerrar_Click(object sender, EventArgs e)
         {
+            this.Name = "Cancelado";
             this.Close();
         }
 
@@ -68,7 +69,7 @@ namespace PROYECTO
 
         private void FormCantidad_Load(object sender, EventArgs e)
         {
-
+            comboBoxCantidad.SelectedItem = "1";
         }
     }
 }

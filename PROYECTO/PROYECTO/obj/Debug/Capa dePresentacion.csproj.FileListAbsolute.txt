@@ -118,3 +118,5 @@ C:\Users\Haedo Jonathan\Desktop\StockProyect\PROYECTO\PROYECTO\obj\Debug\Capa de
 C:\Users\Haedo Jonathan\Desktop\StockProyect\PROYECTO\PROYECTO\obj\Debug\Capa dePresentacion.csproj.CopyComplete
 C:\Users\Haedo Jonathan\Desktop\StockProyect\PROYECTO\PROYECTO\obj\Debug\PROYECTO.exe
 C:\Users\Haedo Jonathan\Desktop\StockProyect\PROYECTO\PROYECTO\obj\Debug\PROYECTO.pdb
+C:\Users\Haedo Jonathan\Desktop\StockProyect\PROYECTO\PROYECTO\bin\Debug\ExcepcionesPropiasDAO.dll
+C:\Users\Haedo Jonathan\Desktop\StockProyect\PROYECTO\PROYECTO\bin\Debug\ExcepcionesPropiasDAO.pdb

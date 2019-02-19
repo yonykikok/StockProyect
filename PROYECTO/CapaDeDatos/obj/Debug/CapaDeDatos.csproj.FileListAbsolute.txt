@@ -97,3 +97,5 @@ C:\Users\Haedo Jonathan\Desktop\StockProyect\PROYECTO\CapaDeDatos\obj\Debug\Capa
 C:\Users\Haedo Jonathan\Desktop\StockProyect\PROYECTO\CapaDeDatos\obj\Debug\CapaDeDatos.csproj.CopyComplete
 C:\Users\Haedo Jonathan\Desktop\StockProyect\PROYECTO\CapaDeDatos\obj\Debug\CapaDeDatos.dll
 C:\Users\Haedo Jonathan\Desktop\StockProyect\PROYECTO\CapaDeDatos\obj\Debug\CapaDeDatos.pdb
+C:\Users\Haedo Jonathan\Desktop\StockProyect\PROYECTO\CapaDeDatos\bin\Debug\ExcepcionesPropiasDAO.dll
+C:\Users\Haedo Jonathan\Desktop\StockProyect\PROYECTO\CapaDeDatos\bin\Debug\ExcepcionesPropiasDAO.pdb

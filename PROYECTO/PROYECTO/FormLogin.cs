@@ -11,6 +11,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using CapaDeNegocios;
 using CapaDeDatos;
+using ExcepcionesPropiasDAO;
 namespace PROYECTO
 {
     public partial class FormLogin : Form
@@ -87,13 +88,13 @@ namespace PROYECTO
         }
         public void buttonAcceder_Click(object sender, EventArgs e)
         {
-             try
+            try
             {
                 labelErrorUsuario.Text = "";
                 labelErrorPassword.Text = "";
                 labelErrorDatosInvalidos.Text = "";
-                empleado = new Empleado(textBoxUsurio.Text, textBoxPassword.Text, "Nombre", "Apellido", "Dni","Direccion", "Gmail@gmail.com", UserType.user);
-               
+                empleado = new Empleado(textBoxUsurio.Text, textBoxPassword.Text, "Nombre", "Apellido", "Dni", "Direccion", "Gmail@gmail.com", UserType.user);
+
                 Empleado empleadoLeido = UsuariosDAO.LeerUsuarioCompleto(empleado);
                 if (empleadoLeido.User == empleado.User && empleadoLeido.Password == empleado.Password)
                 {
@@ -121,8 +122,15 @@ namespace PROYECTO
                         textBoxPassword.Focus();
                     }
                 }
+            }catch(TablaInvalidException exception)
+            {
+                MessageBox.Show(exception.Message);
             }
-            catch (Exception)
+            catch (ErrorAlConectarConLaBaseDeDatosException exception)
+            {
+                MessageBox.Show(exception.Message);
+            }
+            catch (Exception exception)
             {
                 labelErrorDatosInvalidos.Text = "Datos Invalidos vuelva a Intentar";
                 labelErrorDatosInvalidos.Visible = true;

@@ -474,6 +474,7 @@
             this.chartEstadisticaGlobal.Size = new System.Drawing.Size(1080, 429);
             this.chartEstadisticaGlobal.TabIndex = 0;
             this.chartEstadisticaGlobal.Text = "Estadisticas De Venta";
+            this.chartEstadisticaGlobal.Visible = false;
             // 
             // FormPrincipal
             // 
