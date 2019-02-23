@@ -155,7 +155,7 @@ namespace PROYECTO
         {
             if (this.empleado.Type != UserType.admin)
             {
-                buttonUsuario.Visible = false;
+                buttonReparaciones.Visible = false;
                 buttonPagos.Visible = false;
                 buttonReportes.Visible = false;
                 panelUsuarios.Visible = false;

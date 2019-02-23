@@ -47,7 +47,7 @@
             this.buttonReportesVentas = new System.Windows.Forms.Button();
             this.panelReportes = new System.Windows.Forms.Panel();
             this.panelPagos = new System.Windows.Forms.Panel();
-            this.buttonUsuario = new System.Windows.Forms.Button();
+            this.buttonReparaciones = new System.Windows.Forms.Button();
             this.buttonEnvios = new System.Windows.Forms.Button();
             this.panelUsuarios = new System.Windows.Forms.Panel();
             this.panelEnvios = new System.Windows.Forms.Panel();
@@ -133,7 +133,7 @@
             this.panelMenuVertical.Controls.Add(this.panelSubMenu);
             this.panelMenuVertical.Controls.Add(this.panelReportes);
             this.panelMenuVertical.Controls.Add(this.panelPagos);
-            this.panelMenuVertical.Controls.Add(this.buttonUsuario);
+            this.panelMenuVertical.Controls.Add(this.buttonReparaciones);
             this.panelMenuVertical.Controls.Add(this.buttonEnvios);
             this.panelMenuVertical.Controls.Add(this.panelUsuarios);
             this.panelMenuVertical.Controls.Add(this.panelEnvios);
@@ -282,21 +282,21 @@
             this.panelPagos.Size = new System.Drawing.Size(5, 32);
             this.panelPagos.TabIndex = 3;
             // 
-            // buttonUsuario
+            // buttonReparaciones
             // 
-            this.buttonUsuario.FlatAppearance.BorderSize = 0;
-            this.buttonUsuario.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
-            this.buttonUsuario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonUsuario.ForeColor = System.Drawing.Color.White;
-            this.buttonUsuario.Image = ((System.Drawing.Image)(resources.GetObject("buttonUsuario.Image")));
-            this.buttonUsuario.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonUsuario.Location = new System.Drawing.Point(5, 324);
-            this.buttonUsuario.Name = "buttonUsuario";
-            this.buttonUsuario.Size = new System.Drawing.Size(215, 32);
-            this.buttonUsuario.TabIndex = 7;
-            this.buttonUsuario.Text = "Usuarios";
-            this.buttonUsuario.UseVisualStyleBackColor = true;
+            this.buttonReparaciones.FlatAppearance.BorderSize = 0;
+            this.buttonReparaciones.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
+            this.buttonReparaciones.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonReparaciones.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonReparaciones.ForeColor = System.Drawing.Color.White;
+            this.buttonReparaciones.Image = ((System.Drawing.Image)(resources.GetObject("buttonReparaciones.Image")));
+            this.buttonReparaciones.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonReparaciones.Location = new System.Drawing.Point(5, 324);
+            this.buttonReparaciones.Name = "buttonReparaciones";
+            this.buttonReparaciones.Size = new System.Drawing.Size(215, 32);
+            this.buttonReparaciones.TabIndex = 7;
+            this.buttonReparaciones.Text = "Reparaciones";
+            this.buttonReparaciones.UseVisualStyleBackColor = true;
             // 
             // buttonEnvios
             // 
@@ -523,7 +523,7 @@
         private System.Windows.Forms.Button buttonVentas;
         private System.Windows.Forms.Panel panelReportes;
         private System.Windows.Forms.Panel panelPagos;
-        private System.Windows.Forms.Button buttonUsuario;
+        private System.Windows.Forms.Button buttonReparaciones;
         private System.Windows.Forms.Button buttonEnvios;
         private System.Windows.Forms.Panel panelSubMenu;
         private System.Windows.Forms.Panel panelSubVentas;

@@ -120,3 +120,4 @@ C:\Users\Haedo Jonathan\Desktop\StockProyect\PROYECTO\PROYECTO\obj\Debug\PROYECT
 C:\Users\Haedo Jonathan\Desktop\StockProyect\PROYECTO\PROYECTO\obj\Debug\PROYECTO.pdb
 C:\Users\Haedo Jonathan\Desktop\StockProyect\PROYECTO\PROYECTO\bin\Debug\ExcepcionesPropiasDAO.dll
 C:\Users\Haedo Jonathan\Desktop\StockProyect\PROYECTO\PROYECTO\bin\Debug\ExcepcionesPropiasDAO.pdb
+C:\Users\Haedo Jonathan\Desktop\StockProyect\PROYECTO\PROYECTO\obj\Debug\PROYECTO.FormReparaciones.resources
