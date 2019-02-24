@@ -191,12 +191,16 @@ namespace CapaDeDatos
             comando.ExecuteNonQuery();
             conexionADB.Close();
         }
+        /// <summary>
+        /// busca productos en la base de datos que contengan el string pasado como argumento, lo busca en Codigo y Descripcion.
+        /// </summary>
+        /// <param name="codigo"></param>
+        /// <returns></returns>
         public static List<Producto> LeerProductos(string codigo)
         {
             List<Producto> retorno = null;
             try
             {
-
                 conexionADB.Open();
                 int contador = 0;
                 comando = new SqlCommand("SELECT Description,Code,Stock,IdealStock,MinimumStock,Price,Id,img FROM Productos", conexionADB);
@@ -222,6 +226,40 @@ namespace CapaDeDatos
                         retorno.Add(auxProducto);
                     }
 
+                }
+            }
+            catch (Exception exception)
+            {
+                throw new ConexionDBException(exception.Message);
+            }
+            finally
+            {
+                conexionADB.Close();
+            }
+            return retorno;
+        }
+
+
+        public static List<Producto> LeerProductos()
+        {
+            List<Producto> retorno = new List<Producto>();
+            try
+            {
+                conexionADB.Open();
+                comando = new SqlCommand("SELECT Description,Code,Stock,IdealStock,MinimumStock,Price,Id,img FROM Productos", conexionADB);
+                dataReader = comando.ExecuteReader();
+                while (dataReader.Read())
+                {
+                    string auxCode = dataReader["Code"].ToString().ToLower();
+                    string auxDescription = dataReader["Description"].ToString().ToLower();
+                    string auxImg = dataReader["img"].ToString().ToLower();
+                    int auxStock = Convert.ToInt32(dataReader["Stock"].ToString());
+                    int auxIdealStock = Convert.ToInt32(dataReader["IdealStock"].ToString());
+                    int auxMinimumStock = Convert.ToInt32(dataReader["MinimumStock"].ToString());
+                    float auxPrice = (float)Convert.ToDouble(dataReader["Price"].ToString());
+                    int auxId = Convert.ToInt32(dataReader["Id"].ToString());                   
+                    Producto auxProducto = new Producto(auxCode, auxDescription, Convert.ToInt32(auxStock), auxIdealStock, auxMinimumStock, auxPrice, auxImg, auxId);
+                    retorno.Add(auxProducto);
                 }
             }
             catch (Exception exception)

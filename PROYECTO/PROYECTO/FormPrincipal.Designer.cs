@@ -29,9 +29,10 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormPrincipal));
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             this.ButtonMinimizar = new System.Windows.Forms.Panel();
+            this.labelMultitask = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.ButtonMaximizar = new System.Windows.Forms.PictureBox();
             this.ButtonCerrar = new System.Windows.Forms.PictureBox();
@@ -39,7 +40,7 @@
             this.panelEmpleados = new System.Windows.Forms.Panel();
             this.buttonEmpleados = new System.Windows.Forms.Button();
             this.panelSubMenu = new System.Windows.Forms.Panel();
-            this.buttonReportesPagos = new System.Windows.Forms.Button();
+            this.buttonReportesStockBajo = new System.Windows.Forms.Button();
             this.buttonReportesCompras = new System.Windows.Forms.Button();
             this.panelSubPagos = new System.Windows.Forms.Panel();
             this.panelSubCompras = new System.Windows.Forms.Panel();
@@ -61,6 +62,7 @@
             this.buttonProductos = new System.Windows.Forms.Button();
             this.pictureBoxLogo = new System.Windows.Forms.PictureBox();
             this.panel8 = new System.Windows.Forms.Panel();
+            this.richTextBoxStockBajo = new System.Windows.Forms.RichTextBox();
             this.chartEstadisticaGlobal = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.ButtonMinimizar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -76,6 +78,7 @@
             // ButtonMinimizar
             // 
             this.ButtonMinimizar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
+            this.ButtonMinimizar.Controls.Add(this.labelMultitask);
             this.ButtonMinimizar.Controls.Add(this.pictureBox2);
             this.ButtonMinimizar.Controls.Add(this.ButtonMaximizar);
             this.ButtonMinimizar.Controls.Add(this.ButtonCerrar);
@@ -85,6 +88,17 @@
             this.ButtonMinimizar.Size = new System.Drawing.Size(1300, 35);
             this.ButtonMinimizar.TabIndex = 0;
             this.ButtonMinimizar.MouseDown += new System.Windows.Forms.MouseEventHandler(this.ButtonMinimizar_MouseDown);
+            // 
+            // labelMultitask
+            // 
+            this.labelMultitask.AutoSize = true;
+            this.labelMultitask.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelMultitask.ForeColor = System.Drawing.Color.White;
+            this.labelMultitask.Location = new System.Drawing.Point(603, 4);
+            this.labelMultitask.Name = "labelMultitask";
+            this.labelMultitask.Size = new System.Drawing.Size(98, 25);
+            this.labelMultitask.TabIndex = 5;
+            this.labelMultitask.Text = "Multitask";
             // 
             // pictureBox2
             // 
@@ -179,7 +193,7 @@
             // 
             // panelSubMenu
             // 
-            this.panelSubMenu.Controls.Add(this.buttonReportesPagos);
+            this.panelSubMenu.Controls.Add(this.buttonReportesStockBajo);
             this.panelSubMenu.Controls.Add(this.buttonReportesCompras);
             this.panelSubMenu.Controls.Add(this.panelSubPagos);
             this.panelSubMenu.Controls.Add(this.panelSubCompras);
@@ -191,22 +205,22 @@
             this.panelSubMenu.TabIndex = 8;
             this.panelSubMenu.Visible = false;
             // 
-            // buttonReportesPagos
+            // buttonReportesStockBajo
             // 
-            this.buttonReportesPagos.FlatAppearance.BorderSize = 0;
-            this.buttonReportesPagos.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
-            this.buttonReportesPagos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonReportesPagos.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonReportesPagos.ForeColor = System.Drawing.Color.White;
-            this.buttonReportesPagos.Image = ((System.Drawing.Image)(resources.GetObject("buttonReportesPagos.Image")));
-            this.buttonReportesPagos.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonReportesPagos.Location = new System.Drawing.Point(5, 72);
-            this.buttonReportesPagos.Name = "buttonReportesPagos";
-            this.buttonReportesPagos.Size = new System.Drawing.Size(174, 32);
-            this.buttonReportesPagos.TabIndex = 11;
-            this.buttonReportesPagos.Text = "Pagos";
-            this.buttonReportesPagos.UseVisualStyleBackColor = true;
-            this.buttonReportesPagos.Click += new System.EventHandler(this.buttonReportesPagos_Click);
+            this.buttonReportesStockBajo.FlatAppearance.BorderSize = 0;
+            this.buttonReportesStockBajo.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
+            this.buttonReportesStockBajo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonReportesStockBajo.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonReportesStockBajo.ForeColor = System.Drawing.Color.White;
+            this.buttonReportesStockBajo.Image = ((System.Drawing.Image)(resources.GetObject("buttonReportesStockBajo.Image")));
+            this.buttonReportesStockBajo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonReportesStockBajo.Location = new System.Drawing.Point(5, 72);
+            this.buttonReportesStockBajo.Name = "buttonReportesStockBajo";
+            this.buttonReportesStockBajo.Size = new System.Drawing.Size(174, 32);
+            this.buttonReportesStockBajo.TabIndex = 11;
+            this.buttonReportesStockBajo.Text = "Stock Bajo";
+            this.buttonReportesStockBajo.UseVisualStyleBackColor = true;
+            this.buttonReportesStockBajo.Click += new System.EventHandler(this.buttonReportesStockBajo_Click);
             // 
             // buttonReportesCompras
             // 
@@ -454,21 +468,34 @@
             // panel8
             // 
             this.panel8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
+            this.panel8.Controls.Add(this.richTextBoxStockBajo);
             this.panel8.Controls.Add(this.chartEstadisticaGlobal);
             this.panel8.Location = new System.Drawing.Point(220, 35);
             this.panel8.Name = "panel8";
             this.panel8.Size = new System.Drawing.Size(1080, 615);
             this.panel8.TabIndex = 2;
             // 
+            // richTextBoxStockBajo
+            // 
+            this.richTextBoxStockBajo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
+            this.richTextBoxStockBajo.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.richTextBoxStockBajo.ForeColor = System.Drawing.Color.White;
+            this.richTextBoxStockBajo.Location = new System.Drawing.Point(6, 3);
+            this.richTextBoxStockBajo.Name = "richTextBoxStockBajo";
+            this.richTextBoxStockBajo.Size = new System.Drawing.Size(777, 559);
+            this.richTextBoxStockBajo.TabIndex = 1;
+            this.richTextBoxStockBajo.Text = "";
+            this.richTextBoxStockBajo.Visible = false;
+            // 
             // chartEstadisticaGlobal
             // 
             this.chartEstadisticaGlobal.BorderlineColor = System.Drawing.Color.Empty;
             this.chartEstadisticaGlobal.BorderSkin.BackImageWrapMode = System.Windows.Forms.DataVisualization.Charting.ChartImageWrapMode.TileFlipXY;
-            chartArea1.Name = "ChartArea1";
-            this.chartEstadisticaGlobal.ChartAreas.Add(chartArea1);
+            chartArea2.Name = "ChartArea1";
+            this.chartEstadisticaGlobal.ChartAreas.Add(chartArea2);
             this.chartEstadisticaGlobal.Dock = System.Windows.Forms.DockStyle.Bottom;
-            legend1.Name = "Legend1";
-            this.chartEstadisticaGlobal.Legends.Add(legend1);
+            legend2.Name = "Legend1";
+            this.chartEstadisticaGlobal.Legends.Add(legend2);
             this.chartEstadisticaGlobal.Location = new System.Drawing.Point(0, 186);
             this.chartEstadisticaGlobal.Name = "chartEstadisticaGlobal";
             this.chartEstadisticaGlobal.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Excel;
@@ -492,6 +519,7 @@
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormPrincipal_FormClosing);
             this.Load += new System.EventHandler(this.FormPrincipal_Load);
             this.ButtonMinimizar.ResumeLayout(false);
+            this.ButtonMinimizar.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ButtonMaximizar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ButtonCerrar)).EndInit();
@@ -529,7 +557,7 @@
         private System.Windows.Forms.Panel panelSubMenu;
         private System.Windows.Forms.Panel panelSubVentas;
         private System.Windows.Forms.Button buttonReportesVentas;
-        private System.Windows.Forms.Button buttonReportesPagos;
+        private System.Windows.Forms.Button buttonReportesStockBajo;
         private System.Windows.Forms.Button buttonReportesCompras;
         private System.Windows.Forms.Panel panelSubPagos;
         private System.Windows.Forms.Panel panelSubCompras;
@@ -537,6 +565,8 @@
         private System.Windows.Forms.Panel panelEmpleados;
         private System.Windows.Forms.Button buttonEmpleados;
         private System.Windows.Forms.DataVisualization.Charting.Chart chartEstadisticaGlobal;
+        private System.Windows.Forms.RichTextBox richTextBoxStockBajo;
+        private System.Windows.Forms.Label labelMultitask;
     }
 }
 

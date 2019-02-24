@@ -102,14 +102,11 @@ namespace PROYECTO
 
         private void buttonReportesCompras_Click(object sender, EventArgs e)
         {
-
             panelSubMenu.Visible = false;
+
         }
 
-        private void buttonReportesPagos_Click(object sender, EventArgs e)
-        {
-            panelSubMenu.Visible = false;
-        }
+
 
         private void buttonReportes_Click(object sender, EventArgs e)
         {
@@ -261,5 +258,34 @@ namespace PROYECTO
                 ThreadReparaciones.Start();
             }
         }
+
+        private void buttonReportesStockBajo_Click(object sender, EventArgs e)
+        {
+            panelSubMenu.Visible = false;
+            //-----     
+            if(richTextBoxStockBajo.Visible)
+            {
+                richTextBoxStockBajo.Visible = false;
+            }
+            else
+            {
+                richTextBoxStockBajo.Visible = true;
+            }
+            List<Producto> listaProductosDB = ProductosDAO.LeerProductos();
+            List<Producto> listaStockBajo = new List<Producto>();
+            foreach (Producto auxProducto in listaProductosDB)
+            {
+                if (auxProducto.Stock <= auxProducto.StockMinimo)
+                {
+                    listaStockBajo.Add(auxProducto);
+                }
+            }
+            foreach (Producto auxProducto in listaStockBajo)
+            {               
+                richTextBoxStockBajo.Text += string.Format("Producto: {0}, Stock: {1}, Stock Ideal: {2}\n", auxProducto.Descripcion, auxProducto.Stock, auxProducto.StockIdeal); ;
+            }
+        }
+
+      
     }
 }

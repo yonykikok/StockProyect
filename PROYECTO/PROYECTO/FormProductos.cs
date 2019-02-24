@@ -61,11 +61,13 @@ namespace PROYECTO
             {
                 panelVenderProductos.Visible = true;
                 panelCargarProducto.Visible = false;
+                labelProductosVentas.Text = "Multitask-Ventas";
             }
             else
             {
                 panelVenderProductos.Visible = false;
                 panelCargarProducto.Visible = true;
+                labelProductosVentas.Text = "Multitask-Productos";
             }
             //---------temporal----
             /*string pathImagen = "C:\\Users\\Haedo Jonathan\\Desktop\\StockProyect\\Imegenes\\Film Glass.jpg";
@@ -751,7 +753,6 @@ namespace PROYECTO
                 }
             }
         }
-
 
     }
 }

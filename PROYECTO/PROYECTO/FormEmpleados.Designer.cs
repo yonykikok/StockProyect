@@ -70,6 +70,7 @@
             this.panel5 = new System.Windows.Forms.Panel();
             this.pictureBoxClose = new System.Windows.Forms.PictureBox();
             this.pictureBoxMinimizar = new System.Windows.Forms.PictureBox();
+            this.labelEmpleados = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewUsuarios)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel5.SuspendLayout();
@@ -456,6 +457,7 @@
             // panel5
             // 
             this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
+            this.panel5.Controls.Add(this.labelEmpleados);
             this.panel5.Controls.Add(this.pictureBoxClose);
             this.panel5.Controls.Add(this.pictureBoxMinimizar);
             this.panel5.Dock = System.Windows.Forms.DockStyle.Top;
@@ -488,6 +490,17 @@
             this.pictureBoxMinimizar.TabStop = false;
             this.pictureBoxMinimizar.Click += new System.EventHandler(this.pictureBoxMinimizar_Click);
             // 
+            // labelEmpleados
+            // 
+            this.labelEmpleados.AutoSize = true;
+            this.labelEmpleados.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelEmpleados.ForeColor = System.Drawing.Color.White;
+            this.labelEmpleados.Location = new System.Drawing.Point(479, 0);
+            this.labelEmpleados.Name = "labelEmpleados";
+            this.labelEmpleados.Size = new System.Drawing.Size(157, 20);
+            this.labelEmpleados.TabIndex = 5;
+            this.labelEmpleados.Text = "Multitask-Empleados";
+            // 
             // FormEmpleados
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -508,6 +521,7 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel5.ResumeLayout(false);
+            this.panel5.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxClose)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMinimizar)).EndInit();
             this.ResumeLayout(false);
@@ -554,5 +568,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Mail;
         private System.Windows.Forms.DataGridViewTextBoxColumn Contraseña;
         private System.Windows.Forms.DataGridViewTextBoxColumn TipodeUsuario;
+        private System.Windows.Forms.Label labelEmpleados;
     }
 }

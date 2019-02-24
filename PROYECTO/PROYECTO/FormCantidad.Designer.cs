@@ -30,26 +30,28 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormCantidad));
             this.panel1 = new System.Windows.Forms.Panel();
-            this.pictureBoxMinimizar = new System.Windows.Forms.PictureBox();
-            this.pictureBoxClose = new System.Windows.Forms.PictureBox();
             this.buttonMinimizar = new System.Windows.Forms.PictureBox();
             this.buttonCerrar = new System.Windows.Forms.PictureBox();
+            this.pictureBoxMinimizar = new System.Windows.Forms.PictureBox();
+            this.pictureBoxClose = new System.Windows.Forms.PictureBox();
             this.labelCantidad = new System.Windows.Forms.Label();
             this.comboBoxCantidad = new System.Windows.Forms.ComboBox();
             this.panel11 = new System.Windows.Forms.Panel();
             this.buttonAgregarVenta = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.button1 = new System.Windows.Forms.Button();
+            this.labelCantidadTitle = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMinimizar)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxClose)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.buttonMinimizar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.buttonCerrar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMinimizar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxClose)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
+            this.panel1.Controls.Add(this.labelCantidadTitle);
             this.panel1.Controls.Add(this.buttonMinimizar);
             this.panel1.Controls.Add(this.buttonCerrar);
             this.panel1.Controls.Add(this.pictureBoxMinimizar);
@@ -60,26 +62,6 @@
             this.panel1.Size = new System.Drawing.Size(222, 25);
             this.panel1.TabIndex = 1;
             this.panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseDown);
-            // 
-            // pictureBoxMinimizar
-            // 
-            this.pictureBoxMinimizar.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxMinimizar.Image")));
-            this.pictureBoxMinimizar.Location = new System.Drawing.Point(1117, 3);
-            this.pictureBoxMinimizar.Name = "pictureBoxMinimizar";
-            this.pictureBoxMinimizar.Size = new System.Drawing.Size(15, 15);
-            this.pictureBoxMinimizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBoxMinimizar.TabIndex = 1;
-            this.pictureBoxMinimizar.TabStop = false;
-            // 
-            // pictureBoxClose
-            // 
-            this.pictureBoxClose.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxClose.Image")));
-            this.pictureBoxClose.Location = new System.Drawing.Point(1138, 3);
-            this.pictureBoxClose.Name = "pictureBoxClose";
-            this.pictureBoxClose.Size = new System.Drawing.Size(15, 15);
-            this.pictureBoxClose.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBoxClose.TabIndex = 0;
-            this.pictureBoxClose.TabStop = false;
             // 
             // buttonMinimizar
             // 
@@ -102,6 +84,26 @@
             this.buttonCerrar.TabIndex = 2;
             this.buttonCerrar.TabStop = false;
             this.buttonCerrar.Click += new System.EventHandler(this.buttonCerrar_Click);
+            // 
+            // pictureBoxMinimizar
+            // 
+            this.pictureBoxMinimizar.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxMinimizar.Image")));
+            this.pictureBoxMinimizar.Location = new System.Drawing.Point(1117, 3);
+            this.pictureBoxMinimizar.Name = "pictureBoxMinimizar";
+            this.pictureBoxMinimizar.Size = new System.Drawing.Size(15, 15);
+            this.pictureBoxMinimizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBoxMinimizar.TabIndex = 1;
+            this.pictureBoxMinimizar.TabStop = false;
+            // 
+            // pictureBoxClose
+            // 
+            this.pictureBoxClose.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxClose.Image")));
+            this.pictureBoxClose.Location = new System.Drawing.Point(1138, 3);
+            this.pictureBoxClose.Name = "pictureBoxClose";
+            this.pictureBoxClose.Size = new System.Drawing.Size(15, 15);
+            this.pictureBoxClose.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBoxClose.TabIndex = 0;
+            this.pictureBoxClose.TabStop = false;
             // 
             // labelCantidad
             // 
@@ -182,6 +184,17 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.buttonCerrar_Click);
             // 
+            // labelCantidadTitle
+            // 
+            this.labelCantidadTitle.AutoSize = true;
+            this.labelCantidadTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelCantidadTitle.ForeColor = System.Drawing.Color.White;
+            this.labelCantidadTitle.Location = new System.Drawing.Point(22, 2);
+            this.labelCantidadTitle.Name = "labelCantidadTitle";
+            this.labelCantidadTitle.Size = new System.Drawing.Size(141, 20);
+            this.labelCantidadTitle.TabIndex = 5;
+            this.labelCantidadTitle.Text = "Multitask-Cantidad";
+            // 
             // FormCantidad
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -201,10 +214,11 @@
             this.Text = "FormCantidad";
             this.Load += new System.EventHandler(this.FormCantidad_Load);
             this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMinimizar)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxClose)).EndInit();
+            this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.buttonMinimizar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.buttonCerrar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMinimizar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxClose)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -223,5 +237,6 @@
         private System.Windows.Forms.Button buttonAgregarVenta;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label labelCantidadTitle;
     }
 }
