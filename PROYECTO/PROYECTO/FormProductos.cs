@@ -31,7 +31,27 @@ namespace PROYECTO
         public Producto Producto { get => producto; set => producto = value; }
         public Thread ThreadVenta { get => threadVenta; set => threadVenta = value; }
         #endregion
+        /// <summary>
+        /// busca los productos que contenga la palabra clave, y modifica su foto por la imagen perteneciente al pathImagen.
+        /// </summary>
+        /// <param name="pathImagen"></param>
+        /// <param name="palabraClave"></param>
+        private void AgregarFotosALosProductosDelMismoTipo(string pathImagen, string palabraClave)
+        {
+            for (int i = 0; i < 500; i++)
+            {
+                Producto producto = ProductosDAO.ObtenerProductoPorId(i);
+                if (producto != null)
+                {
+                    producto.Imagen = pathImagen;
+                    if (producto.Descripcion.Contains(palabraClave))
+                    {
+                        ProductosDAO.ModificarImagenDelProducto(producto);
+                    }
+                }
 
+            }
+        }
         private void FormProductos_Load(object sender, EventArgs e)
         {
             Carrito = new Carrito(0, 0, 0, 0);
@@ -47,6 +67,9 @@ namespace PROYECTO
                 panelVenderProductos.Visible = false;
                 panelCargarProducto.Visible = true;
             }
+            //---------temporal----
+            /*string pathImagen = "C:\\Users\\Haedo Jonathan\\Desktop\\StockProyect\\Imegenes\\Film Glass.jpg";
+            AgregarFotosALosProductosDelMismoTipo(pathImagen, "glass");*/
         }
         /// <summary>
         /// permite deslizar la ventana
@@ -68,7 +91,7 @@ namespace PROYECTO
                 dataGridViewProductos.Rows.Clear();
                 foreach (Producto producto in ProductosDAO.LeerProductos(""))
                 {
-                    dataGridViewProductos.Rows.Add(producto.Id, producto.Codigo, producto.Descripcion, producto.Stock, producto.StockIdeal, producto.StockMinimo, producto.Precio);
+                    dataGridViewProductos.Rows.Add(producto.Id, producto.Codigo, producto.Descripcion, producto.Stock, producto.StockIdeal, producto.StockMinimo, producto.Precio, producto.Imagen);
                 }
             }
             catch (ConexionDBException exception)
@@ -84,6 +107,7 @@ namespace PROYECTO
             dataGridViewProductos.Columns[0].Visible = true;
             dataGridViewProductos.Columns[4].Visible = true;
             dataGridViewProductos.Columns[5].Visible = true;
+            dataGridViewProductos.Columns[7].Visible = true;
         }
         /// <summary>
         /// Desactiva las columas Indice,StockIdeal y StockMinimo para que no sean visibles
@@ -93,6 +117,7 @@ namespace PROYECTO
             dataGridViewProductos.Columns[0].Visible = false;
             dataGridViewProductos.Columns[4].Visible = false;
             dataGridViewProductos.Columns[5].Visible = false;
+            dataGridViewProductos.Columns[7].Visible = false;
         }
 
         /// <summary>
@@ -112,7 +137,7 @@ namespace PROYECTO
                 dataGridViewProductos.Rows.Clear();
                 foreach (Producto producto in ProductosDAO.LeerProductos(textBoxBuscador.Text))
                 {
-                    dataGridViewProductos.Rows.Add(producto.Id, producto.Codigo, producto.Descripcion, producto.Stock, producto.StockIdeal, producto.StockMinimo, producto.Precio);
+                    dataGridViewProductos.Rows.Add(producto.Id, producto.Codigo, producto.Descripcion, producto.Stock, producto.StockIdeal, producto.StockMinimo, producto.Precio, producto.Imagen);
                 }
                 textBoxBuscador.Text = "";
 
@@ -214,12 +239,31 @@ namespace PROYECTO
                     textBoxStockIdeal.Text = dataGridViewProductos.Rows[e.RowIndex].Cells["StockIdeal"].Value.ToString();
                     textBoxPrecio.Text = dataGridViewProductos.Rows[e.RowIndex].Cells["Precio"].Value.ToString();
                     textBoxIndice.Text = dataGridViewProductos.Rows[e.RowIndex].Cells["Indice"].Value.ToString();
-                    Producto = new Producto(textBoxCodigo.Text, textBoxDescripcion.Text, textBoxStock.Text, textBoxStockIdeal.Text, textBoxStockMinimo.Text, textBoxPrecio.Text);
+                    textBoxImagen.Text = dataGridViewProductos.Rows[e.RowIndex].Cells["Imagen"].Value.ToString();
+                    Producto = new Producto(textBoxCodigo.Text, textBoxDescripcion.Text, textBoxStock.Text, textBoxStockIdeal.Text, textBoxStockMinimo.Text, textBoxPrecio.Text, textBoxImagen.Text);
+                    if ((textBoxImagen.Text != null) && (textBoxImagen.Text != "") && (textBoxImagen.Text != "sin imagen"))
+                    {
+                        pictureBoxImagenProducto.Image = Image.FromFile(textBoxImagen.Text);//cargo la imagen al pictureBox
+                    }
+                    else
+                    {
+                        pictureBoxImagenProducto.Image = null;
+                    }
                 }
                 else//si no, estamos en la seccion ventas.
                 {
+                    string imagen = dataGridViewProductos.Rows[e.RowIndex].Cells["Imagen"].Value.ToString();
                     Producto = new Producto(dataGridViewProductos.Rows[e.RowIndex].Cells["Codigo"].Value.ToString(), dataGridViewProductos.Rows[e.RowIndex].Cells["Descripcion"].Value.ToString(), dataGridViewProductos.Rows[e.RowIndex].Cells["Stock"].Value.ToString(), dataGridViewProductos.Rows[e.RowIndex].Cells["StockIdeal"].Value.ToString(), dataGridViewProductos.Rows[e.RowIndex].Cells["StockMinimo"].Value.ToString(), dataGridViewProductos.Rows[e.RowIndex].Cells["Precio"].Value.ToString());
                     richTextBoxProducto.Text = string.Format("Codigo De Producto: {0}\nDescripcion: {1}\nPrecio: ${2}\n", Producto.Codigo, Producto.Descripcion, Producto.Precio);
+                    if (!(imagen is null) && imagen.Length > 1 && imagen != "sin imagen")
+                    {
+                        pictureBoxImagenProductoVenta.Visible = true;
+                        pictureBoxImagenProductoVenta.Image = Image.FromFile(imagen);
+                    }
+                    else
+                    {
+                        pictureBoxImagenProductoVenta.Visible = false;
+                    }
                     float auxPrecio;
                     if (float.TryParse(dataGridViewProductos.Rows[e.RowIndex].Cells["Precio"].Value.ToString(), out auxPrecio))
                     {
@@ -243,6 +287,9 @@ namespace PROYECTO
             int stockMinimo;
             float precio;
             int id;
+            string codigo = textBoxCodigo.Text;
+            string descripcion = textBoxDescripcion.Text;
+            string imagen = textBoxImagen.Text;
             Producto retorno = null;
             try
             {
@@ -258,19 +305,39 @@ namespace PROYECTO
                                 {
                                     if (float.TryParse(textBoxPrecio.Text, out precio))
                                     {
-                                        if (Int32.TryParse(textBoxIndice.Text, out id))//si tiene id es porque es un producto ya ingresado.
+                                        if (!(textBoxImagen.Text is null) && (textBoxCodigo.Text.ToLower().Length > 1))
                                         {
-                                            string codigo = textBoxCodigo.Text;
-                                            string descripcion = textBoxDescripcion.Text;
-                                            retorno = new Producto(codigo, descripcion, stock, stockIdeal, stockMinimo, precio, id);
+                                            if (Int32.TryParse(textBoxIndice.Text, out id))//si tiene id es porque es un producto ya ingresado.
+                                            {
+                                                /*string codigo = textBoxCodigo.Text;
+                                                string descripcion = textBoxDescripcion.Text;
+                                                string imagen = textBoxImagen.Text;*/
+                                                retorno = new Producto(codigo, descripcion, stock, stockIdeal, stockMinimo, precio, imagen, id);
+                                            }
+                                            else//si no tiene id quiere decir que es un producto nuevo y requiere de un id.
+                                            {
+                                                /*string codigo = textBoxCodigo.Text;
+                                                string descripcion = textBoxDescripcion.Text;
+                                                string imagen = textBoxImagen.Text;*/
+                                                retorno = new Producto(codigo, descripcion, stock, stockIdeal, stockMinimo, precio, imagen);
+                                            }
                                         }
-                                        else//si no tiene id quiere decir que es un producto nuevo y requiere de un id.
+                                        else
                                         {
-                                            string codigo = textBoxCodigo.Text;
-                                            string descripcion = textBoxDescripcion.Text;
-                                            retorno = new Producto(codigo, descripcion, stock, stockIdeal, stockMinimo, precio);
-                                        }
 
+                                            if (Int32.TryParse(textBoxIndice.Text, out id))//si tiene id es porque es un producto ya ingresado.
+                                            {
+                                                /*string codigo = textBoxCodigo.Text;
+                                                string descripcion = textBoxDescripcion.Text;*/
+                                                retorno = new Producto(codigo, descripcion, stock, stockIdeal, stockMinimo, precio, id);
+                                            }
+                                            else//si no tiene id quiere decir que es un producto nuevo y requiere de un id.
+                                            {
+                                                /*string codigo = textBoxCodigo.Text;
+                                                string descripcion = textBoxDescripcion.Text;*/
+                                                retorno = new Producto(codigo, descripcion, stock, stockIdeal, stockMinimo, precio);
+                                            }
+                                        }
                                     }
                                     else
                                     {
@@ -336,14 +403,39 @@ namespace PROYECTO
             }
         }
         /// <summary>
-        /// Selecciona una imagen que representara al producto
+        /// Selecciona una imagen que representara al producto y devuelve un string con el path de la imagen
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private string SeleccionarImagen()
+        {
+            string pathDeImagen;
+            OpenFileDialog openFile = new OpenFileDialog();
+            Thread threadSeleccionarImagen = new Thread(new ParameterizedThreadStart(param => { openFile.ShowDialog(); }));
+            Program.MockThreads.Add(threadSeleccionarImagen);//lo agrego a la lista de threads para cerrar.
+            threadSeleccionarImagen.SetApartmentState(ApartmentState.STA);
+            threadSeleccionarImagen.Start();
+            threadSeleccionarImagen.Join();//hasta que no finaliza el hilo el resto del codigo se pausa.
+            pathDeImagen = openFile.FileName;
+            return pathDeImagen;
+        }
+        /// <summary>
+        /// carga la imagen seleccionada al PictureBox
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
         private void buttonSeleccionarImagen_Click(object sender, EventArgs e)
         {
-            OpenFileDialog openFile = new OpenFileDialog();
-            openFile.ShowDialog();//falta termina y nose como xDD            
+            string pathDeImagen = SeleccionarImagen();
+            if (pathDeImagen.EndsWith(".png") || pathDeImagen.EndsWith(".jpg"))
+            {
+                pictureBoxImagenProducto.Image = Image.FromFile(pathDeImagen);//cargo la imagen al pictureBox
+                textBoxImagen.Text = pathDeImagen;
+            }
+            else
+            {
+                MessageBox.Show("ERROR, eso no es una imagen.");
+            }
         }
         private void IniciarOpenFile()
         {
@@ -387,8 +479,6 @@ namespace PROYECTO
                     int id;
                     if (Int32.TryParse(textBoxIndice.Text, out id))
                     {
-                        ProductosDAO.ModificarProducto(producto);
-
                         ProductosDAO.ModificarProducto(producto);
                         CargarDatosAlGridView();
                     }

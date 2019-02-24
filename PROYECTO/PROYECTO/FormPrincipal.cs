@@ -21,31 +21,24 @@ namespace PROYECTO
         private static Thread threadProductos;
         private static Thread threadVentas;
         private static Thread threadClientes;
+        private static Thread threadReparaciones;
         Empleado empleado;
 
         public Thread ThreadVentas
         {
-            get
-            {
-                return threadVentas;
-            }
+            get { return threadVentas; }
         }
         public Thread ThreadEmpleados
         {
-            get
-            {
-                return threadEmpleados;
-            }
+            get { return threadEmpleados; }
         }
         public Thread ThreadProductos
         {
-            get
-            {
-                return threadProductos;
-            }
+            get { return threadProductos; }
         }
 
         public static Thread ThreadClientes { get => threadClientes; set => threadClientes = value; }
+        public static Thread ThreadReparaciones { get => threadReparaciones; set => threadReparaciones = value; }
 
         private void FormPrincipal_Load(object sender, EventArgs e)
         {
@@ -53,8 +46,8 @@ namespace PROYECTO
 
 
             //------probando
-            List<LogVenta> listaLogs= ClientesLog.LeerHistorialDeVentas();
-            foreach(LogVenta log in listaLogs)
+            List<LogVenta> listaLogs = ClientesLog.LeerHistorialDeVentas();
+            foreach (LogVenta log in listaLogs)
             {
                 Series serie = chartEstadisticaGlobal.Series.Add(log.Descripcion);//agrega las series.
                 serie.Label = log.Cantidad.ToString();//los muestra como label a la derecha del grafico
@@ -97,7 +90,7 @@ namespace PROYECTO
         private void buttonReportesVentas_Click(object sender, EventArgs e)
         {
             panelSubMenu.Visible = false;
-            if(chartEstadisticaGlobal.Visible)
+            if (chartEstadisticaGlobal.Visible)
             {
                 chartEstadisticaGlobal.Visible = false;
             }
@@ -165,7 +158,7 @@ namespace PROYECTO
                 panelReportes.Visible = false;
             }
         }
-        
+
         /// <summary>
         /// inicializa el form empleados
         /// </summary>
@@ -183,9 +176,15 @@ namespace PROYECTO
             formProductos.ShowDialog();
         }
 
+        private void IniciarFormReparaciones()
+        {
+            FormReparaciones formReparaciones = new FormReparaciones();
+            formReparaciones.ShowDialog();
+        }
+
         private void IniciarFormClientes()
         {
-            FormClientes  formCliente= new FormClientes();
+            FormClientes formCliente = new FormClientes();
             formCliente.ShowDialog();
         }
         /// <summary>
@@ -253,5 +252,14 @@ namespace PROYECTO
             }
         }
 
+        private void buttonReparaciones_Click(object sender, EventArgs e)
+        {
+            ThreadReparaciones = new Thread(IniciarFormReparaciones);
+            Program.MockThreads.Add(ThreadReparaciones);
+            if (!(ThreadReparaciones.IsAlive))
+            {
+                ThreadReparaciones.Start();
+            }
+        }
     }
 }

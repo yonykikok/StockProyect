@@ -297,6 +297,7 @@
             this.buttonReparaciones.TabIndex = 7;
             this.buttonReparaciones.Text = "Reparaciones";
             this.buttonReparaciones.UseVisualStyleBackColor = true;
+            this.buttonReparaciones.Click += new System.EventHandler(this.buttonReparaciones_Click);
             // 
             // buttonEnvios
             // 

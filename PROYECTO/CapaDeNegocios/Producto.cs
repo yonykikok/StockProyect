@@ -39,6 +39,25 @@ namespace CapaDeNegocios
                 }
             }
         }
+        public Producto(string codigo, string descripcion, string stock, string stockIdeal, string stockMinimo, string precio,string imagen) : base(codigo, descripcion, precio)//--------------------------------------------------------------------------------------------
+        {
+            int auxStock;
+            int auxStockIdeal;
+            int auxStockMinimo;
+            this.Imagen=imagen;
+            if (Int32.TryParse(stock, out auxStock))
+            {
+                if (Int32.TryParse(stockIdeal, out auxStockIdeal))
+                {
+                    if (Int32.TryParse(stockMinimo, out auxStockMinimo))
+                    {
+                        this.Stock = auxStock;
+                        this.StockIdeal = auxStockIdeal;
+                        this.StockMinimo = auxStockMinimo;
+                    }
+                }
+            }
+        }
         public Producto(string codigo, string descripcion, int stock, int stockIdeal, int stockMinimo, float precio) : base(codigo, descripcion, precio)//--------------------------------------------------------------------------------------------
         {
             this.Stock = stock;
@@ -53,6 +72,10 @@ namespace CapaDeNegocios
             this.id = id;
         }
         public Producto(string codigo, string descripcion, int stock, int stockIdeal, int stockMinimo, float precio, string imagen, int id) : this(codigo, descripcion, stock, stockIdeal, stockMinimo, precio, id)//-------------
+        {
+            this.Imagen = imagen;
+        }
+        public Producto(string codigo, string descripcion, int stock, int stockIdeal, int stockMinimo, float precio, string imagen) : this(codigo, descripcion, stock, stockIdeal, stockMinimo, precio)//-------------
         {
             this.Imagen = imagen;
         }
