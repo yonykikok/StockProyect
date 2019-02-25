@@ -797,9 +797,9 @@
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.dataGridViewProductos);
             this.Controls.Add(this.panel1);
+            this.Controls.Add(this.panelVenderProductos);
             this.Controls.Add(this.panelCargarProducto);
             this.Controls.Add(this.panel7);
-            this.Controls.Add(this.panelVenderProductos);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormProductos";
             this.Opacity = 0.9D;

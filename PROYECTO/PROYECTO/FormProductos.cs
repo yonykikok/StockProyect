@@ -409,18 +409,32 @@ namespace PROYECTO
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private string SeleccionarImagen()
+        /// 
+        private string ObtenerPathCarpetaImagenes()
         {
-            string pathDeImagen;
-            OpenFileDialog openFile = new OpenFileDialog();
+            string retorno = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
+            retorno += "\\StockProyect\\Imegenes\\";
+            return retorno;
+        }
+        /// <summary>
+        /// crea un thread para la apertura del FileDialog y establece el thread como 'STA'(hilo principal)
+        /// agrega el thread al Mock de thread en 'Program.MockThreads'.
+        /// </summary>
+        private void CreaYEjecutaThreadSeleccionarImagen(OpenFileDialog openFile)
+        {
             Thread threadSeleccionarImagen = new Thread(new ParameterizedThreadStart(param => { openFile.ShowDialog(); }));
             Program.MockThreads.Add(threadSeleccionarImagen);//lo agrego a la lista de threads para cerrar.
             threadSeleccionarImagen.SetApartmentState(ApartmentState.STA);
             threadSeleccionarImagen.Start();
             threadSeleccionarImagen.Join();//hasta que no finaliza el hilo el resto del codigo se pausa.
-            pathDeImagen=Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
-            pathDeImagen += "\\StockProyect\\Imegenes\\";
-            pathDeImagen += openFile.SafeFileName;
+        }
+        private string SeleccionarImagen()
+        {
+            string pathDeImagen;
+            OpenFileDialog openFile = new OpenFileDialog();
+            CreaYEjecutaThreadSeleccionarImagen(openFile);
+            pathDeImagen = ObtenerPathCarpetaImagenes();
+            pathDeImagen += openFile.SafeFileName;//sumo al path, el nombre del archivo
             return pathDeImagen;
         }
         /// <summary>
