@@ -418,7 +418,9 @@ namespace PROYECTO
             threadSeleccionarImagen.SetApartmentState(ApartmentState.STA);
             threadSeleccionarImagen.Start();
             threadSeleccionarImagen.Join();//hasta que no finaliza el hilo el resto del codigo se pausa.
-            pathDeImagen = openFile.FileName;
+            pathDeImagen=Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
+            pathDeImagen += "\\StockProyect\\Imegenes\\";
+            pathDeImagen += openFile.SafeFileName;
             return pathDeImagen;
         }
         /// <summary>
