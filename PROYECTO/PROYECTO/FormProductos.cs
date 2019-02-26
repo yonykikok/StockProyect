@@ -12,6 +12,7 @@ using CapaDeDatos;
 using ExcepcionesPropias;
 using ExcepcionesPropiasProductos;
 using System.Threading;
+using System.Windows.Forms.DataVisualization.Charting;
 
 namespace PROYECTO
 {
@@ -427,7 +428,7 @@ namespace PROYECTO
             threadSeleccionarImagen.SetApartmentState(ApartmentState.STA);
             threadSeleccionarImagen.Start();
             threadSeleccionarImagen.Join();//hasta que no finaliza el hilo el resto del codigo se pausa.
-        }
+        }        
         private string SeleccionarImagen()
         {
             string pathDeImagen;

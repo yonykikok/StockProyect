@@ -73,7 +73,7 @@ namespace CapaDeDatos
         /// </summary>
         /// <param name="log">log de la venta a verificar/ actualizar.</param>
         /// <param name="listaLogs"> lista de logs a recorrer.</param>
-        public static void ActualizarLista(LogVenta log,List<LogVenta> listaLogs)
+        public static void ActualizarLista(LogVenta log, List<LogVenta> listaLogs)
         {
             int bandera = 0;
             foreach (LogVenta auxLog in listaLogs)
@@ -92,9 +92,8 @@ namespace CapaDeDatos
             }
         }
         public static List<LogVenta> LeerHistorialDeVentas()
-        {            
+        {
             List<LogVenta> listaLogs = new List<LogVenta>();
-
             string path = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
             path += "\\log.txt";
             StreamReader reader = null;
@@ -113,7 +112,7 @@ namespace CapaDeDatos
                     string[] compras = lineaLeida.Split(';');//separamos las palabras.
 
                     LogVenta log = ObtenerLogDeUnaVenta(compras);
-                    ActualizarLista(log, listaLogs);                    
+                    ActualizarLista(log, listaLogs);
                 }
                 reader.Close();
             }
@@ -153,6 +152,48 @@ namespace CapaDeDatos
                 }
             }
             return retorno;
+        }
+        /// <summary>
+        /// obtiene una fecha limite descontando los dias al dia actual.
+        /// </summary>
+        /// <param name="dias"></param>
+        /// <returns></returns>
+        private static DateTime ObtenerFechaLimite(LogVenta log, int diasADescontar)
+        {
+            DateTime tiempoLimite = DateTime.Today.AddDays(-diasADescontar);
+            return tiempoLimite;
+        }
+        public static List<LogVenta> LeerHistorialDeVentasUltimosXDias(int dias)
+        {
+            DateTime fechaLimite;
+            List<LogVenta> listaLogs = new List<LogVenta>();
+            string path = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
+            path += "\\log.txt";
+            StreamReader reader = null;
+            if (File.Exists(path))//verifico si exite el archivo
+            {
+                reader = new StreamReader(path);
+                string lineaLeida = reader.ReadLine();
+                lineaLeida.Replace("\r\n", "").Replace("\n", "").Replace("\r", "");//ignoramos la primera linea ya que es la descripcion.
+                while (lineaLeida != null)
+                {
+                    lineaLeida = reader.ReadLine();
+                    if (lineaLeida is null)//si es el final del archivo rompe el while.
+                    { break; }
+
+                    lineaLeida.Replace("\r\n", "").Replace("\n", "").Replace("\r", "");//remuevo los salto de lineas de la linea leida 
+                    string[] compras = lineaLeida.Split(';');//separamos las palabras.
+
+                    LogVenta log = ObtenerLogDeUnaVenta(compras);
+                    fechaLimite = ObtenerFechaLimite(log, dias);
+                    if (log.Fecha > fechaLimite)
+                    {
+                        ActualizarLista(log, listaLogs);
+                    }
+                }
+                reader.Close();
+            }
+            return listaLogs;
         }
     }
 }

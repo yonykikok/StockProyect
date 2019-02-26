@@ -33,6 +33,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panelBarraSuperior = new System.Windows.Forms.Panel();
+            this.labelClientes = new System.Windows.Forms.Label();
             this.pictureBoxCerrar = new System.Windows.Forms.PictureBox();
             this.buttonMinimizar = new System.Windows.Forms.PictureBox();
             this.pictureBoxClose = new System.Windows.Forms.PictureBox();
@@ -94,7 +95,6 @@
             this.textBoxBuscador = new System.Windows.Forms.TextBox();
             this.buttonBuscar = new System.Windows.Forms.Button();
             this.panelDecorativo = new System.Windows.Forms.Panel();
-            this.labelClientes = new System.Windows.Forms.Label();
             this.panelBarraSuperior.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCerrar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.buttonMinimizar)).BeginInit();
@@ -124,6 +124,17 @@
             this.panelBarraSuperior.Size = new System.Drawing.Size(969, 25);
             this.panelBarraSuperior.TabIndex = 5;
             this.panelBarraSuperior.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelBarraSuperior_MouseDown);
+            // 
+            // labelClientes
+            // 
+            this.labelClientes.AutoSize = true;
+            this.labelClientes.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelClientes.ForeColor = System.Drawing.Color.White;
+            this.labelClientes.Location = new System.Drawing.Point(420, 2);
+            this.labelClientes.Name = "labelClientes";
+            this.labelClientes.Size = new System.Drawing.Size(134, 20);
+            this.labelClientes.TabIndex = 6;
+            this.labelClientes.Text = "Multitask-Clientes";
             // 
             // pictureBoxCerrar
             // 
@@ -781,9 +792,9 @@
             this.panelBuscadorCliente.Controls.Add(this.textBoxBuscador);
             this.panelBuscadorCliente.Controls.Add(this.buttonBuscar);
             this.panelBuscadorCliente.Controls.Add(this.panelDecorativo);
-            this.panelBuscadorCliente.Location = new System.Drawing.Point(690, 25);
+            this.panelBuscadorCliente.Location = new System.Drawing.Point(699, 25);
             this.panelBuscadorCliente.Name = "panelBuscadorCliente";
-            this.panelBuscadorCliente.Size = new System.Drawing.Size(279, 38);
+            this.panelBuscadorCliente.Size = new System.Drawing.Size(272, 38);
             this.panelBuscadorCliente.TabIndex = 42;
             // 
             // textBoxBuscador
@@ -819,17 +830,6 @@
             this.panelDecorativo.Name = "panelDecorativo";
             this.panelDecorativo.Size = new System.Drawing.Size(5, 25);
             this.panelDecorativo.TabIndex = 8;
-            // 
-            // labelClientes
-            // 
-            this.labelClientes.AutoSize = true;
-            this.labelClientes.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelClientes.ForeColor = System.Drawing.Color.White;
-            this.labelClientes.Location = new System.Drawing.Point(420, 2);
-            this.labelClientes.Name = "labelClientes";
-            this.labelClientes.Size = new System.Drawing.Size(134, 20);
-            this.labelClientes.TabIndex = 6;
-            this.labelClientes.Text = "Multitask-Clientes";
             // 
             // FormClientes
             // 

@@ -40,20 +40,53 @@ namespace PROYECTO
         public static Thread ThreadClientes { get => threadClientes; set => threadClientes = value; }
         public static Thread ThreadReparaciones { get => threadReparaciones; set => threadReparaciones = value; }
 
+        private void PersonalizarChartYLimpiar()
+        {
+            chartEstadisticaGlobal.Series.Clear();
+            chartEstadisticaGlobal.Titles.Clear();
+            chartEstadisticaGlobal.Series.Add("Glass");
+            chartEstadisticaGlobal.Series["Glass"].ChartType = SeriesChartType.Pie;
+            chartEstadisticaGlobal.Series["Glass"].BorderColor = Color.Cyan;
+            chartEstadisticaGlobal.Series["Glass"].Palette = ChartColorPalette.Excel;
+        }
+        private void CargarEstadisticasDeVentas()
+        {
+            PersonalizarChartYLimpiar();
+            List<LogVenta> listaLogs = ClientesLog.LeerHistorialDeVentas();
+            int contadorGlass = 0;
+            int contadorCargadores = 0;
+            int contadorOtros = 0;
+            foreach (LogVenta log in listaLogs)
+            {
+                if (log.Descripcion.Contains("glass"))
+                {
+                    contadorGlass += log.Cantidad;
+                }
+                else if (log.Descripcion.Contains("cargador"))
+                {
+                    contadorCargadores += log.Cantidad;
+                }
+                else
+                {
+                    contadorOtros += log.Cantidad;
+                }
+            }
+            chartEstadisticaGlobal.Series["Glass"].Points.AddXY("Vidrios " + contadorGlass, contadorGlass);
+            chartEstadisticaGlobal.Series["Glass"].Points.AddXY("Cargadores " + contadorCargadores, contadorCargadores);
+            chartEstadisticaGlobal.Series["Glass"].Points.AddXY("Otras " + contadorOtros, contadorOtros);
+
+        }
         private void FormPrincipal_Load(object sender, EventArgs e)
         {
             PrivilegioUsuarios();
-
-
             //------probando
-            List<LogVenta> listaLogs = ClientesLog.LeerHistorialDeVentas();
-            foreach (LogVenta log in listaLogs)
-            {
-                Series serie = chartEstadisticaGlobal.Series.Add(log.Descripcion);//agrega las series.
-                serie.Label = log.Cantidad.ToString();//los muestra como label a la derecha del grafico
-                serie.Points.Add(log.Cantidad);//establece las cantidades o porcentajes
-            }
-
+            /* List<LogVenta> listaLogs = ClientesLog.LeerHistorialDeVentas();
+             foreach (LogVenta log in listaLogs)
+             {
+                 Series serie = chartEstadisticaGlobal.Series.Add(log.Descripcion);//agrega las series.
+                 serie.Label = log.Cantidad.ToString();//los muestra como label a la derecha del grafico
+                 serie.Points.Add(log.Cantidad);//establece las cantidades o porcentajes
+             }*/
         }
         public FormPrincipal()
         {
@@ -90,13 +123,14 @@ namespace PROYECTO
         private void buttonReportesVentas_Click(object sender, EventArgs e)
         {
             panelSubMenu.Visible = false;
-            if (chartEstadisticaGlobal.Visible)
+            if (panelPrincipalEstadistica.Visible)
             {
-                chartEstadisticaGlobal.Visible = false;
+                panelPrincipalEstadistica.Visible = false;
             }
             else
             {
-                chartEstadisticaGlobal.Visible = true;
+                panelPrincipalEstadistica.Visible = true;
+                CargarEstadisticasDeVentas();
             }
         }
 
@@ -146,7 +180,7 @@ namespace PROYECTO
             if (this.empleado.Type != UserType.admin)
             {
                 buttonReparaciones.Visible = false;
-                buttonPagos.Visible = false;
+                buttonDeudas.Visible = false;
                 buttonReportes.Visible = false;
                 panelUsuarios.Visible = false;
                 buttonEmpleados.Visible = false;
@@ -262,8 +296,9 @@ namespace PROYECTO
         private void buttonReportesStockBajo_Click(object sender, EventArgs e)
         {
             panelSubMenu.Visible = false;
+            richTextBoxStockBajo.Clear();
             //-----     
-            if(richTextBoxStockBajo.Visible)
+            if (richTextBoxStockBajo.Visible)
             {
                 richTextBoxStockBajo.Visible = false;
             }
@@ -281,11 +316,53 @@ namespace PROYECTO
                 }
             }
             foreach (Producto auxProducto in listaStockBajo)
-            {               
+            {
                 richTextBoxStockBajo.Text += string.Format("Producto: {0}, Stock: {1}, Stock Ideal: {2}\n", auxProducto.Descripcion, auxProducto.Stock, auxProducto.StockIdeal); ;
             }
         }
 
-      
+        private void buttonSemanal_Click(object sender, EventArgs e)
+        {
+            CargarEstadisticasDeVentasUltomosXDias(7);
+        }
+
+        private void CargarEstadisticasDeVentasUltomosXDias(int dias)
+        {
+
+            PersonalizarChartYLimpiar();
+            chartEstadisticaGlobal.Titles.Add("Estadistica de Ventas Ultimos "+dias+" dias");
+            List<LogVenta> listaLogs = ClientesLog.LeerHistorialDeVentasUltimosXDias(dias);
+            int contadorGlass = 0;
+            int contadorCargadores = 0;
+            int contadorOtros = 0;
+            foreach (LogVenta log in listaLogs)
+            {
+                if (log.Descripcion.Contains("glass"))
+                {
+                    contadorGlass += log.Cantidad;
+                }
+                else if (log.Descripcion.Contains("cargador"))
+                {
+                    contadorCargadores += log.Cantidad;
+                }
+                else
+                {
+                    contadorOtros += log.Cantidad;
+                }
+            }
+            chartEstadisticaGlobal.Series["Glass"].Points.AddXY("Vidrios " + contadorGlass, contadorGlass);
+            chartEstadisticaGlobal.Series["Glass"].Points.AddXY("Cargadores " + contadorCargadores, contadorCargadores);
+            chartEstadisticaGlobal.Series["Glass"].Points.AddXY("Otras " + contadorOtros, contadorOtros);
+        }
+
+        private void buttonMensual_Click(object sender, EventArgs e)
+        {
+            CargarEstadisticasDeVentasUltomosXDias(30);
+        }
+
+        private void buttonAnual_Click(object sender, EventArgs e)
+        {
+            CargarEstadisticasDeVentasUltomosXDias(365);
+        }
     }
 }
