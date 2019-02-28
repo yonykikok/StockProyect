@@ -29,9 +29,12 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormPrincipal));
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.ButtonMinimizar = new System.Windows.Forms.Panel();
             this.labelMultitask = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
@@ -63,16 +66,23 @@
             this.buttonProductos = new System.Windows.Forms.Button();
             this.pictureBoxLogo = new System.Windows.Forms.PictureBox();
             this.panelGlobalOpciones = new System.Windows.Forms.Panel();
-            this.chartEstadisticaGlobal = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.panelPrincipalEstadistica = new System.Windows.Forms.Panel();
             this.panelOpcionesEstadisticas = new System.Windows.Forms.Panel();
-            this.richTextBoxStockBajo = new System.Windows.Forms.RichTextBox();
-            this.panel11 = new System.Windows.Forms.Panel();
-            this.buttonSemanal = new System.Windows.Forms.Button();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.buttonMensual = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.buttonAnual = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.buttonMensual = new System.Windows.Forms.Button();
+            this.panel11 = new System.Windows.Forms.Panel();
+            this.buttonSemanal = new System.Windows.Forms.Button();
+            this.chartEstadisticaGlobal = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.panelPrincipalStockBajo = new System.Windows.Forms.Panel();
+            this.dataGridViewProductosStockBajo = new System.Windows.Forms.DataGridView();
+            this.Descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Stock = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.StockIdeal = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Pedido = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.buttonImprimirLista = new System.Windows.Forms.Button();
+            this.panel3 = new System.Windows.Forms.Panel();
             this.ButtonMinimizar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ButtonMaximizar)).BeginInit();
@@ -81,9 +91,11 @@
             this.panelSubMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogo)).BeginInit();
             this.panelGlobalOpciones.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.chartEstadisticaGlobal)).BeginInit();
             this.panelPrincipalEstadistica.SuspendLayout();
             this.panelOpcionesEstadisticas.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.chartEstadisticaGlobal)).BeginInit();
+            this.panelPrincipalStockBajo.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewProductosStockBajo)).BeginInit();
             this.SuspendLayout();
             // 
             // ButtonMinimizar
@@ -480,44 +492,12 @@
             // panelGlobalOpciones
             // 
             this.panelGlobalOpciones.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
+            this.panelGlobalOpciones.Controls.Add(this.panelPrincipalStockBajo);
             this.panelGlobalOpciones.Controls.Add(this.panelPrincipalEstadistica);
-            this.panelGlobalOpciones.Controls.Add(this.richTextBoxStockBajo);
             this.panelGlobalOpciones.Location = new System.Drawing.Point(220, 35);
             this.panelGlobalOpciones.Name = "panelGlobalOpciones";
             this.panelGlobalOpciones.Size = new System.Drawing.Size(1080, 615);
             this.panelGlobalOpciones.TabIndex = 2;
-            // 
-            // chartEstadisticaGlobal
-            // 
-            this.chartEstadisticaGlobal.BackColor = System.Drawing.Color.Empty;
-            this.chartEstadisticaGlobal.BorderlineColor = System.Drawing.Color.Empty;
-            this.chartEstadisticaGlobal.BorderlineDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.DashDotDot;
-            this.chartEstadisticaGlobal.BorderSkin.BackColor = System.Drawing.Color.Blue;
-            this.chartEstadisticaGlobal.BorderSkin.BackImage = "Blue";
-            this.chartEstadisticaGlobal.BorderSkin.BackImageTransparentColor = System.Drawing.Color.Blue;
-            this.chartEstadisticaGlobal.BorderSkin.BackImageWrapMode = System.Windows.Forms.DataVisualization.Charting.ChartImageWrapMode.TileFlipXY;
-            this.chartEstadisticaGlobal.BorderSkin.BackSecondaryColor = System.Drawing.Color.Blue;
-            this.chartEstadisticaGlobal.BorderSkin.PageColor = System.Drawing.Color.Blue;
-            chartArea3.Name = "ChartArea1";
-            this.chartEstadisticaGlobal.ChartAreas.Add(chartArea3);
-            legend3.Name = "Legend1";
-            this.chartEstadisticaGlobal.Legends.Add(legend3);
-            this.chartEstadisticaGlobal.Location = new System.Drawing.Point(0, 0);
-            this.chartEstadisticaGlobal.Margin = new System.Windows.Forms.Padding(0);
-            this.chartEstadisticaGlobal.Name = "chartEstadisticaGlobal";
-            this.chartEstadisticaGlobal.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Pastel;
-            series3.BorderColor = System.Drawing.Color.Cyan;
-            series3.ChartArea = "ChartArea1";
-            series3.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
-            series3.Color = System.Drawing.Color.White;
-            series3.Legend = "Legend1";
-            series3.Name = "Glass";
-            series3.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Excel;
-            series3.YValuesPerPoint = 2;
-            this.chartEstadisticaGlobal.Series.Add(series3);
-            this.chartEstadisticaGlobal.Size = new System.Drawing.Size(777, 414);
-            this.chartEstadisticaGlobal.TabIndex = 0;
-            this.chartEstadisticaGlobal.Text = "Estadisticas De Venta";
             // 
             // panelPrincipalEstadistica
             // 
@@ -543,41 +523,29 @@
             this.panelOpcionesEstadisticas.Size = new System.Drawing.Size(300, 410);
             this.panelOpcionesEstadisticas.TabIndex = 1;
             // 
-            // richTextBoxStockBajo
+            // panel2
             // 
-            this.richTextBoxStockBajo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
-            this.richTextBoxStockBajo.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.richTextBoxStockBajo.ForeColor = System.Drawing.Color.White;
-            this.richTextBoxStockBajo.Location = new System.Drawing.Point(0, 0);
-            this.richTextBoxStockBajo.Name = "richTextBoxStockBajo";
-            this.richTextBoxStockBajo.Size = new System.Drawing.Size(777, 196);
-            this.richTextBoxStockBajo.TabIndex = 1;
-            this.richTextBoxStockBajo.Text = "";
-            this.richTextBoxStockBajo.Visible = false;
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
+            this.panel2.Location = new System.Drawing.Point(0, 73);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(5, 32);
+            this.panel2.TabIndex = 34;
             // 
-            // panel11
+            // buttonAnual
             // 
-            this.panel11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
-            this.panel11.Location = new System.Drawing.Point(0, 3);
-            this.panel11.Name = "panel11";
-            this.panel11.Size = new System.Drawing.Size(5, 32);
-            this.panel11.TabIndex = 30;
-            // 
-            // buttonSemanal
-            // 
-            this.buttonSemanal.FlatAppearance.BorderSize = 0;
-            this.buttonSemanal.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
-            this.buttonSemanal.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonSemanal.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonSemanal.ForeColor = System.Drawing.Color.White;
-            this.buttonSemanal.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonSemanal.Location = new System.Drawing.Point(3, 3);
-            this.buttonSemanal.Name = "buttonSemanal";
-            this.buttonSemanal.Size = new System.Drawing.Size(96, 32);
-            this.buttonSemanal.TabIndex = 29;
-            this.buttonSemanal.Text = "Semanal";
-            this.buttonSemanal.UseVisualStyleBackColor = true;
-            this.buttonSemanal.Click += new System.EventHandler(this.buttonSemanal_Click);
+            this.buttonAnual.FlatAppearance.BorderSize = 0;
+            this.buttonAnual.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
+            this.buttonAnual.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonAnual.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonAnual.ForeColor = System.Drawing.Color.White;
+            this.buttonAnual.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonAnual.Location = new System.Drawing.Point(3, 73);
+            this.buttonAnual.Name = "buttonAnual";
+            this.buttonAnual.Size = new System.Drawing.Size(96, 32);
+            this.buttonAnual.TabIndex = 33;
+            this.buttonAnual.Text = "Anual";
+            this.buttonAnual.UseVisualStyleBackColor = true;
+            this.buttonAnual.Click += new System.EventHandler(this.buttonAnual_Click);
             // 
             // panel1
             // 
@@ -603,29 +571,164 @@
             this.buttonMensual.UseVisualStyleBackColor = true;
             this.buttonMensual.Click += new System.EventHandler(this.buttonMensual_Click);
             // 
-            // panel2
+            // panel11
             // 
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
-            this.panel2.Location = new System.Drawing.Point(0, 73);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(5, 32);
-            this.panel2.TabIndex = 34;
+            this.panel11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
+            this.panel11.Location = new System.Drawing.Point(0, 3);
+            this.panel11.Name = "panel11";
+            this.panel11.Size = new System.Drawing.Size(5, 32);
+            this.panel11.TabIndex = 30;
             // 
-            // buttonAnual
+            // buttonSemanal
             // 
-            this.buttonAnual.FlatAppearance.BorderSize = 0;
-            this.buttonAnual.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
-            this.buttonAnual.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonAnual.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonAnual.ForeColor = System.Drawing.Color.White;
-            this.buttonAnual.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonAnual.Location = new System.Drawing.Point(3, 73);
-            this.buttonAnual.Name = "buttonAnual";
-            this.buttonAnual.Size = new System.Drawing.Size(96, 32);
-            this.buttonAnual.TabIndex = 33;
-            this.buttonAnual.Text = "Anual";
-            this.buttonAnual.UseVisualStyleBackColor = true;
-            this.buttonAnual.Click += new System.EventHandler(this.buttonAnual_Click);
+            this.buttonSemanal.FlatAppearance.BorderSize = 0;
+            this.buttonSemanal.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
+            this.buttonSemanal.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonSemanal.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonSemanal.ForeColor = System.Drawing.Color.White;
+            this.buttonSemanal.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonSemanal.Location = new System.Drawing.Point(3, 3);
+            this.buttonSemanal.Name = "buttonSemanal";
+            this.buttonSemanal.Size = new System.Drawing.Size(96, 32);
+            this.buttonSemanal.TabIndex = 29;
+            this.buttonSemanal.Text = "Semanal";
+            this.buttonSemanal.UseVisualStyleBackColor = true;
+            this.buttonSemanal.Click += new System.EventHandler(this.buttonSemanal_Click);
+            // 
+            // chartEstadisticaGlobal
+            // 
+            this.chartEstadisticaGlobal.BackColor = System.Drawing.Color.Empty;
+            this.chartEstadisticaGlobal.BorderlineColor = System.Drawing.Color.Empty;
+            this.chartEstadisticaGlobal.BorderlineDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.DashDotDot;
+            this.chartEstadisticaGlobal.BorderSkin.BackColor = System.Drawing.Color.Blue;
+            this.chartEstadisticaGlobal.BorderSkin.BackImage = "Blue";
+            this.chartEstadisticaGlobal.BorderSkin.BackImageTransparentColor = System.Drawing.Color.Blue;
+            this.chartEstadisticaGlobal.BorderSkin.BackImageWrapMode = System.Windows.Forms.DataVisualization.Charting.ChartImageWrapMode.TileFlipXY;
+            this.chartEstadisticaGlobal.BorderSkin.BackSecondaryColor = System.Drawing.Color.Blue;
+            this.chartEstadisticaGlobal.BorderSkin.PageColor = System.Drawing.Color.Blue;
+            chartArea1.Name = "ChartArea1";
+            this.chartEstadisticaGlobal.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.chartEstadisticaGlobal.Legends.Add(legend1);
+            this.chartEstadisticaGlobal.Location = new System.Drawing.Point(0, 0);
+            this.chartEstadisticaGlobal.Margin = new System.Windows.Forms.Padding(0);
+            this.chartEstadisticaGlobal.Name = "chartEstadisticaGlobal";
+            this.chartEstadisticaGlobal.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Pastel;
+            series1.BorderColor = System.Drawing.Color.Cyan;
+            series1.ChartArea = "ChartArea1";
+            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
+            series1.Color = System.Drawing.Color.White;
+            series1.Legend = "Legend1";
+            series1.Name = "Glass";
+            series1.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Excel;
+            series1.YValuesPerPoint = 2;
+            this.chartEstadisticaGlobal.Series.Add(series1);
+            this.chartEstadisticaGlobal.Size = new System.Drawing.Size(777, 414);
+            this.chartEstadisticaGlobal.TabIndex = 0;
+            this.chartEstadisticaGlobal.Text = "Estadisticas De Venta";
+            // 
+            // panelPrincipalStockBajo
+            // 
+            this.panelPrincipalStockBajo.Controls.Add(this.buttonImprimirLista);
+            this.panelPrincipalStockBajo.Controls.Add(this.panel3);
+            this.panelPrincipalStockBajo.Controls.Add(this.dataGridViewProductosStockBajo);
+            this.panelPrincipalStockBajo.Location = new System.Drawing.Point(0, 0);
+            this.panelPrincipalStockBajo.Name = "panelPrincipalStockBajo";
+            this.panelPrincipalStockBajo.Size = new System.Drawing.Size(1080, 614);
+            this.panelPrincipalStockBajo.TabIndex = 3;
+            this.panelPrincipalStockBajo.Visible = false;
+            // 
+            // dataGridViewProductosStockBajo
+            // 
+            this.dataGridViewProductosStockBajo.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.dataGridViewProductosStockBajo.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
+            this.dataGridViewProductosStockBajo.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dataGridViewProductosStockBajo.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Raised;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewProductosStockBajo.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dataGridViewProductosStockBajo.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Descripcion,
+            this.Stock,
+            this.StockIdeal,
+            this.Pedido});
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridViewProductosStockBajo.DefaultCellStyle = dataGridViewCellStyle2;
+            this.dataGridViewProductosStockBajo.Dock = System.Windows.Forms.DockStyle.Left;
+            this.dataGridViewProductosStockBajo.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
+            this.dataGridViewProductosStockBajo.EnableHeadersVisualStyles = false;
+            this.dataGridViewProductosStockBajo.Location = new System.Drawing.Point(0, 0);
+            this.dataGridViewProductosStockBajo.Name = "dataGridViewProductosStockBajo";
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewProductosStockBajo.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            this.dataGridViewProductosStockBajo.Size = new System.Drawing.Size(900, 614);
+            this.dataGridViewProductosStockBajo.TabIndex = 11;
+            // 
+            // Descripcion
+            // 
+            this.Descripcion.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Descripcion.HeaderText = "Descripcion";
+            this.Descripcion.Name = "Descripcion";
+            // 
+            // Stock
+            // 
+            this.Stock.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.Stock.HeaderText = "Stock";
+            this.Stock.Name = "Stock";
+            this.Stock.Width = 75;
+            // 
+            // StockIdeal
+            // 
+            this.StockIdeal.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.StockIdeal.HeaderText = "Stock Ideal";
+            this.StockIdeal.Name = "StockIdeal";
+            this.StockIdeal.Width = 114;
+            // 
+            // Pedido
+            // 
+            this.Pedido.HeaderText = "Pedido";
+            this.Pedido.Name = "Pedido";
+            // 
+            // buttonImprimirLista
+            // 
+            this.buttonImprimirLista.FlatAppearance.BorderSize = 0;
+            this.buttonImprimirLista.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
+            this.buttonImprimirLista.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonImprimirLista.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonImprimirLista.ForeColor = System.Drawing.Color.White;
+            this.buttonImprimirLista.Image = ((System.Drawing.Image)(resources.GetObject("buttonImprimirLista.Image")));
+            this.buttonImprimirLista.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonImprimirLista.Location = new System.Drawing.Point(906, 3);
+            this.buttonImprimirLista.Name = "buttonImprimirLista";
+            this.buttonImprimirLista.Size = new System.Drawing.Size(174, 32);
+            this.buttonImprimirLista.TabIndex = 13;
+            this.buttonImprimirLista.Text = "Imprimir";
+            this.buttonImprimirLista.UseVisualStyleBackColor = true;
+            // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
+            this.panel3.Location = new System.Drawing.Point(901, 3);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(5, 32);
+            this.panel3.TabIndex = 12;
             // 
             // FormPrincipal
             // 
@@ -650,9 +753,11 @@
             this.panelSubMenu.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogo)).EndInit();
             this.panelGlobalOpciones.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.chartEstadisticaGlobal)).EndInit();
             this.panelPrincipalEstadistica.ResumeLayout(false);
             this.panelOpcionesEstadisticas.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.chartEstadisticaGlobal)).EndInit();
+            this.panelPrincipalStockBajo.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewProductosStockBajo)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -693,13 +798,20 @@
         private System.Windows.Forms.Label labelMultitask;
         private System.Windows.Forms.Panel panelPrincipalEstadistica;
         private System.Windows.Forms.Panel panelOpcionesEstadisticas;
-        private System.Windows.Forms.RichTextBox richTextBoxStockBajo;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button buttonAnual;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button buttonMensual;
         private System.Windows.Forms.Panel panel11;
         private System.Windows.Forms.Button buttonSemanal;
+        private System.Windows.Forms.Panel panelPrincipalStockBajo;
+        private System.Windows.Forms.DataGridView dataGridViewProductosStockBajo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Descripcion;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Stock;
+        private System.Windows.Forms.DataGridViewTextBoxColumn StockIdeal;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Pedido;
+        private System.Windows.Forms.Button buttonImprimirLista;
+        private System.Windows.Forms.Panel panel3;
     }
 }
 

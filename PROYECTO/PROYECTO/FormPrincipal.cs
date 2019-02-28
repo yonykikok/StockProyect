@@ -129,6 +129,7 @@ namespace PROYECTO
             }
             else
             {
+                panelPrincipalStockBajo.Visible = false;
                 panelPrincipalEstadistica.Visible = true;
                 CargarEstadisticasDeVentas();
             }
@@ -296,15 +297,15 @@ namespace PROYECTO
         private void buttonReportesStockBajo_Click(object sender, EventArgs e)
         {
             panelSubMenu.Visible = false;
-            richTextBoxStockBajo.Clear();
-            //-----     
-            if (richTextBoxStockBajo.Visible)
+            dataGridViewProductosStockBajo.Rows.Clear();
+            if (panelPrincipalStockBajo.Visible)
             {
-                richTextBoxStockBajo.Visible = false;
+                panelPrincipalStockBajo.Visible = false;
             }
             else
             {
-                richTextBoxStockBajo.Visible = true;
+                panelPrincipalEstadistica.Visible = false;
+                panelPrincipalStockBajo.Visible = true;
             }
             List<Producto> listaProductosDB = ProductosDAO.LeerProductos();
             List<Producto> listaStockBajo = new List<Producto>();
@@ -317,7 +318,8 @@ namespace PROYECTO
             }
             foreach (Producto auxProducto in listaStockBajo)
             {
-                richTextBoxStockBajo.Text += string.Format("Producto: {0}, Stock: {1}, Stock Ideal: {2}\n", auxProducto.Descripcion, auxProducto.Stock, auxProducto.StockIdeal); ;
+                int pedido = (auxProducto.StockIdeal - auxProducto.Stock);
+                dataGridViewProductosStockBajo.Rows.Add(auxProducto.Descripcion, auxProducto.Stock, auxProducto.StockIdeal,pedido);
             }
         }
 

@@ -428,7 +428,7 @@ namespace PROYECTO
             threadSeleccionarImagen.SetApartmentState(ApartmentState.STA);
             threadSeleccionarImagen.Start();
             threadSeleccionarImagen.Join();//hasta que no finaliza el hilo el resto del codigo se pausa.
-        }        
+        }
         private string SeleccionarImagen()
         {
             string pathDeImagen;
