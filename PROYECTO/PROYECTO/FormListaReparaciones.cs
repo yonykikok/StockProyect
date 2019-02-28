@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace PROYECTO
 {
-    public partial class FormReparaciones : Form
+    public partial class FormListaReparaciones : Form
     {
-        public FormReparaciones()
+        public FormListaReparaciones()
         {
             InitializeComponent();
         }

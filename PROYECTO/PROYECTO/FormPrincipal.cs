@@ -210,7 +210,7 @@ namespace PROYECTO
 
         private void IniciarFormReparaciones()
         {
-            FormReparaciones formReparaciones = new FormReparaciones();
+            FormListaReparaciones formReparaciones = new FormListaReparaciones();
             formReparaciones.ShowDialog();
         }
 
