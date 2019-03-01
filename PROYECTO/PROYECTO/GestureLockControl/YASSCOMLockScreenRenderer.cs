@@ -21,14 +21,13 @@ namespace GestureLockApp.GestureLockControl
         private void ApplyThemeToUtencils()
         {
             Color c = Color.FromArgb(0, 80, 200);
-            gesturePen.Color = Color.FromArgb(100, 255,255,255);
-           // gesturePen.Color = Color.FromArgb(100, c.R, c.G, c.B);
+            gesturePen.Color = Color.FromArgb(100, 255, 255, 255);
             padPen.Color = activeBrush.Color = c;
         }
 
         public override void RenderBackground(Graphics graphics, RectangleF bounds, Color backColor)
         {
-            graphics.Clear(Color.FromArgb(22,32,40));
+            graphics.Clear(Color.FromArgb(22, 32, 40));
         }
 
         public override void RenderGesture(Graphics graphics, PointF[] polygon)
@@ -42,7 +41,7 @@ namespace GestureLockApp.GestureLockControl
             graphics.DrawEllipse(padPen, bounds);
             if (state.HasFlag(GesturePadState.Inputted))
             {
-                float inflationAmount = bounds.Width*0.3f;
+                float inflationAmount = bounds.Width * 1.3f;
                 var innerRect = bounds;
                 innerRect.Inflate(-inflationAmount, -inflationAmount);
                 graphics.FillEllipse(activeBrush, innerRect);

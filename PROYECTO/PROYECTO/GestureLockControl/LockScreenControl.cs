@@ -6,20 +6,6 @@ using System.Drawing.Drawing2D;
 using System.Linq;
 using System.Windows.Forms;
 
-/******************** CREATED BY YASSCOM **********************
-*                                                             *
-#         __   __ _    ____ ____   ____ ___  __  __           *
-#         \ \ / // \  / ___/ ___| / ___/ _ \|  \/  |          *
-#          \ V // _ \ \___ \___ \| |  | | | | |\/| |          *
-#           | |/ ___ \ ___) |__) | |__| |_| | |  | |          *
-#           |_/_/   \_\____/____/ \____\___/|_|  |_|          *
-#                                                             *
-#                       DEVOUJDA.COM                          *
-#  https://www.youtube.com/channel/UChiPl4zBq6pNbZHT0rwTT9g   *
-*                                                             *
-***************************************************************    
-*/
-
 namespace GestureLockApp.GestureLockControl
 {
     [DefaultEvent("PassCodeSubmitted")]

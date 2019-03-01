@@ -56,5 +56,10 @@ namespace PROYECTO
             richTextBoxAclaraciones.Text = Aclaraciones();
             richTextBoxAcuerdos.Text = AcuerdosAntesDeFirmar();
         }
+        private void PatterLockControl_PassCodeSubmitted(object sender, GestureLockApp.GestureLockControl.PassCodeSubmittedEventArgs e)
+        {
+            string passCode = e.ToString();
+            //PatterLockControl.SetPassCode(passCode);
+        }
     }
 }
