@@ -109,6 +109,12 @@
     <Compile Include="FormVenta.Designer.cs">
       <DependentUpon>FormVenta.cs</DependentUpon>
     </Compile>
+    <Compile Include="GestureLockControl\GestureSubmittedEventArgs.cs" />
+    <Compile Include="GestureLockControl\LockScreenControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="GestureLockControl\LockScreenRenderer.cs" />
+    <Compile Include="GestureLockControl\YASSCOMLockScreenRenderer.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="FormCantidad.resx">
