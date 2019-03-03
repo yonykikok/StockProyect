@@ -45,12 +45,13 @@ namespace CapaDeDatos
             try
             {
                 conexionADB.Open();
-                comando = new SqlCommand("SELECT Description,Code,Stock,IdealStock,MinimumStock,Price,Id FROM Productos", conexionADB);
+                comando = new SqlCommand("SELECT Description,Code,Stock,IdealStock,MinimumStock,Price,Id,Img FROM Productos", conexionADB);
                 dataReader = comando.ExecuteReader();
                 while (dataReader.Read())
                 {
                     string auxCode = dataReader["Code"].ToString().ToLower();
                     string auxDescription = dataReader["Description"].ToString().ToLower();
+                    string auxImagen = dataReader["Img"].ToString().ToLower();
                     int auxStock = Convert.ToInt32(dataReader["Stock"].ToString());
                     int auxIdealStock = Convert.ToInt32(dataReader["IdealStock"].ToString());
                     int auxMinimumStock = Convert.ToInt32(dataReader["MinimumStock"].ToString());
@@ -58,7 +59,7 @@ namespace CapaDeDatos
                     int auxId = Convert.ToInt32(dataReader["Id"].ToString());
                     if (auxCode == codigo)
                     {
-                        retorno = new Producto(auxCode, auxDescription, auxStock, auxIdealStock, auxMinimumStock, auxPrice, auxId);
+                        retorno = new Producto(auxCode, auxDescription, auxStock, auxIdealStock, auxMinimumStock, auxPrice,auxImagen, auxId);
                         break;
                     }
                 }
