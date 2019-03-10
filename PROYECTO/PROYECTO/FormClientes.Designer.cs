@@ -135,6 +135,7 @@
             this.labelClientes.Size = new System.Drawing.Size(134, 20);
             this.labelClientes.TabIndex = 6;
             this.labelClientes.Text = "Multitask-Clientes";
+            this.labelClientes.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelBarraSuperior_MouseDown);
             // 
             // pictureBoxCerrar
             // 

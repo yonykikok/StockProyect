@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -12,6 +13,10 @@ namespace PROYECTO
 {
     public partial class FormListaReparaciones : Form
     {
+        Thread threadReparacion;
+
+        public Thread ThreadReparacion { get => threadReparacion; set => threadReparacion = value; }
+
         public FormListaReparaciones()
         {
             InitializeComponent();
@@ -58,6 +63,19 @@ namespace PROYECTO
            this.Cursor = Cursors.Arrow;
         }
 
-        
+        private void IniciarFormReparacion()
+        {
+            FormReparacion formReparacion = new FormReparacion();
+            formReparacion.ShowDialog();
+        }
+        private void buttonNuevaReparacion_Click(object sender, EventArgs e)
+        {
+            ThreadReparacion = new Thread(IniciarFormReparacion);
+            Program.MockThreads.Add(ThreadReparacion);
+            if (!(this.ThreadReparacion.IsAlive))
+            {
+                ThreadReparacion.Start();
+            }
+        }
     }
 }

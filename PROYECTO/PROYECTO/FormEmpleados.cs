@@ -76,11 +76,6 @@ namespace PROYECTO
             Program.ReleaseCapture();
             Program.SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
-
-        private void FormEmpleados_FormClosing(object sender, FormClosingEventArgs e)
-        {
-
-        }
         /// <summary>
         /// obtiene los datos de los TextBox y crea un empleado si los datos estan correcto
         /// </summary>
@@ -411,6 +406,5 @@ namespace PROYECTO
                 MessageBox.Show("Seleccione el usuario que desea borrar.");
             }
         }
-
     }
 }

@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using CapaDeNegocios;
 namespace PROYECTO
 {
     public partial class FormReparacion : Form
@@ -55,11 +55,66 @@ namespace PROYECTO
         {
             richTextBoxAclaraciones.Text = Aclaraciones();
             richTextBoxAcuerdos.Text = AcuerdosAntesDeFirmar();
+            textBoxFecha.Text = string.Format("{0}/{1}/{2}", DateTime.Today.Day, DateTime.Today.Month, DateTime.Today.Year);
+            textBoxNroDeBoleta.Text = "0003015 PRUEBA";
+            foreach (string observacion in Enum.GetNames(typeof(EObservaciones)))
+            {
+                comboBoxObservaciones.Items.Add(observacion);
+            }
+
         }
         private void PatterLockControl_PassCodeSubmitted(object sender, GestureLockApp.GestureLockControl.PassCodeSubmittedEventArgs e)
         {
             string passCode = e.ToString();
             //PatterLockControl.SetPassCode(passCode);
+        }
+
+
+        private void pictureBoxCheckForm_MouseHover(object sender, EventArgs e)
+        {
+            panelCheckForm.BackColor = Color.FromArgb(0, 80, 200);
+        }
+
+        private void pictureBoxCheckForm_MouseLeave(object sender, EventArgs e)
+        {
+            panelCheckForm.BackColor = Color.FromArgb(22, 32, 40);
+        }
+
+        private void pictureBoxCheckForm_Click(object sender, EventArgs e)
+        {
+            // Reparacion reparacion = new Reparacion();
+        }
+
+        private void buttonPatron_Click(object sender, EventArgs e)
+        {
+            panelPatterLock.Visible = true;
+            panelPassword.Visible = false;
+        }
+
+        private void buttonPassword_Click(object sender, EventArgs e)
+        {
+            panelPatterLock.Visible = false;
+            panelPassword.Visible = true;
+        }
+
+        private void buttonNinguno_Click(object sender, EventArgs e)
+        {
+            panelPatterLock.Visible = false;
+            panelPassword.Visible = false;
+        }
+
+        private void comboBox1_SelectedValueChanged(object sender, EventArgs e)
+        {
+            if (comboBoxObservaciones.SelectedItem.ToString() == "Otro")
+            {
+                textBoxObservaciones.Visible = true;
+                panelObservacionUnderline.Visible = true;
+            }
+            else
+            {
+                textBoxObservaciones.Visible = false;
+                panelObservacionUnderline.Visible = false;
+            }
         }
     }
 }

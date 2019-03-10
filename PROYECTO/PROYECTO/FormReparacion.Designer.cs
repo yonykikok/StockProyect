@@ -34,32 +34,41 @@
             this.pictureBoxClose = new System.Windows.Forms.PictureBox();
             this.pictureBoxCelular = new System.Windows.Forms.PictureBox();
             this.panelIntro = new System.Windows.Forms.Panel();
-            this.label13 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.labelNumero = new System.Windows.Forms.Label();
             this.labelSabado = new System.Windows.Forms.Label();
             this.labelLunesAViernes = new System.Windows.Forms.Label();
             this.labelTitulo = new System.Windows.Forms.Label();
             this.panelServicio = new System.Windows.Forms.Panel();
-            this.checkBoxGarantia = new System.Windows.Forms.CheckBox();
-            this.checkBoxActivacion = new System.Windows.Forms.CheckBox();
-            this.checkBoxPresupuesto = new System.Windows.Forms.CheckBox();
-            this.checkBoxReparacion = new System.Windows.Forms.CheckBox();
-            this.checkBoxOtro = new System.Windows.Forms.CheckBox();
-            this.checkBoxNotebook = new System.Windows.Forms.CheckBox();
-            this.checkBoxCelular = new System.Windows.Forms.CheckBox();
-            this.checkBoxTablet = new System.Windows.Forms.CheckBox();
+            this.checkedListBoxServicios = new System.Windows.Forms.CheckedListBox();
+            this.checkedListBoxEquipo = new System.Windows.Forms.CheckedListBox();
+            this.panelCheckForm = new System.Windows.Forms.Panel();
+            this.pictureBoxCheckForm = new System.Windows.Forms.PictureBox();
+            this.panel20 = new System.Windows.Forms.Panel();
+            this.panel17 = new System.Windows.Forms.Panel();
+            this.panel19 = new System.Windows.Forms.Panel();
+            this.panel18 = new System.Windows.Forms.Panel();
+            this.textBoxFecha = new System.Windows.Forms.TextBox();
+            this.textBoxNroDeBoleta = new System.Windows.Forms.TextBox();
             this.labelFecha = new System.Windows.Forms.Label();
             this.labelNroBoleta = new System.Windows.Forms.Label();
             this.panelDatosDelEquipo = new System.Windows.Forms.Panel();
+            this.panel23 = new System.Windows.Forms.Panel();
+            this.buttonNinguno = new System.Windows.Forms.Button();
+            this.panel22 = new System.Windows.Forms.Panel();
+            this.buttonPassword = new System.Windows.Forms.Button();
+            this.panel21 = new System.Windows.Forms.Panel();
+            this.buttonPatron = new System.Windows.Forms.Button();
+            this.panelPassword = new System.Windows.Forms.Panel();
+            this.label2 = new System.Windows.Forms.Label();
             this.textBoxPassword = new System.Windows.Forms.TextBox();
+            this.panelLinea = new System.Windows.Forms.Panel();
             this.textBoxGarantia15Dias = new System.Windows.Forms.TextBox();
             this.textBoxMarcaYModelo = new System.Windows.Forms.TextBox();
             this.panel13 = new System.Windows.Forms.Panel();
             this.panel12 = new System.Windows.Forms.Panel();
             this.panelPatterLock = new System.Windows.Forms.Panel();
             this.PatterLockControl = new GestureLockApp.GestureLockControl.LockScreenControl();
-            this.panelLinea = new System.Windows.Forms.Panel();
-            this.label2 = new System.Windows.Forms.Label();
             this.labelTiempoDeGarantia = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.panelDatosDelCliente = new System.Windows.Forms.Panel();
@@ -80,19 +89,16 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label8 = new System.Windows.Forms.Label();
-            this.panel5 = new System.Windows.Forms.Panel();
-            this.textBoxObservaciones = new System.Windows.Forms.TextBox();
-            this.textBoxObservaciones2 = new System.Windows.Forms.TextBox();
-            this.panel7 = new System.Windows.Forms.Panel();
-            this.panel6 = new System.Windows.Forms.Panel();
-            this.label6 = new System.Windows.Forms.Label();
             this.panelPrecio = new System.Windows.Forms.Panel();
             this.panel16 = new System.Windows.Forms.Panel();
+            this.textBox3 = new System.Windows.Forms.TextBox();
             this.textBoxSaldo = new System.Windows.Forms.TextBox();
             this.panel15 = new System.Windows.Forms.Panel();
+            this.textBox2 = new System.Windows.Forms.TextBox();
             this.textBoxSenia = new System.Windows.Forms.TextBox();
             this.panel14 = new System.Windows.Forms.Panel();
             this.textBoxPrecio = new System.Windows.Forms.TextBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
@@ -104,23 +110,32 @@
             this.label12 = new System.Windows.Forms.Label();
             this.richTextBoxAcuerdos = new System.Windows.Forms.RichTextBox();
             this.label11 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.panelObservacionUnderline = new System.Windows.Forms.Panel();
+            this.textBoxObservaciones = new System.Windows.Forms.TextBox();
+            this.comboBoxObservaciones = new System.Windows.Forms.ComboBox();
+            this.panel5 = new System.Windows.Forms.Panel();
             this.panelDown.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMinimizar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxClose)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCelular)).BeginInit();
             this.panelIntro.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panelServicio.SuspendLayout();
+            this.panelCheckForm.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCheckForm)).BeginInit();
             this.panelDatosDelEquipo.SuspendLayout();
+            this.panelPassword.SuspendLayout();
             this.panelPatterLock.SuspendLayout();
             this.panelDatosDelCliente.SuspendLayout();
             this.panel1.SuspendLayout();
-            this.panel5.SuspendLayout();
             this.panelPrecio.SuspendLayout();
             this.panel16.SuspendLayout();
             this.panel15.SuspendLayout();
             this.panel14.SuspendLayout();
             this.panelImportante.SuspendLayout();
             this.panelLeerAntesDeFirmar.SuspendLayout();
+            this.panel5.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelDown
@@ -172,7 +187,7 @@
             // panelIntro
             // 
             this.panelIntro.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panelIntro.Controls.Add(this.label13);
+            this.panelIntro.Controls.Add(this.pictureBox1);
             this.panelIntro.Controls.Add(this.labelNumero);
             this.panelIntro.Controls.Add(this.labelSabado);
             this.panelIntro.Controls.Add(this.labelLunesAViernes);
@@ -181,27 +196,28 @@
             this.panelIntro.Location = new System.Drawing.Point(0, 24);
             this.panelIntro.Name = "panelIntro";
             this.panelIntro.Size = new System.Drawing.Size(389, 135);
-            this.panelIntro.TabIndex = 2;
+            this.panelIntro.TabIndex = 10;
             // 
-            // label13
+            // pictureBox1
             // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(371, 121);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(41, 13);
-            this.label13.TabIndex = 6;
-            this.label13.Text = "label13";
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(343, 94);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(41, 30);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 6;
+            this.pictureBox1.TabStop = false;
             // 
             // labelNumero
             // 
             this.labelNumero.AutoSize = true;
             this.labelNumero.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelNumero.ForeColor = System.Drawing.Color.White;
-            this.labelNumero.Location = new System.Drawing.Point(243, 104);
+            this.labelNumero.Location = new System.Drawing.Point(157, 104);
             this.labelNumero.Name = "labelNumero";
-            this.labelNumero.Size = new System.Drawing.Size(109, 20);
+            this.labelNumero.Size = new System.Drawing.Size(190, 20);
             this.labelNumero.TabIndex = 5;
-            this.labelNumero.Text = "11-3894-1181";
+            this.labelNumero.Text = "Whatsapp: 11-3894-1181";
             // 
             // labelSabado
             // 
@@ -239,116 +255,133 @@
             // panelServicio
             // 
             this.panelServicio.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panelServicio.Controls.Add(this.checkBoxGarantia);
-            this.panelServicio.Controls.Add(this.checkBoxActivacion);
-            this.panelServicio.Controls.Add(this.checkBoxPresupuesto);
-            this.panelServicio.Controls.Add(this.checkBoxReparacion);
-            this.panelServicio.Controls.Add(this.checkBoxOtro);
-            this.panelServicio.Controls.Add(this.checkBoxNotebook);
-            this.panelServicio.Controls.Add(this.checkBoxCelular);
-            this.panelServicio.Controls.Add(this.checkBoxTablet);
+            this.panelServicio.Controls.Add(this.checkedListBoxServicios);
+            this.panelServicio.Controls.Add(this.checkedListBoxEquipo);
+            this.panelServicio.Controls.Add(this.panelCheckForm);
+            this.panelServicio.Controls.Add(this.textBoxFecha);
+            this.panelServicio.Controls.Add(this.textBoxNroDeBoleta);
             this.panelServicio.Controls.Add(this.labelFecha);
             this.panelServicio.Controls.Add(this.labelNroBoleta);
-            this.panelServicio.Location = new System.Drawing.Point(386, 24);
+            this.panelServicio.Location = new System.Drawing.Point(387, 24);
             this.panelServicio.Name = "panelServicio";
             this.panelServicio.Size = new System.Drawing.Size(593, 135);
-            this.panelServicio.TabIndex = 3;
+            this.panelServicio.TabIndex = 1;
             // 
-            // checkBoxGarantia
+            // checkedListBoxServicios
             // 
-            this.checkBoxGarantia.AutoSize = true;
-            this.checkBoxGarantia.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBoxGarantia.ForeColor = System.Drawing.Color.White;
-            this.checkBoxGarantia.Location = new System.Drawing.Point(194, 100);
-            this.checkBoxGarantia.Name = "checkBoxGarantia";
-            this.checkBoxGarantia.Size = new System.Drawing.Size(90, 24);
-            this.checkBoxGarantia.TabIndex = 23;
-            this.checkBoxGarantia.Text = "Garantia";
-            this.checkBoxGarantia.UseVisualStyleBackColor = true;
+            this.checkedListBoxServicios.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
+            this.checkedListBoxServicios.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.checkedListBoxServicios.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkedListBoxServicios.ForeColor = System.Drawing.Color.White;
+            this.checkedListBoxServicios.FormattingEnabled = true;
+            this.checkedListBoxServicios.Items.AddRange(new object[] {
+            "Reparacion",
+            "Presupuesto",
+            "Activacion",
+            "Garantia"});
+            this.checkedListBoxServicios.Location = new System.Drawing.Point(167, 5);
+            this.checkedListBoxServicios.Margin = new System.Windows.Forms.Padding(10);
+            this.checkedListBoxServicios.Name = "checkedListBoxServicios";
+            this.checkedListBoxServicios.Size = new System.Drawing.Size(114, 84);
+            this.checkedListBoxServicios.TabIndex = 568;
             // 
-            // checkBoxActivacion
+            // checkedListBoxEquipo
             // 
-            this.checkBoxActivacion.AutoSize = true;
-            this.checkBoxActivacion.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBoxActivacion.ForeColor = System.Drawing.Color.White;
-            this.checkBoxActivacion.Location = new System.Drawing.Point(194, 70);
-            this.checkBoxActivacion.Name = "checkBoxActivacion";
-            this.checkBoxActivacion.Size = new System.Drawing.Size(100, 24);
-            this.checkBoxActivacion.TabIndex = 22;
-            this.checkBoxActivacion.Text = "Activacion";
-            this.checkBoxActivacion.UseVisualStyleBackColor = true;
+            this.checkedListBoxEquipo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
+            this.checkedListBoxEquipo.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.checkedListBoxEquipo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkedListBoxEquipo.ForeColor = System.Drawing.Color.White;
+            this.checkedListBoxEquipo.FormattingEnabled = true;
+            this.checkedListBoxEquipo.Items.AddRange(new object[] {
+            "Tablet",
+            "Celular",
+            "Notebook",
+            "Otro"});
+            this.checkedListBoxEquipo.Location = new System.Drawing.Point(21, 5);
+            this.checkedListBoxEquipo.Name = "checkedListBoxEquipo";
+            this.checkedListBoxEquipo.Size = new System.Drawing.Size(114, 84);
+            this.checkedListBoxEquipo.TabIndex = 567;
             // 
-            // checkBoxPresupuesto
+            // panelCheckForm
             // 
-            this.checkBoxPresupuesto.AutoSize = true;
-            this.checkBoxPresupuesto.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBoxPresupuesto.ForeColor = System.Drawing.Color.White;
-            this.checkBoxPresupuesto.Location = new System.Drawing.Point(194, 40);
-            this.checkBoxPresupuesto.Name = "checkBoxPresupuesto";
-            this.checkBoxPresupuesto.Size = new System.Drawing.Size(118, 24);
-            this.checkBoxPresupuesto.TabIndex = 21;
-            this.checkBoxPresupuesto.Text = "Presupuesto";
-            this.checkBoxPresupuesto.UseVisualStyleBackColor = true;
+            this.panelCheckForm.Controls.Add(this.pictureBoxCheckForm);
+            this.panelCheckForm.Controls.Add(this.panel20);
+            this.panelCheckForm.Controls.Add(this.panel17);
+            this.panelCheckForm.Controls.Add(this.panel19);
+            this.panelCheckForm.Controls.Add(this.panel18);
+            this.panelCheckForm.Location = new System.Drawing.Point(548, 4);
+            this.panelCheckForm.Name = "panelCheckForm";
+            this.panelCheckForm.Size = new System.Drawing.Size(40, 40);
+            this.panelCheckForm.TabIndex = 566;
             // 
-            // checkBoxReparacion
+            // pictureBoxCheckForm
             // 
-            this.checkBoxReparacion.AutoSize = true;
-            this.checkBoxReparacion.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBoxReparacion.ForeColor = System.Drawing.Color.White;
-            this.checkBoxReparacion.Location = new System.Drawing.Point(194, 10);
-            this.checkBoxReparacion.Name = "checkBoxReparacion";
-            this.checkBoxReparacion.Size = new System.Drawing.Size(110, 24);
-            this.checkBoxReparacion.TabIndex = 20;
-            this.checkBoxReparacion.Text = "Reparacion";
-            this.checkBoxReparacion.UseVisualStyleBackColor = true;
+            this.pictureBoxCheckForm.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxCheckForm.Image")));
+            this.pictureBoxCheckForm.Location = new System.Drawing.Point(6, 6);
+            this.pictureBoxCheckForm.Name = "pictureBoxCheckForm";
+            this.pictureBoxCheckForm.Size = new System.Drawing.Size(30, 30);
+            this.pictureBoxCheckForm.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBoxCheckForm.TabIndex = 562;
+            this.pictureBoxCheckForm.TabStop = false;
+            this.pictureBoxCheckForm.Click += new System.EventHandler(this.pictureBoxCheckForm_Click);
+            this.pictureBoxCheckForm.MouseLeave += new System.EventHandler(this.pictureBoxCheckForm_MouseLeave);
+            this.pictureBoxCheckForm.MouseHover += new System.EventHandler(this.pictureBoxCheckForm_MouseHover);
             // 
-            // checkBoxOtro
+            // panel20
             // 
-            this.checkBoxOtro.AutoSize = true;
-            this.checkBoxOtro.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBoxOtro.ForeColor = System.Drawing.Color.White;
-            this.checkBoxOtro.Location = new System.Drawing.Point(8, 100);
-            this.checkBoxOtro.Name = "checkBoxOtro";
-            this.checkBoxOtro.Size = new System.Drawing.Size(59, 24);
-            this.checkBoxOtro.TabIndex = 19;
-            this.checkBoxOtro.Text = "Otro";
-            this.checkBoxOtro.UseVisualStyleBackColor = true;
+            this.panel20.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
+            this.panel20.Location = new System.Drawing.Point(6, 36);
+            this.panel20.Name = "panel20";
+            this.panel20.Size = new System.Drawing.Size(30, 5);
+            this.panel20.TabIndex = 565;
             // 
-            // checkBoxNotebook
+            // panel17
             // 
-            this.checkBoxNotebook.AutoSize = true;
-            this.checkBoxNotebook.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBoxNotebook.ForeColor = System.Drawing.Color.White;
-            this.checkBoxNotebook.Location = new System.Drawing.Point(8, 70);
-            this.checkBoxNotebook.Name = "checkBoxNotebook";
-            this.checkBoxNotebook.Size = new System.Drawing.Size(97, 24);
-            this.checkBoxNotebook.TabIndex = 18;
-            this.checkBoxNotebook.Text = "Notebook";
-            this.checkBoxNotebook.UseVisualStyleBackColor = true;
+            this.panel17.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
+            this.panel17.Location = new System.Drawing.Point(1, 1);
+            this.panel17.Name = "panel17";
+            this.panel17.Size = new System.Drawing.Size(5, 40);
+            this.panel17.TabIndex = 561;
             // 
-            // checkBoxCelular
+            // panel19
             // 
-            this.checkBoxCelular.AutoSize = true;
-            this.checkBoxCelular.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBoxCelular.ForeColor = System.Drawing.Color.White;
-            this.checkBoxCelular.Location = new System.Drawing.Point(8, 40);
-            this.checkBoxCelular.Name = "checkBoxCelular";
-            this.checkBoxCelular.Size = new System.Drawing.Size(77, 24);
-            this.checkBoxCelular.TabIndex = 17;
-            this.checkBoxCelular.Text = "Celular";
-            this.checkBoxCelular.UseVisualStyleBackColor = true;
+            this.panel19.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
+            this.panel19.Location = new System.Drawing.Point(6, 1);
+            this.panel19.Name = "panel19";
+            this.panel19.Size = new System.Drawing.Size(30, 5);
+            this.panel19.TabIndex = 564;
             // 
-            // checkBoxTablet
+            // panel18
             // 
-            this.checkBoxTablet.AutoSize = true;
-            this.checkBoxTablet.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBoxTablet.ForeColor = System.Drawing.Color.White;
-            this.checkBoxTablet.Location = new System.Drawing.Point(8, 10);
-            this.checkBoxTablet.Name = "checkBoxTablet";
-            this.checkBoxTablet.Size = new System.Drawing.Size(72, 24);
-            this.checkBoxTablet.TabIndex = 16;
-            this.checkBoxTablet.Text = "Tablet";
-            this.checkBoxTablet.UseVisualStyleBackColor = true;
+            this.panel18.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
+            this.panel18.Location = new System.Drawing.Point(36, 1);
+            this.panel18.Name = "panel18";
+            this.panel18.Size = new System.Drawing.Size(5, 40);
+            this.panel18.TabIndex = 563;
+            // 
+            // textBoxFecha
+            // 
+            this.textBoxFecha.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
+            this.textBoxFecha.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBoxFecha.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxFecha.ForeColor = System.Drawing.Color.White;
+            this.textBoxFecha.Location = new System.Drawing.Point(456, 97);
+            this.textBoxFecha.Name = "textBoxFecha";
+            this.textBoxFecha.ReadOnly = true;
+            this.textBoxFecha.Size = new System.Drawing.Size(132, 19);
+            this.textBoxFecha.TabIndex = 559;
+            // 
+            // textBoxNroDeBoleta
+            // 
+            this.textBoxNroDeBoleta.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
+            this.textBoxNroDeBoleta.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBoxNroDeBoleta.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxNroDeBoleta.ForeColor = System.Drawing.Color.White;
+            this.textBoxNroDeBoleta.Location = new System.Drawing.Point(456, 77);
+            this.textBoxNroDeBoleta.Name = "textBoxNroDeBoleta";
+            this.textBoxNroDeBoleta.ReadOnly = true;
+            this.textBoxNroDeBoleta.Size = new System.Drawing.Size(132, 19);
+            this.textBoxNroDeBoleta.TabIndex = 558;
             // 
             // labelFecha
             // 
@@ -375,50 +408,162 @@
             // panelDatosDelEquipo
             // 
             this.panelDatosDelEquipo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panelDatosDelEquipo.Controls.Add(this.textBoxPassword);
+            this.panelDatosDelEquipo.Controls.Add(this.panel23);
+            this.panelDatosDelEquipo.Controls.Add(this.buttonNinguno);
+            this.panelDatosDelEquipo.Controls.Add(this.panel22);
+            this.panelDatosDelEquipo.Controls.Add(this.buttonPassword);
+            this.panelDatosDelEquipo.Controls.Add(this.panel21);
+            this.panelDatosDelEquipo.Controls.Add(this.buttonPatron);
+            this.panelDatosDelEquipo.Controls.Add(this.panelPassword);
             this.panelDatosDelEquipo.Controls.Add(this.textBoxGarantia15Dias);
             this.panelDatosDelEquipo.Controls.Add(this.textBoxMarcaYModelo);
             this.panelDatosDelEquipo.Controls.Add(this.panel13);
             this.panelDatosDelEquipo.Controls.Add(this.panel12);
             this.panelDatosDelEquipo.Controls.Add(this.panelPatterLock);
-            this.panelDatosDelEquipo.Controls.Add(this.panelLinea);
-            this.panelDatosDelEquipo.Controls.Add(this.label2);
             this.panelDatosDelEquipo.Controls.Add(this.labelTiempoDeGarantia);
             this.panelDatosDelEquipo.Controls.Add(this.label1);
             this.panelDatosDelEquipo.Location = new System.Drawing.Point(487, 158);
             this.panelDatosDelEquipo.Name = "panelDatosDelEquipo";
             this.panelDatosDelEquipo.Size = new System.Drawing.Size(492, 184);
-            this.panelDatosDelEquipo.TabIndex = 4;
+            this.panelDatosDelEquipo.TabIndex = 3;
+            // 
+            // panel23
+            // 
+            this.panel23.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
+            this.panel23.Location = new System.Drawing.Point(4, 136);
+            this.panel23.Name = "panel23";
+            this.panel23.Size = new System.Drawing.Size(5, 24);
+            this.panel23.TabIndex = 38;
+            // 
+            // buttonNinguno
+            // 
+            this.buttonNinguno.FlatAppearance.BorderSize = 0;
+            this.buttonNinguno.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
+            this.buttonNinguno.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonNinguno.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonNinguno.ForeColor = System.Drawing.Color.White;
+            this.buttonNinguno.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonNinguno.Location = new System.Drawing.Point(9, 136);
+            this.buttonNinguno.Name = "buttonNinguno";
+            this.buttonNinguno.Size = new System.Drawing.Size(81, 24);
+            this.buttonNinguno.TabIndex = 37;
+            this.buttonNinguno.Text = "Ninguno";
+            this.buttonNinguno.TextAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.buttonNinguno.UseVisualStyleBackColor = true;
+            this.buttonNinguno.Click += new System.EventHandler(this.buttonNinguno_Click);
+            // 
+            // panel22
+            // 
+            this.panel22.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
+            this.panel22.Location = new System.Drawing.Point(4, 106);
+            this.panel22.Name = "panel22";
+            this.panel22.Size = new System.Drawing.Size(5, 24);
+            this.panel22.TabIndex = 36;
+            // 
+            // buttonPassword
+            // 
+            this.buttonPassword.FlatAppearance.BorderSize = 0;
+            this.buttonPassword.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
+            this.buttonPassword.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonPassword.ForeColor = System.Drawing.Color.White;
+            this.buttonPassword.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonPassword.Location = new System.Drawing.Point(9, 106);
+            this.buttonPassword.Name = "buttonPassword";
+            this.buttonPassword.Size = new System.Drawing.Size(81, 24);
+            this.buttonPassword.TabIndex = 35;
+            this.buttonPassword.Text = "Password";
+            this.buttonPassword.TextAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.buttonPassword.UseVisualStyleBackColor = true;
+            this.buttonPassword.Click += new System.EventHandler(this.buttonPassword_Click);
+            // 
+            // panel21
+            // 
+            this.panel21.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
+            this.panel21.Location = new System.Drawing.Point(4, 76);
+            this.panel21.Name = "panel21";
+            this.panel21.Size = new System.Drawing.Size(5, 24);
+            this.panel21.TabIndex = 34;
+            // 
+            // buttonPatron
+            // 
+            this.buttonPatron.FlatAppearance.BorderSize = 0;
+            this.buttonPatron.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
+            this.buttonPatron.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonPatron.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonPatron.ForeColor = System.Drawing.Color.White;
+            this.buttonPatron.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonPatron.Location = new System.Drawing.Point(9, 76);
+            this.buttonPatron.Name = "buttonPatron";
+            this.buttonPatron.Size = new System.Drawing.Size(81, 24);
+            this.buttonPatron.TabIndex = 33;
+            this.buttonPatron.Text = "Patron";
+            this.buttonPatron.TextAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.buttonPatron.UseVisualStyleBackColor = true;
+            this.buttonPatron.Click += new System.EventHandler(this.buttonPatron_Click);
+            // 
+            // panelPassword
+            // 
+            this.panelPassword.Controls.Add(this.label2);
+            this.panelPassword.Controls.Add(this.textBoxPassword);
+            this.panelPassword.Controls.Add(this.panelLinea);
+            this.panelPassword.Location = new System.Drawing.Point(146, 70);
+            this.panelPassword.Name = "panelPassword";
+            this.panelPassword.Size = new System.Drawing.Size(287, 99);
+            this.panelPassword.TabIndex = 32;
+            this.panelPassword.Visible = false;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(109, 22);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(92, 20);
+            this.label2.TabIndex = 27;
+            this.label2.Text = "Contraseña";
             // 
             // textBoxPassword
             // 
             this.textBoxPassword.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
             this.textBoxPassword.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBoxPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxPassword.ForeColor = System.Drawing.Color.White;
-            this.textBoxPassword.Location = new System.Drawing.Point(36, 146);
+            this.textBoxPassword.Location = new System.Drawing.Point(5, 64);
             this.textBoxPassword.Name = "textBoxPassword";
-            this.textBoxPassword.Size = new System.Drawing.Size(278, 13);
-            this.textBoxPassword.TabIndex = 37;
+            this.textBoxPassword.Size = new System.Drawing.Size(278, 19);
+            this.textBoxPassword.TabIndex = 3;
+            // 
+            // panelLinea
+            // 
+            this.panelLinea.BackColor = System.Drawing.Color.Silver;
+            this.panelLinea.Location = new System.Drawing.Point(3, 83);
+            this.panelLinea.Name = "panelLinea";
+            this.panelLinea.Size = new System.Drawing.Size(280, 1);
+            this.panelLinea.TabIndex = 28;
             // 
             // textBoxGarantia15Dias
             // 
             this.textBoxGarantia15Dias.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
             this.textBoxGarantia15Dias.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBoxGarantia15Dias.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxGarantia15Dias.ForeColor = System.Drawing.Color.White;
-            this.textBoxGarantia15Dias.Location = new System.Drawing.Point(220, 49);
+            this.textBoxGarantia15Dias.Location = new System.Drawing.Point(220, 44);
             this.textBoxGarantia15Dias.Name = "textBoxGarantia15Dias";
-            this.textBoxGarantia15Dias.Size = new System.Drawing.Size(258, 13);
-            this.textBoxGarantia15Dias.TabIndex = 36;
+            this.textBoxGarantia15Dias.Size = new System.Drawing.Size(258, 19);
+            this.textBoxGarantia15Dias.TabIndex = 2;
             // 
             // textBoxMarcaYModelo
             // 
             this.textBoxMarcaYModelo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
             this.textBoxMarcaYModelo.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBoxMarcaYModelo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxMarcaYModelo.ForeColor = System.Drawing.Color.White;
-            this.textBoxMarcaYModelo.Location = new System.Drawing.Point(138, 18);
+            this.textBoxMarcaYModelo.Location = new System.Drawing.Point(138, 13);
             this.textBoxMarcaYModelo.Name = "textBoxMarcaYModelo";
-            this.textBoxMarcaYModelo.Size = new System.Drawing.Size(340, 13);
-            this.textBoxMarcaYModelo.TabIndex = 35;
+            this.textBoxMarcaYModelo.Size = new System.Drawing.Size(340, 19);
+            this.textBoxMarcaYModelo.TabIndex = 1;
             // 
             // panel13
             // 
@@ -440,10 +585,11 @@
             // 
             this.panelPatterLock.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panelPatterLock.Controls.Add(this.PatterLockControl);
-            this.panelPatterLock.Location = new System.Drawing.Point(345, 66);
+            this.panelPatterLock.Location = new System.Drawing.Point(220, 66);
             this.panelPatterLock.Name = "panelPatterLock";
             this.panelPatterLock.Size = new System.Drawing.Size(133, 113);
             this.panelPatterLock.TabIndex = 29;
+            this.panelPatterLock.Visible = false;
             // 
             // PatterLockControl
             // 
@@ -453,25 +599,6 @@
             this.PatterLockControl.TabIndex = 26;
             this.PatterLockControl.Text = "lockScreenControl1";
             this.PatterLockControl.PassCodeSubmitted += new System.EventHandler<GestureLockApp.GestureLockControl.PassCodeSubmittedEventArgs>(this.PatterLockControl_PassCodeSubmitted);
-            // 
-            // panelLinea
-            // 
-            this.panelLinea.BackColor = System.Drawing.Color.Silver;
-            this.panelLinea.Location = new System.Drawing.Point(34, 161);
-            this.panelLinea.Name = "panelLinea";
-            this.panelLinea.Size = new System.Drawing.Size(280, 1);
-            this.panelLinea.TabIndex = 28;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(101, 98);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(159, 20);
-            this.label2.TabIndex = 27;
-            this.label2.Text = "Patron O Contraseña";
             // 
             // labelTiempoDeGarantia
             // 
@@ -510,37 +637,40 @@
             this.panelDatosDelCliente.Location = new System.Drawing.Point(0, 158);
             this.panelDatosDelCliente.Name = "panelDatosDelCliente";
             this.panelDatosDelCliente.Size = new System.Drawing.Size(488, 119);
-            this.panelDatosDelCliente.TabIndex = 5;
+            this.panelDatosDelCliente.TabIndex = 2;
             // 
             // textBoxNombreYApellido
             // 
             this.textBoxNombreYApellido.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
             this.textBoxNombreYApellido.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBoxNombreYApellido.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxNombreYApellido.ForeColor = System.Drawing.Color.White;
-            this.textBoxNombreYApellido.Location = new System.Drawing.Point(145, 18);
+            this.textBoxNombreYApellido.Location = new System.Drawing.Point(145, 13);
             this.textBoxNombreYApellido.Name = "textBoxNombreYApellido";
-            this.textBoxNombreYApellido.Size = new System.Drawing.Size(330, 13);
-            this.textBoxNombreYApellido.TabIndex = 34;
+            this.textBoxNombreYApellido.Size = new System.Drawing.Size(330, 19);
+            this.textBoxNombreYApellido.TabIndex = 1;
             // 
             // textBoxTelefono
             // 
             this.textBoxTelefono.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
             this.textBoxTelefono.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBoxTelefono.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxTelefono.ForeColor = System.Drawing.Color.White;
-            this.textBoxTelefono.Location = new System.Drawing.Point(79, 81);
+            this.textBoxTelefono.Location = new System.Drawing.Point(79, 76);
             this.textBoxTelefono.Name = "textBoxTelefono";
-            this.textBoxTelefono.Size = new System.Drawing.Size(396, 13);
-            this.textBoxTelefono.TabIndex = 33;
+            this.textBoxTelefono.Size = new System.Drawing.Size(396, 19);
+            this.textBoxTelefono.TabIndex = 3;
             // 
             // textBoxDni
             // 
             this.textBoxDni.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
             this.textBoxDni.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBoxDni.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxDni.ForeColor = System.Drawing.Color.White;
-            this.textBoxDni.Location = new System.Drawing.Point(47, 49);
+            this.textBoxDni.Location = new System.Drawing.Point(47, 44);
             this.textBoxDni.Name = "textBoxDni";
-            this.textBoxDni.Size = new System.Drawing.Size(427, 13);
-            this.textBoxDni.TabIndex = 32;
+            this.textBoxDni.Size = new System.Drawing.Size(427, 19);
+            this.textBoxDni.TabIndex = 2;
             // 
             // panel10
             // 
@@ -612,37 +742,40 @@
             this.panel1.Location = new System.Drawing.Point(0, 276);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(488, 130);
-            this.panel1.TabIndex = 6;
+            this.panel1.TabIndex = 4;
             // 
             // textBoxTrabajoARealizar3
             // 
             this.textBoxTrabajoARealizar3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
             this.textBoxTrabajoARealizar3.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBoxTrabajoARealizar3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxTrabajoARealizar3.ForeColor = System.Drawing.Color.White;
-            this.textBoxTrabajoARealizar3.Location = new System.Drawing.Point(7, 109);
+            this.textBoxTrabajoARealizar3.Location = new System.Drawing.Point(7, 103);
             this.textBoxTrabajoARealizar3.Name = "textBoxTrabajoARealizar3";
-            this.textBoxTrabajoARealizar3.Size = new System.Drawing.Size(471, 13);
-            this.textBoxTrabajoARealizar3.TabIndex = 40;
+            this.textBoxTrabajoARealizar3.Size = new System.Drawing.Size(471, 19);
+            this.textBoxTrabajoARealizar3.TabIndex = 3;
             // 
             // textBoxTrabajoARealizar2
             // 
             this.textBoxTrabajoARealizar2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
             this.textBoxTrabajoARealizar2.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBoxTrabajoARealizar2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxTrabajoARealizar2.ForeColor = System.Drawing.Color.White;
-            this.textBoxTrabajoARealizar2.Location = new System.Drawing.Point(8, 75);
+            this.textBoxTrabajoARealizar2.Location = new System.Drawing.Point(8, 69);
             this.textBoxTrabajoARealizar2.Name = "textBoxTrabajoARealizar2";
-            this.textBoxTrabajoARealizar2.Size = new System.Drawing.Size(471, 13);
-            this.textBoxTrabajoARealizar2.TabIndex = 39;
+            this.textBoxTrabajoARealizar2.Size = new System.Drawing.Size(471, 19);
+            this.textBoxTrabajoARealizar2.TabIndex = 2;
             // 
             // textBoxTrabajoARealizar
             // 
             this.textBoxTrabajoARealizar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
             this.textBoxTrabajoARealizar.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBoxTrabajoARealizar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxTrabajoARealizar.ForeColor = System.Drawing.Color.White;
-            this.textBoxTrabajoARealizar.Location = new System.Drawing.Point(7, 40);
+            this.textBoxTrabajoARealizar.Location = new System.Drawing.Point(7, 34);
             this.textBoxTrabajoARealizar.Name = "textBoxTrabajoARealizar";
-            this.textBoxTrabajoARealizar.Size = new System.Drawing.Size(471, 13);
-            this.textBoxTrabajoARealizar.TabIndex = 38;
+            this.textBoxTrabajoARealizar.Size = new System.Drawing.Size(471, 19);
+            this.textBoxTrabajoARealizar.TabIndex = 1;
             // 
             // panel4
             // 
@@ -679,66 +812,6 @@
             this.label8.TabIndex = 5;
             this.label8.Text = "Trabajo a realizar";
             // 
-            // panel5
-            // 
-            this.panel5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel5.Controls.Add(this.textBoxObservaciones);
-            this.panel5.Controls.Add(this.textBoxObservaciones2);
-            this.panel5.Controls.Add(this.panel7);
-            this.panel5.Controls.Add(this.panel6);
-            this.panel5.Controls.Add(this.label6);
-            this.panel5.Location = new System.Drawing.Point(487, 341);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(492, 65);
-            this.panel5.TabIndex = 7;
-            // 
-            // textBoxObservaciones
-            // 
-            this.textBoxObservaciones.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
-            this.textBoxObservaciones.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBoxObservaciones.ForeColor = System.Drawing.Color.White;
-            this.textBoxObservaciones.Location = new System.Drawing.Point(123, 16);
-            this.textBoxObservaciones.Name = "textBoxObservaciones";
-            this.textBoxObservaciones.Size = new System.Drawing.Size(355, 13);
-            this.textBoxObservaciones.TabIndex = 40;
-            // 
-            // textBoxObservaciones2
-            // 
-            this.textBoxObservaciones2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
-            this.textBoxObservaciones2.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBoxObservaciones2.ForeColor = System.Drawing.Color.White;
-            this.textBoxObservaciones2.Location = new System.Drawing.Point(9, 44);
-            this.textBoxObservaciones2.Name = "textBoxObservaciones2";
-            this.textBoxObservaciones2.Size = new System.Drawing.Size(469, 13);
-            this.textBoxObservaciones2.TabIndex = 39;
-            // 
-            // panel7
-            // 
-            this.panel7.BackColor = System.Drawing.Color.Silver;
-            this.panel7.Location = new System.Drawing.Point(123, 29);
-            this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(355, 1);
-            this.panel7.TabIndex = 31;
-            // 
-            // panel6
-            // 
-            this.panel6.BackColor = System.Drawing.Color.Silver;
-            this.panel6.Location = new System.Drawing.Point(8, 57);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(470, 1);
-            this.panel6.TabIndex = 30;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(3, 10);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(122, 20);
-            this.label6.TabIndex = 6;
-            this.label6.Text = "Observaciones: ";
-            // 
             // panelPrecio
             // 
             this.panelPrecio.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -751,16 +824,30 @@
             this.panelPrecio.Location = new System.Drawing.Point(0, 405);
             this.panelPrecio.Name = "panelPrecio";
             this.panelPrecio.Size = new System.Drawing.Size(979, 44);
-            this.panelPrecio.TabIndex = 8;
+            this.panelPrecio.TabIndex = 6;
             // 
             // panel16
             // 
             this.panel16.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel16.Controls.Add(this.textBox3);
             this.panel16.Controls.Add(this.textBoxSaldo);
             this.panel16.Location = new System.Drawing.Point(738, 4);
             this.panel16.Name = "panel16";
             this.panel16.Size = new System.Drawing.Size(207, 33);
             this.panel16.TabIndex = 12;
+            // 
+            // textBox3
+            // 
+            this.textBox3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
+            this.textBox3.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox3.ForeColor = System.Drawing.Color.White;
+            this.textBox3.Location = new System.Drawing.Point(1, 1);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.ReadOnly = true;
+            this.textBox3.Size = new System.Drawing.Size(18, 28);
+            this.textBox3.TabIndex = 556;
+            this.textBox3.Text = "$";
             // 
             // textBoxSaldo
             // 
@@ -768,19 +855,33 @@
             this.textBoxSaldo.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBoxSaldo.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxSaldo.ForeColor = System.Drawing.Color.White;
-            this.textBoxSaldo.Location = new System.Drawing.Point(6, -2);
+            this.textBoxSaldo.Location = new System.Drawing.Point(19, 1);
             this.textBoxSaldo.Name = "textBoxSaldo";
-            this.textBoxSaldo.Size = new System.Drawing.Size(207, 28);
-            this.textBoxSaldo.TabIndex = 41;
+            this.textBoxSaldo.Size = new System.Drawing.Size(187, 28);
+            this.textBoxSaldo.TabIndex = 3;
             // 
             // panel15
             // 
             this.panel15.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel15.Controls.Add(this.textBox2);
             this.panel15.Controls.Add(this.textBoxSenia);
             this.panel15.Location = new System.Drawing.Point(403, 4);
             this.panel15.Name = "panel15";
             this.panel15.Size = new System.Drawing.Size(207, 33);
             this.panel15.TabIndex = 11;
+            // 
+            // textBox2
+            // 
+            this.textBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
+            this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox2.ForeColor = System.Drawing.Color.White;
+            this.textBox2.Location = new System.Drawing.Point(1, 0);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.ReadOnly = true;
+            this.textBox2.Size = new System.Drawing.Size(18, 28);
+            this.textBox2.TabIndex = 555;
+            this.textBox2.Text = "$";
             // 
             // textBoxSenia
             // 
@@ -788,15 +889,16 @@
             this.textBoxSenia.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBoxSenia.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxSenia.ForeColor = System.Drawing.Color.White;
-            this.textBoxSenia.Location = new System.Drawing.Point(6, -1);
+            this.textBoxSenia.Location = new System.Drawing.Point(19, 1);
             this.textBoxSenia.Name = "textBoxSenia";
-            this.textBoxSenia.Size = new System.Drawing.Size(207, 28);
-            this.textBoxSenia.TabIndex = 41;
+            this.textBoxSenia.Size = new System.Drawing.Size(187, 28);
+            this.textBoxSenia.TabIndex = 2;
             // 
             // panel14
             // 
             this.panel14.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel14.Controls.Add(this.textBoxPrecio);
+            this.panel14.Controls.Add(this.textBox1);
             this.panel14.Location = new System.Drawing.Point(89, 4);
             this.panel14.Name = "panel14";
             this.panel14.Size = new System.Drawing.Size(207, 33);
@@ -808,10 +910,23 @@
             this.textBoxPrecio.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBoxPrecio.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxPrecio.ForeColor = System.Drawing.Color.White;
-            this.textBoxPrecio.Location = new System.Drawing.Point(6, 0);
+            this.textBoxPrecio.Location = new System.Drawing.Point(19, 0);
             this.textBoxPrecio.Name = "textBoxPrecio";
-            this.textBoxPrecio.Size = new System.Drawing.Size(207, 28);
-            this.textBoxPrecio.TabIndex = 40;
+            this.textBoxPrecio.Size = new System.Drawing.Size(187, 28);
+            this.textBoxPrecio.TabIndex = 1;
+            // 
+            // textBox1
+            // 
+            this.textBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
+            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox1.ForeColor = System.Drawing.Color.White;
+            this.textBox1.Location = new System.Drawing.Point(2, 1);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.ReadOnly = true;
+            this.textBox1.Size = new System.Drawing.Size(18, 28);
+            this.textBox1.TabIndex = 557;
+            this.textBox1.Text = "$";
             // 
             // label10
             // 
@@ -854,7 +969,7 @@
             this.panelImportante.Location = new System.Drawing.Point(0, 448);
             this.panelImportante.Name = "panelImportante";
             this.panelImportante.Size = new System.Drawing.Size(407, 252);
-            this.panelImportante.TabIndex = 9;
+            this.panelImportante.TabIndex = 7;
             // 
             // richTextBoxAclaraciones
             // 
@@ -863,6 +978,7 @@
             this.richTextBoxAclaraciones.ForeColor = System.Drawing.Color.White;
             this.richTextBoxAclaraciones.Location = new System.Drawing.Point(3, 37);
             this.richTextBoxAclaraciones.Name = "richTextBoxAclaraciones";
+            this.richTextBoxAclaraciones.ReadOnly = true;
             this.richTextBoxAclaraciones.Size = new System.Drawing.Size(394, 210);
             this.richTextBoxAclaraciones.TabIndex = 5;
             this.richTextBoxAclaraciones.Text = "";
@@ -916,8 +1032,9 @@
             this.richTextBoxAcuerdos.ForeColor = System.Drawing.Color.White;
             this.richTextBoxAcuerdos.Location = new System.Drawing.Point(3, 37);
             this.richTextBoxAcuerdos.Name = "richTextBoxAcuerdos";
+            this.richTextBoxAcuerdos.ReadOnly = true;
             this.richTextBoxAcuerdos.Size = new System.Drawing.Size(567, 210);
-            this.richTextBoxAcuerdos.TabIndex = 4;
+            this.richTextBoxAcuerdos.TabIndex = 8;
             this.richTextBoxAcuerdos.Text = "";
             // 
             // label11
@@ -930,6 +1047,60 @@
             this.label11.Size = new System.Drawing.Size(255, 31);
             this.label11.TabIndex = 3;
             this.label11.Text = "Leer antes de firmar";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.White;
+            this.label6.Location = new System.Drawing.Point(3, 10);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(122, 20);
+            this.label6.TabIndex = 6;
+            this.label6.Text = "Observaciones: ";
+            // 
+            // panelObservacionUnderline
+            // 
+            this.panelObservacionUnderline.BackColor = System.Drawing.Color.Silver;
+            this.panelObservacionUnderline.Location = new System.Drawing.Point(8, 57);
+            this.panelObservacionUnderline.Name = "panelObservacionUnderline";
+            this.panelObservacionUnderline.Size = new System.Drawing.Size(470, 1);
+            this.panelObservacionUnderline.TabIndex = 30;
+            this.panelObservacionUnderline.Visible = false;
+            // 
+            // textBoxObservaciones
+            // 
+            this.textBoxObservaciones.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
+            this.textBoxObservaciones.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBoxObservaciones.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxObservaciones.ForeColor = System.Drawing.Color.White;
+            this.textBoxObservaciones.Location = new System.Drawing.Point(9, 38);
+            this.textBoxObservaciones.Name = "textBoxObservaciones";
+            this.textBoxObservaciones.Size = new System.Drawing.Size(469, 19);
+            this.textBoxObservaciones.TabIndex = 1;
+            this.textBoxObservaciones.Visible = false;
+            // 
+            // comboBoxObservaciones
+            // 
+            this.comboBoxObservaciones.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxObservaciones.FormattingEnabled = true;
+            this.comboBoxObservaciones.Location = new System.Drawing.Point(131, 9);
+            this.comboBoxObservaciones.Name = "comboBoxObservaciones";
+            this.comboBoxObservaciones.Size = new System.Drawing.Size(121, 21);
+            this.comboBoxObservaciones.TabIndex = 32;
+            this.comboBoxObservaciones.SelectedValueChanged += new System.EventHandler(this.comboBox1_SelectedValueChanged);
+            // 
+            // panel5
+            // 
+            this.panel5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel5.Controls.Add(this.comboBoxObservaciones);
+            this.panel5.Controls.Add(this.textBoxObservaciones);
+            this.panel5.Controls.Add(this.panelObservacionUnderline);
+            this.panel5.Controls.Add(this.label6);
+            this.panel5.Location = new System.Drawing.Point(487, 341);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(492, 65);
+            this.panel5.TabIndex = 5;
             // 
             // FormReparacion
             // 
@@ -945,10 +1116,11 @@
             this.Controls.Add(this.panelDatosDelCliente);
             this.Controls.Add(this.panelDatosDelEquipo);
             this.Controls.Add(this.panelServicio);
-            this.Controls.Add(this.panelIntro);
             this.Controls.Add(this.panelDown);
+            this.Controls.Add(this.panelIntro);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormReparacion";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormReparacion";
             this.Load += new System.EventHandler(this.FormReparacion_Load);
             this.panelDown.ResumeLayout(false);
@@ -957,17 +1129,20 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCelular)).EndInit();
             this.panelIntro.ResumeLayout(false);
             this.panelIntro.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panelServicio.ResumeLayout(false);
             this.panelServicio.PerformLayout();
+            this.panelCheckForm.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCheckForm)).EndInit();
             this.panelDatosDelEquipo.ResumeLayout(false);
             this.panelDatosDelEquipo.PerformLayout();
+            this.panelPassword.ResumeLayout(false);
+            this.panelPassword.PerformLayout();
             this.panelPatterLock.ResumeLayout(false);
             this.panelDatosDelCliente.ResumeLayout(false);
             this.panelDatosDelCliente.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            this.panel5.ResumeLayout(false);
-            this.panel5.PerformLayout();
             this.panelPrecio.ResumeLayout(false);
             this.panelPrecio.PerformLayout();
             this.panel16.ResumeLayout(false);
@@ -980,6 +1155,8 @@
             this.panelImportante.PerformLayout();
             this.panelLeerAntesDeFirmar.ResumeLayout(false);
             this.panelLeerAntesDeFirmar.PerformLayout();
+            this.panel5.ResumeLayout(false);
+            this.panel5.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -998,14 +1175,6 @@
         private System.Windows.Forms.Panel panelServicio;
         private System.Windows.Forms.Label labelFecha;
         private System.Windows.Forms.Label labelNroBoleta;
-        private System.Windows.Forms.CheckBox checkBoxTablet;
-        private System.Windows.Forms.CheckBox checkBoxGarantia;
-        private System.Windows.Forms.CheckBox checkBoxActivacion;
-        private System.Windows.Forms.CheckBox checkBoxPresupuesto;
-        private System.Windows.Forms.CheckBox checkBoxReparacion;
-        private System.Windows.Forms.CheckBox checkBoxOtro;
-        private System.Windows.Forms.CheckBox checkBoxNotebook;
-        private System.Windows.Forms.CheckBox checkBoxCelular;
         private System.Windows.Forms.Panel panelDatosDelEquipo;
         private System.Windows.Forms.Label labelTiempoDeGarantia;
         private System.Windows.Forms.Label label1;
@@ -1021,10 +1190,6 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.Panel panel5;
-        private System.Windows.Forms.Panel panel7;
-        private System.Windows.Forms.Panel panel6;
-        private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Panel panel10;
         private System.Windows.Forms.Panel panel9;
         private System.Windows.Forms.Panel panel8;
@@ -1039,7 +1204,6 @@
         private System.Windows.Forms.Panel panel15;
         private System.Windows.Forms.Panel panel14;
         private System.Windows.Forms.Panel panelImportante;
-        private System.Windows.Forms.Label label13;
         private System.Windows.Forms.RichTextBox richTextBoxAclaraciones;
         private System.Windows.Forms.Label labelImportante;
         private System.Windows.Forms.Panel panelLeerAntesDeFirmar;
@@ -1054,12 +1218,36 @@
         private System.Windows.Forms.TextBox textBoxTrabajoARealizar3;
         private System.Windows.Forms.TextBox textBoxTrabajoARealizar2;
         private System.Windows.Forms.TextBox textBoxTrabajoARealizar;
-        private System.Windows.Forms.TextBox textBoxObservaciones;
-        private System.Windows.Forms.TextBox textBoxObservaciones2;
         private System.Windows.Forms.TextBox textBoxSaldo;
         private System.Windows.Forms.TextBox textBoxSenia;
-        private System.Windows.Forms.TextBox textBoxPrecio;
         private System.Windows.Forms.Panel panel11;
         private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox textBoxPrecio;
+        private System.Windows.Forms.TextBox textBoxFecha;
+        private System.Windows.Forms.TextBox textBoxNroDeBoleta;
+        private System.Windows.Forms.PictureBox pictureBoxCheckForm;
+        private System.Windows.Forms.Panel panel17;
+        private System.Windows.Forms.Panel panel20;
+        private System.Windows.Forms.Panel panel19;
+        private System.Windows.Forms.Panel panel18;
+        private System.Windows.Forms.Panel panelCheckForm;
+        private System.Windows.Forms.CheckedListBox checkedListBoxServicios;
+        private System.Windows.Forms.CheckedListBox checkedListBoxEquipo;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Panel panelPassword;
+        private System.Windows.Forms.Panel panel23;
+        private System.Windows.Forms.Button buttonNinguno;
+        private System.Windows.Forms.Panel panel22;
+        private System.Windows.Forms.Button buttonPassword;
+        private System.Windows.Forms.Panel panel21;
+        private System.Windows.Forms.Button buttonPatron;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Panel panelObservacionUnderline;
+        private System.Windows.Forms.TextBox textBoxObservaciones;
+        private System.Windows.Forms.ComboBox comboBoxObservaciones;
+        private System.Windows.Forms.Panel panel5;
     }
 }
