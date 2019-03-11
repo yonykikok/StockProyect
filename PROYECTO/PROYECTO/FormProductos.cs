@@ -53,6 +53,38 @@ namespace PROYECTO
 
             }
         }
+        private void AgregarImagenesALosProductos()
+        {
+            //---------temporal----
+            string pathImagenCargadorInova3mAh = "C:\\Users\\Haedo Jonathan\\Desktop\\StockProyect\\Imegenes\\cargador inova.jpg";
+            string pathImagenGlass = "C:\\Users\\Haedo Jonathan\\Desktop\\StockProyect\\Imegenes\\Film Glass.jpg";
+            string pathImagenCableIphoneMetal = "C:\\Users\\Haedo Jonathan\\Desktop\\StockProyect\\Imegenes\\cable iphone metalico.jpg";
+            string pathImagensd16gb = "C:\\Users\\Haedo Jonathan\\Desktop\\StockProyect\\Imegenes\\sd 16gb.jpg";
+            string pathImagensdPendrive16gb = "C:\\Users\\Haedo Jonathan\\Desktop\\StockProyect\\Imegenes\\pendrive 16gb.jpg";
+            string pathImagensdoOtg = "C:\\Users\\Haedo Jonathan\\Desktop\\StockProyect\\Imegenes\\otg.jpg";
+            string pathImagensdCamaraAxis = "C:\\Users\\Haedo Jonathan\\Desktop\\StockProyect\\Imegenes\\camara axis.jpg";
+            string pathImagensCargadorBateria = "C:\\Users\\Haedo Jonathan\\Desktop\\StockProyect\\Imegenes\\cargador bateria.jpg";
+            string pathImagensdCargadorSam = "C:\\Users\\Haedo Jonathan\\Desktop\\StockProyect\\Imegenes\\cargador samsung.jpg";
+            string pathImagensdCargador2mah = "C:\\Users\\Haedo Jonathan\\Desktop\\StockProyect\\Imegenes\\cargador 2mah.jpg";
+            string pathImagensdcableTelaIphone = "C:\\Users\\Haedo Jonathan\\Desktop\\StockProyect\\Imegenes\\cable tela iphone.jpg";
+            string pathImagensdAuricularVincha = "C:\\Users\\Haedo Jonathan\\Desktop\\StockProyect\\Imegenes\\auricular estampado.jpg";
+            string pathImagensdTipoCTela = "C:\\Users\\Haedo Jonathan\\Desktop\\StockProyect\\Imegenes\\cable tipo C tela.jpg";
+            string pathImagenJoystick = "C:\\Users\\Haedo Jonathan\\Desktop\\StockProyect\\Imegenes\\joystick ps3.jpg";
+            AgregarFotosALosProductosDelMismoTipo(pathImagenCargadorInova3mAh, "3.1m");
+            AgregarFotosALosProductosDelMismoTipo(pathImagenGlass, "glass");
+            AgregarFotosALosProductosDelMismoTipo(pathImagenCableIphoneMetal, "metalico iphone");
+            AgregarFotosALosProductosDelMismoTipo(pathImagensd16gb, "16gb");
+            AgregarFotosALosProductosDelMismoTipo(pathImagensdPendrive16gb, "pendrive");
+            AgregarFotosALosProductosDelMismoTipo(pathImagensdoOtg, "otg");
+            AgregarFotosALosProductosDelMismoTipo(pathImagensCargadorBateria, "universal de baterias");
+            AgregarFotosALosProductosDelMismoTipo(pathImagensdCargador2mah, "inova 2 en 1");
+            AgregarFotosALosProductosDelMismoTipo(pathImagensdCamaraAxis, "camaras segurida");
+            AgregarFotosALosProductosDelMismoTipo(pathImagensdcableTelaIphone, "tela iphone");
+            AgregarFotosALosProductosDelMismoTipo(pathImagensdCargadorSam, "cargador samsung");
+            AgregarFotosALosProductosDelMismoTipo(pathImagensdAuricularVincha, "vincha dise");
+            AgregarFotosALosProductosDelMismoTipo(pathImagensdTipoCTela, "tela tipo c");
+            AgregarFotosALosProductosDelMismoTipo(pathImagenJoystick, "joystick");
+        }
         private void FormProductos_Load(object sender, EventArgs e)
         {
             Carrito = new Carrito(0, 0, 0, 0);
@@ -70,9 +102,7 @@ namespace PROYECTO
                 panelCargarProducto.Visible = true;
                 labelProductosVentas.Text = "Multitask-Productos";
             }
-            //---------temporal----
-            /*string pathImagen = "C:\\Users\\Haedo Jonathan\\Desktop\\StockProyect\\Imegenes\\Film Glass.jpg";
-            AgregarFotosALosProductosDelMismoTipo(pathImagen, "glass");*/
+           //AgregarImagenesALosProductos();
         }
         /// <summary>
         /// permite deslizar la ventana
