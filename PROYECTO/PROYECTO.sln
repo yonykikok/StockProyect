@@ -15,7 +15,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExcepcionesPropiasProductos
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExcepcionesPropiasDAO", "ExcepcionesPropiasDAO\ExcepcionesPropiasDAO.csproj", "{C862B4C1-B5AC-47DB-8752-5FFB7058DCCA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PatterLock", "PatterLock\PatterLock.csproj", "{CA8D3922-65CE-414A-957F-0D52FF180232}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExcepcionesPropiasReparacion", "ExcepcionesPropiasReparacion\ExcepcionesPropiasReparacion.csproj", "{D8A58870-9E54-4F60-8887-C9F00DCB06B7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -47,10 +47,10 @@ Global
 		{C862B4C1-B5AC-47DB-8752-5FFB7058DCCA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C862B4C1-B5AC-47DB-8752-5FFB7058DCCA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C862B4C1-B5AC-47DB-8752-5FFB7058DCCA}.Release|Any CPU.Build.0 = Release|Any CPU
-		{CA8D3922-65CE-414A-957F-0D52FF180232}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{CA8D3922-65CE-414A-957F-0D52FF180232}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{CA8D3922-65CE-414A-957F-0D52FF180232}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{CA8D3922-65CE-414A-957F-0D52FF180232}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D8A58870-9E54-4F60-8887-C9F00DCB06B7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D8A58870-9E54-4F60-8887-C9F00DCB06B7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D8A58870-9E54-4F60-8887-C9F00DCB06B7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D8A58870-9E54-4F60-8887-C9F00DCB06B7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -187,6 +187,10 @@
       <Project>{82518ead-a47a-4787-bbab-782a0004412f}</Project>
       <Name>ExcepcionesPropiasProductos</Name>
     </ProjectReference>
+    <ProjectReference Include="..\ExcepcionesPropiasReparacion\ExcepcionesPropiasReparacion.csproj">
+      <Project>{d8a58870-9e54-4f60-8887-c9f00dcb06b7}</Project>
+      <Name>ExcepcionesPropiasReparacion</Name>
+    </ProjectReference>
     <ProjectReference Include="..\ExcepcionesPropias\ExcepcionesPropias.csproj">
       <Project>{b578279b-15d2-4293-8b35-3f1fe24f55d5}</Project>
       <Name>ExcepcionesPropias</Name>

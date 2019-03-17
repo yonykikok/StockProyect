@@ -1,0 +1,6 @@
+C:\Users\Haedo Jonathan\Desktop\StockProyect\PROYECTO\ExcepcionesPropiasReparacion\bin\Debug\ExcepcionesPropiasReparacion.dll
+C:\Users\Haedo Jonathan\Desktop\StockProyect\PROYECTO\ExcepcionesPropiasReparacion\bin\Debug\ExcepcionesPropiasReparacion.pdb
+C:\Users\Haedo Jonathan\Desktop\StockProyect\PROYECTO\ExcepcionesPropiasReparacion\obj\Debug\ExcepcionesPropiasReparacion.csprojAssemblyReference.cache
+C:\Users\Haedo Jonathan\Desktop\StockProyect\PROYECTO\ExcepcionesPropiasReparacion\obj\Debug\ExcepcionesPropiasReparacion.csproj.CoreCompileInputs.cache
+C:\Users\Haedo Jonathan\Desktop\StockProyect\PROYECTO\ExcepcionesPropiasReparacion\obj\Debug\ExcepcionesPropiasReparacion.dll
+C:\Users\Haedo Jonathan\Desktop\StockProyect\PROYECTO\ExcepcionesPropiasReparacion\obj\Debug\ExcepcionesPropiasReparacion.pdb

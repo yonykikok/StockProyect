@@ -40,6 +40,8 @@
             this.labelLunesAViernes = new System.Windows.Forms.Label();
             this.labelTitulo = new System.Windows.Forms.Label();
             this.panelServicio = new System.Windows.Forms.Panel();
+            this.labelErrorTipoDeServicio = new System.Windows.Forms.Label();
+            this.labelErrorTipoDeEquipo = new System.Windows.Forms.Label();
             this.checkedListBoxServicios = new System.Windows.Forms.CheckedListBox();
             this.checkedListBoxEquipo = new System.Windows.Forms.CheckedListBox();
             this.panelCheckForm = new System.Windows.Forms.Panel();
@@ -53,6 +55,7 @@
             this.labelFecha = new System.Windows.Forms.Label();
             this.labelNroBoleta = new System.Windows.Forms.Label();
             this.panelDatosDelEquipo = new System.Windows.Forms.Panel();
+            this.labelErrorMarcaYModelo = new System.Windows.Forms.Label();
             this.panel23 = new System.Windows.Forms.Panel();
             this.buttonNinguno = new System.Windows.Forms.Button();
             this.panel22 = new System.Windows.Forms.Panel();
@@ -72,6 +75,9 @@
             this.labelTiempoDeGarantia = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.panelDatosDelCliente = new System.Windows.Forms.Panel();
+            this.labelErrorTelefono = new System.Windows.Forms.Label();
+            this.labelErrorDni = new System.Windows.Forms.Label();
+            this.labelErrorNombreYApellido = new System.Windows.Forms.Label();
             this.textBoxNombreYApellido = new System.Windows.Forms.TextBox();
             this.textBoxTelefono = new System.Windows.Forms.TextBox();
             this.textBoxDni = new System.Windows.Forms.TextBox();
@@ -82,6 +88,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.labelErrorTrabajoARealizar = new System.Windows.Forms.Label();
             this.textBoxTrabajoARealizar3 = new System.Windows.Forms.TextBox();
             this.textBoxTrabajoARealizar2 = new System.Windows.Forms.TextBox();
             this.textBoxTrabajoARealizar = new System.Windows.Forms.TextBox();
@@ -115,6 +122,10 @@
             this.textBoxObservaciones = new System.Windows.Forms.TextBox();
             this.comboBoxObservaciones = new System.Windows.Forms.ComboBox();
             this.panel5 = new System.Windows.Forms.Panel();
+            this.labelErrorTipoDeObservacion = new System.Windows.Forms.Label();
+            this.labelErrorPrecio = new System.Windows.Forms.Label();
+            this.labelErrorSenia = new System.Windows.Forms.Label();
+            this.labelErrorSaldo = new System.Windows.Forms.Label();
             this.panelDown.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMinimizar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxClose)).BeginInit();
@@ -255,6 +266,8 @@
             // panelServicio
             // 
             this.panelServicio.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panelServicio.Controls.Add(this.labelErrorTipoDeServicio);
+            this.panelServicio.Controls.Add(this.labelErrorTipoDeEquipo);
             this.panelServicio.Controls.Add(this.checkedListBoxServicios);
             this.panelServicio.Controls.Add(this.checkedListBoxEquipo);
             this.panelServicio.Controls.Add(this.panelCheckForm);
@@ -266,6 +279,28 @@
             this.panelServicio.Name = "panelServicio";
             this.panelServicio.Size = new System.Drawing.Size(593, 135);
             this.panelServicio.TabIndex = 1;
+            // 
+            // labelErrorTipoDeServicio
+            // 
+            this.labelErrorTipoDeServicio.AutoSize = true;
+            this.labelErrorTipoDeServicio.ForeColor = System.Drawing.Color.Red;
+            this.labelErrorTipoDeServicio.Location = new System.Drawing.Point(164, 92);
+            this.labelErrorTipoDeServicio.Name = "labelErrorTipoDeServicio";
+            this.labelErrorTipoDeServicio.Size = new System.Drawing.Size(70, 13);
+            this.labelErrorTipoDeServicio.TabIndex = 570;
+            this.labelErrorTipoDeServicio.Text = "Error Servicio";
+            this.labelErrorTipoDeServicio.Visible = false;
+            // 
+            // labelErrorTipoDeEquipo
+            // 
+            this.labelErrorTipoDeEquipo.AutoSize = true;
+            this.labelErrorTipoDeEquipo.ForeColor = System.Drawing.Color.Red;
+            this.labelErrorTipoDeEquipo.Location = new System.Drawing.Point(22, 92);
+            this.labelErrorTipoDeEquipo.Name = "labelErrorTipoDeEquipo";
+            this.labelErrorTipoDeEquipo.Size = new System.Drawing.Size(65, 13);
+            this.labelErrorTipoDeEquipo.TabIndex = 569;
+            this.labelErrorTipoDeEquipo.Text = "Error Equipo";
+            this.labelErrorTipoDeEquipo.Visible = false;
             // 
             // checkedListBoxServicios
             // 
@@ -365,10 +400,10 @@
             this.textBoxFecha.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBoxFecha.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxFecha.ForeColor = System.Drawing.Color.White;
-            this.textBoxFecha.Location = new System.Drawing.Point(456, 97);
+            this.textBoxFecha.Location = new System.Drawing.Point(411, 97);
             this.textBoxFecha.Name = "textBoxFecha";
             this.textBoxFecha.ReadOnly = true;
-            this.textBoxFecha.Size = new System.Drawing.Size(132, 19);
+            this.textBoxFecha.Size = new System.Drawing.Size(173, 19);
             this.textBoxFecha.TabIndex = 559;
             // 
             // textBoxNroDeBoleta
@@ -408,6 +443,7 @@
             // panelDatosDelEquipo
             // 
             this.panelDatosDelEquipo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panelDatosDelEquipo.Controls.Add(this.labelErrorMarcaYModelo);
             this.panelDatosDelEquipo.Controls.Add(this.panel23);
             this.panelDatosDelEquipo.Controls.Add(this.buttonNinguno);
             this.panelDatosDelEquipo.Controls.Add(this.panel22);
@@ -426,6 +462,17 @@
             this.panelDatosDelEquipo.Name = "panelDatosDelEquipo";
             this.panelDatosDelEquipo.Size = new System.Drawing.Size(492, 184);
             this.panelDatosDelEquipo.TabIndex = 3;
+            // 
+            // labelErrorMarcaYModelo
+            // 
+            this.labelErrorMarcaYModelo.AutoSize = true;
+            this.labelErrorMarcaYModelo.ForeColor = System.Drawing.Color.Red;
+            this.labelErrorMarcaYModelo.Location = new System.Drawing.Point(137, 33);
+            this.labelErrorMarcaYModelo.Name = "labelErrorMarcaYModelo";
+            this.labelErrorMarcaYModelo.Size = new System.Drawing.Size(108, 13);
+            this.labelErrorMarcaYModelo.TabIndex = 39;
+            this.labelErrorMarcaYModelo.Text = "Error Marca y Modelo";
+            this.labelErrorMarcaYModelo.Visible = false;
             // 
             // panel23
             // 
@@ -625,6 +672,9 @@
             // panelDatosDelCliente
             // 
             this.panelDatosDelCliente.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panelDatosDelCliente.Controls.Add(this.labelErrorTelefono);
+            this.panelDatosDelCliente.Controls.Add(this.labelErrorDni);
+            this.panelDatosDelCliente.Controls.Add(this.labelErrorNombreYApellido);
             this.panelDatosDelCliente.Controls.Add(this.textBoxNombreYApellido);
             this.panelDatosDelCliente.Controls.Add(this.textBoxTelefono);
             this.panelDatosDelCliente.Controls.Add(this.textBoxDni);
@@ -638,6 +688,39 @@
             this.panelDatosDelCliente.Name = "panelDatosDelCliente";
             this.panelDatosDelCliente.Size = new System.Drawing.Size(488, 119);
             this.panelDatosDelCliente.TabIndex = 2;
+            // 
+            // labelErrorTelefono
+            // 
+            this.labelErrorTelefono.AutoSize = true;
+            this.labelErrorTelefono.ForeColor = System.Drawing.Color.Red;
+            this.labelErrorTelefono.Location = new System.Drawing.Point(76, 96);
+            this.labelErrorTelefono.Name = "labelErrorTelefono";
+            this.labelErrorTelefono.Size = new System.Drawing.Size(74, 13);
+            this.labelErrorTelefono.TabIndex = 34;
+            this.labelErrorTelefono.Text = "Error Telefono";
+            this.labelErrorTelefono.Visible = false;
+            // 
+            // labelErrorDni
+            // 
+            this.labelErrorDni.AutoSize = true;
+            this.labelErrorDni.ForeColor = System.Drawing.Color.Red;
+            this.labelErrorDni.Location = new System.Drawing.Point(45, 64);
+            this.labelErrorDni.Name = "labelErrorDni";
+            this.labelErrorDni.Size = new System.Drawing.Size(48, 13);
+            this.labelErrorDni.TabIndex = 33;
+            this.labelErrorDni.Text = "Error Dni";
+            this.labelErrorDni.Visible = false;
+            // 
+            // labelErrorNombreYApellido
+            // 
+            this.labelErrorNombreYApellido.AutoSize = true;
+            this.labelErrorNombreYApellido.ForeColor = System.Drawing.Color.Red;
+            this.labelErrorNombreYApellido.Location = new System.Drawing.Point(142, 33);
+            this.labelErrorNombreYApellido.Name = "labelErrorNombreYApellido";
+            this.labelErrorNombreYApellido.Size = new System.Drawing.Size(68, 13);
+            this.labelErrorNombreYApellido.TabIndex = 32;
+            this.labelErrorNombreYApellido.Text = "Error Usuario";
+            this.labelErrorNombreYApellido.Visible = false;
             // 
             // textBoxNombreYApellido
             // 
@@ -732,6 +815,7 @@
             // panel1
             // 
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.labelErrorTrabajoARealizar);
             this.panel1.Controls.Add(this.textBoxTrabajoARealizar3);
             this.panel1.Controls.Add(this.textBoxTrabajoARealizar2);
             this.panel1.Controls.Add(this.textBoxTrabajoARealizar);
@@ -743,6 +827,17 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(488, 130);
             this.panel1.TabIndex = 4;
+            // 
+            // labelErrorTrabajoARealizar
+            // 
+            this.labelErrorTrabajoARealizar.AutoSize = true;
+            this.labelErrorTrabajoARealizar.ForeColor = System.Drawing.Color.Red;
+            this.labelErrorTrabajoARealizar.Location = new System.Drawing.Point(5, 54);
+            this.labelErrorTrabajoARealizar.Name = "labelErrorTrabajoARealizar";
+            this.labelErrorTrabajoARealizar.Size = new System.Drawing.Size(119, 13);
+            this.labelErrorTrabajoARealizar.TabIndex = 34;
+            this.labelErrorTrabajoARealizar.Text = "Error Trabajo A Realizar";
+            this.labelErrorTrabajoARealizar.Visible = false;
             // 
             // textBoxTrabajoARealizar3
             // 
@@ -829,6 +924,7 @@
             // panel16
             // 
             this.panel16.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel16.Controls.Add(this.labelErrorSaldo);
             this.panel16.Controls.Add(this.textBox3);
             this.panel16.Controls.Add(this.textBoxSaldo);
             this.panel16.Location = new System.Drawing.Point(738, 4);
@@ -863,6 +959,7 @@
             // panel15
             // 
             this.panel15.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel15.Controls.Add(this.labelErrorSenia);
             this.panel15.Controls.Add(this.textBox2);
             this.panel15.Controls.Add(this.textBoxSenia);
             this.panel15.Location = new System.Drawing.Point(403, 4);
@@ -897,6 +994,7 @@
             // panel14
             // 
             this.panel14.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel14.Controls.Add(this.labelErrorPrecio);
             this.panel14.Controls.Add(this.textBoxPrecio);
             this.panel14.Controls.Add(this.textBox1);
             this.panel14.Location = new System.Drawing.Point(89, 4);
@@ -1093,6 +1191,7 @@
             // panel5
             // 
             this.panel5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel5.Controls.Add(this.labelErrorTipoDeObservacion);
             this.panel5.Controls.Add(this.comboBoxObservaciones);
             this.panel5.Controls.Add(this.textBoxObservaciones);
             this.panel5.Controls.Add(this.panelObservacionUnderline);
@@ -1101,6 +1200,50 @@
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(492, 65);
             this.panel5.TabIndex = 5;
+            // 
+            // labelErrorTipoDeObservacion
+            // 
+            this.labelErrorTipoDeObservacion.AutoSize = true;
+            this.labelErrorTipoDeObservacion.ForeColor = System.Drawing.Color.Red;
+            this.labelErrorTipoDeObservacion.Location = new System.Drawing.Point(6, 30);
+            this.labelErrorTipoDeObservacion.Name = "labelErrorTipoDeObservacion";
+            this.labelErrorTipoDeObservacion.Size = new System.Drawing.Size(92, 13);
+            this.labelErrorTipoDeObservacion.TabIndex = 571;
+            this.labelErrorTipoDeObservacion.Text = "Error Observacion";
+            this.labelErrorTipoDeObservacion.Visible = false;
+            // 
+            // labelErrorPrecio
+            // 
+            this.labelErrorPrecio.AutoSize = true;
+            this.labelErrorPrecio.ForeColor = System.Drawing.Color.Red;
+            this.labelErrorPrecio.Location = new System.Drawing.Point(144, 18);
+            this.labelErrorPrecio.Name = "labelErrorPrecio";
+            this.labelErrorPrecio.Size = new System.Drawing.Size(62, 13);
+            this.labelErrorPrecio.TabIndex = 572;
+            this.labelErrorPrecio.Text = "Error Precio";
+            this.labelErrorPrecio.Visible = false;
+            // 
+            // labelErrorSenia
+            // 
+            this.labelErrorSenia.AutoSize = true;
+            this.labelErrorSenia.ForeColor = System.Drawing.Color.Red;
+            this.labelErrorSenia.Location = new System.Drawing.Point(151, 19);
+            this.labelErrorSenia.Name = "labelErrorSenia";
+            this.labelErrorSenia.Size = new System.Drawing.Size(55, 13);
+            this.labelErrorSenia.TabIndex = 573;
+            this.labelErrorSenia.Text = "Error seña";
+            this.labelErrorSenia.Visible = false;
+            // 
+            // labelErrorSaldo
+            // 
+            this.labelErrorSaldo.AutoSize = true;
+            this.labelErrorSaldo.ForeColor = System.Drawing.Color.Red;
+            this.labelErrorSaldo.Location = new System.Drawing.Point(147, 19);
+            this.labelErrorSaldo.Name = "labelErrorSaldo";
+            this.labelErrorSaldo.Size = new System.Drawing.Size(59, 13);
+            this.labelErrorSaldo.TabIndex = 574;
+            this.labelErrorSaldo.Text = "Error Saldo";
+            this.labelErrorSaldo.Visible = false;
             // 
             // FormReparacion
             // 
@@ -1249,5 +1392,16 @@
         private System.Windows.Forms.TextBox textBoxObservaciones;
         private System.Windows.Forms.ComboBox comboBoxObservaciones;
         private System.Windows.Forms.Panel panel5;
+        private System.Windows.Forms.Label labelErrorMarcaYModelo;
+        private System.Windows.Forms.Label labelErrorTelefono;
+        private System.Windows.Forms.Label labelErrorDni;
+        private System.Windows.Forms.Label labelErrorNombreYApellido;
+        private System.Windows.Forms.Label labelErrorTrabajoARealizar;
+        private System.Windows.Forms.Label labelErrorTipoDeServicio;
+        private System.Windows.Forms.Label labelErrorTipoDeEquipo;
+        private System.Windows.Forms.Label labelErrorTipoDeObservacion;
+        private System.Windows.Forms.Label labelErrorSaldo;
+        private System.Windows.Forms.Label labelErrorSenia;
+        private System.Windows.Forms.Label labelErrorPrecio;
     }
 }

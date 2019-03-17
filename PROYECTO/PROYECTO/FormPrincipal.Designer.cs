@@ -29,12 +29,12 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormPrincipal));
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.ButtonMinimizar = new System.Windows.Forms.Panel();
             this.labelMultitask = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
@@ -66,6 +66,14 @@
             this.buttonProductos = new System.Windows.Forms.Button();
             this.pictureBoxLogo = new System.Windows.Forms.PictureBox();
             this.panelGlobalOpciones = new System.Windows.Forms.Panel();
+            this.panelPrincipalStockBajo = new System.Windows.Forms.Panel();
+            this.buttonImprimirLista = new System.Windows.Forms.Button();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.dataGridViewProductosStockBajo = new System.Windows.Forms.DataGridView();
+            this.Descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Stock = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.StockIdeal = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Pedido = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panelPrincipalEstadistica = new System.Windows.Forms.Panel();
             this.panelOpcionesEstadisticas = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -75,14 +83,6 @@
             this.panel11 = new System.Windows.Forms.Panel();
             this.buttonSemanal = new System.Windows.Forms.Button();
             this.chartEstadisticaGlobal = new System.Windows.Forms.DataVisualization.Charting.Chart();
-            this.panelPrincipalStockBajo = new System.Windows.Forms.Panel();
-            this.dataGridViewProductosStockBajo = new System.Windows.Forms.DataGridView();
-            this.Descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Stock = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.StockIdeal = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Pedido = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.buttonImprimirLista = new System.Windows.Forms.Button();
-            this.panel3 = new System.Windows.Forms.Panel();
             this.ButtonMinimizar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ButtonMaximizar)).BeginInit();
@@ -91,11 +91,11 @@
             this.panelSubMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogo)).BeginInit();
             this.panelGlobalOpciones.SuspendLayout();
+            this.panelPrincipalStockBajo.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewProductosStockBajo)).BeginInit();
             this.panelPrincipalEstadistica.SuspendLayout();
             this.panelOpcionesEstadisticas.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chartEstadisticaGlobal)).BeginInit();
-            this.panelPrincipalStockBajo.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewProductosStockBajo)).BeginInit();
             this.SuspendLayout();
             // 
             // ButtonMinimizar
@@ -165,7 +165,7 @@
             // 
             // panelMenuVertical
             // 
-            this.panelMenuVertical.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
+            this.panelMenuVertical.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
             this.panelMenuVertical.Controls.Add(this.panelEmpleados);
             this.panelMenuVertical.Controls.Add(this.buttonEmpleados);
             this.panelMenuVertical.Controls.Add(this.panelSubMenu);
@@ -491,13 +491,117 @@
             // 
             // panelGlobalOpciones
             // 
-            this.panelGlobalOpciones.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
+            this.panelGlobalOpciones.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
             this.panelGlobalOpciones.Controls.Add(this.panelPrincipalStockBajo);
             this.panelGlobalOpciones.Controls.Add(this.panelPrincipalEstadistica);
             this.panelGlobalOpciones.Location = new System.Drawing.Point(220, 35);
             this.panelGlobalOpciones.Name = "panelGlobalOpciones";
             this.panelGlobalOpciones.Size = new System.Drawing.Size(1080, 615);
             this.panelGlobalOpciones.TabIndex = 2;
+            // 
+            // panelPrincipalStockBajo
+            // 
+            this.panelPrincipalStockBajo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
+            this.panelPrincipalStockBajo.Controls.Add(this.buttonImprimirLista);
+            this.panelPrincipalStockBajo.Controls.Add(this.panel3);
+            this.panelPrincipalStockBajo.Controls.Add(this.dataGridViewProductosStockBajo);
+            this.panelPrincipalStockBajo.Location = new System.Drawing.Point(0, 0);
+            this.panelPrincipalStockBajo.Name = "panelPrincipalStockBajo";
+            this.panelPrincipalStockBajo.Size = new System.Drawing.Size(1080, 614);
+            this.panelPrincipalStockBajo.TabIndex = 3;
+            this.panelPrincipalStockBajo.Visible = false;
+            // 
+            // buttonImprimirLista
+            // 
+            this.buttonImprimirLista.FlatAppearance.BorderSize = 0;
+            this.buttonImprimirLista.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
+            this.buttonImprimirLista.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonImprimirLista.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonImprimirLista.ForeColor = System.Drawing.Color.White;
+            this.buttonImprimirLista.Image = ((System.Drawing.Image)(resources.GetObject("buttonImprimirLista.Image")));
+            this.buttonImprimirLista.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonImprimirLista.Location = new System.Drawing.Point(906, 3);
+            this.buttonImprimirLista.Name = "buttonImprimirLista";
+            this.buttonImprimirLista.Size = new System.Drawing.Size(174, 32);
+            this.buttonImprimirLista.TabIndex = 13;
+            this.buttonImprimirLista.Text = "Imprimir";
+            this.buttonImprimirLista.UseVisualStyleBackColor = true;
+            // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
+            this.panel3.Location = new System.Drawing.Point(901, 3);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(5, 32);
+            this.panel3.TabIndex = 12;
+            // 
+            // dataGridViewProductosStockBajo
+            // 
+            this.dataGridViewProductosStockBajo.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.dataGridViewProductosStockBajo.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
+            this.dataGridViewProductosStockBajo.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dataGridViewProductosStockBajo.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Raised;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewProductosStockBajo.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            this.dataGridViewProductosStockBajo.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Descripcion,
+            this.Stock,
+            this.StockIdeal,
+            this.Pedido});
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridViewProductosStockBajo.DefaultCellStyle = dataGridViewCellStyle5;
+            this.dataGridViewProductosStockBajo.Dock = System.Windows.Forms.DockStyle.Left;
+            this.dataGridViewProductosStockBajo.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
+            this.dataGridViewProductosStockBajo.EnableHeadersVisualStyles = false;
+            this.dataGridViewProductosStockBajo.Location = new System.Drawing.Point(0, 0);
+            this.dataGridViewProductosStockBajo.Name = "dataGridViewProductosStockBajo";
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewProductosStockBajo.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            this.dataGridViewProductosStockBajo.Size = new System.Drawing.Size(900, 614);
+            this.dataGridViewProductosStockBajo.TabIndex = 11;
+            // 
+            // Descripcion
+            // 
+            this.Descripcion.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Descripcion.HeaderText = "Descripcion";
+            this.Descripcion.Name = "Descripcion";
+            // 
+            // Stock
+            // 
+            this.Stock.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.Stock.HeaderText = "Stock";
+            this.Stock.Name = "Stock";
+            this.Stock.Width = 75;
+            // 
+            // StockIdeal
+            // 
+            this.StockIdeal.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.StockIdeal.HeaderText = "Stock Ideal";
+            this.StockIdeal.Name = "StockIdeal";
+            this.StockIdeal.Width = 114;
+            // 
+            // Pedido
+            // 
+            this.Pedido.HeaderText = "Pedido";
+            this.Pedido.Name = "Pedido";
             // 
             // panelPrincipalEstadistica
             // 
@@ -606,134 +710,32 @@
             this.chartEstadisticaGlobal.BorderSkin.BackImageWrapMode = System.Windows.Forms.DataVisualization.Charting.ChartImageWrapMode.TileFlipXY;
             this.chartEstadisticaGlobal.BorderSkin.BackSecondaryColor = System.Drawing.Color.Blue;
             this.chartEstadisticaGlobal.BorderSkin.PageColor = System.Drawing.Color.Blue;
-            chartArea1.Name = "ChartArea1";
-            this.chartEstadisticaGlobal.ChartAreas.Add(chartArea1);
-            legend1.Name = "Legend1";
-            this.chartEstadisticaGlobal.Legends.Add(legend1);
+            chartArea2.Name = "ChartArea1";
+            this.chartEstadisticaGlobal.ChartAreas.Add(chartArea2);
+            legend2.Name = "Legend1";
+            this.chartEstadisticaGlobal.Legends.Add(legend2);
             this.chartEstadisticaGlobal.Location = new System.Drawing.Point(0, 0);
             this.chartEstadisticaGlobal.Margin = new System.Windows.Forms.Padding(0);
             this.chartEstadisticaGlobal.Name = "chartEstadisticaGlobal";
             this.chartEstadisticaGlobal.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Pastel;
-            series1.BorderColor = System.Drawing.Color.Cyan;
-            series1.ChartArea = "ChartArea1";
-            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
-            series1.Color = System.Drawing.Color.White;
-            series1.Legend = "Legend1";
-            series1.Name = "Glass";
-            series1.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Excel;
-            series1.YValuesPerPoint = 2;
-            this.chartEstadisticaGlobal.Series.Add(series1);
+            series2.BorderColor = System.Drawing.Color.Cyan;
+            series2.ChartArea = "ChartArea1";
+            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
+            series2.Color = System.Drawing.Color.White;
+            series2.Legend = "Legend1";
+            series2.Name = "Glass";
+            series2.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Excel;
+            series2.YValuesPerPoint = 2;
+            this.chartEstadisticaGlobal.Series.Add(series2);
             this.chartEstadisticaGlobal.Size = new System.Drawing.Size(777, 414);
             this.chartEstadisticaGlobal.TabIndex = 0;
             this.chartEstadisticaGlobal.Text = "Estadisticas De Venta";
-            // 
-            // panelPrincipalStockBajo
-            // 
-            this.panelPrincipalStockBajo.Controls.Add(this.buttonImprimirLista);
-            this.panelPrincipalStockBajo.Controls.Add(this.panel3);
-            this.panelPrincipalStockBajo.Controls.Add(this.dataGridViewProductosStockBajo);
-            this.panelPrincipalStockBajo.Location = new System.Drawing.Point(0, 0);
-            this.panelPrincipalStockBajo.Name = "panelPrincipalStockBajo";
-            this.panelPrincipalStockBajo.Size = new System.Drawing.Size(1080, 614);
-            this.panelPrincipalStockBajo.TabIndex = 3;
-            this.panelPrincipalStockBajo.Visible = false;
-            // 
-            // dataGridViewProductosStockBajo
-            // 
-            this.dataGridViewProductosStockBajo.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            this.dataGridViewProductosStockBajo.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
-            this.dataGridViewProductosStockBajo.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dataGridViewProductosStockBajo.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Raised;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewProductosStockBajo.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.dataGridViewProductosStockBajo.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Descripcion,
-            this.Stock,
-            this.StockIdeal,
-            this.Pedido});
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridViewProductosStockBajo.DefaultCellStyle = dataGridViewCellStyle2;
-            this.dataGridViewProductosStockBajo.Dock = System.Windows.Forms.DockStyle.Left;
-            this.dataGridViewProductosStockBajo.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
-            this.dataGridViewProductosStockBajo.EnableHeadersVisualStyles = false;
-            this.dataGridViewProductosStockBajo.Location = new System.Drawing.Point(0, 0);
-            this.dataGridViewProductosStockBajo.Name = "dataGridViewProductosStockBajo";
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewProductosStockBajo.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
-            this.dataGridViewProductosStockBajo.Size = new System.Drawing.Size(900, 614);
-            this.dataGridViewProductosStockBajo.TabIndex = 11;
-            // 
-            // Descripcion
-            // 
-            this.Descripcion.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Descripcion.HeaderText = "Descripcion";
-            this.Descripcion.Name = "Descripcion";
-            // 
-            // Stock
-            // 
-            this.Stock.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.Stock.HeaderText = "Stock";
-            this.Stock.Name = "Stock";
-            this.Stock.Width = 75;
-            // 
-            // StockIdeal
-            // 
-            this.StockIdeal.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.StockIdeal.HeaderText = "Stock Ideal";
-            this.StockIdeal.Name = "StockIdeal";
-            this.StockIdeal.Width = 114;
-            // 
-            // Pedido
-            // 
-            this.Pedido.HeaderText = "Pedido";
-            this.Pedido.Name = "Pedido";
-            // 
-            // buttonImprimirLista
-            // 
-            this.buttonImprimirLista.FlatAppearance.BorderSize = 0;
-            this.buttonImprimirLista.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
-            this.buttonImprimirLista.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonImprimirLista.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonImprimirLista.ForeColor = System.Drawing.Color.White;
-            this.buttonImprimirLista.Image = ((System.Drawing.Image)(resources.GetObject("buttonImprimirLista.Image")));
-            this.buttonImprimirLista.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonImprimirLista.Location = new System.Drawing.Point(906, 3);
-            this.buttonImprimirLista.Name = "buttonImprimirLista";
-            this.buttonImprimirLista.Size = new System.Drawing.Size(174, 32);
-            this.buttonImprimirLista.TabIndex = 13;
-            this.buttonImprimirLista.Text = "Imprimir";
-            this.buttonImprimirLista.UseVisualStyleBackColor = true;
-            // 
-            // panel3
-            // 
-            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
-            this.panel3.Location = new System.Drawing.Point(901, 3);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(5, 32);
-            this.panel3.TabIndex = 12;
             // 
             // FormPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
             this.ClientSize = new System.Drawing.Size(1300, 650);
             this.Controls.Add(this.panelMenuVertical);
             this.Controls.Add(this.ButtonMinimizar);
@@ -753,11 +755,11 @@
             this.panelSubMenu.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogo)).EndInit();
             this.panelGlobalOpciones.ResumeLayout(false);
+            this.panelPrincipalStockBajo.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewProductosStockBajo)).EndInit();
             this.panelPrincipalEstadistica.ResumeLayout(false);
             this.panelOpcionesEstadisticas.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.chartEstadisticaGlobal)).EndInit();
-            this.panelPrincipalStockBajo.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewProductosStockBajo)).EndInit();
             this.ResumeLayout(false);
 
         }

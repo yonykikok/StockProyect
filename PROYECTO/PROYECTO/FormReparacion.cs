@@ -8,10 +8,15 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using CapaDeNegocios;
+using ExcepcionesPropiasReparacion;
 namespace PROYECTO
 {
     public partial class FormReparacion : Form
     {
+        private int[] patterLock;
+
+        public int[] PatterLock { get => patterLock; set => patterLock = value; }
+
         public FormReparacion()
         {
             InitializeComponent();
@@ -55,8 +60,8 @@ namespace PROYECTO
         {
             richTextBoxAclaraciones.Text = Aclaraciones();
             richTextBoxAcuerdos.Text = AcuerdosAntesDeFirmar();
-            textBoxFecha.Text = string.Format("{0}/{1}/{2}", DateTime.Today.Day, DateTime.Today.Month, DateTime.Today.Year);
-            textBoxNroDeBoleta.Text = "0003015 PRUEBA";
+            textBoxFecha.Text = DateTime.Now.ToString();
+            textBoxNroDeBoleta.Text = "0003015";
             foreach (string observacion in Enum.GetNames(typeof(EObservaciones)))
             {
                 comboBoxObservaciones.Items.Add(observacion);
@@ -65,7 +70,14 @@ namespace PROYECTO
         }
         private void PatterLockControl_PassCodeSubmitted(object sender, GestureLockApp.GestureLockControl.PassCodeSubmittedEventArgs e)
         {
-            string passCode = e.ToString();
+            if (e.Code.Length >= 4)
+            {
+                PatterLock = e.Code;
+            }
+            else
+            {
+                //error patron invalido.
+            }
             //PatterLockControl.SetPassCode(passCode);
         }
 
@@ -80,9 +92,241 @@ namespace PROYECTO
             panelCheckForm.BackColor = Color.FromArgb(22, 32, 40);
         }
 
+
+        private Reparacion ObtenerReparacionDelForm()
+        {
+            Reparacion reparacion = null;
+            //declaracion de variables
+            float precio;
+            float senia;
+            float saldo;
+            int garantia;
+            long numeroDeBoleta;
+            string nombre;
+            string apellido;
+            string[] nombreYApellido = textBoxNombreYApellido.Text.Split(' ');
+            if (nombreYApellido.Length >= 2)
+            {
+                if (!(nombreYApellido[0] is null) && !(nombreYApellido[1] is null))
+                {
+                    nombre = nombreYApellido[0].ToLower();
+                    apellido = nombreYApellido[1].ToLower();
+                }
+                else
+                {
+                    throw new NombreYApellidoException("Error, ingrese nombre y apellido");
+                }
+            }
+            else
+            {
+                throw new NombreYApellidoException("Error, ingrese nombre y apellido");
+            }
+
+            string strPassword;
+            int[] patterLock = null;
+            DateTime fecha;
+            Cliente cliente = new Cliente(textBoxNombreYApellido.Text, "", textBoxDni.Text, "", "", textBoxTelefono.Text);
+            string trabajoARealizar = textBoxTrabajoARealizar.Text + " " + textBoxTrabajoARealizar2.Text + " " + textBoxTrabajoARealizar3.Text;
+            string marcaYModelo = textBoxMarcaYModelo.Text;
+            string observacionesPropias = textBoxObservaciones.Text;
+            ETipoDeBloqueo bloqueo;
+            ETipoDeEquipo equipo;
+            EServicio servicio;
+            EObservaciones observacion;
+            if (checkedListBoxEquipo.SelectedItem is null)
+            {
+                throw new TipoDeEquipoException("Debe Seleccionar un tipo de equipo");
+            }
+            else if (checkedListBoxServicios.SelectedItem is null)
+            {
+                throw new TipoDeServicioException("Debe Seleccionar un tipo de servicio");
+            }
+            else if (comboBoxObservaciones.SelectedItem is null)
+            {
+                throw new TipoDeObservacionException("Debe Seleccionar un tipo de observacion");
+            }
+            equipo = (ETipoDeEquipo)Enum.Parse(typeof(ETipoDeEquipo), checkedListBoxEquipo.SelectedItem.ToString());
+            servicio = (EServicio)Enum.Parse(typeof(EServicio), checkedListBoxServicios.SelectedItem.ToString());
+            observacion = (EObservaciones)Enum.Parse(typeof(EObservaciones), comboBoxObservaciones.SelectedItem.ToString());
+
+            //verificamos que los datos se puedan parsiar al tipo correcto.
+            bool validarNroDeBoleta = long.TryParse(textBoxNroDeBoleta.Text, out numeroDeBoleta);
+            bool validarFecha = DateTime.TryParse(textBoxFecha.Text, out fecha);
+            bool validarGarantia = Int32.TryParse(textBoxGarantia15Dias.Text, out garantia);
+            bool validarPrecio = float.TryParse(textBoxPrecio.Text, out precio);
+            bool validarSenia = float.TryParse(textBoxSenia.Text, out senia);
+            bool validarSaldo = float.TryParse(textBoxSaldo.Text, out saldo);
+
+            if (!(trabajoARealizar is null) && trabajoARealizar.Length > 4)
+            {
+                if (!(marcaYModelo is null) && marcaYModelo.Length > 4)
+                {
+                    //verificamos si uso verificaciones predefinidas o alguna propia
+                    if (!(observacionesPropias is null) && observacionesPropias.Length > 1)
+                    {
+                        //si entra aca quiere decir que ingreso una observacion propia
+                    }
+                    else
+                    {
+                        observacionesPropias = observacion.ToString();// sino es una obsrvacion predefinida
+                    }
+                    if (validarNroDeBoleta)
+                    {
+                        if (validarFecha)
+                        {
+                            if (validarPrecio)
+                            {
+                                if ((validarSenia) && (senia <= precio) && (senia >= 0))
+                                {
+                                    if ((validarSaldo) && ((precio - senia) >= 0) && (saldo == (precio - senia)))
+                                    {
+                                        //---verificamos la garantia
+                                        if (validarGarantia)
+                                        {
+                                            if (garantia >= 0)
+                                            {
+
+                                            }
+                                            else
+                                            {
+                                                garantia = 15;
+                                            }
+                                        }
+                                        else
+                                        {
+                                            garantia = 15;
+                                        }
+                                        //---verificamos que tipo de bloqueo eligio 
+                                        if (panelPatterLock.Visible)
+                                        {
+                                            bloqueo = ETipoDeBloqueo.patron;
+                                            patterLock = PatterLock;
+                                            if (patterLock.Length < 4)
+                                            {
+                                                MessageBox.Show("error en el patron seleccione 4 puntos minimo");
+                                            }
+                                        }
+                                        else if (panelPassword.Visible)
+                                        {
+                                            bloqueo = ETipoDeBloqueo.password;
+                                            strPassword = textBoxPassword.Text;
+                                        }
+                                        else
+                                        {
+                                            bloqueo = ETipoDeBloqueo.ninguno;
+                                        }
+                                        //---Creamos la reparacion si estan todos los datos correctos.
+                                        reparacion = new Reparacion(equipo, servicio, bloqueo, observacion, cliente, marcaYModelo, trabajoARealizar, garantia, precio, senia, saldo, numeroDeBoleta, fecha);
+                                    }
+                                    else
+                                    {
+                                        throw new SaldoException("Error, no es un saldo valido");
+                                    }
+                                }
+                                else
+                                {
+                                    throw new SeniaException("Error, no es una seña valida");
+                                }
+                            }
+                            else
+                            {
+                                throw new PrecioException("Error, no es un precio valido");
+                            }
+                        }
+                        else
+                        {
+                            throw new FechaException("Error, en la lectura de la Fecha.");
+                        }
+                    }
+                    else
+                    {
+                        throw new NroDeBoletaException("Error, en la lectura del numero de Boleta.");
+                    }
+                }
+                else
+                {
+                    throw new MarcaYModeloException("Error en la marca y modelo. minimo 4 caracteres.");
+                }
+            }
+            else
+            {
+                throw new TrabajoARealizarException("Error en la descripcion del trabajo a realizar. minimo 4 caracteres.");
+            }
+            return reparacion;
+        }
+        private void OcultarLabelsDeErrorOcultarLabelsDeError()
+        {
+            labelErrorTrabajoARealizar.Visible = false;
+            labelErrorMarcaYModelo.Visible = false;
+            labelErrorTipoDeEquipo.Visible = false;
+            labelErrorTipoDeObservacion.Visible = false;
+            labelErrorPrecio.Visible = false;
+            labelErrorSenia.Visible = false;
+            labelErrorSaldo.Visible = false;
+            labelErrorTipoDeServicio.Visible = false;
+            labelErrorNombreYApellido.Visible = false;
+        }
         private void pictureBoxCheckForm_Click(object sender, EventArgs e)
         {
-            // Reparacion reparacion = new Reparacion();
+            //Reparacion reparacion = new Reparacion();
+            try
+            {
+                OcultarLabelsDeErrorOcultarLabelsDeError();
+                ObtenerReparacionDelForm();
+            }
+            catch (TrabajoARealizarException exception)
+            {
+                textBoxTrabajoARealizar.Focus();
+                labelErrorTrabajoARealizar.Visible = true;
+            }
+            catch (MarcaYModeloException exception)
+            {
+                textBoxMarcaYModelo.Focus();
+                labelErrorMarcaYModelo.Visible = true;
+            }
+            catch (NroDeBoletaException exception)
+            {
+                MessageBox.Show(exception.Message);
+            }
+            catch (FechaException exception)
+            {
+                MessageBox.Show(exception.Message);
+            }
+            catch (PrecioException exception)
+            {
+                textBoxPrecio.Focus();
+                labelErrorPrecio.Visible = true;
+            }
+            catch (SeniaException exception)
+            {
+                textBoxSenia.Focus();
+                labelErrorSenia.Visible = true;
+            }
+            catch (SaldoException exception)
+            {
+                textBoxSaldo.Focus();
+                labelErrorSaldo.Visible = true;
+            }
+            catch (TipoDeEquipoException exception)
+            {
+                checkedListBoxEquipo.Focus();
+                labelErrorTipoDeEquipo.Visible = true;
+            }
+            catch (TipoDeServicioException exception)
+            {
+                checkedListBoxServicios.Focus();
+                labelErrorTipoDeServicio.Visible = true;
+            }
+            catch (TipoDeObservacionException exception)
+            {
+                comboBoxObservaciones.Focus();
+                labelErrorTipoDeObservacion.Visible = true;
+            }
+            catch (NombreYApellidoException exception)
+            {
+                textBoxNombreYApellido.Focus();
+                labelErrorNombreYApellido.Visible = true;
+            }
         }
 
         private void buttonPatron_Click(object sender, EventArgs e)

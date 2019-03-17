@@ -151,3 +151,5 @@ C:\Users\screw\Desktop\StockProyect\PROYECTO\PROYECTO\obj\Debug\PROYECTO.exe
 C:\Users\screw\Desktop\StockProyect\PROYECTO\PROYECTO\obj\Debug\PROYECTO.pdb
 C:\Users\Haedo Jonathan\Desktop\StockProyect\PROYECTO\PROYECTO\obj\Debug\PROYECTO.FormListaReparaciones.resources
 C:\Users\Haedo Jonathan\Desktop\StockProyect\PROYECTO\PROYECTO\obj\Debug\PROYECTO.FormReparacion.resources
+C:\Users\Haedo Jonathan\Desktop\StockProyect\PROYECTO\PROYECTO\bin\Debug\ExcepcionesPropiasReparacion.dll
+C:\Users\Haedo Jonathan\Desktop\StockProyect\PROYECTO\PROYECTO\bin\Debug\ExcepcionesPropiasReparacion.pdb
