@@ -41,8 +41,8 @@ namespace CapaDeNegocios
             {
                 if (!(value is null))
                 {
-                    Regex SoloLetras = new Regex("^[0-9]+?$");
-                    if (SoloLetras.IsMatch(value))
+                    Regex SoloNumeros = new Regex("^[0-9]+?$");
+                    if (SoloNumeros.IsMatch(value))
                     {
                         if (value.Length > 5 && value.Length < 10)
                         {

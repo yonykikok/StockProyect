@@ -5,10 +5,12 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using CapaDeNegocios;
 using ExcepcionesPropiasReparacion;
+using ExcepcionesPropias;
 namespace PROYECTO
 {
     public partial class FormReparacion : Form
@@ -95,6 +97,7 @@ namespace PROYECTO
 
         private Reparacion ObtenerReparacionDelForm()
         {
+            #region VARIABLES
             Reparacion reparacion = null;
             //declaracion de variables
             float precio;
@@ -104,6 +107,29 @@ namespace PROYECTO
             long numeroDeBoleta;
             string nombre;
             string apellido;
+            string dni;
+            string telefono;
+            ETipoDeBloqueo bloqueo;
+            ETipoDeEquipo equipo;
+            EServicio servicio;
+            EObservaciones observacion;
+            string strPassword;
+            int[] patterLock = null;
+            DateTime fecha;
+            #endregion
+
+            #region SELECCION EQUIPO Y SERVICIO
+            if (checkedListBoxEquipo.SelectedItem is null)
+            {
+                throw new TipoDeEquipoException("Debe Seleccionar un tipo de equipo");
+            }
+            if (checkedListBoxServicios.SelectedItem is null)
+            {
+                throw new TipoDeServicioException("Debe Seleccionar un tipo de servicio");
+            }
+            #endregion
+
+            #region DATOS DEL CLIENTE
             string[] nombreYApellido = textBoxNombreYApellido.Text.Split(' ');
             if (nombreYApellido.Length >= 2)
             {
@@ -111,6 +137,23 @@ namespace PROYECTO
                 {
                     nombre = nombreYApellido[0].ToLower();
                     apellido = nombreYApellido[1].ToLower();
+                    Regex SoloNumeros = new Regex("^[0-9]+?$");//expresion regular solo numeros.
+                    if (SoloNumeros.IsMatch(textBoxDni.Text))
+                    {
+                        dni = textBoxDni.Text;
+                        if (SoloNumeros.IsMatch(textBoxTelefono.Text))
+                        {
+                            telefono = textBoxTelefono.Text;
+                        }
+                        else
+                        {
+                            throw new NumberInvalidException("Error, ingrese solo numeros para TELEFONO");
+                        }
+                    }
+                    else
+                    {
+                        throw new DniInvalidException("Error, ingrese solo numeros para el DNI");
+                    }
                 }
                 else
                 {
@@ -121,33 +164,16 @@ namespace PROYECTO
             {
                 throw new NombreYApellidoException("Error, ingrese nombre y apellido");
             }
+            #endregion
 
-            string strPassword;
-            int[] patterLock = null;
-            DateTime fecha;
+
             Cliente cliente = new Cliente(textBoxNombreYApellido.Text, "", textBoxDni.Text, "", "", textBoxTelefono.Text);
             string trabajoARealizar = textBoxTrabajoARealizar.Text + " " + textBoxTrabajoARealizar2.Text + " " + textBoxTrabajoARealizar3.Text;
             string marcaYModelo = textBoxMarcaYModelo.Text;
             string observacionesPropias = textBoxObservaciones.Text;
-            ETipoDeBloqueo bloqueo;
-            ETipoDeEquipo equipo;
-            EServicio servicio;
-            EObservaciones observacion;
-            if (checkedListBoxEquipo.SelectedItem is null)
-            {
-                throw new TipoDeEquipoException("Debe Seleccionar un tipo de equipo");
-            }
-            else if (checkedListBoxServicios.SelectedItem is null)
-            {
-                throw new TipoDeServicioException("Debe Seleccionar un tipo de servicio");
-            }
-            else if (comboBoxObservaciones.SelectedItem is null)
-            {
-                throw new TipoDeObservacionException("Debe Seleccionar un tipo de observacion");
-            }
+
             equipo = (ETipoDeEquipo)Enum.Parse(typeof(ETipoDeEquipo), checkedListBoxEquipo.SelectedItem.ToString());
             servicio = (EServicio)Enum.Parse(typeof(EServicio), checkedListBoxServicios.SelectedItem.ToString());
-            observacion = (EObservaciones)Enum.Parse(typeof(EObservaciones), comboBoxObservaciones.SelectedItem.ToString());
 
             //verificamos que los datos se puedan parsiar al tipo correcto.
             bool validarNroDeBoleta = long.TryParse(textBoxNroDeBoleta.Text, out numeroDeBoleta);
@@ -157,19 +183,27 @@ namespace PROYECTO
             bool validarSenia = float.TryParse(textBoxSenia.Text, out senia);
             bool validarSaldo = float.TryParse(textBoxSaldo.Text, out saldo);
 
-            if (!(trabajoARealizar is null) && trabajoARealizar.Length > 4)
+
+            if (!(marcaYModelo is null) && marcaYModelo.Length > 4)
             {
-                if (!(marcaYModelo is null) && marcaYModelo.Length > 4)
+            #region SELECCION OBSERVACIONES
+            if (comboBoxObservaciones.SelectedItem is null)
+            {
+                throw new TipoDeObservacionException("Debe Seleccionar un tipo de observacion");
+            }
+            observacion = (EObservaciones)Enum.Parse(typeof(EObservaciones), comboBoxObservaciones.SelectedItem.ToString());
+            #endregion
+                //verificamos si uso verificaciones predefinidas o alguna propia
+                if (!(observacionesPropias is null) && observacionesPropias.Length > 1)
                 {
-                    //verificamos si uso verificaciones predefinidas o alguna propia
-                    if (!(observacionesPropias is null) && observacionesPropias.Length > 1)
-                    {
-                        //si entra aca quiere decir que ingreso una observacion propia
-                    }
-                    else
-                    {
-                        observacionesPropias = observacion.ToString();// sino es una obsrvacion predefinida
-                    }
+                    //si entra aca quiere decir que ingreso una observacion propia
+                }
+                else
+                {
+                    observacionesPropias = observacion.ToString();// sino es una obsrvacion predefinida
+                }
+                if (!(trabajoARealizar is null) && trabajoARealizar.Length > 4)
+                {
                     if (validarNroDeBoleta)
                     {
                         if (validarFecha)
@@ -245,13 +279,16 @@ namespace PROYECTO
                 }
                 else
                 {
-                    throw new MarcaYModeloException("Error en la marca y modelo. minimo 4 caracteres.");
+                    throw new TrabajoARealizarException("Error en la descripcion del trabajo a realizar. minimo 4 caracteres.");
                 }
             }
             else
             {
-                throw new TrabajoARealizarException("Error en la descripcion del trabajo a realizar. minimo 4 caracteres.");
+                throw new MarcaYModeloException("Error en la marca y modelo. minimo 4 caracteres.");
             }
+
+
+
             return reparacion;
         }
         private void OcultarLabelsDeErrorOcultarLabelsDeError()
@@ -265,6 +302,8 @@ namespace PROYECTO
             labelErrorSaldo.Visible = false;
             labelErrorTipoDeServicio.Visible = false;
             labelErrorNombreYApellido.Visible = false;
+            labelErrorDni.Visible = false;
+            labelErrorTelefono.Visible = false;
         }
         private void pictureBoxCheckForm_Click(object sender, EventArgs e)
         {
@@ -326,6 +365,16 @@ namespace PROYECTO
             {
                 textBoxNombreYApellido.Focus();
                 labelErrorNombreYApellido.Visible = true;
+            }
+            catch (DniInvalidException exception)
+            {
+                textBoxDni.Focus();
+                labelErrorDni.Visible = true;
+            }
+            catch (NumberInvalidException exception)
+            {
+                textBoxTelefono.Focus();
+                labelErrorTelefono.Visible = true;
             }
         }
 
