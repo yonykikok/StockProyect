@@ -99,6 +99,7 @@ namespace PROYECTO
         {
             #region VARIABLES
             Reparacion reparacion = null;
+            Cliente cliente = null;
             //declaracion de variables
             float precio;
             float senia;
@@ -135,8 +136,8 @@ namespace PROYECTO
             {
                 if (!(nombreYApellido[0] is null) && !(nombreYApellido[1] is null))
                 {
-                    nombre = nombreYApellido[0].ToLower();
-                    apellido = nombreYApellido[1].ToLower();
+                    nombre = nombreYApellido[1].ToLower();
+                    apellido = nombreYApellido[0].ToLower();
                     Regex SoloNumeros = new Regex("^[0-9]+?$");//expresion regular solo numeros.
                     if (SoloNumeros.IsMatch(textBoxDni.Text))
                     {
@@ -144,6 +145,7 @@ namespace PROYECTO
                         if (SoloNumeros.IsMatch(textBoxTelefono.Text))
                         {
                             telefono = textBoxTelefono.Text;
+                            cliente = new Cliente(nombre,apellido, textBoxDni.Text, "", "", textBoxTelefono.Text);
                         }
                         else
                         {
@@ -167,7 +169,6 @@ namespace PROYECTO
             #endregion
 
 
-            Cliente cliente = new Cliente(textBoxNombreYApellido.Text, "", textBoxDni.Text, "", "", textBoxTelefono.Text);
             string trabajoARealizar = textBoxTrabajoARealizar.Text + " " + textBoxTrabajoARealizar2.Text + " " + textBoxTrabajoARealizar3.Text;
             string marcaYModelo = textBoxMarcaYModelo.Text;
             string observacionesPropias = textBoxObservaciones.Text;
@@ -186,13 +187,12 @@ namespace PROYECTO
 
             if (!(marcaYModelo is null) && marcaYModelo.Length > 4)
             {
-            #region SELECCION OBSERVACIONES
-            if (comboBoxObservaciones.SelectedItem is null)
-            {
-                throw new TipoDeObservacionException("Debe Seleccionar un tipo de observacion");
-            }
-            observacion = (EObservaciones)Enum.Parse(typeof(EObservaciones), comboBoxObservaciones.SelectedItem.ToString());
-            #endregion
+                #region SELECCION OBSERVACIONES
+                if (comboBoxObservaciones.SelectedItem is null)
+                {
+                    throw new TipoDeObservacionException("Debe Seleccionar un tipo de observacion");
+                }
+                observacion = (EObservaciones)Enum.Parse(typeof(EObservaciones), comboBoxObservaciones.SelectedItem.ToString());
                 //verificamos si uso verificaciones predefinidas o alguna propia
                 if (!(observacionesPropias is null) && observacionesPropias.Length > 1)
                 {
@@ -202,6 +202,7 @@ namespace PROYECTO
                 {
                     observacionesPropias = observacion.ToString();// sino es una obsrvacion predefinida
                 }
+                #endregion
                 if (!(trabajoARealizar is null) && trabajoARealizar.Length > 4)
                 {
                     if (validarNroDeBoleta)

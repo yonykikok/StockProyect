@@ -141,7 +141,7 @@
             this.panelResumenDeCompras.Controls.Add(this.dataGridViewProductos);
             this.panelResumenDeCompras.Location = new System.Drawing.Point(12, 278);
             this.panelResumenDeCompras.Name = "panelResumenDeCompras";
-            this.panelResumenDeCompras.Size = new System.Drawing.Size(855, 347);
+            this.panelResumenDeCompras.Size = new System.Drawing.Size(855, 305);
             this.panelResumenDeCompras.TabIndex = 5;
             // 
             // dataGridViewProductos

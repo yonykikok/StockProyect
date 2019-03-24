@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormListaReparaciones));
             this.panelMain = new System.Windows.Forms.Panel();
             this.buttonNuevaReparacion = new System.Windows.Forms.Button();
@@ -46,12 +46,12 @@
             this.pictureBoxHamburgeMenu = new System.Windows.Forms.PictureBox();
             this.panelMenu = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.button3 = new System.Windows.Forms.Button();
+            this.buttonSinSolucion = new System.Windows.Forms.Button();
             this.panel11 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.buttonAgregarVenta = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.buttonSinHacer = new System.Windows.Forms.Button();
+            this.buttonTerminados = new System.Windows.Forms.Button();
+            this.buttonEnProceso = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panelBuscador = new System.Windows.Forms.Panel();
             this.textBoxBuscador = new System.Windows.Forms.TextBox();
@@ -124,14 +124,14 @@
             // 
             this.dataGridViewClientes.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
             this.dataGridViewClientes.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Raised;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewClientes.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewClientes.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridViewClientes.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Indice,
             this.NroDeBoleta,
@@ -139,27 +139,27 @@
             this.Dni,
             this.Problema,
             this.Estado});
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridViewClientes.DefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridViewClientes.DefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridViewClientes.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridViewClientes.EnableHeadersVisualStyles = false;
             this.dataGridViewClientes.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
             this.dataGridViewClientes.Location = new System.Drawing.Point(0, 0);
             this.dataGridViewClientes.Name = "dataGridViewClientes";
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewClientes.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewClientes.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridViewClientes.Size = new System.Drawing.Size(931, 571);
             this.dataGridViewClientes.TabIndex = 8;
             // 
@@ -221,12 +221,12 @@
             // panelMenu
             // 
             this.panelMenu.Controls.Add(this.panel3);
-            this.panelMenu.Controls.Add(this.button3);
+            this.panelMenu.Controls.Add(this.buttonSinSolucion);
             this.panelMenu.Controls.Add(this.panel11);
             this.panelMenu.Controls.Add(this.panel2);
-            this.panelMenu.Controls.Add(this.buttonAgregarVenta);
-            this.panelMenu.Controls.Add(this.button2);
-            this.panelMenu.Controls.Add(this.button1);
+            this.panelMenu.Controls.Add(this.buttonSinHacer);
+            this.panelMenu.Controls.Add(this.buttonTerminados);
+            this.panelMenu.Controls.Add(this.buttonEnProceso);
             this.panelMenu.Controls.Add(this.panel1);
             this.panelMenu.Location = new System.Drawing.Point(0, 25);
             this.panelMenu.Name = "panelMenu";
@@ -242,20 +242,20 @@
             this.panel3.Size = new System.Drawing.Size(5, 32);
             this.panel3.TabIndex = 51;
             // 
-            // button3
+            // buttonSinSolucion
             // 
-            this.button3.FlatAppearance.BorderSize = 0;
-            this.button3.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.ForeColor = System.Drawing.Color.White;
-            this.button3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button3.Location = new System.Drawing.Point(308, 3);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(99, 32);
-            this.button3.TabIndex = 50;
-            this.button3.Text = "Sin Solucion";
-            this.button3.UseVisualStyleBackColor = true;
+            this.buttonSinSolucion.FlatAppearance.BorderSize = 0;
+            this.buttonSinSolucion.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
+            this.buttonSinSolucion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonSinSolucion.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonSinSolucion.ForeColor = System.Drawing.Color.White;
+            this.buttonSinSolucion.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonSinSolucion.Location = new System.Drawing.Point(308, 3);
+            this.buttonSinSolucion.Name = "buttonSinSolucion";
+            this.buttonSinSolucion.Size = new System.Drawing.Size(99, 32);
+            this.buttonSinSolucion.TabIndex = 50;
+            this.buttonSinSolucion.Text = "Sin Solucion";
+            this.buttonSinSolucion.UseVisualStyleBackColor = true;
             // 
             // panel11
             // 
@@ -273,56 +273,56 @@
             this.panel2.Size = new System.Drawing.Size(5, 32);
             this.panel2.TabIndex = 49;
             // 
-            // buttonAgregarVenta
+            // buttonSinHacer
             // 
-            this.buttonAgregarVenta.FlatAppearance.BorderSize = 0;
-            this.buttonAgregarVenta.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
-            this.buttonAgregarVenta.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonAgregarVenta.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonAgregarVenta.ForeColor = System.Drawing.Color.White;
-            this.buttonAgregarVenta.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonAgregarVenta.Location = new System.Drawing.Point(6, 3);
-            this.buttonAgregarVenta.Name = "buttonAgregarVenta";
-            this.buttonAgregarVenta.Size = new System.Drawing.Size(96, 32);
-            this.buttonAgregarVenta.TabIndex = 44;
-            this.buttonAgregarVenta.Text = "Sin Hacer";
-            this.buttonAgregarVenta.UseVisualStyleBackColor = true;
-            this.buttonAgregarVenta.MouseLeave += new System.EventHandler(this.pictureBoxHamburgeMenu_MouseLeave);
-            this.buttonAgregarVenta.MouseHover += new System.EventHandler(this.pictureBoxHamburgeMenu_MouseHover);
+            this.buttonSinHacer.FlatAppearance.BorderSize = 0;
+            this.buttonSinHacer.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
+            this.buttonSinHacer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonSinHacer.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonSinHacer.ForeColor = System.Drawing.Color.White;
+            this.buttonSinHacer.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonSinHacer.Location = new System.Drawing.Point(6, 3);
+            this.buttonSinHacer.Name = "buttonSinHacer";
+            this.buttonSinHacer.Size = new System.Drawing.Size(96, 32);
+            this.buttonSinHacer.TabIndex = 44;
+            this.buttonSinHacer.Text = "Sin Hacer";
+            this.buttonSinHacer.UseVisualStyleBackColor = true;
+            this.buttonSinHacer.MouseLeave += new System.EventHandler(this.pictureBoxHamburgeMenu_MouseLeave);
+            this.buttonSinHacer.MouseHover += new System.EventHandler(this.pictureBoxHamburgeMenu_MouseHover);
             // 
-            // button2
+            // buttonTerminados
             // 
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button2.Location = new System.Drawing.Point(208, 3);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(96, 32);
-            this.button2.TabIndex = 48;
-            this.button2.Text = "Terminados";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.MouseLeave += new System.EventHandler(this.pictureBoxHamburgeMenu_MouseLeave);
-            this.button2.MouseHover += new System.EventHandler(this.pictureBoxHamburgeMenu_MouseHover);
+            this.buttonTerminados.FlatAppearance.BorderSize = 0;
+            this.buttonTerminados.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
+            this.buttonTerminados.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonTerminados.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonTerminados.ForeColor = System.Drawing.Color.White;
+            this.buttonTerminados.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonTerminados.Location = new System.Drawing.Point(208, 3);
+            this.buttonTerminados.Name = "buttonTerminados";
+            this.buttonTerminados.Size = new System.Drawing.Size(96, 32);
+            this.buttonTerminados.TabIndex = 48;
+            this.buttonTerminados.Text = "Terminados";
+            this.buttonTerminados.UseVisualStyleBackColor = true;
+            this.buttonTerminados.MouseLeave += new System.EventHandler(this.pictureBoxHamburgeMenu_MouseLeave);
+            this.buttonTerminados.MouseHover += new System.EventHandler(this.pictureBoxHamburgeMenu_MouseHover);
             // 
-            // button1
+            // buttonEnProceso
             // 
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(107, 3);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(96, 32);
-            this.button1.TabIndex = 46;
-            this.button1.Text = "En Proceso";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.MouseLeave += new System.EventHandler(this.pictureBoxHamburgeMenu_MouseLeave);
-            this.button1.MouseHover += new System.EventHandler(this.pictureBoxHamburgeMenu_MouseHover);
+            this.buttonEnProceso.FlatAppearance.BorderSize = 0;
+            this.buttonEnProceso.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
+            this.buttonEnProceso.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonEnProceso.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonEnProceso.ForeColor = System.Drawing.Color.White;
+            this.buttonEnProceso.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonEnProceso.Location = new System.Drawing.Point(107, 3);
+            this.buttonEnProceso.Name = "buttonEnProceso";
+            this.buttonEnProceso.Size = new System.Drawing.Size(96, 32);
+            this.buttonEnProceso.TabIndex = 46;
+            this.buttonEnProceso.Text = "En Proceso";
+            this.buttonEnProceso.UseVisualStyleBackColor = true;
+            this.buttonEnProceso.MouseLeave += new System.EventHandler(this.pictureBoxHamburgeMenu_MouseLeave);
+            this.buttonEnProceso.MouseHover += new System.EventHandler(this.pictureBoxHamburgeMenu_MouseHover);
             // 
             // panel1
             // 
@@ -462,16 +462,16 @@
         private System.Windows.Forms.Button buttonBuscar;
         private System.Windows.Forms.Panel panelDecorativo;
         private System.Windows.Forms.Panel panel11;
-        private System.Windows.Forms.Button buttonAgregarVenta;
+        private System.Windows.Forms.Button buttonSinHacer;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button buttonTerminados;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button buttonEnProceso;
         private System.Windows.Forms.Panel panelMenu;
         private System.Windows.Forms.PictureBox pictureBoxHamburgeMenu;
         private System.Windows.Forms.Label labelReparaciones;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button buttonSinSolucion;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.DataGridView dataGridViewClientes;
         private System.Windows.Forms.DataGridViewTextBoxColumn Indice;

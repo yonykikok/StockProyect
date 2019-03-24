@@ -6,6 +6,14 @@ using System.Threading.Tasks;
 
 namespace CapaDeNegocios
 {
+
+    public enum EEstado
+    {
+        SinHacer,
+        EnProceso,
+        Terminado,
+        SinSolucion
+    }
     public enum ETipoDeEquipo
     {
         Celular,
