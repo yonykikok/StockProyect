@@ -204,42 +204,38 @@ namespace PROYECTO
             }
 
         }
-        /// <summary>
-        /// Cargo Los Usuarios leidos Obtenidos del GridView  a los textBox.
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void dataGridViewUsuarios_RowHeaderMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
-        {
+        
+      
+        private void seleccionarEmpleado(int rowIndex) {
             try
             {
-                if (!(dataGridViewUsuarios.Rows[e.RowIndex].Cells["Usuario"].Value is null))
+                if (!(dataGridViewUsuarios.Rows[rowIndex].Cells["Usuario"].Value is null))
                 {
-                    if (!(dataGridViewUsuarios.Rows[e.RowIndex].Cells["Nombre"].Value is null))
+                    if (!(dataGridViewUsuarios.Rows[rowIndex].Cells["Nombre"].Value is null))
                     {
-                        if (!(dataGridViewUsuarios.Rows[e.RowIndex].Cells["Apellido"].Value is null))
+                        if (!(dataGridViewUsuarios.Rows[rowIndex].Cells["Apellido"].Value is null))
                         {
-                            if (!(dataGridViewUsuarios.Rows[e.RowIndex].Cells["Dni"].Value is null))
+                            if (!(dataGridViewUsuarios.Rows[rowIndex].Cells["Dni"].Value is null))
                             {
-                                if (!(dataGridViewUsuarios.Rows[e.RowIndex].Cells["Direccion"].Value is null))
+                                if (!(dataGridViewUsuarios.Rows[rowIndex].Cells["Direccion"].Value is null))
                                 {
-                                    if (!(dataGridViewUsuarios.Rows[e.RowIndex].Cells["Mail"].Value is null))
+                                    if (!(dataGridViewUsuarios.Rows[rowIndex].Cells["Mail"].Value is null))
                                     {
-                                        if (!(dataGridViewUsuarios.Rows[e.RowIndex].Cells["Contraseña"].Value is null))
+                                        if (!(dataGridViewUsuarios.Rows[rowIndex].Cells["Contraseña"].Value is null))
                                         {
-                                            if (!(dataGridViewUsuarios.Rows[e.RowIndex].Cells["Indice"].Value is null))
+                                            if (!(dataGridViewUsuarios.Rows[rowIndex].Cells["Indice"].Value is null))
                                             {
-                                                if (!(dataGridViewUsuarios.Rows[e.RowIndex].Cells["TipoDeUsuario"].Value is null))//verifica que no tenga datos nulos
+                                                if (!(dataGridViewUsuarios.Rows[rowIndex].Cells["TipoDeUsuario"].Value is null))//verifica que no tenga datos nulos
                                                 {
-                                                    textBoxUsuario.Text = dataGridViewUsuarios.Rows[e.RowIndex].Cells["Usuario"].Value.ToString();
-                                                    textBoxName.Text = dataGridViewUsuarios.Rows[e.RowIndex].Cells["Nombre"].Value.ToString();
-                                                    textBoxLastName.Text = dataGridViewUsuarios.Rows[e.RowIndex].Cells["Apellido"].Value.ToString();
-                                                    textBoxDni.Text = dataGridViewUsuarios.Rows[e.RowIndex].Cells["Dni"].Value.ToString();
-                                                    textBoxAdress.Text = dataGridViewUsuarios.Rows[e.RowIndex].Cells["Direccion"].Value.ToString();
-                                                    textBoxMailAdress.Text = dataGridViewUsuarios.Rows[e.RowIndex].Cells["Mail"].Value.ToString();
-                                                    textBoxPassword.Text = dataGridViewUsuarios.Rows[e.RowIndex].Cells["Contraseña"].Value.ToString();
-                                                    textBoxId.Text = dataGridViewUsuarios.Rows[e.RowIndex].Cells["Indice"].Value.ToString();
-                                                    if (dataGridViewUsuarios.Rows[e.RowIndex].Cells["TipoDeUsuario"].Value.ToString().ToLower() == "admin")
+                                                    textBoxUsuario.Text = dataGridViewUsuarios.Rows[rowIndex].Cells["Usuario"].Value.ToString();
+                                                    textBoxName.Text = dataGridViewUsuarios.Rows[rowIndex].Cells["Nombre"].Value.ToString();
+                                                    textBoxLastName.Text = dataGridViewUsuarios.Rows[rowIndex].Cells["Apellido"].Value.ToString();
+                                                    textBoxDni.Text = dataGridViewUsuarios.Rows[rowIndex].Cells["Dni"].Value.ToString();
+                                                    textBoxAdress.Text = dataGridViewUsuarios.Rows[rowIndex].Cells["Direccion"].Value.ToString();
+                                                    textBoxMailAdress.Text = dataGridViewUsuarios.Rows[rowIndex].Cells["Mail"].Value.ToString();
+                                                    textBoxPassword.Text = dataGridViewUsuarios.Rows[rowIndex].Cells["Contraseña"].Value.ToString();
+                                                    textBoxId.Text = dataGridViewUsuarios.Rows[rowIndex].Cells["Indice"].Value.ToString();
+                                                    if (dataGridViewUsuarios.Rows[rowIndex].Cells["TipoDeUsuario"].Value.ToString().ToLower() == "admin")
                                                     {
                                                         comboBoxUserType.SelectedItem = "Admin";
                                                     }
@@ -250,7 +246,7 @@ namespace PROYECTO
                                                 }
                                                 else
                                                 {
-                                                    dataGridViewUsuarios.Rows[e.RowIndex].Cells["TipoDeUsuario"].Value = "user";
+                                                    dataGridViewUsuarios.Rows[rowIndex].Cells["TipoDeUsuario"].Value = "user";
                                                 }
                                             }
                                             else
@@ -260,37 +256,37 @@ namespace PROYECTO
                                         }
                                         else
                                         {
-                                            dataGridViewUsuarios.Rows[e.RowIndex].Cells["Contraseña"].Value = "SinPassword";
+                                            dataGridViewUsuarios.Rows[rowIndex].Cells["Contraseña"].Value = "SinPassword";
                                         }
                                     }
                                     else
                                     {
-                                        dataGridViewUsuarios.Rows[e.RowIndex].Cells["Mail"].Value = "SinMail";
+                                        dataGridViewUsuarios.Rows[rowIndex].Cells["Mail"].Value = "SinMail";
                                     }
                                 }
                                 else
                                 {
-                                    dataGridViewUsuarios.Rows[e.RowIndex].Cells["Direccion"].Value = "SinDireccion";
+                                    dataGridViewUsuarios.Rows[rowIndex].Cells["Direccion"].Value = "SinDireccion";
                                 }
                             }
                             else
                             {
-                                dataGridViewUsuarios.Rows[e.RowIndex].Cells["Dni"].Value = "SinDni";
+                                dataGridViewUsuarios.Rows[rowIndex].Cells["Dni"].Value = "SinDni";
                             }
                         }
                         else
                         {
-                            dataGridViewUsuarios.Rows[e.RowIndex].Cells["Apellido"].Value = "SinApellido";
+                            dataGridViewUsuarios.Rows[rowIndex].Cells["Apellido"].Value = "SinApellido";
                         }
                     }
                     else
                     {
-                        dataGridViewUsuarios.Rows[e.RowIndex].Cells["Nombre"].Value = "SinNombre";
+                        dataGridViewUsuarios.Rows[rowIndex].Cells["Nombre"].Value = "SinNombre";
                     }
                 }
                 else
                 {
-                    dataGridViewUsuarios.Rows[e.RowIndex].Cells["Usuario"].Value = "SinUsuario";
+                    dataGridViewUsuarios.Rows[rowIndex].Cells["Usuario"].Value = "SinUsuario";
                 }
 
             }
@@ -405,6 +401,26 @@ namespace PROYECTO
             {
                 MessageBox.Show("Seleccione el usuario que desea borrar.");
             }
+        }
+        /// <summary>
+        /// Cargo el Usuario clickeado del GridView  a los textBox.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void dataGridViewUsuarios_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int rowIndex = e.RowIndex;
+            this.seleccionarEmpleado(rowIndex);
+        }
+        /// <summary>
+        /// Cargo el Usuario clickeado del GridView  a los textBox.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void dataGridViewUsuarios_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            int rowIndex = e.RowIndex;
+            this.seleccionarEmpleado(rowIndex);
         }
     }
 }

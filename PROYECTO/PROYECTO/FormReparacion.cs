@@ -410,5 +410,32 @@ namespace PROYECTO
                 panelObservacionUnderline.Visible = false;
             }
         }
+
+        private void textBoxSenia_TextChanged(object sender, EventArgs e)
+        {
+            float precio;
+            float senia;
+            float saldo;
+            bool validarPrecio = float.TryParse(textBoxPrecio.Text, out precio);
+            bool validarSenia = float.TryParse(textBoxSenia.Text, out senia);
+
+
+            if (validarPrecio && validarSenia)
+            {
+                saldo = precio - senia;
+                if (saldo < 0)
+                {
+                    MessageBox.Show("El saldo no puede quedar negativo, verifique los datos.");
+                }
+                else
+                {
+                    textBoxSaldo.Text = saldo.ToString();
+                }
+
+            }
+            else {
+                textBoxSaldo.Text = "";
+            }
+        }
     }
 }

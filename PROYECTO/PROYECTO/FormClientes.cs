@@ -354,5 +354,10 @@ namespace PROYECTO
                 MessageBox.Show("Error, Cliente No Encontrado");
             }
         }
+
+        private void dataGridViewClientes_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            this.dataGridViewClientes_RowHeaderMouseDoubleClick(sender, e);
+        }
     }
 }

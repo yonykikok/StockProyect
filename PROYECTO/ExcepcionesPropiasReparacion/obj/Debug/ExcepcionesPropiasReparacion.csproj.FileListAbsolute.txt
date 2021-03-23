@@ -4,3 +4,9 @@ C:\Users\Haedo Jonathan\Desktop\StockProyect\PROYECTO\ExcepcionesPropiasReparaci
 C:\Users\Haedo Jonathan\Desktop\StockProyect\PROYECTO\ExcepcionesPropiasReparacion\obj\Debug\ExcepcionesPropiasReparacion.csproj.CoreCompileInputs.cache
 C:\Users\Haedo Jonathan\Desktop\StockProyect\PROYECTO\ExcepcionesPropiasReparacion\obj\Debug\ExcepcionesPropiasReparacion.dll
 C:\Users\Haedo Jonathan\Desktop\StockProyect\PROYECTO\ExcepcionesPropiasReparacion\obj\Debug\ExcepcionesPropiasReparacion.pdb
+C:\Users\Desktop-Pro\Desktop\C#\StockProyect\PROYECTO\ExcepcionesPropiasReparacion\bin\Debug\ExcepcionesPropiasReparacion.dll
+C:\Users\Desktop-Pro\Desktop\C#\StockProyect\PROYECTO\ExcepcionesPropiasReparacion\bin\Debug\ExcepcionesPropiasReparacion.pdb
+C:\Users\Desktop-Pro\Desktop\C#\StockProyect\PROYECTO\ExcepcionesPropiasReparacion\obj\Debug\ExcepcionesPropiasReparacion.csprojAssemblyReference.cache
+C:\Users\Desktop-Pro\Desktop\C#\StockProyect\PROYECTO\ExcepcionesPropiasReparacion\obj\Debug\ExcepcionesPropiasReparacion.csproj.CoreCompileInputs.cache
+C:\Users\Desktop-Pro\Desktop\C#\StockProyect\PROYECTO\ExcepcionesPropiasReparacion\obj\Debug\ExcepcionesPropiasReparacion.dll
+C:\Users\Desktop-Pro\Desktop\C#\StockProyect\PROYECTO\ExcepcionesPropiasReparacion\obj\Debug\ExcepcionesPropiasReparacion.pdb

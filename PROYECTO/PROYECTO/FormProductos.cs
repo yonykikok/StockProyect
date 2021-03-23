@@ -13,6 +13,7 @@ using ExcepcionesPropias;
 using ExcepcionesPropiasProductos;
 using System.Threading;
 using System.Windows.Forms.DataVisualization.Charting;
+using System.IO;
 
 namespace PROYECTO
 {
@@ -55,8 +56,10 @@ namespace PROYECTO
         }
         private void AgregarImagenesALosProductos()
         {
+            
+            
             //---------temporal----
-            string pathImagenCargadorInova3mAh = "C:\\Users\\Haedo Jonathan\\Desktop\\StockProyect\\Imegenes\\cargador inova.jpg";
+           /* string pathImagenCargadorInova3mAh = "C:\\Users\\Haedo Jonathan\\Desktop\\StockProyect\\Imegenes\\cargador inova.jpg";
             string pathImagenGlass = "C:\\Users\\Haedo Jonathan\\Desktop\\StockProyect\\Imegenes\\Film Glass.jpg";
             string pathImagenCableIphoneMetal = "C:\\Users\\Haedo Jonathan\\Desktop\\StockProyect\\Imegenes\\cable iphone metalico.jpg";
             string pathImagensd16gb = "C:\\Users\\Haedo Jonathan\\Desktop\\StockProyect\\Imegenes\\sd 16gb.jpg";
@@ -83,7 +86,7 @@ namespace PROYECTO
             AgregarFotosALosProductosDelMismoTipo(pathImagensdCargadorSam, "cargador samsung");
             AgregarFotosALosProductosDelMismoTipo(pathImagensdAuricularVincha, "vincha dise");
             AgregarFotosALosProductosDelMismoTipo(pathImagensdTipoCTela, "tela tipo c");
-            AgregarFotosALosProductosDelMismoTipo(pathImagenJoystick, "joystick");
+            AgregarFotosALosProductosDelMismoTipo(pathImagenJoystick, "joystick");*/
         }
         private void FormProductos_Load(object sender, EventArgs e)
         {
@@ -122,9 +125,12 @@ namespace PROYECTO
             try
             {
                 dataGridViewProductos.Rows.Clear();
-                foreach (Producto producto in ProductosDAO.LeerProductos(""))
-                {
-                    dataGridViewProductos.Rows.Add(producto.Id, producto.Codigo, producto.Descripcion, producto.Stock, producto.StockIdeal, producto.StockMinimo, producto.Precio, producto.Imagen);
+                List<Producto> productos = ProductosDAO.LeerProductos("");
+                if (productos != null) { 
+                    foreach (Producto producto in ProductosDAO.LeerProductos(""))
+                    {
+                        dataGridViewProductos.Rows.Add(producto.Id, producto.Codigo, producto.Descripcion, producto.Stock, producto.StockIdeal, producto.StockMinimo, producto.Precio, producto.Imagen);
+                    }
                 }
             }
             catch (ConexionDBException exception)
@@ -187,24 +193,25 @@ namespace PROYECTO
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private bool ValidarDatosDelProductoSeleccionado(object sender, DataGridViewCellMouseEventArgs e)
+        private bool ValidarDatosDelProductoSeleccionado(int rowIndex)
         {
+
             bool retorno = false;
             try
             {
-                if (!(dataGridViewProductos.Rows[e.RowIndex].Cells["Codigo"].Value is null))
+                if (!(dataGridViewProductos.Rows[rowIndex].Cells["Codigo"].Value is null))
                 {
-                    if (!(dataGridViewProductos.Rows[e.RowIndex].Cells["Descripcion"].Value is null))
+                    if (!(dataGridViewProductos.Rows[rowIndex].Cells["Descripcion"].Value is null))
                     {
-                        if (!(dataGridViewProductos.Rows[e.RowIndex].Cells["Stock"].Value is null))
+                        if (!(dataGridViewProductos.Rows[rowIndex].Cells["Stock"].Value is null))
                         {
-                            if (!(dataGridViewProductos.Rows[e.RowIndex].Cells["StockMinimo"].Value is null))
+                            if (!(dataGridViewProductos.Rows[rowIndex].Cells["StockMinimo"].Value is null))
                             {
-                                if (!(dataGridViewProductos.Rows[e.RowIndex].Cells["StockIdeal"].Value is null))
+                                if (!(dataGridViewProductos.Rows[rowIndex].Cells["StockIdeal"].Value is null))
                                 {
-                                    if (!(dataGridViewProductos.Rows[e.RowIndex].Cells["Precio"].Value is null))
+                                    if (!(dataGridViewProductos.Rows[rowIndex].Cells["Precio"].Value is null))
                                     {
-                                        if (!(dataGridViewProductos.Rows[e.RowIndex].Cells["Indice"].Value is null))
+                                        if (!(dataGridViewProductos.Rows[rowIndex].Cells["Indice"].Value is null))
                                         {
                                             retorno = true;
                                         }
@@ -215,32 +222,32 @@ namespace PROYECTO
                                     }
                                     else
                                     {
-                                        dataGridViewProductos.Rows[e.RowIndex].Cells["Precio"].Value = "Ingrese Un Precio";
+                                        dataGridViewProductos.Rows[rowIndex].Cells["Precio"].Value = "Ingrese Un Precio";
                                     }
                                 }
                                 else
                                 {
-                                    dataGridViewProductos.Rows[e.RowIndex].Cells["StockIdeal"].Value = "Ingrese El Stock Ideal";
+                                    dataGridViewProductos.Rows[rowIndex].Cells["StockIdeal"].Value = "Ingrese El Stock Ideal";
                                 }
                             }
                             else
                             {
-                                dataGridViewProductos.Rows[e.RowIndex].Cells["StockMinimo"].Value = "Ingrese El Stock Minimo";
+                                dataGridViewProductos.Rows[rowIndex].Cells["StockMinimo"].Value = "Ingrese El Stock Minimo";
                             }
                         }
                         else
                         {
-                            dataGridViewProductos.Rows[e.RowIndex].Cells["Stock"].Value = "Ingrese El Stock";
+                            dataGridViewProductos.Rows[rowIndex].Cells["Stock"].Value = "Ingrese El Stock";
                         }
                     }
                     else
                     {
-                        dataGridViewProductos.Rows[e.RowIndex].Cells["Descripcion"].Value = "Ingrese La Descripcion";
+                        dataGridViewProductos.Rows[rowIndex].Cells["Descripcion"].Value = "Ingrese La Descripcion";
                     }
                 }
                 else
                 {
-                    dataGridViewProductos.Rows[e.RowIndex].Cells["Codigo"].Value = "Ingrese El Codigo";
+                    dataGridViewProductos.Rows[rowIndex].Cells["Codigo"].Value = "Ingrese El Codigo";
                 }
             }
             catch (NullReferenceException exception)
@@ -261,22 +268,41 @@ namespace PROYECTO
         /// <param name="e"></param>
         private void dataGridViewProductos_RowHeaderMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
         {
-            if (ValidarDatosDelProductoSeleccionado(sender, e))
+            this.seleccionarProducto(e.RowIndex);
+        }
+
+
+
+        private void seleccionarProducto(int rowIndex) {
+
+            string pathCarpetaImagenes= this.ObtenerPathCarpetaImagenes()+"productos\\";
+            if (ValidarDatosDelProductoSeleccionado(rowIndex))
             {
                 if (panelCargarProducto.Visible == true)//si esta visible quiere decir, que estamos en la seccion productos
                 {
-                    textBoxCodigo.Text = dataGridViewProductos.Rows[e.RowIndex].Cells["Codigo"].Value.ToString();
-                    textBoxDescripcion.Text = dataGridViewProductos.Rows[e.RowIndex].Cells["Descripcion"].Value.ToString();
-                    textBoxStock.Text = dataGridViewProductos.Rows[e.RowIndex].Cells["Stock"].Value.ToString();
-                    textBoxStockMinimo.Text = dataGridViewProductos.Rows[e.RowIndex].Cells["StockMinimo"].Value.ToString();
-                    textBoxStockIdeal.Text = dataGridViewProductos.Rows[e.RowIndex].Cells["StockIdeal"].Value.ToString();
-                    textBoxPrecio.Text = dataGridViewProductos.Rows[e.RowIndex].Cells["Precio"].Value.ToString();
-                    textBoxIndice.Text = dataGridViewProductos.Rows[e.RowIndex].Cells["Indice"].Value.ToString();
-                    textBoxImagen.Text = dataGridViewProductos.Rows[e.RowIndex].Cells["Imagen"].Value.ToString();
+                    textBoxCodigo.Text = dataGridViewProductos.Rows[rowIndex].Cells["Codigo"].Value.ToString();
+                    textBoxDescripcion.Text = dataGridViewProductos.Rows[rowIndex].Cells["Descripcion"].Value.ToString();
+                    textBoxStock.Text = dataGridViewProductos.Rows[rowIndex].Cells["Stock"].Value.ToString();
+                    textBoxStockMinimo.Text = dataGridViewProductos.Rows[rowIndex].Cells["StockMinimo"].Value.ToString();
+                    textBoxStockIdeal.Text = dataGridViewProductos.Rows[rowIndex].Cells["StockIdeal"].Value.ToString();
+                    textBoxPrecio.Text = dataGridViewProductos.Rows[rowIndex].Cells["Precio"].Value.ToString();
+                    textBoxIndice.Text = dataGridViewProductos.Rows[rowIndex].Cells["Indice"].Value.ToString();
+                    if(dataGridViewProductos.Rows[rowIndex].Cells["Imagen"].Value!=null)//solucion temporal al no poner imagen en alta de producto
+                    textBoxImagen.Text = dataGridViewProductos.Rows[rowIndex].Cells["Imagen"].Value.ToString();
                     Producto = new Producto(textBoxCodigo.Text, textBoxDescripcion.Text, textBoxStock.Text, textBoxStockIdeal.Text, textBoxStockMinimo.Text, textBoxPrecio.Text, textBoxImagen.Text);
                     if ((textBoxImagen.Text != null) && (textBoxImagen.Text != "") && (textBoxImagen.Text != "sin imagen"))
                     {
-                        pictureBoxImagenProducto.Image = Image.FromFile(textBoxImagen.Text);//cargo la imagen al pictureBox
+                        try {
+                            
+                            string[] fileNameArray = textBoxImagen.Text.Split('\\');
+                            FileStream fs = new System.IO.FileStream(pathCarpetaImagenes + fileNameArray[fileNameArray.Length - 1], FileMode.Open, FileAccess.Read);
+                            pictureBoxImagenProducto.Image = Image.FromStream(fs);
+                            fs.Close();
+                            //pictureBoxImagenProducto.Image = Image.FromFile(pathCarpetaImagenes + fileNameArray[fileNameArray.Length-1]);//cargo la imagen al pictureBox
+                        }
+                        catch (FileNotFoundException e) {
+                            MessageBox.Show("Esta imagen no se encontro en la carpeta IMAGENES!");
+                        }
                     }
                     else
                     {
@@ -285,20 +311,20 @@ namespace PROYECTO
                 }
                 else//si no, estamos en la seccion ventas.
                 {
-                    string imagen = dataGridViewProductos.Rows[e.RowIndex].Cells["Imagen"].Value.ToString();
-                    Producto = new Producto(dataGridViewProductos.Rows[e.RowIndex].Cells["Codigo"].Value.ToString(), dataGridViewProductos.Rows[e.RowIndex].Cells["Descripcion"].Value.ToString(), dataGridViewProductos.Rows[e.RowIndex].Cells["Stock"].Value.ToString(), dataGridViewProductos.Rows[e.RowIndex].Cells["StockIdeal"].Value.ToString(), dataGridViewProductos.Rows[e.RowIndex].Cells["StockMinimo"].Value.ToString(), dataGridViewProductos.Rows[e.RowIndex].Cells["Precio"].Value.ToString());
+                    string imagen = dataGridViewProductos.Rows[rowIndex].Cells["Imagen"].Value.ToString();
+                    Producto = new Producto(dataGridViewProductos.Rows[rowIndex].Cells["Codigo"].Value.ToString(), dataGridViewProductos.Rows[rowIndex].Cells["Descripcion"].Value.ToString(), dataGridViewProductos.Rows[rowIndex].Cells["Stock"].Value.ToString(), dataGridViewProductos.Rows[rowIndex].Cells["StockIdeal"].Value.ToString(), dataGridViewProductos.Rows[rowIndex].Cells["StockMinimo"].Value.ToString(), dataGridViewProductos.Rows[rowIndex].Cells["Precio"].Value.ToString());
                     richTextBoxProducto.Text = string.Format("Codigo De Producto: {0}\nDescripcion: {1}\nPrecio: ${2}\n", Producto.Codigo, Producto.Descripcion, Producto.Precio);
                     if (!(imagen is null) && imagen.Length > 1 && imagen != "sin imagen")
                     {
                         pictureBoxImagenProductoVenta.Visible = true;
-                        pictureBoxImagenProductoVenta.Image = Image.FromFile(imagen);
+                        pictureBoxImagenProductoVenta.Image = Image.FromFile(pathCarpetaImagenes + imagen);
                     }
                     else
                     {
                         pictureBoxImagenProductoVenta.Visible = false;
                     }
                     float auxPrecio;
-                    if (float.TryParse(dataGridViewProductos.Rows[e.RowIndex].Cells["Precio"].Value.ToString(), out auxPrecio))
+                    if (float.TryParse(dataGridViewProductos.Rows[rowIndex].Cells["Precio"].Value.ToString(), out auxPrecio))
                     {
                         Producto.Precio = auxPrecio;
                     }
@@ -340,11 +366,13 @@ namespace PROYECTO
                                     {
                                         if (!(textBoxImagen.Text is null) && (textBoxCodigo.Text.ToLower().Length > 1))
                                         {
+                                            string[] pathImagenArray = imagen.Split('\\');
+                                            string newPathImage = this.ObtenerPathCarpetaImagenes() + pathImagenArray[pathImagenArray.Length - 1];
                                             if (Int32.TryParse(textBoxIndice.Text, out id))//si tiene id es porque es un producto ya ingresado.
                                             {
                                                 /*string codigo = textBoxCodigo.Text;
                                                 string descripcion = textBoxDescripcion.Text;
-                                                string imagen = textBoxImagen.Text;*/
+                                                string imagen = textBoxImagen.Text;*/                                              
                                                 retorno = new Producto(codigo, descripcion, stock, stockIdeal, stockMinimo, precio, imagen, id);
                                             }
                                             else//si no tiene id quiere decir que es un producto nuevo y requiere de un id.
@@ -352,7 +380,7 @@ namespace PROYECTO
                                                 /*string codigo = textBoxCodigo.Text;
                                                 string descripcion = textBoxDescripcion.Text;
                                                 string imagen = textBoxImagen.Text;*/
-                                                retorno = new Producto(codigo, descripcion, stock, stockIdeal, stockMinimo, precio, imagen);
+                                                retorno = new Producto(codigo, descripcion, stock, stockIdeal, stockMinimo, precio, imagen);                                                
                                             }
                                         }
                                         else
@@ -418,6 +446,8 @@ namespace PROYECTO
             try
             {
                 Producto auxProducto = LeerProductoDelFormulario();
+                this.copiarImagenSeleccionadaALaCarpetaImagenes(auxProducto,"productos\\");
+
                 ProductosDAO.InsertarProducto(auxProducto);
                 CargarDatosAlGridView();
                 textBoxCodigo.Focus();
@@ -443,9 +473,10 @@ namespace PROYECTO
         /// 
         private string ObtenerPathCarpetaImagenes()
         {
-            string retorno = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
-            retorno += "\\StockProyect\\Imegenes\\";
-            return retorno;
+            string workingDirectory = Environment.CurrentDirectory;
+            string projectDirectory = Directory.GetParent(workingDirectory).Parent.Parent.Parent.FullName;
+            projectDirectory += "\\Imegenes\\";
+            return projectDirectory;
         }
         /// <summary>
         /// crea un thread para la apertura del FileDialog y establece el thread como 'STA'(hilo principal)
@@ -464,8 +495,7 @@ namespace PROYECTO
             string pathDeImagen;
             OpenFileDialog openFile = new OpenFileDialog();
             CreaYEjecutaThreadSeleccionarImagen(openFile);
-            pathDeImagen = ObtenerPathCarpetaImagenes();
-            pathDeImagen += openFile.SafeFileName;//sumo al path, el nombre del archivo
+            pathDeImagen = openFile.FileName;
             return pathDeImagen;
         }
         /// <summary>
@@ -486,9 +516,21 @@ namespace PROYECTO
                 MessageBox.Show("ERROR, eso no es una imagen.");
             }
         }
-        private void IniciarOpenFile()
-        {
 
+        private void eliminarFotoFisica(string pathFileToRemove) {
+            try
+            {
+                pictureBoxImagenProducto.Image = null;
+                Application.DoEvents();
+                if (System.IO.File.Exists(pathFileToRemove) == true)
+                {
+                    System.IO.File.Delete(pathFileToRemove);
+                }
+            }
+            catch (Exception error)
+            {
+                MessageBox.Show(error.Message);
+            }
         }
         /// <summary>
         /// remueve un producto de la base de datos
@@ -498,8 +540,20 @@ namespace PROYECTO
         private void buttonQuitarProducto_Click(object sender, EventArgs e)
         {
             Producto producto = LeerProductoDelFormulario();
+            string lala=producto.Imagen;
             ProductosDAO.Remover(producto);
+            string pathFileToRemove = this.ObtenerPathCarpetaImagenes() + "productos\\" + producto.Imagen;
+            this.eliminarFotoFisica(pathFileToRemove);
+            
             CargarDatosAlGridView();
+            textBoxCodigo.Text = "";
+            textBoxDescripcion.Text ="";
+            textBoxStock.Text = "";
+            textBoxStockMinimo.Text = "";
+            textBoxStockIdeal.Text = "";
+            textBoxPrecio.Text = "";
+            textBoxIndice.Text = "";
+            textBoxImagen.Text = "";
         }
         /// <summary>
         /// detecta la tecla 'ENTER' para buscar el producto
@@ -522,13 +576,19 @@ namespace PROYECTO
         {
             try
             {
-                Producto producto = LeerProductoDelFormulario();
-                if (!(producto is null))
+                Producto productoActualizado = LeerProductoDelFormulario();
+                Producto auxProductoOriginal =ProductosDAO.ObtenerProductoPorCodigo(productoActualizado.Codigo);
+                MessageBox.Show(productoActualizado.Imagen.ToLower()+auxProductoOriginal.Imagen.ToLower());
+                if (!(productoActualizado is null))
                 {
                     int id;
                     if (Int32.TryParse(textBoxIndice.Text, out id))
                     {
-                        ProductosDAO.ModificarProducto(producto);
+                        if (productoActualizado.Imagen != auxProductoOriginal.Imagen) { 
+                           this.eliminarFotoFisica(this.ObtenerPathCarpetaImagenes()+"productos\\"+auxProductoOriginal.Imagen);
+                           this.copiarImagenSeleccionadaALaCarpetaImagenes(productoActualizado, "productos\\");
+                        }
+                        ProductosDAO.ModificarProducto(productoActualizado);
                         CargarDatosAlGridView();
                     }
                 }
@@ -790,16 +850,30 @@ namespace PROYECTO
         {
             if (dataGridViewProductos.Columns[e.ColumnIndex].Name == "Stock")
             {
-                if (Convert.ToInt32(e.Value) < Convert.ToInt32(dataGridViewProductos.Rows[e.RowIndex].Cells["StockMinimo"].Value))
+              /*  if (Convert.ToInt32(e.Value) < Convert.ToInt32(dataGridViewProductos.Rows[e.RowIndex].Cells["StockMinimo"].Value))
                 {
                     e.CellStyle.BackColor = Color.Red;
                 }
                 else if (Convert.ToInt32(e.Value) == Convert.ToInt32(dataGridViewProductos.Rows[e.RowIndex].Cells["StockMinimo"].Value))
                 {
                     e.CellStyle.BackColor = Color.Orange;
-                }
+                }*/
             }
         }
+        private void copiarImagenSeleccionadaALaCarpetaImagenes(Producto producto, string subFolder = "") {
+            string sourceFile= textBoxImagen.Text;
+            string targetPath = this.ObtenerPathCarpetaImagenes()+subFolder;
+            string[] pathImagenArray = textBoxImagen.Text.Split('.');
+            producto.Imagen = producto.Descripcion.Replace(' ', '_') + "." + pathImagenArray[pathImagenArray.Length-1];
+       
+            string destFile = System.IO.Path.Combine(targetPath, producto.Imagen);
+            // overwrite the destination file if it already exists.
+            System.IO.File.Copy(sourceFile, destFile, true);
+        }
 
+        private void dataGridViewProductos_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            this.seleccionarProducto(e.RowIndex);
+        }
     }
 }

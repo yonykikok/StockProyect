@@ -4,3 +4,9 @@ C:\Users\Haedo Jonathan\Desktop\StockProyect\PROYECTO\ExcepcionesPropiasDAO\obj\
 C:\Users\Haedo Jonathan\Desktop\StockProyect\PROYECTO\ExcepcionesPropiasDAO\obj\Debug\ExcepcionesPropiasDAO.csproj.CoreCompileInputs.cache
 C:\Users\Haedo Jonathan\Desktop\StockProyect\PROYECTO\ExcepcionesPropiasDAO\obj\Debug\ExcepcionesPropiasDAO.dll
 C:\Users\Haedo Jonathan\Desktop\StockProyect\PROYECTO\ExcepcionesPropiasDAO\obj\Debug\ExcepcionesPropiasDAO.pdb
+C:\Users\Desktop-Pro\Desktop\C#\StockProyect\PROYECTO\ExcepcionesPropiasDAO\bin\Debug\ExcepcionesPropiasDAO.dll
+C:\Users\Desktop-Pro\Desktop\C#\StockProyect\PROYECTO\ExcepcionesPropiasDAO\bin\Debug\ExcepcionesPropiasDAO.pdb
+C:\Users\Desktop-Pro\Desktop\C#\StockProyect\PROYECTO\ExcepcionesPropiasDAO\obj\Debug\ExcepcionesPropiasDAO.csprojAssemblyReference.cache
+C:\Users\Desktop-Pro\Desktop\C#\StockProyect\PROYECTO\ExcepcionesPropiasDAO\obj\Debug\ExcepcionesPropiasDAO.csproj.CoreCompileInputs.cache
+C:\Users\Desktop-Pro\Desktop\C#\StockProyect\PROYECTO\ExcepcionesPropiasDAO\obj\Debug\ExcepcionesPropiasDAO.dll
+C:\Users\Desktop-Pro\Desktop\C#\StockProyect\PROYECTO\ExcepcionesPropiasDAO\obj\Debug\ExcepcionesPropiasDAO.pdb

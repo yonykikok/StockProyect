@@ -167,12 +167,14 @@ namespace PROYECTO
             {
                 this.textBoxDireccion.BeginInvoke((MethodInvoker)delegate ()
                 {
-                    this.textBoxNombreDelCliente.Text = ClienteSeleccionado.LastName + " " + ClienteSeleccionado.Name;
-                    this.textBoxDireccion.Text = ClienteSeleccionado.Adress;
-                    this.textBoxTelefono.Text = ClienteSeleccionado.Numero;
-                    textBoxNombreDelCliente.Refresh();
-                    textBoxDireccion.Refresh();
-                    textBoxTelefono.Refresh();
+                    if (ClienteSeleccionado!=null) { 
+                        this.textBoxNombreDelCliente.Text = ClienteSeleccionado.LastName + " " + ClienteSeleccionado.Name;
+                        this.textBoxDireccion.Text = ClienteSeleccionado.Adress;
+                        this.textBoxTelefono.Text = ClienteSeleccionado.Numero;
+                        textBoxNombreDelCliente.Refresh();
+                        textBoxDireccion.Refresh();
+                        textBoxTelefono.Refresh();
+                    }
                 });
             }
             else

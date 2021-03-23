@@ -58,6 +58,5 @@ namespace CapaDeNegocios
             }
             return retorno.ToString();
         }
-
     }
 }

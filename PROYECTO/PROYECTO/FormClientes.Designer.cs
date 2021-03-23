@@ -223,6 +223,7 @@
             this.dataGridViewClientes.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridViewClientes.Size = new System.Drawing.Size(690, 289);
             this.dataGridViewClientes.TabIndex = 7;
+            this.dataGridViewClientes.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridViewClientes_RowHeaderMouseClick);
             this.dataGridViewClientes.RowHeaderMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridViewClientes_RowHeaderMouseDoubleClick);
             // 
             // Indice

@@ -10,3 +10,9 @@ C:\Users\Haedo Jonathan\Desktop\StockProyect\PROYECTO\ExcepcionesPropiasProducto
 C:\Users\Haedo Jonathan\Desktop\StockProyect\PROYECTO\ExcepcionesPropiasProductos\obj\Debug\ExcepcionesPropiasProductos.csproj.CoreCompileInputs.cache
 C:\Users\Haedo Jonathan\Desktop\StockProyect\PROYECTO\ExcepcionesPropiasProductos\obj\Debug\ExcepcionesPropiasProductos.dll
 C:\Users\Haedo Jonathan\Desktop\StockProyect\PROYECTO\ExcepcionesPropiasProductos\obj\Debug\ExcepcionesPropiasProductos.pdb
+C:\Users\Desktop-Pro\Desktop\C#\StockProyect\PROYECTO\ExcepcionesPropiasProductos\bin\Debug\ExcepcionesPropiasProductos.dll
+C:\Users\Desktop-Pro\Desktop\C#\StockProyect\PROYECTO\ExcepcionesPropiasProductos\bin\Debug\ExcepcionesPropiasProductos.pdb
+C:\Users\Desktop-Pro\Desktop\C#\StockProyect\PROYECTO\ExcepcionesPropiasProductos\obj\Debug\ExcepcionesPropiasProductos.csprojAssemblyReference.cache
+C:\Users\Desktop-Pro\Desktop\C#\StockProyect\PROYECTO\ExcepcionesPropiasProductos\obj\Debug\ExcepcionesPropiasProductos.csproj.CoreCompileInputs.cache
+C:\Users\Desktop-Pro\Desktop\C#\StockProyect\PROYECTO\ExcepcionesPropiasProductos\obj\Debug\ExcepcionesPropiasProductos.dll
+C:\Users\Desktop-Pro\Desktop\C#\StockProyect\PROYECTO\ExcepcionesPropiasProductos\obj\Debug\ExcepcionesPropiasProductos.pdb

@@ -11,7 +11,7 @@ namespace CapaDeDatos
 {
     public class ProductosDAO
     {
-        private static string stringDeConexion = "Data Source=MULTITASK\\SQLEXPRESS;Initial Catalog=Multitask; Integrated Security=True";
+        private static string stringDeConexion = "Data Source=DESKTOP-HGEBRUB\\MSSQLSERVER01;Initial Catalog=Multitask; Integrated Security=True";
         private static SqlConnection conexionADB;
         private static SqlCommand comando;
         private static SqlDataReader dataReader;
@@ -256,7 +256,7 @@ namespace CapaDeDatos
                     string auxImg = dataReader["img"].ToString().ToLower();
                     int auxStock = Convert.ToInt32(dataReader["Stock"].ToString());
                     int auxIdealStock = Convert.ToInt32(dataReader["IdealStock"].ToString());
-                    int auxMinimumStock = Convert.ToInt32(dataReader["MinimumStock"].ToString());
+                        int auxMinimumStock = Convert.ToInt32(dataReader["MinimumStock"].ToString());
                     float auxPrice = (float)Convert.ToDouble(dataReader["Price"].ToString());
                     int auxId = Convert.ToInt32(dataReader["Id"].ToString());                   
                     Producto auxProducto = new Producto(auxCode, auxDescription, Convert.ToInt32(auxStock), auxIdealStock, auxMinimumStock, auxPrice, auxImg, auxId);

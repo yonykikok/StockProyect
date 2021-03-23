@@ -12,6 +12,7 @@ using CapaDeNegocios;
 using CapaDeDatos;
 using System.Threading;
 using System.Windows.Forms.DataVisualization.Charting;
+using System.Drawing.Printing;
 
 namespace PROYECTO
 {
@@ -79,6 +80,7 @@ namespace PROYECTO
         private void FormPrincipal_Load(object sender, EventArgs e)
         {
             PrivilegioUsuarios();
+           
             //------probando
             /* List<LogVenta> listaLogs = ClientesLog.LeerHistorialDeVentas();
              foreach (LogVenta log in listaLogs)
@@ -365,6 +367,48 @@ namespace PROYECTO
         private void buttonAnual_Click(object sender, EventArgs e)
         {
             CargarEstadisticasDeVentasUltomosXDias(365);
+        }
+
+        private void buttonImprimirLista_Click(object sender, EventArgs e)
+        {
+            PrintDocument document = new PrintDocument();
+            document.DefaultPageSettings.Landscape = true;
+            document.PrinterSettings.PrinterName = "Microsoft Print to PDF";
+
+            PrintPreviewDialog printPreviewDialog = new PrintPreviewDialog { Document = document };
+            ((Form)printPreviewDialog).WindowState = FormWindowState.Maximized;
+
+            document.PrintPage += delegate (object ev, PrintPageEventArgs printPageEvent)
+            {
+                const int DGV_ALTO = 35;
+                int left = printPageEvent.MarginBounds.Left, top = printPageEvent.MarginBounds.Top;
+                foreach (DataGridViewColumn columna in dataGridViewProductosStockBajo.Columns) {
+                    if (columna.HeaderText.ToLower() == "descripcion" || columna.HeaderText.ToLower() == "pedido") {
+                        printPageEvent.Graphics.DrawString(columna.HeaderText, new Font("Segoe UI", 16, FontStyle.Bold), Brushes.DeepSkyBlue, left, top);
+                        left += columna.Width;
+                    }
+                }
+                left = printPageEvent.MarginBounds.Left;
+                printPageEvent.Graphics.FillRectangle(Brushes.Black, left, top + 40, printPageEvent.MarginBounds.Right - left, 3);
+                top += 43;
+                foreach (DataGridViewRow row in dataGridViewProductosStockBajo.Rows) {                    
+                    if (row.Index == dataGridViewProductosStockBajo.RowCount - 1) {
+                        break;
+                    }
+                    foreach (DataGridViewCell cell in row.Cells)
+                    {
+                        if (cell.OwningColumn.HeaderText.ToLower() == "descripcion" || cell.OwningColumn.HeaderText.ToLower() == "pedido") {
+                            printPageEvent.Graphics.DrawString(Convert.ToString(cell.Value), new Font("Segoe UI", 13), Brushes.Black, left, top+4);
+                        left += cell.OwningColumn.Width;
+                        }
+                    }
+                    top += DGV_ALTO;
+                    printPageEvent.Graphics.DrawLine(Pens.Gray, printPageEvent.MarginBounds.Left, top, printPageEvent.MarginBounds.Right, top);
+                    left = printPageEvent.MarginBounds.Left;                    
+                }
+            };
+            printPreviewDialog.ShowDialog();
+            
         }
     }
 }

@@ -10,7 +10,7 @@ namespace CapaDeDatos
 {
     public static class ClientesDAO
     {
-        private static string stringDeConexion = "Data Source=MULTITASK\\SQLEXPRESS;Initial Catalog=Multitask; Integrated Security=True";
+        private static string stringDeConexion = "Data Source=DESKTOP-HGEBRUB\\MSSQLSERVER01;Initial Catalog=Multitask; Integrated Security=True";
         private static SqlConnection conexionADB;
         private static SqlCommand comando;
         private static SqlDataReader dataReader;
