@@ -185,3 +185,4 @@ C:\Users\Desktop-Pro\Desktop\C#\StockProyect\PROYECTO\PROYECTO\obj\Debug\Capa de
 C:\Users\Desktop-Pro\Desktop\C#\StockProyect\PROYECTO\PROYECTO\obj\Debug\Capa dePresentacion.csproj.CopyComplete
 C:\Users\Desktop-Pro\Desktop\C#\StockProyect\PROYECTO\PROYECTO\obj\Debug\PROYECTO.exe
 C:\Users\Desktop-Pro\Desktop\C#\StockProyect\PROYECTO\PROYECTO\obj\Debug\PROYECTO.pdb
+C:\Users\Desktop-Pro\Desktop\C#\StockProyect\PROYECTO\PROYECTO\obj\Debug\PROYECTO.FormDeudores.resources

@@ -49,6 +49,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FormDeudores.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormDeudores.Designer.cs">
+      <DependentUpon>FormDeudores.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormCantidad.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -125,6 +131,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormConfirmarIdentidad.resx">
       <DependentUpon>FormConfirmarIdentidad.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormDeudores.resx">
+      <DependentUpon>FormDeudores.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormEmpleados.resx">
       <DependentUpon>FormEmpleados.cs</DependentUpon>

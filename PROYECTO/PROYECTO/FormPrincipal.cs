@@ -410,5 +410,10 @@ namespace PROYECTO
             printPreviewDialog.ShowDialog();
             
         }
+
+        private void btnLogOut_Click(object sender, EventArgs e)
+        {
+                //cerrar la sesion.
+        }
     }
 }

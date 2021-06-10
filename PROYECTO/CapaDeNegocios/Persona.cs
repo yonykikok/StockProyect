@@ -88,7 +88,7 @@ namespace CapaDeNegocios
                     Regex SoloLetras = new Regex("^[a-z|A-Z|0-9| ]+?$");
                     if (SoloLetras.IsMatch(value))
                     {
-                        if (value.Length > 8 && value.Length < 50)
+                        if (value.Length > 6 && value.Length < 50)
                         {
                             this.adress = value;
                         }

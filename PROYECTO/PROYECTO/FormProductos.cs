@@ -578,7 +578,7 @@ namespace PROYECTO
             {
                 Producto productoActualizado = LeerProductoDelFormulario();
                 Producto auxProductoOriginal =ProductosDAO.ObtenerProductoPorCodigo(productoActualizado.Codigo);
-                MessageBox.Show(productoActualizado.Imagen.ToLower()+auxProductoOriginal.Imagen.ToLower());
+                //MessageBox.Show(productoActualizado.Imagen.ToLower()+auxProductoOriginal.Imagen.ToLower());
                 if (!(productoActualizado is null))
                 {
                     int id;
@@ -808,6 +808,7 @@ namespace PROYECTO
                         MostrarDatosDeCompraEnLosListBox(Carrito);
                     }
                 }
+                richTextBoxTotalProductos.Text = "$"+this.calcularTotalDelCarrito().ToString();
             }
             catch (StockInvalidException exception)
             {
@@ -818,6 +819,14 @@ namespace PROYECTO
 
             }
 
+        }
+
+        private float calcularTotalDelCarrito() {
+            float total = 0;
+            foreach (Compra compra in this.carrito.Compras) {
+             total+=   (compra.Cantidad * compra.Precio);
+            }
+            return total;
         }
 
         private void IniciarFormVenta()
@@ -833,13 +842,19 @@ namespace PROYECTO
         /// <param name="e"></param>
         private void buttonFinalizarVenta_Click(object sender, EventArgs e)
         {
-            ThreadVenta = new Thread(IniciarFormVenta);
-            Program.MockThreads.Add(ThreadVenta);
-            if (!(ThreadVenta.IsAlive))
+            if (this.carrito.Compras.Count > 0)
             {
-                ThreadVenta.Start();
+                ThreadVenta = new Thread(IniciarFormVenta);
+                Program.MockThreads.Add(ThreadVenta);
+                if (!(ThreadVenta.IsAlive))
+                {
+                    ThreadVenta.Start();
+                }
+                this.Close();
             }
-            this.Close();
+            else {
+                MessageBox.Show("Debe agregar al menos un producto para continuar.");
+            }
         }
         /// <summary>
         /// alerta al usuario de los productos con stock basico. (naranja= stock minimo) (rojo= stock por debajo del minimo)
@@ -874,6 +889,26 @@ namespace PROYECTO
         private void dataGridViewProductos_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             this.seleccionarProducto(e.RowIndex);
+        }
+
+        private void buttonQuitarVenta_Click(object sender, EventArgs e)
+        {
+            if (listBoxCarrito.SelectedItem != null)
+            {
+                foreach (Compra compra in this.carrito.Compras)
+                {
+                    if (compra.Descripcion == listBoxCarrito.SelectedItem.ToString())
+                    {
+                        this.carrito.Compras.Remove(compra);
+                        MostrarDatosDeCompraEnLosListBox(this.carrito);
+                        richTextBoxTotalProductos.Text = "$" + this.calcularTotalDelCarrito().ToString();
+                        break;
+                    }
+                }
+            }
+            else {
+                MessageBox.Show("Debe seleccionar un producto");
+            }
         }
     }
 }
